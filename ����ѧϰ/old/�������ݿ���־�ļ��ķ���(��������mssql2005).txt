@@ -1,0 +1,9 @@
+收缩数据库日志文件的方法(仅适用于mssql2005)
+
+将数据库日志文件变为1M大小代码讲解收缩mssql2005数据库日志文件的方法，感兴趣的你可不要错过了哈，希望本文可以帮助到你
+执行以下语句，在执行前将dbname修改为需要瘦身的数据库名称，执行后数据库日志文件将变为1M大小。 
+复制代码 代码如下:
+backup log dbName with NO_LOG; 
+backup log dbName with TRUNCATE_ONLY; 
+DBCC SHRINKDATABASE(dbName); 
+

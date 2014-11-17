@@ -1,0 +1,108 @@
+怎样配置apache虚拟主机 
+
+基于不同情况下配置apache虚拟主机的方法，一共八种情况。首先查看你虚拟主机属于哪一种情况，然后对号入座就好了。过程不复杂，关键在于对症下药。
+
+ 
+步骤/方法 1基于ip地址的虚拟主机
+Listen 80
+<VirtualHost 172.20.30.40>
+DocumentRoot /home/httpd/html1
+ServerName www.ok1.com
+ErrorLog /usr/local/apache/logs/error1_log
+CustomLog /usr/local/apache/logs/access1_log combined
+</VirtualHost>
+<VirtualHost 172.20.30.50>
+DocumentRoot /home/httpd/html2
+ServerName www.ok2.com
+ErrorLog /usr/local/apache/logs/error2_log
+CustomLog /usr/local/apache/logs/access2_log combined
+</VirtualHost>
+2基于IP 和多端口的虚拟主机配置
+Listen 172.20.30.40:80
+Listen 172.20.30.40:8080
+Listen 172.20.30.50:80
+Listen 172.20.30.50:8080
+<VirtualHost 172.20.30.40:80>
+DocumentRoot /www/example1-80
+ServerName www.example1.com
+</VirtualHost>
+<VirtualHost 172.20.30.40:8080>
+DocumentRoot /www/example1-8080
+ServerName www.example1.com
+</VirtualHost>
+<VirtualHost 172.20.30.50:80>
+DocumentRoot /www/example2-80
+ServerName www.example1.org
+</VirtualHost>
+<VirtualHost 172.20.30.50:8080>
+DocumentRoot /www/example2-8080
+ServerName www.example2.org
+</VirtualHost> 
+
+ 3单个IP 地址的服务器上基于域名的虚拟主机配置
+# Ensure that Apache listens on port 80
+Listen 80
+# Listen for virtual host requests on all IP addresses
+NameVirtualHost *:80
+<VirtualHost *:80>
+DocumentRoot /www/example1
+ServerName www.example1.com
+ServerAlias example1.com. *.example1.com
+# Other directives here
+</VirtualHost>
+<VirtualHost *:80>
+DocumentRoot /www/example2
+ServerName www.example2.org
+# Other directives here
+</VirtualHost> 4在多个IP 地址的服务器上配置基于域名的虚拟主机
+Listen 80
+# This is the "main" server running on 172.20.30.40
+ServerName server.domain.com
+DocumentRoot /www/mainserver
+# This is the other address
+NameVirtualHost 172.20.30.50
+<VirtualHost 172.20.30.50>
+DocumentRoot /www/example1
+ServerName www.example1.com
+# Other directives here ...
+</VirtualHost>
+<VirtualHost 172.20.30.50>
+DocumentRoot /www/example2
+ServerName www.example2.org
+# Other directives here ...
+</VirtualHost> 5在不同的端口上运行不同的站点(基于多端口的服务器上配置基于域名的虚拟主机)
+Listen 80
+Listen 8080
+NameVirtualHost 172.20.30.40:80
+NameVirtualHost 172.20.30.40:8080
+<VirtualHost 172.20.30.40:80>
+ServerName www.example1.com
+DocumentRoot /www/domain-80
+</VirtualHost>
+<VirtualHost 172.20.30.40:8080>
+ServerName www.example1.com
+DocumentRoot /www/domain-8080
+</VirtualHost>
+<VirtualHost 172.20.30.40:80>
+ServerName www.example2.org
+DocumentRoot /www/otherdomain-80
+</VirtualHost>
+<VirtualHost 172.20.30.40:8080>
+ServerName www.example2.org
+DocumentRoot /www/otherdomain-8080
+</VirtualHost> 
+6基于域名和基于IP 的混合虚拟主机的配置
+Listen 80
+NameVirtualHost 172.20.30.40
+<VirtualHost 172.20.30.40>
+DocumentRoot /www/example1
+ServerName www.example1.com
+</VirtualHost>
+<VirtualHost 172.20.30.40>
+DocumentRoot /www/example2
+ServerName www.example2.org
+</VirtualHost>
+<VirtualHost 172.20.30.40>
+DocumentRoot /www/example3
+ServerName www.example3.net
+</VirtualHost> 

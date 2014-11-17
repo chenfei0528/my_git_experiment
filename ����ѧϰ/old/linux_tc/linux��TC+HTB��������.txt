@@ -1,0 +1,373 @@
+linux下TC+HTB流量控制
+
+C规则涉及到 队列(QUEUE) 分类器(CLASS) 过滤器（FILTER）,filter划分的标志位可用U32或iptables的set-mark来实现 ) 一般是"控发"不控收 linux下有两块网卡,一个eth1是外网,另一块eth0是内网.在eth0上做HTB。（注 意：filter划分标志位可用u32打标功能或iptables的set-mark功能，如果用iptables来打标记的话，下行速LV在eth0处 控制，但打标应在进入eth0之前进行，所以，“-i eth1";例子：
+
+　　主要命令就下面三句：创建一个HTB的根
+
+　　1.tc qdisc add dev eth0 root handle 1: htb default 20创建一个HTB的类,流量的限制就是在这里限制的,并设置突发.
+
+　　2.tc class add dev eth0 parent 1: classid 1:1 htb rate 200kbit(速率) ceil 200kbit burst 20k(突发流量)
+
+　　创建一个过滤规则把要限制流量的数据过滤出来,并发给上面的类来限制速度3.tc filter add dev eth0 parent 1: prio 1(优先级) protocol ip u32 match ip sport 80 0xfff flowid 1:1
+
+　　说明：让交互数据包保持较低的延迟时间，并最先取得空闲带宽，比如：
+
+　　ssh telnet dns quake3 irc ftp控制 smtp命令和带有SYN标记的数据包，都应属于这一类。为了保证上行数据流不会伤害下行流，还要把ACK数据包排在队列前面，因为下行数据的ACK必须同上行流进行竟争。
+
+　　TC+IPTABLES+HTB+SFQ
+
+　　1 tcp/ip 协议规定,每个封包,都需要有ACKNOWLEDGE讯息的回传,也就是说,传输的资料需要有一个收到资料的讯息回复,才能决定后面的传输速度,并决定是 否重新传输遗失的资料,上行的带宽一部分就是用来传输这些ACK资料的.上行带宽点用大的时候,就会影响ACK资料的传送速度,并进而影响到下载速度,
+
+　　2 试验证明,当上传满载时,下载速度变为原来速度的40%,甚至更低,,因为上载文件(包括ftp上传,发邮件SMTP),如果较大,一个的通讯量令带宽超 向包和,那么所有的数据包按照先进先出的原则进行排队和等待,这就可以解释为什么网内其中有人用ftp上载文件或发送大邮件的时候,整个网速变得很慢的原 因.
+
+　　解决速度之道:
+
+　　1 为了解决这些速度问题,对经过线路的数据进行了有规则的分流.把本来在宽带上的瓶颈转移到我们的LINUX路由器上,可以把带宽控制的比我们购买的带宽小一点. 这样,我们就可以方便的用tc技术对经过的数据进行分流与控制.
+
+　　我们的想像就像马路上的车道一样,有高速道,还有小车道,大车道,需要高速的syn ack icmp ssh等走高速道,需要大量传输的ftp-data,smtp等走大车道,不能让它堵塞整条马路,各行其道.
+
+　　linux下的TC(traffic control)就有这样的作用,只要控制得当,一定会有明显的效果.tc 和iptables结合是最好的简单运用的结合方法.
+
+　　我 们设置过滤器以便用iptables对数据包进行分类,因为iptables更灵活,而且还可以为每个规则设置计数器,iptables用mangle链 来mark数据包,告诉了内核,数据包会有一个特定的FWMARK标记值(handle x fw) 表明它应该送给那个类(classid x:x),而prio是优先值,表明那些重要数据应该优先通过那个通道,首先选择队列(选择htb),
+
+　　一般系统默认的是fifo的先进先出队列,就是说包是按照先来先处理的原则,如果有一个大的数据包在前面,那么后面的包只能等前面的发完后才能接着发了,这样就算后面既使是一个小小的ack包,也要等待了,这样上传就影响了下载,就算你有很大的下载带宽也无能为力.
+
+　　HTB(Hierarchical token bucket,分层的令牌桶),就像CBQ一样工作,但是并不靠计算闲置时间来整形,它是一个分类的令牌桶过滤器.,它只有很少的参数.
+
+　　结构简图:             1:
+
+　　~~~~~~~~~~~~~~~~`~~~~~
+
+　　~~~~~~~_________1:1~~~~~~~~~1:2________
+
+　　|~~~|~~~~|~~~~|~~~~~|~~~~~~~~|~~~~~~~~|~~~~~~~|
+
+　　1:11~~~1:12~~~~~~~~~~~~1:21~~~1:22~~~1:23~~1:24
+
+　　优先顺序: 1:11 1:12 1:21 1:22 1:23 1:24
+
+　　根据上面的例子,开始脚本:
+
+　　关于参数的说明:
+
+　　rate:是一个类保证得到的带宽值,如果有不只一个类,请保证所有子类总和是小于或等于父类,
+
+　　ceil: ceil是一个类最大能得到带宽值.
+
+　　prio: 是优先权的设置,数值越大,优先权越小,如果是分配剩余带宽,就是数值小的会最优先取得剩余的空闲的带宽权.
+
+　　一般大数据的话,控制在50%-80%左右吧,而ceil最大建议不超过85%,以免某一个会话占用过多的带宽.
+
+　　rate可按各类所需要分配:
+
+　　1:11是很小而且最重要的数据包通道,当然要多分点,甚至必要时先全部占用,不过一般不会的,所以给全速.
+
+　　1:12是很重要的数据道,给多点,最少给一半,但需要时可以再多一点
+
+　　rate规划 1:2=1:21 +1:22 +1:23 +1:24 一般总在50%-80%左右.
+
+　　1:21 http,pop是最常用的啦,为了太多人用,而导致堵塞,我们不能给得太多,也不能太少.
+
+　　1:22 我打算给smtp用,优先低于1:21,以防发大的附件大量占用带宽.
+
+　　1:23 我打算给ftp-data,和1:22一样,很可能大量上传文件,所以,rate不能给的太多,而当其他有剩时可以给大些,ceil设置大些.
+
+　　1:24 是无所谓通道,就是一般不是我们平时工作上需要的通道,给小点防止这些人妨碍有正常工作需要的人.
+
+　　上行uplink 320K,设置销低于理论值.
+
+　　DEV="PPP0"
+
+　　UPLINK=300
+
+　　下行downlink 3200K大概一半左右,以便能够得到更多的关发连接.
+
+　　DOWNLINK=1500
+
+　　1 曾加一个根队列,没有进行分类的数据包都走这个1:24是缺省类:
+
+　　tc qdisc add dev $DEV parent 1: htb default 24
+
+　　1.1 增加一个根队下面主干类1: 速率为$UPLINK k
+
+　　tc cladd add dev $DEV parent 1: classid 1:1 htb rate ${UPLINK}kbit ceil ${UPLINK}kbit prio 0
+
+　　1.1.1 在主干类1下建立第一叶子类,这是一个最高优先权的类,需要高优先和高速的包走这条通道,比如SYN ACK ICMP等.
+
+　　tc class add dev $DEV parent 1:1 classid 1:11 htb rate ${$uplink}kbit ceil ${uplink}kbit prio 1
+
+　　1.1.2 在主类1下建立第二叶子类，这是一个次高优先权的类，比如我们重要的CRM数据。
+
+　　tc class add dev $DEV parent 1:1 classid 1:12 htb rate ${$uplink-150}kbit ceil ${uplink-50}kbit prio 2
+
+　　1.2 在根类下建立次干类 classid 1:2 ，此次干类的下面全部优先权低于主干类，以防重要数据堵塞。
+
+　　tc class add dev $DEV parent 1: classid 1:2 htb rate ${$UPLINK -150]kbit prio 3
+
+1.2.1 在次干类下建立第一叶子类，可以跑例如http ,pop等。
+
+　　tc class add dev $DEV parent 1:2 classid 1:21 htb rate 100kbit ceil ${$uplink -150}kbit prio 4
+
+　　1.2.2 在次干类下建立第二叶子类，不要太高的速度，以防发大的附件大量占用带宽，便如smtp等。
+
+　　tc class add dev $DEV parent 1:2 classid 1:22 htb rate 30kbit ceil ${uplink-160}kbit prio 5
+
+　　1.2.3 在次干类下建立第三叶子类，不要太高的带宽，以防大量的数据堵塞网络，例如：ftp-data.
+
+　　tc class add dev $DEV parent 1:2 classid 1:23 htb rate 15kbit ceil ${UPLINK-170}kbit prio 6
+
+　　1.2.4 在次干类下建立第四叶子类。无所谓的数据通道，无需要太多的带宽，以防无所谓的人在阻碍正务。
+
+　　tc class add dev $DEV parent 1:2 classid 1:24 htb rate 5kbit ceil ${UPLINK -250}kbit prio 7
+
+　　在每个类下面再附加上另一个队列规定，随机公平队列（SFQ），不被某个连接不停占用带宽，以保证带宽的平均公平使用。
+
+　　#SFQ（stochastic fairness queueing 随机公平队列），SFQ的关键词是“会话”（或称作流），主要针对一个TCP会话或者UDP流，流量被分成相当多数量的FIFO队列中，每个队列对应一个会话。
+
+　　数据按照简单轮转的方式发送，每个会话都按顺序得到发送机会。这种方式非常公平，保证了每个会话都不会被其它会话所淹没，SFQ之所以被称为“随机”，是因为它并不是真的为每个会话创建一个队列，而是使用一个散列算法，把所有的会话映射到有限的几个队列中去。
+
+　　#参数perturb是多少秒后重新配置一次散列算法，默认为10秒.
+
+　　tc qdisc add dev $DEV parent 1:11 handle 111: sfq perturb 5
+
+　　tc qidsc add dev $DEV parent 1:12 handle 112: sfq perturb 5
+
+　　tc qdisc add dev $DEV parent 1:21 handle 121: sfq perturb 10
+
+　　tc qidsc add dev $DEV parent 1:22 handle 122: sfq perturb 10
+
+　　tc qidsc add dev $DEV parent 1:23 handle 123: sfq perturb 10
+
+　　tc qidsc add dev $DEV parent 1:24 handle 124: sfq perturb 10
+
+　　设置过滤器,handle是iptables作mark的值,让被iptables在mangle链做了mark的不同的值选择不同的通道classid,而prio是过滤器的优先级别
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 1 handle 1 fw classid 1:11
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 2 handle 2 fw classid 1:12
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 3 handle 3 fw classid 1:21
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 4 handle 4 fw classid 1:22
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 5 handle 5 fw classid 1:23
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 6 handle 6 fw classid 1:24
+
+　　##################################################
+
+　　##################################
+
+　　下行的限制:
+
+　　# 设置入队的规则,是因为把一些经常会造成下载大文件的端口进行控制,不让他们来得太快,导致堵塞,来得太快,就直接drop,就不会浪费和占用机器时间和力量去处理了.
+
+　　1 把下行速率控制在大概1000-1500K(大约为带宽的50%),因为这个速度已经够用了,以便能够得到更多的并发下载连接.
+
+　　tc qdisc add dev $DEV handle ffff: ingress
+
+　　tc filter add dev $DEV parent ffff: protocol ip prio 50 handle 8 fw police rate ${downlink}kbit burst 10k drop flowid :8
+
+　　如果内部网数据流不是很疯狂的话,就不用做下载的限制了,用#符号屏蔽上面两行既可.
+
+　　如果要对任何进来的数据进行限速的话,可以用下面这句.
+
+　　tc filter add dev $DEV parent ffff : protocol ip prio 10 u32 match ip src 0.0.0.0/0 police rate ${downlink}kbit burst 10k drop flowid :1
+
+　　################################
+
+　　开始给数据包打标记
+
+　　把出去的不同类数据包(为dport)给mark上标记1---6,让它走不同的通道.
+
+　　把进来的数据包(为sport)给mark上标记8,让它受到下行的限制,以免速度太快而影响全局.
+
+　　每条规则下跟着return的意思是可以通过RETURN方法避免遍历所有的规则,加快了处理速度.
+
+　　设置TOS的处理:
+
+　　iptables -t mangle -A PREROUTING -m tos --tos Minimize-Delay -j MARK --set-mark 1
+
+　　iptables -t mangle -A PREROUTING -m tos --tos Minimize-Delay -j RETURN
+
+　　iptables -t mangle -A PREROUTING -m tos --tos Minimize-Cost -j MARK --set-mark 4
+
+　　iptables -t mangle -A PREROUTING --m tos --tos Minimize-Cost -j RETURN
+
+　　iptables -t mangle -A PREROUTING -m tos --tos Maximize-Throughput -j MARK --set-mark 5
+
+　　iptables -t mangle -A PREROUTING -m tos --tos Maximize-Througput -j RETURN
+
+　　##提高TCP初始连接(也就是带有SYN的数据包)的优先权是非常明智的.
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --tcp-flags SYN,RST,ACK SYN -j MARK --set-mark 1
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --tcp-flags SYN,RST,ACK SYN -j RETURN
+
+　　#想ICMP 想ping有良好的反应，放在第一类。
+
+　　iptables -t mangle -A PREROUTING -p icmp -j MARK --set-mark 1
+
+　　iptables -t mangle -A PREROUTING -P icmp -j RETURN
+
+　　#small packets (probably just ACKS)长度小于64的小包通常是需要快些的,一般是用来确认tcp的连接的，让它跟快些的通道吧。
+
+　　iptables -t mangle -A PREROUTING -p tcp -m length --length :64 -j MARK --set-mark 2
+
+　　iptables -t mangle -A PREROUTING -p tcp -m length --length:64 -j RETURN
+
+　　#ftp放第二类，因为一般是小包，ftp-data放在第5类，因为一般是大时数据的传送。
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport ftp -j MARK --set-mark 2
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport ftp -j RETURN
+
+　　iptables -t mangle -A PRETOUTING -p tcp -m tcp --dport ftp-data -j MARK --set-mark 5
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport ftp -j MARK --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport ftp -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport ftp-data -j MARK --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport ftp-data -j RETURN
+
+　　###提高SSH数据包的优先权：放在第1类，要知道SSH是交互式的和重要的，不容待慢：
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 22 -j MARK --set-mark 1
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport -j RETURN
+
+　　##SMTP邮件，放在第4类，因为有时有人发送很大的邮件，为避免它堵塞，让它跑第4道吧
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 25 -j MARK --st-mark 4
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 25 -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 25 -j MARK --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 25 -j RETURN
+
+##name-domain server:放在第1类，这样连接带有域名的连接才能快速找到对应有的地址，提高速度
+
+　　iptables -t mangle -A PREROUTING -p udp -m udp --dport 53 -j MARK --set-mark 1
+
+　　iptables -t mangle -A PREROUTING -P udp -m udp --dport 53 -j RETURN
+
+　　###HTTP: 放在第3类，是最常用的，最多人用的
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 80 -j MARK --set-mark 3
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 80 -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 80 -j MARK --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 80 -j RETURN
+
+　　###pop邮件放在第3类：
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 110 -j MARK --set-mark 3
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dprot 110 -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 110 -j MARK --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 110 -j RETURN
+
+　　###MICSOSOFT-SQL-SERVE:放在第2类，我这里认为较重要，一定保证速度和优先的
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 1433 -j MARK --set-mark 3
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 1433 -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 1433 -j MARK --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 1433 -j RETURN
+
+　　##https:放在第3类
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 443 -j MARK --set-mark 3
+
+　　iptables -t mangle -A PREROUTING -p tcpm -m tcp --dport 443 -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 443 -j MAKR --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -P tcp -m tcp --sport 443 -j RETURN
+
+　　###voip用，提高，语音要保持高速才不会断续
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 1720 -j MARK--SET-MARK 1
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 1720 -j RETURN
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 1720 -j MAKR --set-mark 8
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --sport 1720 -j RETURN
+
+　　###VPN 用作voip的，也要走高速路，才不会断续
+
+　　iptables -t mangle -A PREROUTING -p udp -m udp --dport 7707 -j MARK --set-mark 1
+
+　　iptables -t mangle -A PREROUTING -p udp -m udp --dport 7707 -j RETURN
+
+　　###放在第1类，因为我觉得客观存在要我心中很重要，优行：
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport 7070 -j MARK --set-mark 1
+
+　　iptables -t mangle -A PREROUTING -p tcp -m tcp --dport -j RETURN
+
+　　##提高本地数据包的优先权：放在第1类
+
+　　iptables -t mangle -A OUTPUT -p tcp -m tcp --dport 22 -j MARK --set-mark 1
+
+　　iptables -t mangle -A OUTPUT -p tcp -m tcp --dport 22 -j RETURN
+
+　　iptables -t mangle -A OUTPUT -p icmp -j MARK --set-mark 1
+
+　　iptables -t mangle -A OUTPUT -p icmp -j RETURN
+
+　　###本地small packet (probably just ACKS)
+
+　　iptables -t mangle -A OUTPUT -p tcp -m length --length :64 --set-mark 2
+
+　　iptables -t mangle -A OUTPUT -p tcp -m length --length :64 -j RETURN
+
+　　#################################################
+
+　　## 向PRETOUTRIN中添加完mangle规则后，用这条规则结束prerouting表：也就是说前面没有打过标记的数据包就交给1:24来处理实际 上是不必要的，因为1:24是缺省类,但仍然打上标记是为了保持整个设置 的协调一致,而且这样,还能看到规则的数据包计数:
+
+　　iptables -t mangle -A PREROUTING -i $DEV -j MARK --set-mark 6
+
+　　###对某人限制:iptables -t mangle -I PREROUTING 1 -s 192.168.xx.xx -j MAKR --set-mark 6
+
+　　###iptables -t mangle -I PREROUTING 2 -s 192.168.xx.xx -j RETURN
+
+　　###################################################
+
+　　u32的应用:
+
+　　tc filter add dev eth0 parent 1:0 protocol ip prio 1 u32 ...... 这就是所谓的u32匹配,可以匹配数据包的任意部分.
+
+　　根据源/目的地址: match ip src 0.0.0.0/0
+
+　　match ip dst 1.2.3.0/24
+
+　　单个IP地址可以用/32来表示
+
+　　根据源/目的端口可以这样表示: match ip sport 80 0xffff
+
+　　match ip dport 80 0xffff
+
+　　根据IP协议: match ip protocol (udp tcp icmp gre ipsec)
+
+　　比如icmp协议是1 match ip protocol 1 0xff
+
+　　举例:
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 1 u32 match ip dst 4.3.2.1/32 flowid 10:1
+
+　　tc filter add dev $DEV parent 1:0 protocol ip prio 1
+
+　　u32 match ip src 4.3.2.1/32 match ip sport 80 0xffff flowid 10:1

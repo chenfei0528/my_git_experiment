@@ -1,0 +1,43 @@
+xp下用netsh禁用启用网卡
+
+在XP系统中不支持netsh interface set interface name命令扩展，所以此命令是无法正常运行的，提取2003下的ifmon.dll文件覆盖，就可以用了。
+
+winxp下使用： netsh interface set interface "本地连接" "disabled"
+会出现 如下错误提示：
+代码:
+
+
+--------------------------------------------------------------------------------
+C:\>netsh interface set interface "本地连接" "disabled"
+没有指定一个或多个关键性参数
+此命令提供的语法不正确。请查看帮助以获取正确的语法信息。
+
+用法 set interface [name = ] IfName
+[ [admin = ] ENABLED|DISABLED
+[connect = ] CONNECTED|DISCONNECTED
+[newname = ] NewName ]
+
+设置接口参数。
+
+IfName - 接口名称
+admin - 接口是否被启用 (仅用于非 LAN)。
+connect - 是否连接接口 (仅用于非 LAN)。
+newname - 接口的新名称 (仅用于非 LAN)。
+
+注意:
+- 除名称外，还必须至少指定一个选项。
+- 如果 connect = CONNECTED 被指定，那么接口被自动
+启用，甚至在 admin = DISABLED 选项被指定时也是如
+此。 
+===========================
+
+替换XP下的ifmon.dll步骤：
+
+ 
+
+但是你可以把win2003系统下 C:\\WINDOWS\\system32\\ifmon.dll文件 拷贝到winxp系统下来使用，从而实现网卡的禁用，启用拷贝时候需要注意：需要先把 ifmon.dll文件拷贝到 C:\\WINDOWS\\system32\\dllcache 替换掉系统文件再拷贝到 C:\\WINDOWS\\system32 替换掉系统文件，若系统会提示 文件被修改了，是否从安装盘还原，选择保持修改的文件就替换成功了。
+
+替换后就可以正常使用netsh命令来禁用，启用网卡了
+
+===========================
+

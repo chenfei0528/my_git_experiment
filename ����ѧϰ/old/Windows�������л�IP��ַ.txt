@@ -1,0 +1,48 @@
+Windows批处理切换IP地址
+
+不知朋友们是否有这样的经历，把本本带到单位上网时，由于单位需要配固定IP地址，而家里是自动获得IP地址的，所以每天都要对这个IP地址设置来设置去，那么有没有简单方便的办法呢？其实我们可以做一个批处理，每次要设置IP地址的时候只要运行一下批处理即可。
+
+　　一、设置IP地址批处理，将如下代码用记事本保存为.bat文件，如：IPadd.bat，双击运行即可。
+
+　　@echo off
+
+　　echo HTMer修改IP地址工具
+
+　　echo 正在设置您的IP地址，请稍等......
+
+　　netsh interface ip set address name="本地连接" source=static addr=192.168.0.2 mask=255.255.255.0
+
+　　netsh interface ip set address name="本地连接" gateway=192.168.0.1 gwmetric=0
+
+　　netsh interface ip set dns name="本地连接" source=static addr=192.168.0.3 register=primary
+
+　　netsh interface ip add dns name="本地连接" addr=192.168.0.4
+
+　　netsh interface ip set wins name="本地连接" source=static addr=none
+
+　　上面代码中的相关参数说明如下，根据您的实际情况修改即可：
+
+　　addr=192.168.0.2——IP地址
+
+　　mask=255.255.255.0——子网掩码
+
+　　gateway=192.168.0.1——网关
+
+　　addr=192.168.0.3——首选DNS
+
+　　addr=192.168.0.4——备用DNS（如果没有备用 DNS，请将这一行代码整个删除即可）
+
+　　二、设置自动获得IP地址，将如下代码用记事本保存为.bat文件，如：dhcp.bat，双击运行即可。
+
+　　@echo off
+
+　　echo HTMer修改IP地址工具
+
+　　echo 正在设置自动获得IP地址，请稍等......
+
+　　netsh interface ip set address name="本地连接" source=dhcp
+
+　　netsh interface ip set dns name="本地连接" source=dhcp
+
+　　说明：以上代码中的“本地链接”为您计算机中网络链接的系统默认名称，如果您安装了多个网卡，或是将本地链接改名了，请将代码中的相应本地链接名称也改成你现在的名称。
+

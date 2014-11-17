@@ -1,0 +1,14 @@
+更改 Android SDK 中 AVD 的位置 
+
+
+使用 Android 的 SDK 时，可能有很多人纳闷如何修改 AVD 的位置，那么经过摸索和 Google 之，也经过实验，终于知道如何更改 AVD 的位置了，那么请看。
+
+第一种方法，适合还没有建立 AVD 的情况
+
+即：在计算机右击的属性 选择环境变量，然后添加一个用户的环境变量，名字为 "ANDROID_SDK_HOME”，然后把变量值改为你想将".android”文件夹(AVD信息)所放置的位置这样，你重新打开你的 SDK，看看存放的位置是不是变了？好了，那接下来第二种了。
+
+第二种方法，适合在已经建立过AVD的情况
+
+即： 修改配置文件中的路径，比如我的 AVD 名称是 Android，打开 C:\Documents and Settings\Administrator\.android\avd 目录中的文件 Android.ini 文件，找到
+target=android-5path=C:\Documents and Settings\Administrator\.android\avd\MyAVD.avd （注意 Vista 和 W 7 这个路径在 C 盘你的用户名文件件中）修改其路径即可.
+

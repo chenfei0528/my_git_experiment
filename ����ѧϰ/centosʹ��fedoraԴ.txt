@@ -1,0 +1,13 @@
+centos 使用fedora源 
+
+1. 可以从该处理下 http://fedoraproject.org/wiki/EPEL包
+  http://dl.fedoraproject.org/pub/epel/ 目录下查找：
+  http://dl.fedoraproject.org/pub/epel/6/x86_64/下
+
+  rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+  rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm 
+2. 导入key：
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+
+
+3. yum install yum-priorities

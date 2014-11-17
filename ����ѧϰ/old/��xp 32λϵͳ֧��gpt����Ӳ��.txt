@@ -1,0 +1,16 @@
+让xp 32位系统支持gpt分区硬盘
+
+让xp 32位系统支持gpt分区硬盘
+
+我们知道32位的2003 sp2系统识别gpt分区，也能正常读取和写入。
+但是xp为什么不行呢？  我把优盘搞成gpt类型的分区，结果xp果然不认。
+但是我启动了ram2003后发现2003 sp2非常轻松的识别了我的优盘，拷贝数据，一切正常。
+既然这样，我就知道怎么让xp和2003一样支持gpt分区的硬盘了。不需要用到gpt loader这个驱动。
+好了 干活。
+把2003 sp2系统的disk.sys文件拷贝出来 
+然后再xp系统下替换或pe下替换。
+xp下替换需要把system32\dllcache里面的disk.sys重命名，xp找不到就好。如果没有这个文件那就不用管理。
+xp还有个地方windows\Driver Cache\大家可以把这里清空，或者把drivers.cab文件改名。把2003的disk.sys拷贝到dllcache和driver cache里面
+删除xp的system32\drivers里面的disk.sys 好了 现在系统就能识别gpt的硬盘或优盘了。
+不需要用到第三方软件。
+也不存在不稳定.

@@ -1,0 +1,16 @@
+nmap 扫描mac地址
+
+最近干的一个工作就是要对出整个数据中心里面的服务器的网卡插在了那个交换机的那个端口上面.
+经过总结发现合理使用的snmp和一些工具完全可以省去用手去看的工作.
+其中一个最重要的功能是将ip地址和mac的对应表列出来.
+所以我就使用了nmap这个工具.正好今天把nmap升级到了最新的版本.
+linux :
+Latest Stable i386 Nmap RPM: 
+nmap-3.93-1.i386.rpm
+windows:Nmap 3.90 and later require 
+WinPcap
+3.1 or later. Latest stable Nmap command-line zipfile: 
+nmap-3.93-win32.zip
+使用的方法:
+nmap -sP -PI -PT -oN ipandmaclist.txt 192.168.1.0/24
+完事后就得到了一个txt文件里面就是ip地址和mac地址.

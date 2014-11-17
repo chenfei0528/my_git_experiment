@@ -1,0 +1,9 @@
+安装openSUSE-13.1后禁用官方源和DVD光盘源启用中国大陆源
+
+使用DVD光盘安装好openSUSE 13.1之后，软件安装源中默认存在一个名称为"openSUSE-13.1-1.10"的软件源，这个源的URL实际上是指向DVD光驱的，可是一般情况下我们安装好系统之后，谁会一直把DVD盘放在光驱里面呢？这使得我们通过YaST或者zypper安装软件时，总是会浪费时间去检测该源是否可用。所以我建议大家把该软件源禁用掉，只有真的需要从光盘安装软件时才激活。 另外，对于中国大陆用户来说，要想在软件安装、系统更新升级时获得理想的下载速度，就近选择软件源的镜像站点非常重要，不然乌龟爬爬一般的速度会让你对世界失去信心！由于我是电信用户，所以搜狐镜像源对我来说是最合适的，每次都能达到近500K的满速下载。对于教育网用户，我建议添加上海交大镜像源。 要添加搜狐源并禁用官方源，请执行下述命令：
+sudo zypper mr -d openSUSE-13.1-1.10
+sudo zypper mr -d openSUSE-13.1-Oss openSUSE-13.1-Non-Oss openSUSE-13.1-Update openSUSE-13.1-Update-Non-Oss
+sudo zypper ar -f http://mirrors.sohu.com/opensuse/distribution/13.1/repo/oss/ openSUSE-13.1-Oss-sohu-mirror
+sudo zypper ar -f http://mirrors.sohu.com/opensuse/distribution/13.1/repo/non-oss/ openSUSE-13.1-Non-Oss-sohu-mirror
+sudo zypper ar -f http://mirrors.sohu.com/opensuse/update/13.1/ openSUSE-13.1-Update-sohu-mirror
+sudo zypper ar -f http://mirrors.sohu.com/opensuse/update/13.1-non-oss/ openSUSE-13.1-Update-Non-Oss-sohu-mirror

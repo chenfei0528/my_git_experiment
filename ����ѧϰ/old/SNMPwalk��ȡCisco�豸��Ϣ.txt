@@ -1,0 +1,76 @@
+SNMPwalk获取Cisco设备信息
+
+以下是一些通过OID获取Cisco交换机信息的范例，可以参考一下
+
+具体的名字和OID对应，可以在这个网站查询
+
+http://tools.cisco.com/Support/SNMP/do/BrowseOID.do?objectInput=ifOperStatus&translate=Translate&submitValue=SUBMIT&submitClicked=true
+
+# 获取端口Index
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.2.2.1.1
+
+# 获取端口列表及其描述
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.2.2.1.2
+
+# 获取端口Mac地址
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.2.2.1.6
+
+# 获取IP地址对应的Index
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.4.20.1.2
+
+# 获取端口的Up/Down情况
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.2.2.1.8
+
+# 获取端口入流量（Bytes）
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.2.2.1.10
+
+# 获取端口出流量（Bytes）
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.2.2.1.16
+
+# 获取过去5秒的CPU load (cpu繁忙的百分比)
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.4.1.9.2.1.56.0
+
+# 获取过去1分钟的CPU load (cpu繁忙的百分比)
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.4.1.9.2.1.57.0
+
+# 获取过去5分钟的CPU load (cpu繁忙的百分比)
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.4.1.9.2.1.58.0
+
+# 获取内存当前使用情况（bytes）
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.4.1.9.9.48.1.1.1.5
+
+# 获取内存当前空闲多少（bytes）
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.4.1.9.9.48.1.1.1.6
+
+# 获取设备序列号
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.47.1.1.1.1.11.1
+
+或
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.4.1.9.3.6.3.0
+
+# 获取设备名称
+
+snmpwalk -v 2c -c wlzx 172.30.0.9 1.3.6.1.2.1.1.5.0
+
+
+
+
+
+
+
+
+ 

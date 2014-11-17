@@ -1,0 +1,18 @@
+CentOS Linux安装Atomic源
+
+Atomic源支持Fedora，RHEL和CentOS的YUM包管理。这里系统是CentOS6.2。
+ 
+安装方法很简单：
+ 
+wget -q -O - http://www.atomicorp.com/installers/atomic | sh
+ 
+安装完后在/etc/yum.repos.d/目录会有一个atomic.repo文件。
+ 
+Atomic仓库支持哪些软件可以到这个地址查看：http://www.atomicorp.com/channels/atomic/
+有php、mysql、nginx、openvas、memcached、php-zend-guard-loader等软件。
+ 
+网上看了下常用这个源yum安装zend-optimizer：
+ 
+yum install php-zend-guard-loader
+ 
+PS：由于zend optimizer不支持php5.3，使用php5.3以上版本就要安装zend guard loader。

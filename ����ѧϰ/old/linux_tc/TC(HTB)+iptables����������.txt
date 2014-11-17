@@ -1,0 +1,175 @@
+TC(HTB)+iptables作流量控制 
+
+一、环境和要求
+　　
+　　线路：ADSL：2M/512K
+　　eth0:10.0.0.136,外网口
+　　eth1:192.168.1.1,内网口
+　　
+　　业务需求：保证正常的网页浏览，FTP，SMTP，POP3，对其它的所有应用加以限制，以免影响正常业务的使用。
+　　
+　　1、让交互数据包保持较低的延迟时间,也就是说上载或下载文件不会打扰SSH/telnet等。
+　　2、上载或下载期间有合理的速率用于网页浏览,即使http属于一种大量数据传输，也不应受其它传输影响太大
+　　3、对FTP-data限速，不会占用所有带宽
+　　4、对SMTP，pop3限速
+　　5、对未分类的进行限制，以免影响
+　　6、保证上载不会影响下载，上载数据流会影响下载的速率，这是相当普遍的现象。
+　　7、对每个IP的下载速率进行限制
+　　8、取得空闲带宽的优先级别如：交互数据，FTP-data,smtp,pop3；网页浏览，其它业务优先级别最低
+　　
+　　二、方法
+　　
+　　1、(eth0)使用HTB分成五类：如下图
+　　+---------+
+　　| root 1: |
+　　+---------+
+　　|
+　　+--------------------------------+
+　　| class 1:1 |
+　　+--------------------------------+
+　　| | | | | |
+　　+----+ +----+ +----+ +----+ +----+
+　　|1:11| |1:12| |1:13| |1:14| |1:15|
+　　+----+ +----+ +----+ +----+ +----+
+　　
+　　classid 1:11：
+　　
+　　1）这个类优先权最高。拥有最低的延迟并最先取得空闲带宽，因此要设置这个类的峰值速率。
+　　ssh、telnet、dns、quake3、irc,ftp控制，smtp命令和带有SYN标记的数据包都应属于这一类。
+　　
+　　2)为了保证上行数据流不会伤害下行流，我们还要把ACK数据包排在队列前面。这就是当发生大批量数据流的时
+　　
+　　候，双向传输均受到严重影响的原因。因为下行数据的ACK必须同上行流进行竞争，并在处理过程中被延迟。
+　　
+　　3)限制上载速率:把上载速率限制在比可用带宽稍小一些的位置上，于是你的MODEM中就不会形成队列了。
+　　
+　　4)排除了下行队列(除了偶尔的突发)，保证交互数据包永远排在上行队列的最前面。
+　　
+　　classid 1:12：大批量传输的类。主要用来处理浏览网页的数据包，目标端口80,8080,443,8443的包。
+　　
+　　classid 1:13:此类是拥用最大吞吐TOS位的数据包。用于处理目的地址为xxxx的FTP-data。
+　　
+　　classid
+　　
+　　1:14：这里是邮件(SMTP、pop3)相关和TOS要求最小成本的数据流。用于处理目的地址为xxxx的smtp,pop3服务
+　　
+　　classid 1:15：最后是经过NAT进行大批量传输的机器，以保证他们不会妨碍正常服务。
+　　
+　　2、(eth0)限制下载速率：。丢掉那些太快到来的数据包，不让他们导致TCP/IP的速率低于我们期望的速率。因
+　　
+　　为我们不希望轻易地丢弃数据包，所以我们要配置“burst”来容纳突发传输。
+　　
+　　3、(eth1)限制下载速率：对每一个IP限制最高下载速率
+　　
+　　三、流量控制步骤
+　　
+　　1、队列处理
+　　
+　　#脚本：用384kbps作为峰值速率，调整CEIL为上行速率的75%。
+　　#Set the following values to somewhat lesss than your actual download and uplink speed.
+　　DOWNLINK=2000
+　　UPLINK=384
+　　
+　　#清空已有的队列，并把出错消息清空
+　　#clean existing down and uplink qdiscs,put the errors to /dev/null
+　　tc qdisc del dev eth0 root 2> /dev/null > /dev/null
+　　tc qdisc del dev eth0 ingress 2> /dev/null > /dev/null
+　　tc qdisc del dev eth1 root 2> /dev/null > /dev/null
+　　
+　　########################################uplink###########################################
+　　
+　　#建立HTB父类，默认数据由1：15这个类通走
+　　#install root HTB,point default traffic to 1:15:
+　　tc qdisc add dev eth0 root handle 1: htb default 15
+　　
+　　#设定uplink的最大速率。
+　　#shape everything at $UPLINK speed -this prevents huge queues in your DSL modem which destroy
+　　
+　　latency:
+　　# main class
+　　tc class add dev eth0 parent 1: classid 1:1 htb rate ${UPLINK}kbit ceil ${UPLINK}kbit
+　　
+　　#分类，1：11为最高优先级别，stmp,pop3,ftp-data次之，网页浏览再次之。并对每个类限制了最高速率。
+　　#high prio class 1:11:
+　　tc class add dev eth0 parent 1:1 classid 1:11 htb rate 128kbit ceil 128kbit prio 0
+　　tc class add dev eth0 parent 1:1 classid 1:12 htb rate 128kbit ceil ${UPLINK}kbit prio 2
+　　tc class add dev eth0 parent 1:1 classid 1:13 htb rate 32kbit ceil ${UPLINK}kbit prio 1
+　　tc class add dev eth0 parent 1:1 classid 1:14 htb rate 32kbit ceil ${UPLINK}kbit prio 1
+　　#bulk & default class 1:15 -gets slightly less traffic,and a lower priority:
+　　tc class add dev eth0 parent 1:1 classid 1:15 htb rate 16kbit ceil ${UPLINK}kbit prio 3
+　　
+　　
+　　可以在类下面再附加上另一个队列规定，以保证带宽的公平使用：
+　　#bost get Stochastic Fairness:
+　　tc qdisc add dev eth0 parent 1:12 handle 12: sfq perturb 10
+　　tc qdisc add dev eth0 parent 1:13 handle 13: sfq perturb 10
+　　tc qdisc add dev eth0 parent 1:14 handle 14: sfq perturb 10
+　　tc qdisc add dev eth0 parent 1:15 handle 15: sfq perturb 10
+　　
+　　2、分类：
+　　
+　　上面的队列处理中等于把所有发出的数据包都送给了1:15
+　　(tc qdisc add dev eth0 root handle 1: htb default 15)。
+　　现在应该需要告诉机器那些数据包走哪条路。设置过滤器以便用iptables对数据包进行分类。
+　　可以通过RETURN方法避免遍历所有的规则。
+　　#TOS Mininum Delay (ssh,telnet) in 1:11:
+　　tc filter add dev eth0 parent 1:0 protocol ip prio 1 handle 1 fw classid 1:11
+　　#80,8080,443 in 1:12
+　　tc filter add dev eth0 parent 1:0 protocol ip prio 2 handle 2 fw classid 1:12
+　　#ftp-data in 1:13
+　　tc filter add dev eth0 parent 1:0 protocol ip prio 3 handle 3 fw classid 1:13
+　　#smtp,pop3 in 1:14
+　　tc filter add dev eth0 parent 1:0 protocol ip prio 4 handle 4 fw classid 1:14
+　　#
+　　tc filter add dev eth0 parent 1:0 protocol ip prio 5 handle 5 fw classid 1:15
+　　
+　　这样数据包会有一个特定的FWMARK标记值(hanlde x fw)，表明它应该送给哪个类( classid x)。
+　　后面要给数据包打标记。
+　　
+　　3、丢掉那些太快到来的数据包，不让他们导致TCP/IP的速率低于我们期望的速率。因为我们不希望轻易地丢弃数据包，所以我们要配置“burst”来容纳突发传输。,
+　　########################################DOWNLINK###########################################
+　　# install the ingress qdisc on the ingress
+　　tc qdisc add dev eth0 handle ffff: ingress
+　　# DROP everything thats coming in too fast:
+　　tc filter add dev eth0 parent ffff: protocol ip prio 50 u32 match ip src 0.0.0.0/0 police rate ${DOWNLINK}kbit burst 10k drop flowid :1
+　　
+　　
+　　4、对内网的IP速率进行限制
+　　tc qdisc add dev eth1 root handle 2: htb
+　　tc class add dev eth1 parent 2: classid 2:1 htb rate 128kbit ceil ${DOWNLINK}kbit
+　　tc qdisc add dev eth1 parent 2:1 sfq
+　　tc filter add dev eth1 parent 2:0 protocol ip prio 4 u32 match ip dst 192.168.1.0/24 flowid 2:1
+　　
+　　
+　　四、现在对数据mark
+　　
+　　1、首先启用ip转发，做NAT转换，并设定默认iptable策略：
+　　echo "1" > /proc/sys/net/ipv4/ip_forward
+　　iptables -P INPUT DROP
+　　iptables -P OUTPUT DROP
+　　iptables -P FORWARD DROP
+　　iptables -t nat -A POSTROUTING -s 192.168.1.0/255.255.255.0 -o eth0 -j SNAT --to-source
+　　
+　　10.0.0.136
+　　
+　　2、设置TOS的处理：
+　　
+　　最小延迟的归第一类
+　　iptables -t mangle -A PREROUTING -m tos --tos Minimize-Delay -j MARK --set-mark 0x1
+　　iptables -t mangle -A PREROUTING -m tos --tos Minimize-Delay -j RETURN
+　　
+　　这里是邮件(SMTP、pop3?)相关和TOS要求最小成本的数据流。
+　　iptables -t mangle -A PREROUTING -m tos --tos Minimize-Cost -j MARK --set-mark 0x4
+　　iptables -t mangle -A PREROUTING -m tos --tos Minimize-Cost -j RETURN
+　　
+　　最后是路由器后面经过NAT进行大批量传输的机器。以保证他们不会妨碍正常服务。
+　　iptables -t mangle -A PREROUTING -m tos --tos Maximize-Throughput -j MARK --set-mark 0x5
+　　iptables -t mangle -A PREROUTING -m tos --tos Maximize-Throughput -j RETURN
+　　
+　　
+　　3、给数据包打标记
+　　
+　　类1：
+　　提高tcp初始连接(也就是带有SYN的数据包)的优先权是非常明智的：
+　　# tag all incoming SYN packets through eth0 as mark value
+　　iptables -t mangle -I PREROUTING -p tcp -m tcp --tcp-flags SYN,RST,ACK SYN -j MARK --set-mark 0x1

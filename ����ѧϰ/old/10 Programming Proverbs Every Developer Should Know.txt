@@ -1,0 +1,16 @@
+ 10 Programming Proverbs Every Developer Should Know
+
+
+Keep It Simple Stupid 
+
+Don¡¯t Repeat Yourself 
+
+A clever person solves a problem. A wise person avoids it ¨C [Einstein] 
+
+Silence is construed as approval  
+
+There is no smoke without fire 
+
+Think first, Program later 
+
+Never assume the computer assumes anything 

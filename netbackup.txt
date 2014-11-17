@@ -1,0 +1,464 @@
+#========================
+# 接口配置
+#========================
+pushd interface
+
+reset all
+
+
+popd
+# 接口配置结束
+
+#========================
+# 接口配置
+#========================
+pushd interface ipv6
+
+uninstall
+
+
+popd
+# 接口配置结束
+
+
+
+# ----------------------------------
+# ISATAP 配置
+# ----------------------------------
+pushd interface ipv6 isatap
+
+
+
+popd
+# ISATAP 配置结束
+
+
+
+# ----------------------------------
+# 6to4 配置
+# ----------------------------------
+pushd interface ipv6 6to4
+
+reset
+
+
+
+popd
+# 6to4 配置结束
+
+#=============
+# 端口代理配置
+#=============
+pushd interface portproxy
+
+reset
+
+
+popd
+# 端口代理配置结束
+
+
+
+# ---------------------------------- 
+# 接口 IP 配置         
+# ---------------------------------- 
+pushd interface ip
+
+
+# "本地连接" 的接口 IP  配置
+
+set address name="本地连接" source=static addr=10.2.1.40 mask=255.255.255.0
+set address name="本地连接" gateway=10.2.1.254 gwmetric=0
+set dns name="本地连接" source=static addr=10.4.1.30 register=PRIMARY
+add dns name="本地连接" addr=10.4.1.31 index=2
+set wins name="本地连接" source=static addr=none
+
+
+popd
+# 接口 IP 配置结束
+
+
+# ------------------------------------
+# 桥配置 (不支持)
+# ------------------------------------
+
+# ------------------------------------
+# 桥配置结束
+# ------------------------------------
+
+# ----------------------------------------
+# 有线局域网配置
+# ----------------------------------------
+pushd lan
+
+
+popd
+
+# 有线局域网配置结尾。
+
+
+# ========================================================== 
+# 网络访问保护客户端配置 
+# ========================================================== 
+pushd nap client
+
+# ---------------------------------------------------------- 
+# 受信任服务器组配置 
+# ---------------------------------------------------------- 
+
+reset trustedservergroup 
+
+# ---------------------------------------------------------- 
+# 加密服务提供程序(CSP)配置 
+# ---------------------------------------------------------- 
+
+set csp name = "Microsoft RSA SChannel Cryptographic Provider" keylength = "2048" 
+
+# ---------------------------------------------------------- 
+# 哈希算法配置 
+# ---------------------------------------------------------- 
+
+set hash oid = "1.3.14.3.2.29" 
+
+# ---------------------------------------------------------- 
+# 强制配置 
+# ---------------------------------------------------------- 
+
+set enforcement id = "79617" admin = "disable" id = "79618" admin = "disable" id = "79619" admin = "disable" id = "79620" admin = "disable" id = "79621" admin = "disable" id = "79623" admin = "disable" 
+# ---------------------------------------------------------- 
+# 跟踪配置
+# ---------------------------------------------------------- 
+
+set tracing state = "disable" level = "basic" 
+
+# ---------------------------------------------------------- 
+# 用户接口配置 
+# ---------------------------------------------------------- 
+
+reset userinterface 
+
+popd
+# NAP 客户端配置的结尾 
+
+                                            
+# ----------------------------------------- 
+# RAS 配置                         
+# ----------------------------------------- 
+pushd ras
+
+set authmode mode = standard
+delete authtype type = PAP
+delete authtype type = SPAP
+delete authtype type = MD5CHAP
+delete authtype type = MSCHAP
+delete authtype type = MSCHAPv2
+delete authtype type = EAP
+add authtype type = MSCHAP
+delete link type = SWC
+delete link type = LCP
+add link type = SWC
+add link type = LCP
+delete multilink type = MULTI
+delete multilink type = BACP
+add multilink type = MULTI
+add multilink type = BACP
+
+set user name = __vmware_user__ dialin = policy cbpolicy = none 
+set user name = Administrator dialin = policy cbpolicy = none 
+set user name = chenfei dialin = policy cbpolicy = none 
+set user name = Guest dialin = policy cbpolicy = none 
+set user name = HelpAssistant dialin = policy cbpolicy = none 
+set user name = SUPPORT_388945a0 dialin = policy cbpolicy = none 
+
+set tracing component = * state = disabled
+
+popd
+
+#  RAS 配置结束。                  
+                                             
+                                             
+
+                                            
+# ----------------------------------------- 
+# 远程访问 AppleTalk 配置      
+# ----------------------------------------- 
+pushd ras appletalk
+
+set negotiation mode = allow
+set access mode = all
+
+popd
+
+# 远程访问 AppleTalk 配置结束。
+
+
+                                            
+# ----------------------------------------- 
+# RAS IP 配置                      
+# ----------------------------------------- 
+pushd ras ip
+
+delete pool
+
+set negotiation mode = allow
+set access mode = all
+set addrreq mode = deny
+set broadcastnameresolution mode = disabled
+set addrassign method = auto
+
+popd
+
+# RAS IP 配置结束。               
+                                             
+
+                                            
+# ----------------------------------------- 
+# RAS IPX 配置                      
+# ----------------------------------------- 
+pushd ras ipx
+
+set negotiation mode = allow
+set access mode = all
+set nodereq mode = allow
+set netassign method = autosame
+
+popd
+
+# RAS IPX 配置结束。               
+                                             
+                                             
+
+                                            
+# ----------------------------------------- 
+# RAS NBF 配置                      
+# ----------------------------------------- 
+pushd ras netbeui
+
+set negotiation mode = allow
+set access mode = all
+
+popd
+
+#  RAS NBF 配置结束。               
+                                             
+                                             
+
+                                            
+# ----------------------------------------- 
+# RAS AAAA 配置                    
+# ----------------------------------------- 
+pushd ras aaaa
+
+set authentication provider = windows
+set accounting provider = windows
+
+delete authserver name = *
+delete acctserver name = *
+
+
+
+popd
+
+# RAS AAAA 配置结束。             
+                                             
+                                             
+# 路由配置
+pushd routing
+reset
+popd
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
+#                                                         #
+#   在运行这个脚本之前                                    #
+#                                                         #
+# 要恢复 IPX 路由器配置，您必须首先从                     #
+# 网络连接文件夹中卸载 IPX 然后将其重                     #
+# 新安装。                                                #
+#                                                         #
+#   这样会删除旧的 IPX 路由器配置                         #
+#   并将 IPX 路由器配置复原为默认                         #
+#   值                                                    #
+#                                                         #
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
+
+#----------------------------------------------------------
+# IPX 配置
+#----------------------------------------------------------
+
+pushd routing ipx
+
+#----------------------------------------------------------
+# IPX 接口配置
+#----------------------------------------------------------
+
+
+#----------------------------------------------------------
+# IPX 传输筛选器配置
+#----------------------------------------------------------
+
+
+#----------------------------------------------------------
+# IPX 静态路由配置
+#----------------------------------------------------------
+
+
+#----------------------------------------------------------
+# IPX 静态服务器配置
+#----------------------------------------------------------
+
+
+popd
+
+# IPX 配置完毕
+
+#----------------------------------------------------------
+# IPX RIP 配置
+#----------------------------------------------------------
+
+pushd routing ipx rip
+popd
+
+
+# End of IPX RIP 配置
+
+#----------------------------------------------------------
+# IPX SAP 配置
+#----------------------------------------------------------
+
+pushd routing ipx sap
+popd
+
+
+# IPX SAP 配置完毕
+
+#----------------------------------------------------------
+# IPX NETBIOS 配置
+#----------------------------------------------------------
+
+pushd routing ipx netbios
+popd
+
+
+# IPX NB 配置完毕
+# IP 配置
+pushd routing ip
+reset
+set loglevel error
+add preferenceforprotocol proto=LOCAL preflevel=1
+add preferenceforprotocol proto=NetMgmt preflevel=10
+add preferenceforprotocol proto=STATIC preflevel=3
+add preferenceforprotocol proto=NONDOD preflevel=5
+add preferenceforprotocol proto=AUTOSTATIC preflevel=7
+add preferenceforprotocol proto=OSPF preflevel=110
+add preferenceforprotocol proto=RIP preflevel=120
+add interface name="本地连接" state=enable
+set filter name="本地连接" fragcheck=disable
+add interface name="本地连接 2" state=enable
+set filter name="本地连接 2" fragcheck=disable
+add interface name="环回" state=enable
+set filter name="环回" fragcheck=disable
+add interface name="内部" state=enable
+set filter name="内部" fragcheck=disable
+popd
+# IP 配置的尾端
+
+
+
+# ---------------------------------- 
+# DNS 代理配置            
+# ---------------------------------- 
+pushd routing ip dnsproxy
+uninstall
+
+
+popd
+# DNS 代理配置结束
+
+
+
+# ---------------------------------- 
+# IGMP 配置                 
+# ---------------------------------- 
+pushd routing ip igmp
+uninstall
+
+
+popd
+# IGMP 配置结束
+
+
+
+# ---------------------------------- 
+# NAT 配置                  
+# ---------------------------------- 
+pushd routing ip nat
+uninstall
+
+
+popd
+
+
+
+
+# ---------------------------------- 
+# OSPF 配置                 
+# ---------------------------------- 
+
+pushd routing ip ospf
+uninstall
+
+popd
+# OSPF 配置结束
+
+
+
+
+# ---------------------------------- 
+# DHCP 中继代理配置    
+# ---------------------------------- 
+pushd routing ip relay
+uninstall
+
+
+popd
+# DHCP 中继配置结束
+
+
+
+# ---------------------------------- 
+# RIP 配置                  
+# ---------------------------------- 
+pushd routing ip rip
+uninstall
+
+
+popd
+# RIP 配置结束
+
+
+
+# ---------------------------------- 
+# 路由器探索配置     
+# ---------------------------------- 
+pushd routing ip routerdiscovery
+uninstall
+add interface name="本地连接" disc=disable minint=7 maxint=10 life=30 level=0
+add interface name="本地连接 2" disc=disable minint=7 maxint=10 life=30 level=0
+add interface name="环回" disc=disable minint=7 maxint=10 life=30 level=0
+add interface name="内部" disc=disable minint=7 maxint=10 life=30 level=0
+
+
+popd
+
+
+# ---------------------------------- 
+# DHCP 分配器配置       
+# ---------------------------------- 
+pushd routing ip autodhcp
+uninstall
+
+
+popd
+# DHCP 分配器配置结束
+
+

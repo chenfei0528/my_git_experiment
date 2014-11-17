@@ -1,0 +1,79 @@
+windows server 2008 R2 IIS7.5配置PHP
+
+在Windows server 2008 R2的官方文档上说IIS7.5运行PHP性能有显著的提升，完全可以和LAMP比拼。 笔者就亲自配置一下在Windows Server 2008 R2的IIS7.5上运行PHP程序。
+
+准备工作：
+IIS7.5
+PHP_5.2.14_Thread safe
+MySQL_5.1.51(x64)
+Zend optimizer 3.3.3
+
+首先安装IIS7.5，IIS7.5采用模块化设计，根据所需功能安装可选模块，如果只运行PHP程序的话尽量不要安装不必要的模块。
+下图是安装和未安装的模块。
+
+IIS7.5具体安装这里不再赘述。
+安装PHP
+
+解压PHP到D:\Core\PHP
+修改php动态库路径，在PHP目录,找到php.ini-recommended，复制一份并重命名为php.ini,打开后查找“extension_dir = “./””修改为“extension_dir = “D:/Core/php/ext/””
+开启必要的扩展“extension=php_gd2.dll”“extension=php_mbstring.dll”“extension=php_mcrypt.dll”“extension=php_mysql.dll”“extension=php_pdo_mysql.dll”，开启方法是去掉扩展前面的“;”
+保存文件后把该文件（php.ini）复制到C:\Windows 目录下。
+
+安装MySQL
+
+mysql安装过程也不再赘述，和32位的mysql安装一样，大家可以参考网上教程。
+
+测试mysql，
+命令提示符里
+“net stop mysql”（停止mysql服务）
+“net start mysql”（启动mysql服务）
+测试是否正常，然后登陆mysql看能否登陆。“mysql -uroot -p”输入正确的密码后进入mysql命令控制台。
+
+配置IIS7.5以支持PHP，到这里才是重点。
+
+打开IIS管理器
+
+1、添加应用程序池
+右键点“应用程序池”选择“添加应用程序池”。
+名称：“phpsite”(可以任意命名)
+.NET Framework版本：“无托管代码”
+托管管道模式：“集成”
+
+2、配置应用程序池
+右键点击刚刚添加的应用程序池“phpsite”选择“高级设置”，
+在“启用32位应用程序”一行选择“true”,因为php没有64位windows版本，要使用php必须要此设置。
+
+3、添加和配置网站
+右键点击“网站”，选择“添加网站”
+网站名称：“phpsite”
+应用程序池选择刚刚添加的“phpsite”
+类型：“http”
+IP地址：“全部未分配”
+端口：“81”因为默认网站已经占用了80端口，这里用81端口。
+主机名：留空
+选择立即启动网站
+点确定，就新建了一个名为“phpsite”的网站。
+
+4、处理程序映射
+
+打开“处理程序映射”，点击“添加脚本映射”。
+请求路径：“*.php”
+可执行文件：“D:\Core\php\php5isapi.dll”
+名称：“php”
+
+点击“确定”就成功添加了脚本映射。
+
+5、添加ISAPI筛选器
+回到IIS7.5主界面，打开ISAPI筛选器。点击“添加”，
+筛选器名称：“PHP”
+可执行文件：“D:\Core\php\php5isapi.dll”
+
+到这里已经完成
+
+新建一个phpifo文件测试，
+代码：<?php phpinfo();?>
+
+使用浏览器打开。
+出现了我们熟悉的phpinfo界面。
+
+接下来就可以安装Zend optimizer 3.3.3了，安装Zend optimizer很简单，在网上很多教程这里不再赘述。

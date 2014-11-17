@@ -1,0 +1,308 @@
+     1	TC(8)                                Linux                               TC(8)
+
+
+
+     2	NAME
+     3	       tc - show / manipulate traffic control settings
+
+     4	SYNOPSIS
+     5	       tc  qdisc [ add | change | replace | link ] dev DEV [ parent qdisc-id |
+     6	       root ] [ handle qdisc-id ] qdisc [ qdisc specific parameters ]
+
+
+     7	       tc class [ add | change | replace ] dev DEV parent qdisc-id  [  classid
+     8	       class-id ] qdisc [ qdisc specific parameters ]
+
+
+     9	       tc filter [ add | change | replace ] dev DEV [ parent qdisc-id | root ]
+    10	       protocol protocol prio priority filtertype [ filtertype specific param-
+    11	       eters ] flowid flow-id
+
+    12	       tc [-s | -d ] qdisc show [ dev DEV ]
+
+    13	       tc [-s | -d ] class show dev DEV
+
+    14	       tc filter show dev DEV
+
+
+    15	DESCRIPTION
+    16	       Tc  is  used  to configure Traffic Control in the Linux kernel. Traffic
+    17	       Control consists of the following:
+
+
+    18	       SHAPING
+    19	              When traffic is shaped, its rate of transmission is  under  con-
+    20	              trol.  Shaping may be more than lowering the available bandwidth
+    21	              - it is also used to smooth out bursts  in  traffic  for  better
+    22	              network behaviour. Shaping occurs on egress.
+
+
+    23	       SCHEDULING
+    24	              By  scheduling  the  transmission  of  packets it is possible to
+    25	              improve interactivity for traffic  that  needs  it  while  still
+    26	              guaranteeing  bandwidth  to  bulk  transfers. Reordering is also
+    27	              called prioritizing, and happens only on egress.
+
+
+    28	       POLICING
+    29	              Where shaping deals with transmission of traffic, policing  per-
+    30	              tains to traffic arriving. Policing thus occurs on ingress.
+
+
+    31	       DROPPING
+    32	              Traffic exceeding a set bandwidth may also be dropped forthwith,
+    33	              both on ingress and on egress.
+
+
+    34	       Processing of traffic is controlled by three kinds of objects:  qdiscs,
+    35	       classes and filters.
+
+
+    36	QDISCS
+    37	       qdisc is short for 'queueing discipline' and it is elementary to under-
+    38	       standing traffic control. Whenever the kernel needs to send a packet to
+    39	       an  interface,  it  is enqueued to the qdisc configured for that inter-
+    40	       face. Immediately afterwards, the kernel tries to get as  many  packets
+    41	       as  possible  from  the  qdisc,  for giving them to the network adaptor
+    42	       driver.
+
+    43	       A simple QDISC is the 'pfifo' one, which does no processing at all  and
+    44	       is a pure First In, First Out queue. It does however store traffic when
+    45	       the network interface can't handle it momentarily.
+
+
+    46	CLASSES
+    47	       Some qdiscs can contain classes, which contain further qdiscs - traffic
+    48	       may  then  be enqueued in any of the inner qdiscs, which are within the
+    49	       classes.  When the kernel tries to dequeue a packet from such a  class-
+    50	       ful  qdisc it can come from any of the classes. A qdisc may for example
+    51	       prioritize certain kinds of traffic by trying to dequeue  from  certain
+    52	       classes before others.
+
+
+    53	FILTERS
+    54	       A  filter  is  used  by  a classful qdisc to determine in which class a
+    55	       packet will be enqueued. Whenever traffic arrives at a class with  sub-
+    56	       classes,  it needs to be classified. Various methods may be employed to
+    57	       do so, one of these are the filters. All filters attached to the  class
+    58	       are called, until one of them returns with a verdict. If no verdict was
+    59	       made, other criteria may be available. This differs per qdisc.
+
+    60	       It is important to notice that filters reside within qdiscs - they  are
+    61	       not masters of what happens.
+
+
+    62	CLASSLESS QDISCS
+    63	       The classless qdiscs are:
+
+    64	       [p|b]fifo
+    65	              Simplest  usable qdisc, pure First In, First Out behaviour. Lim-
+    66	              ited in packets or in bytes.
+
+    67	       pfifo_fast
+    68	              Standard qdisc for 'Advanced Router' enabled  kernels.  Consists
+    69	              of  a  three-band  queue  which honors Type of Service flags, as
+    70	              well as the priority that may be assigned to a packet.
+
+    71	       red    Random Early Detection simulates physical congestion by randomly
+    72	              dropping  packets  when nearing configured bandwidth allocation.
+    73	              Well suited to very large bandwidth applications.
+
+    74	       sfq    Stochastic Fairness Queueing reorders  queued  traffic  so  each
+    75	              'session' gets to send a packet in turn.
+
+    76	       tbf    The  Token Bucket Filter is suited for slowing traffic down to a
+    77	              precisely configured rate. Scales well to large bandwidths.
+
+    78	CONFIGURING CLASSLESS QDISCS
+    79	       In the absence  of  classful  qdiscs,  classless  qdiscs  can  only  be
+    80	       attached at the root of a device. Full syntax:
+
+    81	       tc qdisc add dev DEV root QDISC QDISC-PARAMETERS
+
+    82	       To remove, issue
+
+    83	       tc qdisc del dev DEV root
+
+    84	       The  pfifo_fast qdisc is the automatic default in the absence of a con-
+    85	       figured qdisc.
+
+
+    86	CLASSFUL QDISCS
+    87	       The classful qdiscs are:
+
+    88	       CBQ    Class Based Queueing implements a rich linksharing hierarchy  of
+    89	              classes.   It  contains shaping elements as well as prioritizing
+    90	              capabilities. Shaping is performed using link idle time calcula-
+    91	              tions  based  on  average  packet size and underlying link band-
+    92	              width. The latter may be ill-defined for some interfaces.
+
+    93	       HTB    The Hierarchy Token Bucket implements a rich linksharing hierar-
+    94	              chy  of classes with an emphasis on conforming to existing prac-
+    95	              tices. HTB facilitates guaranteeing bandwidth to classes,  while
+    96	              also allowing specification of upper limits to inter-class shar-
+    97	              ing. It contains shaping elements, based on TBF and can  priori-
+    98	              tize classes.
+
+    99	       PRIO   The  PRIO  qdisc  is  a non-shaping container for a configurable
+   100	              number of classes which are dequeued in order. This  allows  for
+   101	              easy  prioritization  of  traffic,  where lower classes are only
+   102	              able to send if higher ones have no packets available. To facil-
+   103	              itate  configuration,  Type  Of  Service  bits  are  honored  by
+   104	              default.
+
+   105	THEORY OF OPERATION
+   106	       Classes form a tree, where each class has a single parent.  A class may
+   107	       have  multiple  children.  Some  qdiscs  allow  for runtime addition of
+   108	       classes (CBQ, HTB) while others (PRIO) are created with a static number
+   109	       of children.
+
+   110	       Qdiscs  which  allow  dynamic addition of classes can have zero or more
+   111	       subclasses to which traffic may be enqueued.
+
+   112	       Furthermore, each class contains a leaf  qdisc  which  by  default  has
+   113	       pfifo  behaviour  though  another  qdisc can be attached in place. This
+   114	       qdisc may again contain classes, but each class can have only one  leaf
+   115	       qdisc.
+
+   116	       When  a  packet  enters a classful qdisc it can be classified to one of
+   117	       the classes within. Three criteria  are  available,  although  not  all
+   118	       qdiscs will use all three:
+
+   119	       tc filters
+   120	              If  tc filters are attached to a class, they are consulted first
+   121	              for relevant instructions. Filters can match on all fields of  a
+   122	              packet  header,  as  well  as  on  the  firewall mark applied by
+   123	              ipchains or iptables. See tc-filters(8).
+
+   124	       Type of Service
+   125	              Some qdiscs have built in rules for classifying packets based on
+   126	              the TOS field.
+
+   127	       skb->priority
+   128	              Userspace  programs can encode a class-id in the 'skb->priority'
+   129	              field using the SO_PRIORITY option.
+
+   130	       Each node within the tree can have its own  filters  but  higher  level
+   131	       filters may also point directly to lower classes.
+
+   132	       If  classification  did  not  succeed, packets are enqueued to the leaf
+   133	       qdisc attached  to  that  class.  Check  qdisc  specific  manpages  for
+   134	       details, however.
+
+
+   135	NAMING
+   136	       All qdiscs, classes and filters have IDs, which can either be specified
+   137	       or be automatically assigned.
+
+   138	       IDs consist of a major number and a minor number, separated by a colon.
+
+
+   139	       QDISCS A  qdisc,  which  potentially can have children, gets assigned a
+   140	              major number, called a 'handle', leaving the minor number names-
+   141	              pace  available  for  classes. The handle is expressed as '10:'.
+   142	              It is customary to explicitly assign a handle to qdiscs expected
+   143	              to have children.
+
+
+   144	       CLASSES
+   145	              Classes  residing  under a qdisc share their qdisc major number,
+   146	              but each have a separate minor number called  a  'classid'  that
+   147	              has  no  relation  to their parent classes, only to their parent
+   148	              qdisc. The same naming custom as for qdiscs applies.
+
+
+   149	       FILTERS
+   150	              Filters have a three part ID, which is only needed when using  a
+   151	              hashed filter hierarchy, for which see tc-filters(8).
+
+   152	UNITS
+   153	       All  parameters  accept a floating point number, possibly followed by a
+   154	       unit.
+
+   155	       Bandwidths or rates can be specified in:
+
+   156	       kbps   Kilobytes per second
+
+   157	       mbps   Megabytes per second
+
+   158	       kbit   Kilobits per second
+
+   159	       mbit   Megabits per second
+
+   160	       bps or a bare number
+   161	              Bytes per second
+
+   162	       Amounts of data can be specified in:
+
+   163	       kb or k
+   164	              Kilobytes
+
+   165	       mb or m
+   166	              Megabytes
+
+   167	       mbit   Megabits
+
+   168	       kbit   Kilobits
+
+   169	       b or a bare number
+   170	              Bytes.
+
+   171	       Lengths of time can be specified in:
+
+   172	       s, sec or secs
+   173	              Whole seconds
+
+   174	       ms, msec or msecs
+   175	              Milliseconds
+
+   176	       us, usec, usecs or a bare number
+   177	              Microseconds.
+
+
+   178	TC COMMANDS
+   179	       The following commands are available for qdiscs, classes and filter:
+
+   180	       add    Add a qdisc, class or filter to a node. For all entities, a par-
+   181	              ent  must  be  passed,  either by passing its ID or by attaching
+   182	              directly to the root of a device.  When creating a  qdisc  or  a
+   183	              filter,  it  can  be named with the handle parameter. A class is
+   184	              named with the classid parameter.
+
+
+   185	       remove A qdisc can be removed by specifying its handle, which may  also
+   186	              be  'root'.  All  subclasses and their leaf qdiscs are automati-
+   187	              cally deleted, as well as any filters attached to them.
+
+
+   188	       change Some entities can be modified 'in place'. Shares the  syntax  of
+   189	              'add',  with the exception that the handle cannot be changed and
+   190	              neither can the parent. In other words,  change  cannot  move  a
+   191	              node.
+
+
+   192	       replace
+   193	              Performs  a  nearly atomic remove/add on an existing node id. If
+   194	              the node does not exist yet it is created.
+
+
+   195	       link   Only available for qdiscs and performs a replace where the  node
+   196	              must exist already.
+
+
+
+   197	HISTORY
+   198	       tc was written by Alexey N. Kuznetsov and added in Linux 2.2.
+
+   199	SEE ALSO
+   200	       tc-cbq(8), tc-htb(8), tc-sfq(8), tc-red(8), tc-tbf(8), tc-pfifo(8), tc-
+   201	       bfifo(8), tc-pfifo_fast(8), http://lartc.org/
+
+
+   202	AUTHOR
+   203	       Manpage maintained by bert hubert (ahu@ds9a.nl)
+
+
+
+
+   204	iproute2                       16 December 2001                          TC(8)

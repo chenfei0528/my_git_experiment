@@ -1,0 +1,15 @@
+Windows Server 2012显示桌面图标
+
+1、本地方式
+如果是在Windows Server 2012本地控制台下，直接按Win（键盘上的微软徽标键）+R，输入：
+rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,0
+
+回车后，勾选所需要的桌面图标的名称，确定即可。
+
+2、远程方式
+打开Windows PowerShell（一个像是命令提示符的东西[蓝底白字]，但不是命令提示符），在Windows PowerShell内输入cmd回车，当返回如下信息：
+Microsoft Windows [版本 6.2.9200]
+(c) 2012 Microsoft Corporation。保留所有权利。
+则表示已成功进入命令行环境，然后再输入：
+rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,0
+回车后，勾选所需要的桌面图标的名称，确定即可。

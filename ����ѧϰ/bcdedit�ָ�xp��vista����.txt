@@ -1,0 +1,185 @@
+bcdedit恢复xp及vista引导
+
+
+bcdedit.exe是vista系统自带的一个命令行工具，用来定制windows boot manager，它位于v:\windows\system32目录下。bcdedit.exe的功能强大，参数非常多，VistaBootPro和Easybcd这类工具就是图形化的bcdedit，它们实现的功能bcdedit都可以实现。在一些情况下，上述工具无法达到目的，而bcdedit.exe却能够得心应手。因此有必要对bcdedit.exe这个系统自带的命令行工具进行了解。bcdedit.exe的参数非常多，帮助文档有很复杂，很多人因此对它弃而不用。但实际上大部分人只需掌握它的很少几个用法即可。
+
+下面我用一个实例来讲解bcdedit.exe的常用功能。
+
+一个秘密：bcdedit不但能对系统bcd(boot configuration data)进行操作，它也能对文件bcd进行操作。作为新手，你不应该去贸然改动你的系统bcd(这很可能导致你丢失引导菜单甚至再无法启动计算机)。因此，下面的实例中我只对一个文件bcd进行操作，全部完成后再将该文件bcd导入到系统bcd中。对文件bcd和系统bcd的操作方法是完全一致的（实际上系统bcd也是一个文件，大家用bcdedit查看c:\boot\bcd的内容就知道了）
+
+操作环境：C盘装xp，D盘装vista，之后c盘的xp又被重装，因此原启动菜单丢失，现在开机只能进xp了。为了方便，我将v:\windows\system32\bcdedit.exe复制到了c:\下，cmd窗口改变当前路径到c:\。预料的bcd信息应该是这样的
+Windows Boot Manager
+--------------------
+Identifier: {bootmgr} //这个不是菜单，而是主入口，一个BCD有且只有一个{bootmgr}
+Type: 10100002
+Device: partition=C: //这个说明BOOT MANAGER的BCD信息在C盘？
+Description: Wolf Boot Manager
+Display order: {ntldr} //菜单项排列顺序，第一个菜单项
+{882e394a-f543-11db-8ee8-00105ccdeb8f} //第二个菜单项
+Windows Legacy OS Loader
+------------------------
+Identifier: {ntldr} //XP它用NTLDR这个程序进行引导
+Type: 10300006
+Device: partition=C: //XP在C盘
+Path: \ntldr //引导程序是\ntldr
+Description: Wolf XP //该菜单显示的文字
+Windows Boot Loader
+-------------------
+Identifier: {882e394a-f543-11db-8ee8-00105ccdeb8f} //这串数字是计算机生成的，是唯一的
+Type: 10200003
+Device: partition=D: //VISTA在D盘
+Path: \windows\system32\winload.exe //VISTA引导程序是\windows\system32\winload.exe
+Description: Wolf Vista //该菜单显示的文字
+Windows device: partition=D: 
+Windows root: \windows
+简单讲解，上面只有3个入口(Entry)，每个入口又有细分，最关键的是Identifier，很多人看不明白
+在BCD中，每个入口的唯一标识就是这个Identifier（简称Id）。
+上面有个三个Id：
+{bootmgr}
+{ntldr}
+{882e394a-f543-11db-8ee8-00105ccdeb8f}
+我们要修改已经生成的入口，必须指定其Id。修改都是针对具体的Id进行的，后面我们会看到
+为什么上面3个Id中，前两个不像最后一个也由一大串数字组成呢？这也是新手最容易误解的原因。
+我只能告诉你{bootmgr}和{ntldr}其实是保留的Id，其中{bootmgr}是一个合理的BCD中必须有的ID，{ntldr}这个ID则用来存放XP这一类的老系统的引导菜单信息。
+下面我们一步一步来生成上面的bcd信息
+由于我们还没有一个文件bcd，因此我们先创建一个，命令如下
+bcdedit /createstore bcdwolf
+该命令创建一个空的bcd文件c:\bcdwolf;有了这个空bcd文件，我们就对它进行操作
+C:\>bcdedit /store c:\bcdwolf /create {ntldr} /d "Wolf XP"
+说明：如果在bcdedit后面不加这个store参数，则是对系统bcd进行操作；加了则是对指定的文件bcd进行操作。
+上述命令在c:\bcdwolf文件的BCD信息中创建菜单Wolf XP
+/store参数指对c:\bcdwolf进行操作，而不是对系统bcd
+/create参数指创建一个新菜单
+{ntldr}是固定ID，凡在vista之前的操作系统菜单都用这个Id，如果你需要创建一个能引导XP的菜单项，就一定请用这个ID，不能指定为其他的或者像VISTA菜单那样让计算机为你生成随机ID
+/d参数是指定该菜单显示的文字
+C:\>bcdedit /store c:\bcdwolf /create /d "Wolf Vista" /application osloader
+The entry {882e394a-f543-11db-8ee8-00105ccdeb8f} was successfully created.
+创建菜单Wolf Vista
+由于是vista系统的菜单，参数改变为/application osloader
+Vista和Vista之前的系统，菜单创建方式是不同的
+C:\>bcdedit /store c:\bcdwolf /create {bootmgr} /d "Wolf Boot Manager"
+The entry {bootmgr} was successfully created.
+创建{bootmgr}入口，这个是主入口，不是菜单，建立的所有菜单都在这个入口中管理
+C:\>bcdedit /store c:\bcdwolf /enum all
+显示我们创建的c:\bcdwolf的内容
+Windows Boot Manager
+--------------------
+Identifier: {bootmgr}
+Type: 10100002
+Description: Wolf Boot Manager
+Windows Boot Loader
+-------------------
+Identifier: {882e394a-f543-11db-8ee8-00105ccdeb8f}
+Type: 10200003
+Description: Wolf Vista
+Windows Legacy OS Loader
+------------------------
+Identifier: {ntldr}
+Type: 10300006
+Description: Wolf XP
+设置{bootmgr}入口的device值
+C:\>bcdedit /store c:\bcdwolf /set {bootmgr} device partition=c:
+操作成功完成。
+设置{ntldr}入口的device值,这里实际是xp所在分区，它在c盘
+C:\>bcdedit /store c:\bcdwolf /set {ntldr} device partition=c:
+操作成功完成。
+设置{ntldr}入口的path值,这里指定引导程序所在路径，xp是在c:\ntldr
+C:\>bcdedit /store c:\bcdwolf /set {ntldr} path \ntldr
+操作成功完成。
+设置{882e394a-f543-11db-8ee8-00105ccdeb8f}入口的device值
+说明：{882e394a-f543-11db-8ee8-00105ccdeb8f}是菜单“Wolf Vista”的全局Id，这个Id是自动生成的，vista在d盘
+C:\>bcdedit /store c:\bcdwolf /set {882e394a-f543-11db-8ee8-00105ccdeb8f} device partition=d:
+操作成功完成。
+设置{882e394a-f543-11db-8ee8-00105ccdeb8f}入口的path值，应该在d:\windows\system32\winload.exe
+C:\>bcdedit /store c:\bcdwolf /set {882e394a-f543-11db-8ee8-00105ccdeb8f} path \windows\system32\winload.exe
+操作成功完成。
+将id为{ntldr}的菜单追加到多重菜单的最后
+C:\>bcdedit /store c:\bcdwolf /displayorder {ntldr} /addlast
+操作成功完成。
+将id为{882e394a-f543-11db-8ee8-00105ccdeb8f}的菜单(即Wolf Vista)追加到多重菜单的最后
+C:\>bcdedit /store c:\bcdwolf /displayorder {882e394a-f543-11db-8ee8-00105ccdeb8f} /addlast
+操作成功完成。
+设置{882e394a-f543-11db-8ee8-00105ccdeb8f}的windows device为d盘
+C:\>bcdedit /store c:\bcdwolf /set {882e394a-f543-11db-8ee8-00105ccdeb8f} osdevice partition=d:
+操作成功完成。
+设置{882e394a-f543-11db-8ee8-00105ccdeb8f}的windows root为\windows
+C:\>bcdedit /store bcdwolf /set {882e394a-f543-11db-8ee8-00105ccdeb8f} systemroot \windows
+操作成功完成。
+查看结果
+C:\>bcdedit /store bcdwolf
+Windows Boot Manager
+--------------------
+Identifier: {bootmgr}
+Type: 10100002
+Device: partition=C:
+Description: Wolf Boot Manager
+Display order: {ntldr}
+{882e394a-f543-11db-8ee8-00105ccdeb8f}
+Windows Legacy OS Loader
+------------------------
+Identifier: {ntldr}
+Type: 10300006
+Device: partition=C:
+Path: \ntldr
+Description: Wolf XP
+Windows Boot Loader
+-------------------
+Identifier: {882e394a-f543-11db-8ee8-00105ccdeb8f}
+Type: 10200003
+Device: partition=D:
+Path: \windows\system32\winload.exe
+Description: Wolf Vista
+Windows device: partition=D:
+Windows root: \windows
+再增加一点内容，设置等待时间为30秒
+C:\>bcdedit /store bcdwolf /timeout 30
+操作成功完成。
+将{882e394a-f543-11db-8ee8-00105ccdeb8f}设置为缺省菜单
+C:\>bcdedit /store bcdwolf /default {882e394a-f543-11db-8ee8-00105ccdeb8f}
+操作成功完成。
+最后来看看
+C:\>bcdedit /store bcdwolf
+Windows Boot Manager
+--------------------
+Identifier: {bootmgr}
+Type: 10100002
+Device: partition=C:
+Description: Wolf Boot Manager
+Default: {default}
+Display order: {ntldr}
+{default}
+Timeout: 30
+Windows Legacy OS Loader
+------------------------
+Identifier: {ntldr}
+Type: 10300006
+Device: partition=C:
+Path: \ntldr
+Description: Wolf XP
+Windows Boot Loader
+-------------------
+Identifier: {default}
+Type: 10200003
+Device: partition=D:
+Path: \windows\system32\winload.exe
+Description: Wolf Vista
+Windows device: partition=D:
+Windows root: \windows
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+你可以将文件BCD导入系统BCD
+bcdedit /import c:\bcdwolf
+你也可以备份系统BCD到文件
+bcdedit /export e:\bcdbak
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+整个过程是这样的：
+先用/create 创建3个入口
+再用/set 设置每个入口下面具体的值，比如device, path等等
+最后用/displayorder 将建好的每个入口（菜单项）一个一个加入到引导菜单中
+其他还可以用/timeout 设置等待时间
+以及用/default 设置缺省菜单
+上面操作中的“入口”，实际都是用花括号中的Id来表示的
+
+==================================
+设置好系统BCD之后，重启计算机，并不能保证成功进行多重引导。因为BCD要起作用还必须依赖于C:\BOOT文件夹及C:\BOOTMGR这个文件。其中C:\BOOTMGR是真正的开机引导程序，而C:\BOOT文件夹中有一个名为BCD的文件（大家可以用bcdedit /store c:\boot\bcd /enum all查看内容），以及一个FONT子文件夹，里面含有字体文件，估计是用于开机引导菜单的显示。
+

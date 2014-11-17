@@ -1,0 +1,109 @@
+     1	RED(8)                               Linux                              RED(8)
+
+
+
+     2	NAME
+     3	       red - Random Early Detection
+
+     4	SYNOPSIS
+     5	       tc  qdisc  ...  red  limit  bytes min bytes max bytes avpkt bytes burst
+     6	       packets [ ecn ] [ bandwidth rate ] probability chance
+
+
+     7	DESCRIPTION
+     8	       Random Early Detection is a classless qdisc  which  manages  its  queue
+     9	       size  smartly.  Regular  queues  simply drop packets from the tail when
+    10	       they are full, which may not be the optimal behaviour.  RED  also  per-
+    11	       forms tail drop, but does so in a more gradual way.
+
+    12	       Once  the  queue hits a certain average length, packets enqueued have a
+    13	       configurable chance of being marked  (which  may  mean  dropped).  This
+    14	       chance  increases  linearly  up to a point called the max average queue
+    15	       length, although the queue might get bigger.
+
+    16	       This has a host of benefits over simple taildrop, while not being  pro-
+    17	       cessor  intensive. It prevents synchronous retransmits after a burst in
+    18	       traffic, which cause further retransmits, etc.
+
+    19	       The goal is the have a small queue size, which is good for  interactiv-
+    20	       ity  while  not  disturbing  TCP/IP  traffic with too many sudden drops
+    21	       after a burst of traffic.
+
+    22	       Depending on if ECN is configured, marking  either  means  dropping  or
+    23	       purely marking a packet as overlimit.
+
+    24	ALGORITHM
+    25	       The average queue size is used for determining the marking probability.
+    26	       This is calculated using an Exponential Weighted Moving Average,  which
+    27	       can be more or less sensitive to bursts.
+
+    28	       When  the average queue size is below min bytes, no packet will ever be
+    29	       marked. When it exceeds min, the probability of doing  so  climbs  lin-
+    30	       early  up  to probability, until the average queue size hits max bytes.
+    31	       Because probability is normally not set to 100%, the queue  size  might
+    32	       conceivably rise above max bytes, so the limit parameter is provided to
+    33	       set a hard maximum for the size of the queue.
+
+
+    34	PARAMETERS
+    35	       min    Average queue size at which marking becomes a possibility.
+
+    36	       max    At this average queue size, the marking probability is  maximal.
+    37	              Should be at least twice min to prevent synchronous retransmits,
+    38	              higher for low min.
+
+    39	       probability
+    40	              Maximum probability for marking, specified as a  floating  point
+    41	              number  from 0.0 to 1.0. Suggested values are 0.01 or 0.02 (1 or
+    42	              2%, respectively).
+
+    43	       limit  Hard limit on the real (not average) queue size in  bytes.  Fur-
+    44	              ther  packets  are dropped. Should be set higher than max+burst.
+    45	              It is advised to set this a few times higher than max.
+
+    46	       burst  Used for determining how fast the average queue size  is  influ-
+    47	              enced by the real queue size. Larger values make the calculation
+    48	              more sluggish, allowing longer bursts of traffic before  marking
+    49	              starts.  Real  life experiments support the following guideline:
+    50	              (min+min+max)/(3*avpkt).
+
+    51	       avpkt  Specified in bytes. Used with burst to determine the  time  con-
+    52	              stant for average queue size calculations. 1000 is a good value.
+
+    53	       bandwidth
+    54	              This rate is used for calculating the average queue  size  after
+    55	              some  idle  time.  Should be set to the bandwidth of your inter-
+    56	              face. Does not mean that RED will shape for you! Optional.
+
+    57	       ecn    As mentioned before, RED can either 'mark' or  'drop'.  Explicit
+    58	              Congestion  Notification  allows RED to notify remote hosts that
+    59	              their rate exceeds the amount of  bandwidth  available.  Non-ECN
+    60	              capable  hosts  can  only  be notified by dropping a packet.  If
+    61	              this parameter is specified, packets which indicate  that  their
+    62	              hosts  honor ECN will only be marked and not dropped, unless the
+    63	              queue size hits limit bytes. Needs a tc binary with RED  support
+    64	              compiled in. Recommended.
+
+
+    65	SEE ALSO
+    66	       tc(8)
+
+
+    67	SOURCES
+    68	       o      Floyd, S., and Jacobson, V., Random Early Detection gateways for
+    69	              Congestion                                            Avoidance.
+    70	              http://www.aciri.org/floyd/papers/red/red.html
+
+    71	       o      Some changes to the algorithm by Alexey N. Kuznetsov.
+
+
+    72	AUTHORS
+    73	       Alexey   N.   Kuznetsov,   <kuznet@ms2.inr.ac.ru>,    Alexey  Makarenko
+    74	       <makar@phoenix.kharkov.ua>,  J  Hadi  Salim  <hadi@nortelnetworks.com>.
+    75	       This manpage maintained by bert hubert <ahu@ds9a.nl>
+
+
+
+
+
+    76	iproute2                       13 December 2001                         RED(8)

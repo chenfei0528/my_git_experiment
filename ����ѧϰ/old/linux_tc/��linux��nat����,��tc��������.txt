@@ -1,0 +1,77 @@
+用linux做nat服务,用tc限制流量
+
+最近有同事用bt和电驴疯狂下载，我们上网打cs受到极大影响，所以对nat上网做了流量控制,将一点经验介绍给网友，希望对cs fans 有所帮助. 
+我们上网环境如下： 
+    eth0 外网ip :a.b.c.d 
+    eth1 内网ip1:192.168.0.0/24  给老板和bt 
+    eth2 内网ip2:192.168.1.0/24  给我和csfans 
+用linux 做nat 命令如下: 
+echo 1 >; /proc/sys/net/ipv4/ip_forward 
+iptables -F 
+iptables -t nat -F    ----清除旧规则 
+iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j SNAT --to a.b.c.d   ---为内网ip1 做nat 
+iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j SNAT -- to a.b.c.d   ---为内网ip2 做nat 
+------------为流量控制做基于fw过滤器的标记 
+iptables -I PREROUTING -t mangle -p tcp -s 192.168.0.0/24 -j MARK --set-mark 1 
+iptables -I PREROUTING -t mangle -p tcp -s 192.168.1.0/24 -j MARK --set-mark 2 
+------------为上传速率做流量控制 
+tc 要求内核2.4.18以上，所以不够的要升级 
+tc 只能控制网卡发送包的速率，所以上传速率的限制要在eth0上做 
+----删除旧有队列 
+tc qdisc del dev eth0 root 
+----加一个根队列,速率用网卡的速率10Mbit，也可用上传的速率 
+tc qdisc add dev eth0 root handle 100: cbq bandwidth 10Mbit avpkt 1000 
+----加一个根类 
+tc class add dev eth0 parent 100:0 classid 100:1 cbq bandwidth 10Mbit rate 10Mbit allot 1514 weight 1Mbit prio 8 maxburst 8 avpkt 1000 bounded 
+----加一个子类用于内网1速率限制为300Kbit 
+tc class add dev eth0 parent 100:1 classid 100:2 cbq bandwidth 10Mbit rate 300Kbit allot 1513 weight 30Kbit prio 5 maxburst 8 avpkt 1000 bounded 
+----加一个子类用于内网2速率限制为320Kbit 
+tc class add dev eth0 parent 100:1 classid 100:3 cbq bandwidth 10Mbit rate 320Kbit allot 1513 weight 32Kbit prio 6 maxburst 8 avpkt 1000 bounded 
+----设置队列规则 
+tc qdisc add dev eth0 parent 100:2 sfq quantum 1514b perturb 15 
+tc qdisc add dev eth0 parent 100:3 sfq quantum 1514b perturb 15 
+------将队列和fw过滤器映射起来 其中handle 1 的1是开始用iptables 做的标记，handle 2 的2也是开始用iptables 做的标记 
+tc filter add dev eth0 parent 100:0 protocol ip prio 1 handle 1 fw classid 100:2 
+tc filter add dev eth0 parent 100:0 protocol ip prio 2 handle 2 fw classid 100:3 
+-----------------------再做下载限制我只限制了老板和bt的下载速率，过滤器是用u32 
+tc qdisc del dev eth1 root 
+tc qdisc add dev eth1 root handle 200: cbq bandwidth 10Mbit avpkt 1000 
+tc class add dev eth1 parent 200:0 classid 200:1 cbq bandwidth 10Mbit rate 10Mbit allot 1514 weight 2Kbit prio 8 maxburst 8 avpkt 1000 bounded 
+tc class add dev eth1 parent 200:1 classid 200:2 cbq bandwidth 10Mbit rate 1000Kbit allot 1513 weight 1Mbit prio 5 maxburst 8 avpkt 1000 bounded 
+tc qdisc add dev eth1 parent 200:2 sfq quantum 1514b perturb 15 
+tc filter add dev eth1 parent 200:0 protocol ip prio 25 u32 match ip dst 192.168.0.0/24 flowid 200:2 
+
+
+---------------------- 
+现在可以用tc -s qdisc ls dev eth0 
+     tc -s qdisc ls dev eth1 
+          tc -s class ls dev eth0 
+          tc -s class ls dev eth1 监视流量
+
+Q:能不能做基于IP地址的限量呢?
+A:作基于ip 的流量控制只要把网段改为ip就可以 
+比如 
+iptables -I PREROUTING -t mangle -p tcp -s 192.168.0.0/24 -j MARK --set-mark 1  
+iptables -I PREROUTING -t mangle -p tcp -s 192.168.1.0/24 -j MARK --set-mark 2  
+可以改为 
+iptables -I PREROUTING -t mangle -p tcp -s 192.168.0.17/32 -j MARK --set-mark 1  
+iptables -I PREROUTING -t mangle -p tcp -s 192.168.0.18/32 -j MARK --set-mark 2  
+则192.168.0.17和192.168.0.18的上传流量得到控制 
+下载控制可改为 
+tc filter add dev eth1 parent 200:0 protocol ip prio 25 u32 match ip dst 192.168.0.17/32 flowid 200:2 则192.168.0.17的下载流量得到控制
+
+allot   
+当从外部请求一个 CBQ 发包的时候，它就会按照“priority”参数指定的 
+顺序轮流尝试其内部的每一个类的队列规定。当轮到一个类发数据时，它 
+只能发送一定量的数据。“allot”参数就是这个量的基值。更多细节请参 
+照“weight”参数。 
+weight   
+“weight”参数控制 WRR 过程。每个类都轮流取得发包的机会。如果其 
+中一个类要求的带宽显著地高于其他的类，就应该让它每次比其他的类发 
+送更多的数据。  
+CBQ 会把一个类下面所有的 weight 值加起来后归一化，所以数值可以任 
+意定，只要保持比例合适就可以。人们常把“速率/10”作为参数的值来 
+使用，实际工作得很好。归一化值后的值乘以“allot”参数后，决定了每 
+次传输多少数据。  
+请注意，在一个CBQ内部所有的类都必须使用一致的主号码！
+

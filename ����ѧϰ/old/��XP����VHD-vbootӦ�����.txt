@@ -1,0 +1,62 @@
+把XP灌入VHD-vboot应用详解
+
+WinXP本身并不支VHD 但是我们通过vboot就能实现
+vboot是一款国人自己开发的虚拟机vmlite中的一个组件 可以实现引导时加载VHD虚拟磁盘
+具体操作方法如下
+
+1.解压vboot
+
+2.将vboot中的vbootldr.mbr，vbootldr放在引导区根目录，剩下的VBOOT目录也放在引导区根目录
+结构如下
+c:(或100M小分区)
+   |--vbootldr
+   |--vbootldr.mbr
+   |----vboot
+          |--grub
+          |--font
+...........
+注：若在win7安装过程中创建了100M的分区，可用磁盘管理软件(如DiskGenius)将其放入此分区中  
+
+3.将boot.INI中增加一行
+C:\vbootldr.mbr="VBoot -VHD Boot"
+此时启动，选择VBoot -VHD Boot能看到启动菜单
+注1：win7系统没有boot.ini 可以在引导分区手动新建此文件，并写入
+[boot loader]
+[operating systems]
+C:\vbootldr.mbr="VBoot -VHD Boot"
+注2：若将其放在100M小分区中，盘符也用C:而不需要更改
+
+4.创建VHD磁盘
+命令
+c:\vboot\tools\x86\vbootctl.exe createhd c:\winxp.vhd /size 5
+可以使用c:\vboot\tools\x86\vbootctl.exe help查看命令
+此处建立的是一个动态的vhd文件。
+这个size后面单位是GB
+注：也可使用win7自带磁盘管理工具建立
+
+5.安装XP系统到这个VHD
+将要安装的光盘改名为winxp-sp2.iso，放在C盘根目录
+重启
+然后选择
+VBoot -VHD Boot
+下一个菜单中选择
+"xp install step1"
+安装过程中注意选择磁盘，一般是最后一个未划分区域
+安装过程要重启，接着选择菜单
+"xp install step2" 
+继续安装到完成
+选择
+"xp sp2"菜单进入系统
+注：此处安装光盘ISO文件名和前面创建的VHD文件名，由vboot\grub\grub.cfg文件中决定，如下
+vboot harddisk="(hd0,1)/winxp.vhd" floppy=(hd0,1)/vboot/vboot.img cdrom=(hd0,1)/winxp-sp2.iso boot=cdrom
+此处(hd0,1)表示第0磁盘的第一个分区[例：若有100M小分区并把VHD文件放在D盘，则改成(hd0,3)]
+
+6.引导其他镜像(如WinPE)
+将WinPE镜像winPE.ISO放入C盘 编辑vboot\grub\grub.cfg文件按格式添加
+vboot cdrom=(hd0,1)/winPE.ISO boot=cdrom
+注：1.经测试外置程序无法正常加载，原因为进入PE后无法找到整个ISO镜像，于是无法加载镜像中的外置程序，将外置程序内置于PE内核中即可正常加载，也可以使用某些整体加载的PE(如UD版PE)即可正常加载外置程序
+
+特别注意：1.VHD文件必须放在NTFS格式的主分区内 经测试无论VHD是否超过4G，放入FAT32格式下均蓝屏
+              2.目前本人测试全新安装XP可以正常启动，若安装GHO版蓝屏可进入win7挂载VHD，然后使用工具如WinImage解开vboot.img并将i386驱动文件和inf文件，手工放入system32\drivers和windows\inf里(此法未经过测试 我在网上看到的)
+              3.目前vboot支持动态磁盘 但是不支持差分磁盘(官方说测试版将其屏蔽了 下一个版本会支持)
+

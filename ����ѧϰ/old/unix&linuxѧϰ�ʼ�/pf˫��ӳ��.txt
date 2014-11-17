@@ -1,0 +1,51 @@
+pf双向映射 (1:1 映射)
+
+双向映射可以通过使用binat规则建立。Binat规则建立一个内部地址和外部地址一对一的映射。这会很有用，比如，使用独立的外部IP地址用内部网络里的机器提供web服务。从因特网到来连接外部地址的请求被转换到内部地址，同时由（内部）web服务器发起的连接（例如DNS查询）被转换为外部地址。和NAT规则不过，binat规则中的tcp和udp端口不会被修改。
+
+
+例如:
+
+web_serv_int = "192.168.1.100"
+web_serv_ext = "24.5.0.6"
+
+binat on tl0 from $web_serv_int to any -> $web_serv_ext
+
+转换规则例外设置
+
+使用no关键字可以在转换规则中设置例外。例如，如果上面的转换规则修改成这样：
+
+no nat on tl0 from 192.168.1.10 to any
+nat on tl0 from 192.168.1.0/24 to any -> 24.2.74.79
+
+则除了192.168.1.10以外，整个192.168.1.0/24网络地址的数据包都会转换为外部地址24.2.74.79。
+
+注意第一条匹配的规则起了决定作用，如果是匹配有no的规则，数据包不会被转换。No关键字也可以在binat和rdr规则中使用。
+
+检查 NAT 状态
+
+要检查活动的NAT转换可以使用pfctl（8）带-s state 选项。这个选项列出所有当前的NAT会话。
+# pfctl -s state
+fxp0 TCP 192.168.1.35:2132 -> 24.5.0.5:53136 -> 65.42.33.245:22 TIME_WAIT:TIME_WAIT
+fxp0 UDP 192.168.1.35:2491 -> 24.5.0.5:60527 -> 24.2.68.33:53 MULTIPLE:SINGLE
+
+解释 (对第一行):
+
+fxp0
+显示状态绑定的接口。如果状态是浮动的，会出现self字样。
+
+TCP
+连接使用的协议。
+
+192.168.1.35:2132
+内部网络中机器的IP地址 (192.168.1.35)，源端口（2132）在地址后显示，这个也是被替换的IP头中的地址。 of the machine on the internal network. The
+source port (2132) is shown after the address. This is also the address
+that is replaced in the IP header.
+
+24.5.0.5:53136
+IP 地址 (24.5.0.5) 和端口 (53136) 是网关上数据包被转换后的地址和端口。
+
+65.42.33.245:22
+IP 地址 (65.42.33.245) 和端口 (22) 是内部机器要连接的地址和端口。
+
+TIME_WAIT:TIME_WAIT
+这表明PF认为的目前这个TCP连接的状态。

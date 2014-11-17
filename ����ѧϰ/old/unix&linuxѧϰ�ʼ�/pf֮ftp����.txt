@@ -1,0 +1,112 @@
+PF: FTP问题
+
+
+--------------------------------------------------------------------------------
+
+目录
+FTP的模式 
+在防火墙后的FTP客户端 
+PF"自保护"FTP服务器 
+FTP服务器通过外部的PF防火墙运行NAT来保护 
+更多关于FTP的信息 
+代理TFTP 
+
+--------------------------------------------------------------------------------
+
+FTP的模式
+FTP是一种协议, 它可以追溯到当互联网还是一个小的、友好的计算机的集合, 并且这个集合中的每个人相互熟识。那个时候过滤或严格的安全是没有必要的。 FTP不是为过滤、通过防火墙、或者工作在NAT下设计的。 
+
+你可以用两种模式使用FTP: 被动与主动。通常, 选择主动或被动模式是由谁通过防火墙有困难来决定的。实际上, 为了满足不同用户你的服务器不得不支持这两种方式。 
+
+对主动模式的FTP来说, 当一个用户连接到一台远程的FTP服务器并请求信息或一个文件, FTP服务器会创建一个新的与客户端的连接来传送请求的数据, 这个连接被称为数据连接。为了开始传送, FTP客户端随机选择一个端口来接收这个数据连接, FTP客户端将选择的端口号发送给FTP服务器并在这个端口上监听进站连接, 然后FTP服务器就发起一个到客户端选择端口的连接并开始传送数据。如果用户在NAT网关的后面想访问FTP服务器会存在一个问题, 这是因为NAT的工作机制导致的, FTP服务器通过连接NAT网关的外部地址及端口建立了数据连接, 作为网关的机器会收到这些数据, 但是因为这些数据并未被映射到它的状态表上, 所以它会丢弃这些数据而不是将它们传送到客户端。 
+
+对于被动模式的FTP来说(OpenBSD ftp(1) 客户端的默认模式), 客户端请求服务器随机挑选一个服务器的端口作为数据连接来监听, 服务器告诉客户端它已经选择了自己的哪个端口, 然后客户端连接到那个端口上传送数据。遗憾的是, 这种方式并非总是可能或令人满意, 因为位于服务器前的防火墙可能会阻止来自客户端的进站数据连接。 OpenBSD的 ftp(1)默认使用被动模式; 要强制使用主动模式的FTP, 就要在连接时使用 -A 标记, 或者在"ftp>"提示符下输入命令 "passive off" 来设定关闭被动模式。 
+
+
+在防火墙后的FTP客户端
+如上所述, FTP通过NAT或防火墙时工作的不太好。 
+PF提供了一个解决的办法, 就是通过一台FTP代理服务器将FTP通讯重新定向。它是通过PF的锚系统在PF上添加适当的放行规则并在完成时删除它们, 这样可以让FTP代理服务器充当一个引导员角色来 "指引" FTP通讯通过NAT网关或防火墙。PF使用的FTP代理是 ftp-proxy(8)。 
+
+要激活它, 将类似下面的内容添加到 pf.conf 文件中的NAT部分: 
+
+ nat-anchor "ftp-proxy/*"
+    rdr-anchor "ftp-proxy/*"
+    rdr on $int_if proto tcp from any to any port 21 -> 127.0.0.1 \
+   port 8021
+
+前面两行是一对锚, 它们被ftp代理用来根据需要在运行时添加规则以管理你的FTP通讯。最后一行是将FTP从你的客户端重定向到ftp代理程序ftp-proxy(8)上, 它监听你机器的8021端口。 
+
+你还需要在规则部分添加一个锚: 
+
+anchor "ftp-proxy/*"
+
+我们显然希望现在就在OpenBSD的机器上启动并运行代理服务器, 这需要将下面这行添加到 /etc/rc.conf.local: 
+
+ftpproxy_flags=""
+
+这样不用重新启动系统就可以通过root激活并启用ftp代理程序。 
+
+ftp代理在端口8021上监听, 上面rdr语句也是将FTP通讯发送到这个端口上。 
+
+启用主动模式连接, 你需要 ftp-proxy(8) 加上 '-r' 参数(为了如此你必须在运行老代理时采用 "-u root")。 
+
+PF"自保护"FTP服务器
+这种情况下, PF自己运行在一台FTP服务器上, 而不是运行在作为专用防火墙的计算机上。处理被动的FTP连接时, FTP将为进站数据随机选择一个高端TCP端口。默认情况下, OpenBSD本地FTP服务器 ftpd(8) 随机选择端口的范围是49152到65535。很显然, 端口21(FTP控制端口)和这些高端端口必须在过滤规则上设置为放行: 
+
+pass in on $ext_if proto tcp from any to any port 21 keep state
+pass in on $ext_if proto tcp from any to any port > 49151 \
+   keep state
+
+注意, 如果你希望, 你可以大幅度缩小高端端口的范围。对于OpenBSD的 ftpd(8) 程序而言, 设定范围使用 sysctl(8) 的变量 net.inet.ip.porthifirst 和 net.inet.ip.porthilast。 
+
+FTP服务器通过外部的PF防火墙运行NAT来保护
+这种情况下, 防火墙除了不能封闭所需的端口外, 还必须将通讯重定向到FTP服务器上。我们还要依靠FTP代理ftp-proxy(8)来完成此任务。 
+ftp-proxy(8)的运行模式可将所有FTP连接转发到特定的服务器, 主要是通过监听防火墙的21端口以及将所有连接转发到后端的服务器上。 
+
+编辑 /etc/rc.conf.local 并添加如下内容: 
+
+ftpproxy_flags="-R 10.10.10.1 -p 21 -b 192.168.0.1"
+
+这里 10.10.10.1 实际FTP服务器的IP地址, 21 是我们希望 ftp-proxy(8) 监听的端口, 而192.168.0.1是防火墙的IP地址, 我们想将代理绑定在上面。 
+
+现在对 pf.conf 规则: 
+
+ext_ip = "192.168.0.1"
+    ftp_ip = "10.10.10.1"
+    
+    nat-anchor "ftp-proxy/*"
+    nat on $ext_if inet from $int_if -> ($ext_if)
+    rdr-anchor "ftp-proxy/*"
+    
+pass in on $ext_if inet proto tcp to $ext_ip port 21 \
+    flags S/SA keep state
+pass out on $int_if inet proto tcp to $ftp_ip port 21 \
+    user proxy flags S/SA keep state
+anchor "ftp-proxy/*"
+
+这里我们允许到外部接口端口21的进站连接, 同时也允许与之相应的到FTP服务器的出站连接。这里的 "user proxy" 加上出站规则确保了只有 ftp-proxy(8) 发起的连接才被允许。 
+
+注意如果你既想让 ftp-proxy(8) 保护FTP服务器, 又想防火墙后的客户端连接到外面的FTP服务器, 那么两个例子中的 ftp-proxy 全需要。 
+
+更多有关FTP的信息
+更多有关FTP过滤及FTP通常是如何工作的请参阅这份白皮书: 
+FTP Reviewed 
+代理TFTP
+普通文件数传协议 (TFTP) 通过防火墙时收到的限制和FTP一样。幸运的是, PF提供了一个TFTP助手, 就是 tftp-proxy(8). 
+
+tftp-proxy(8) 的设置和 ftp-proxy(8) 的设置大同小异, 可参看上面的 在防火墙后的FTP客户端 部分。 
+
+nat on $ext_if from $int_if -> ($ext_if)
+    rdr-anchor "tftp-proxy/*"
+    rdr on $int_if proto udp from $int_if to port tftp -> \
+    127.0.0.1 port 6969
+
+anchor "tftp-proxy/*"
+
+上面的规则允许TFTP从内部网络出站到外部网络的TFTP服务器。 
+
+最后一步是在 inetd.conf(5) 里启用tftp-proxy一边它可以监听同上面rdr规则指定的相同端口, 这个例子中是 6969 。 
+
+127.0.0.1:6969  dgram   udp   wait  root  /usr/libexec/tftp-proxy tftp-proxy
+
+不像 ftp-proxy(8), tftp-proxy(8) 需要依赖inetd。 

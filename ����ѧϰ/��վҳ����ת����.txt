@@ -1,0 +1,96 @@
+网站页面跳转代码大全
+
+三种网页跳转代码：
+  
+如果你要在服务器端跳转，可以这样：
+ 
+Response.Redirect(www.admin5.com) 
+Response.End  
+如果你要在客户端跳转，可以这样：
+  
+<script language="javascript" type="text/javascript">
+ 
+window.location="http: //www.admin5.com";; 
+</script>  
+如果你要让页面显示几秒钟之后跳转，可以在
+html
+代码的
+<head></head>
+部分加上这样的代
+码：
+  
+<meta http-equiv="refresh" content="3; url=http://www.admin5.com"> 
+（
+3
+秒钟后自动跳转到
+www.admin5.com
+）
+  
+
+
+有如下多种方法，你自己挑一个喜欢的：
+1、
+
+<meta http-equiv="refresh" content="秒; url=http://www.tao36524.com"> 
+
+2、
+
+<script language="JavaScript">
+<!--
+var userAgent = navigator.userAgent;
+var MSIEIndex = userAgent.indexOf("MSIE");
+if (userAgent.indexOf("Win") != -1 &&
+userAgent.indexOf("MSIE") != -1 &&
+userAgent.substring((MSIEIndex + 5),(MSIEIndex + 8)) >= 5.5)
+window.location.replace(http://www.jd265.com);
+//-->
+</script>
+
+没时间转移
+
+3、
+
+有些人想访问网站时,直接进入某个子目录中的文件,如cgi-bin/leoboard.cgi,这时,你只要写一个默认的首页文件如index.htm,内容如下,就可以实现你的要求.
+方法一:
+
+<html>
+<head>
+<title>网页跳转</title>
+<meta http-equiv="refresh" content="0;url=cgi-bin/leoboard.cgi">
+</head>
+<body>
+</body>
+</html>
+
+
+方法二
+<html>
+<head>
+<title>正在进入>>> Loading>>> </title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<p> </p><tr> <td width=724> 
+<p align=center><font color="red" size="2">正在进入,请等待,谢谢......</font></p></td></tr><tr> 
+<td width="724">
+<p align=center>
+<form name=loading>
+<div align=center>
+<p>
+<input type=text name=chart size=46 style="font-family:Arial; font-weight:bolder; color:rgb(124,119,119); background-color:white; padding:0px; border-style:none;"> 
+<br> <input type=text name=percent size=46 style="color:rgb(138,134,134); text-align:center; border-width:medium; border-style:none;"><script>var bar = 0 
+var line = "||" 
+var amount ="||" 
+count() 
+function count(){ 
+bar= bar+2 
+amount =amount + line 
+document.loading.chart.value=amount 
+document.loading.percent.value=bar+"%" 
+if (bar<99) 
+{setTimeout("count()",10);} 
+else 
+{window.location = http://f2144.asktang.com;} 
+}</script>
+
+</body>
+</html>

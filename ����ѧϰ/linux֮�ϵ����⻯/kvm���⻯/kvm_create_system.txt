@@ -1,0 +1,1 @@
+virt-install --connect=qemu:///system --name u3 --ram 512 --vcpus=2 --os-type=linux --os-variant=ubuntuTrusty --accelerate --hvm --disk path=/downloads/os/u3.img,size=10,bus=virtio --location /downloads/ubuntu-14.04-server-amd64.iso --extra-args='console=tty0 console=ttyS0' --network bridge=br0,model=virtio --graphics none

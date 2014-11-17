@@ -1,0 +1,4182 @@
+From: <ÓÉ Windows Internet Explorer 8 ±£´æ>
+Subject: GhostBSD User Handbook - GhostBSD Wiki
+Date: Mon, 23 Sep 2013 09:07:53 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CEB83C.62D7EE30"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.6157
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01CEB83C.62D7EE30
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://wiki.ghostbsd.org/index.php?title=GhostBSD_User_Handbook
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML dir=3Dltr lang=3Den class=3Dclient-nojs><HEAD><TITLE>GhostBSD User =
+Handbook - GhostBSD Wiki</TITLE>
+<META charset=3DUTF-8>
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.23520"><LINK =
+rel=3D"shortcut icon"=20
+href=3D"/home/ericbsd/public_html/wiki/favicon.ico"><LINK=20
+title=3D"GhostBSD Wiki (en)" rel=3Dsearch =
+type=3Dapplication/opensearchdescription+xml=20
+href=3D"/opensearch_desc.php"><LINK rel=3DEditURI =
+type=3Dapplication/rsd+xml=20
+href=3D"http://wiki.ghostbsd.org/api.php?action=3Drsd"><LINK=20
+title=3D"GhostBSD Wiki Atom feed" rel=3Dalternate =
+type=3Dapplication/atom+xml=20
+href=3D"/index.php?title=3DSpecial:RecentChanges&amp;feed=3Datom"><LINK =
+rel=3Dstylesheet=20
+href=3D"http://wiki.ghostbsd.org/load.php?debug=3Dfalse&amp;lang=3Den&amp=
+;modules=3Dmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=3D=
+styles&amp;skin=3Dvector&amp;*">
+<META name=3DResourceLoaderDynamicStyles content=3D""><LINK =
+rel=3Dstylesheet=20
+href=3D"http://wiki.ghostbsd.org/load.php?debug=3Dfalse&amp;lang=3Den&amp=
+;modules=3Dsite&amp;only=3Dstyles&amp;skin=3Dvector&amp;*">
+<STYLE>UNKNOWN {
+	TEXT-DECORATION: none
+}
+A.new {
+	COLOR: #ba0000
+}
+#quickbar A.new {
+	COLOR: #ba0000
+}
+</STYLE>
+
+<SCRIPT=20
+src=3D"http://wiki.ghostbsd.org/load.php?debug=3Dfalse&amp;lang=3Den&amp;=
+modules=3Dstartup&amp;only=3Dscripts&amp;skin=3Dvector&amp;*"></SCRIPT>
+
+<SCRIPT>if(window.mw){=0A=
+	mw.config.set({"wgCanonicalNamespace": "", =
+"wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, =
+"wgPageName": "GhostBSD_User_Handbook", "wgTitle": "GhostBSD User =
+Handbook", "wgCurRevisionId": 56413, "wgArticleId": 24, "wgIsArticle": =
+true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], =
+"wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], =
+"wgRestrictionMove": [], "wgWikiEditorEnabledModules": {"toolbar": true, =
+"dialogs": true, "hidesig": true, "templateEditor": false, "templates": =
+false, "preview": false, "previewDialog": false, "publish": false, =
+"toc": false}});=0A=
+}=0A=
+</SCRIPT>
+
+<SCRIPT>if(window.mw){=0A=
+	mw.loader.load(["mediawiki.page.startup"]);=0A=
+}=0A=
+</SCRIPT>
+<!--[if lt IE 7]><style =
+type=3D"text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</s=
+tyle><![endif]--></HEAD>
+<BODY=20
+class=3D"mediawiki ltr sitedir-ltr ns-0 ns-subject =
+page-GhostBSD_User_Handbook action-view skin-vector">
+<DIV id=3Dmw-page-base class=3Dnoprint></DIV>
+<DIV id=3Dmw-head-base class=3Dnoprint></DIV><!-- content -->
+<DIV id=3Dcontent><A id=3Dtop></A>
+<DIV style=3D"DISPLAY: none" id=3Dmw-js-message></DIV><!-- firstHeading =
+-->
+<H1 id=3DfirstHeading class=3DfirstHeading>GhostBSD User =
+Handbook</H1><!-- /firstHeading --><!-- bodyContent -->
+<DIV id=3DbodyContent><!-- tagline -->
+<DIV id=3DsiteSub>From GhostBSD Wiki</DIV><!-- /tagline --><!-- subtitle =
+-->
+<DIV id=3DcontentSub></DIV><!-- /subtitle --><!-- jumpto -->
+<DIV id=3Djump-to-nav>Jump to: <A=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+#mw-head">navigation</A>,=20
+<A=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+#p-search">search</A>=20
+</DIV><!-- /jumpto --><!-- bodycontent -->
+<DIV dir=3Dltr lang=3Den class=3Dmw-content-ltr>
+<TABLE style=3D"BACKGROUND-COLOR: #f3f8fd; COLOR: black" =
+class=3Dwikitable>
+  <TBODY>
+  <TR>
+    <TD><B>This handbook still under heavy development, fill free to =
+help us=20
+      to finish it.</B> </TD></TR></TBODY></TABLE>
+<P><STRONG class=3Dselflink>Split page</STRONG>/<A title=3D"GhostBSD =
+Users Handbook"=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_Users_Handboo=
+k">Single=20
+Page</A> </P>
+<H2><SPAN id=3DTable_of_Contents class=3Dmw-headline>Table of Contents =
+</SPAN></H2>
+<P><B><A title=3DIntroduction=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DIntroduction">1.=20
+Introduction</A></B> </P>
+<DL>
+  <DD><A title=3D"A Brief History of GhostBSD"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DA_Brief_History_of_Gho=
+stBSD">1.1=20
+  A Brief History of GhostBSD</A> </DD></DL>
+<DL>
+  <DD><A title=3D"GhostBSD Project Goals"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_Project_Goals=
+">1.2=20
+  GhostBSD Project Goals</A> </DD></DL>
+<P><B><A title=3D"Installing GhostBSD"=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DInstalling_GhostBSD">2=
+.=20
+Installing GhostBSD</A></B> </P>
+<DL>
+  <DD><A title=3D"Hardware Requirements"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DHardware_Requirements"=
+>2.1=20
+  Hardware Requirements</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Pre-installation Tasks"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DPre-installation_Tasks=
+">2.2=20
+  Pre-installation Tasks</A> </DD></DL>
+<DL>
+  <DD><A title=3D"VirtualBox Configuration"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DVirtualBox_Configurati=
+on">2.3=20
+  VirtualBox Configuration</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Starting GhostBSD Live Media"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DStarting_GhostBSD_Live=
+_Media">2.4=20
+  Starting GhostBSD Live Media</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Setting Language, Keyboard and Timezone"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DSetting_Language,_Keyb=
+oard_and_Timezone">2.5=20
+  Setting Language, Keyboard and Timezone</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Entire Disk Installation"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DEntire_Disk_Installati=
+on">2.6=20
+  Entire Disk Installation</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Auto Label Partitioning Installation"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DAuto_Label_Partitionin=
+g_Installation">2.7=20
+  Auto Label Partitioning Installation</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Custom Disk Partitioning Installation"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DCustom_Disk_Partitioni=
+ng_Installation">2.8=20
+  Custom Disk Partitioning Installation</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Adding Root Password and User"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DAdding_Root_Password_a=
+nd_User">2.9=20
+  Adding Root Password and User</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Installation Summary and Progress"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DInstallation_Summary_a=
+nd_Progress">2.10=20
+  Installation Summary and Progress</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Installation Troubleshooting"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DInstallation_Troublesh=
+ooting">2.11=20
+  Installation Troubleshooting</A> </DD></DL>
+<P><B><A title=3D"Installing Applications"=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DInstalling_Application=
+s">3.=20
+Installing Applications</A></B> </P>
+<DL>
+  <DD><A title=3D"BxPKG Package Manager"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DBxPKG_Package_Manager"=
+>3.1=20
+  bxPKG Package Manager</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Command Line Package Manager"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DCommand_Line_Package_M=
+anager">3.2=20
+  Command Line Package Manager</A> </DD></DL>
+<DL>
+  <DD><A title=3D"Using the Ports Collection"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DUsing_the_Ports_Collec=
+tion">3.3=20
+  Using the Ports Collection</A> </DD></DL><!-- =0A=
+NewPP limit report=0A=
+Preprocessor node count: 155/1000000=0A=
+Post-expand include size: 1221/2097152 bytes=0A=
+Template argument size: 1054/2097152 bytes=0A=
+Expensive parser function count: 0/100=0A=
+--><!-- Saved in parser cache with key =
+ericbsd_mdwk1-phpw_:pcache:idhash:24-0!*!0!*!*!*!* and timestamp =
+20130922174100 --></DIV><!-- /bodycontent --><!-- printfooter -->
+<DIV class=3Dprintfooter>Retrieved from "<A=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+&amp;oldid=3D56413">http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_U=
+ser_Handbook&amp;oldid=3D56413</A>"=20
+</DIV><!-- /printfooter --><!-- catlinks -->
+<DIV id=3Dcatlinks class=3D"catlinks catlinks-allhidden"></DIV><!-- =
+/catlinks -->
+<DIV class=3DvisualClear></DIV><!-- debughtml --><!-- /debughtml =
+--></DIV><!-- /bodyContent --></DIV><!-- /content --><!-- header -->
+<DIV id=3Dmw-head class=3Dnoprint><!-- 0 -->
+<DIV id=3Dp-personal>
+<H5>Personal tools</H5>
+<UL>
+  <LI id=3Dpt-login><A accessKey=3Do=20
+  title=3D"You are encouraged to log in; however, it is not mandatory =
+[o]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DSpecial:UserLogin&amp;=
+returnto=3DGhostBSD+User+Handbook">Log=20
+  in / create account</A> </LI></UL></DIV><!-- /0 -->
+<DIV id=3Dleft-navigation><!-- 0 -->
+<DIV id=3Dp-namespaces class=3DvectorTabs>
+<H5>Namespaces</H5>
+<UL>
+  <LI id=3Dca-nstab-main class=3Dselected><SPAN><A accessKey=3Dc=20
+  title=3D"View the content page [c]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+">Page</A></SPAN>=20
+  </LI>
+  <LI id=3Dca-talk class=3Dnew><SPAN><A accessKey=3Dt=20
+  title=3D"Discussion about the content page [t]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DTalk:GhostBSD_User_Han=
+dbook&amp;action=3Dedit&amp;redlink=3D1">Discussion</A></SPAN>=20
+  </LI></UL></DIV><!-- /0 --><!-- 1 -->
+<DIV id=3Dp-variants class=3D"vectorMenu emptyPortlet">
+<H5><SPAN>Variants</SPAN><A=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+#"></A></H5>
+<DIV class=3Dmenu>
+<UL></UL></DIV></DIV><!-- /1 --></DIV>
+<DIV id=3Dright-navigation><!-- 0 -->
+<DIV id=3Dp-views class=3DvectorTabs>
+<H5>Views</H5>
+<UL>
+  <LI id=3Dca-view class=3Dselected><SPAN><A=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+">Read</A></SPAN>=20
+  </LI>
+  <LI id=3Dca-viewsource><SPAN><A accessKey=3De=20
+  title=3D"This page is protected.&#10;You can view its source [e]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+&amp;action=3Dedit">View=20
+  source</A></SPAN> </LI>
+  <LI id=3Dca-history class=3Dcollapsible><SPAN><A accessKey=3Dh=20
+  title=3D"Past revisions of this page [h]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+&amp;action=3Dhistory">View=20
+  history</A></SPAN> </LI></UL></DIV><!-- /0 --><!-- 1 -->
+<DIV id=3Dp-cactions class=3D"vectorMenu emptyPortlet">
+<H5><SPAN>Actions</SPAN><A=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+#"></A></H5>
+<DIV class=3Dmenu>
+<UL></UL></DIV></DIV><!-- /1 --><!-- 2 -->
+<DIV id=3Dp-search>
+<H5><LABEL for=3DsearchInput>Search</LABEL></H5>
+<FORM id=3Dsearchform action=3D/index.php><INPUT value=3DSpecial:Search =
+type=3Dhidden=20
+name=3Dtitle> <INPUT accessKey=3Df id=3DsearchInput title=3D"Search =
+GhostBSD Wiki [f]"=20
+type=3Dsearch name=3Dsearch> <INPUT id=3DsearchGoButton =
+class=3DsearchButton title=3D"Go to a page with this exact name if =
+exists" value=3DGo type=3Dsubmit name=3Dgo>=20
+<INPUT id=3Dmw-searchButton class=3DsearchButton title=3D"Search the =
+pages for this text" value=3DSearch type=3Dsubmit name=3Dfulltext>=20
+</FORM></DIV><!-- /2 --></DIV></DIV><!-- /header --><!-- panel -->
+<DIV id=3Dmw-panel class=3Dnoprint><!-- logo -->
+<DIV id=3Dp-logo><A style=3D"BACKGROUND-IMAGE: url(/glogo.png)"=20
+title=3D"Visit the main page"=20
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DMain_Page"></A></DIV><=
+!-- /logo --><!-- WiKi -->
+<DIV id=3Dp-WiKi class=3Dportal>
+<H5>WiKi</H5>
+<DIV class=3Dbody>
+<UL>
+  <LI id=3Dn-mainpage-description><A accessKey=3Dz title=3D"Visit the =
+main page [z]"=20
+  href=3D"http://wiki.ghostbsd.org/index.php?title=3DMain_Page">Main =
+page</A> </LI>
+  <LI id=3Dn-User-Handbook><A=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+">User=20
+  Handbook</A> </LI>
+  <LI id=3Dn-portal><A=20
+  title=3D"About the project, what you can do, where to find things"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_Wiki:Communit=
+y_portal">Community=20
+  portal</A> </LI>
+  <LI id=3Dn-currentevents><A=20
+  title=3D"Find background information on current events"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_Wiki:Current_=
+events">Current=20
+  events</A> </LI>
+  <LI id=3Dn-recentchanges><A accessKey=3Dr=20
+  title=3D"A list of recent changes in the wiki [r]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DSpecial:RecentChanges"=
+>Recent=20
+  changes</A> </LI>
+  <LI id=3Dn-randompage><A accessKey=3Dx title=3D"Load a random page =
+[x]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DSpecial:Random">Random=
+ page</A>=20
+  </LI>
+  <LI id=3Dn-help><A title=3D"The place to find out"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DHelp:Contents">Help</A=
+>=20
+</LI></UL></DIV></DIV><!-- /WiKi --><!-- navigation -->
+<DIV id=3Dp-navigation class=3Dportal>
+<H5>Navigation</H5>
+<DIV class=3Dbody>
+<UL>
+  <LI id=3Dn-Home-page><A href=3D"http://www.ghostbsd.org/" =
+rel=3Dnofollow>Home=20
+  page</A> </LI>
+  <LI id=3Dn-Get-GhostBSD><A href=3D"http://www.ghostbsd.org/download"=20
+  rel=3Dnofollow>Get GhostBSD</A> </LI></UL></DIV></DIV><!-- /navigation =
+--><!-- SEARCH --><!-- /SEARCH --><!-- TOOLBOX -->
+<DIV id=3Dp-tb class=3Dportal>
+<H5>Toolbox</H5>
+<DIV class=3Dbody>
+<UL>
+  <LI id=3Dt-whatlinkshere><A accessKey=3Dj=20
+  title=3D"A list of all wiki pages that link here [j]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DSpecial:WhatLinksHere/=
+GhostBSD_User_Handbook">What=20
+  links here</A> </LI>
+  <LI id=3Dt-recentchangeslinked><A accessKey=3Dk=20
+  title=3D"Recent changes in pages linked from this page [k]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DSpecial:RecentChangesL=
+inked/GhostBSD_User_Handbook">Related=20
+  changes</A> </LI>
+  <LI id=3Dt-specialpages><A accessKey=3Dq title=3D"A list of all =
+special pages [q]"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DSpecial:SpecialPages">=
+Special=20
+  pages</A> </LI>
+  <LI><A=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+&amp;printable=3Dyes"=20
+  rel=3Dalternate>Printable version</A> </LI>
+  <LI id=3Dt-permalink><A title=3D"Permanent link to this revision of =
+the page"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_User_Handbook=
+&amp;oldid=3D56413">Permanent=20
+  link</A> </LI></UL></DIV></DIV><!-- /TOOLBOX --><!-- LANGUAGES --><!-- =
+/LANGUAGES --><!-- googleadsense -->
+<DIV id=3Dp-googleadsense class=3Dportal>
+<H5>Google AdSense</H5>
+<DIV class=3Dbody>
+<SCRIPT type=3Dtext/javascript>=0A=
+/* <![CDATA[ */=0A=
+google_ad_client =3D "ca-pub-4014573512333264";=0A=
+/* GhostBSD Wiki */=0A=
+google_ad_slot =3D "6024644047";=0A=
+google_ad_width =3D 160;=0A=
+google_ad_height =3D 600;=0A=
+/* ]]> */=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript=20
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js">=0A=
+</SCRIPT>
+</DIV></DIV><!-- /googleadsense --></DIV><!-- /panel --><!-- footer -->
+<DIV id=3Dfooter>
+<UL id=3Dfooter-info>
+  <LI id=3Dfooter-info-lastmod>This page was last modified on 12 June =
+2013, at=20
+  19:09.=20
+  <LI id=3Dfooter-info-viewcount>This page has been accessed 15,601 =
+times.=20
+</LI></UL>
+<UL id=3Dfooter-places>
+  <LI id=3Dfooter-places-privacy><A title=3D"GhostBSD Wiki:Privacy =
+policy"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_Wiki:Privacy_=
+policy">Privacy=20
+  policy</A> </LI>
+  <LI id=3Dfooter-places-about><A title=3D"GhostBSD Wiki:About"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_Wiki:About">A=
+bout=20
+  GhostBSD Wiki</A> </LI>
+  <LI id=3Dfooter-places-disclaimer><A title=3D"GhostBSD Wiki:General =
+disclaimer"=20
+  =
+href=3D"http://wiki.ghostbsd.org/index.php?title=3DGhostBSD_Wiki:General_=
+disclaimer">Disclaimers</A>=20
+  </LI></UL>
+<UL id=3Dfooter-icons class=3Dnoprint>
+  <LI id=3Dfooter-poweredbyico><A =
+href=3D"http://www.mediawiki.org/"><IMG=20
+  alt=3D"Powered by MediaWiki" src=3D"" width=3D88 height=3D31></A> =
+</LI></UL>
+<DIV style=3D"CLEAR: both"></DIV></DIV><!-- /footer --><!-- fixalpha -->
+<SCRIPT type=3Dtext/javascript> if ( window.isMSIE55 ) fixalpha(); =
+</SCRIPT>
+<!-- /fixalpha -->
+<SCRIPT=20
+src=3D"http://wiki.ghostbsd.org/load.php?debug=3Dfalse&amp;lang=3Den&amp;=
+modules=3Dskins.vector&amp;only=3Dscripts&amp;skin=3Dvector&amp;*"></SCRI=
+PT>
+
+<SCRIPT>if(window.mw){=0A=
+	mw.loader.load(["mediawiki.user", "mediawiki.util", =
+"mediawiki.page.ready", "mediawiki.legacy.wikibits", =
+"mediawiki.legacy.ajax"]);=0A=
+}=0A=
+</SCRIPT>
+
+<SCRIPT=20
+type=3Dtext/javascript>window.google_analytics_uacct =3D =
+"UA-33546791-1";</SCRIPT>
+
+<SCRIPT=20
+src=3D"http://wiki.ghostbsd.org/load.php?debug=3Dfalse&amp;lang=3Den&amp;=
+modules=3Dsite&amp;only=3Dscripts&amp;skin=3Dvector&amp;*"></SCRIPT>
+
+<SCRIPT>if(window.mw){=0A=
+	=
+mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonl=
+y":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblcl=
+ick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"=
+enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"ext=
+endwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceed=
+itsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highligh=
+tbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpagesh=
+idepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberh=
+eadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"r=
+climit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencat=
+s":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":=
+1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivep=
+review":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion=
+":0,"watchlistdays":3,"watchlisthideanons":0,=0A=
+	=
+"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchl=
+isthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"us=
+ebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","se=
+archNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"sear=
+chNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searc=
+hNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"sear=
+chNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});=
+;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.st=
+ate({"user.options":"ready","user.tokens":"ready"});=0A=
+	=0A=
+	/* cache key: =
+ericbsd_mdwk1-phpw_:resourceloader:filter:minify-js:4:b9a15f5d20e0ba9200e=
+691e7f0d7282a */=0A=
+}=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>=0A=
+var gaJsHost =3D (("https:" =3D=3D document.location.protocol) ? =
+"https://ssl." : "http://www.");=0A=
+document.write(unescape("%3Cscript src=3D'" + gaJsHost + =
+"google-analytics.com/ga.js' type=3D'text/javascript'%3E%3C/script%3E"));=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>=0A=
+var pageTracker =3D _gat._getTracker("UA-33546791-1");=0A=
+pageTracker._trackPageview();=0A=
+</SCRIPT>
+<!-- Served in 0.233 secs. --></BODY></HTML>
+
+------=_NextPart_000_0000_01CEB83C.62D7EE30
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://wiki.ghostbsd.org/load.php?debug=false&lang=en&modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&only=styles&skin=vector&*
+
+
+@media Print   =20
+{
+A.stub {
+	COLOR: #ba0000; TEXT-DECORATION: none
+}
+A.new {
+	COLOR: #ba0000; TEXT-DECORATION: none
+}
+#toc {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa =
+1px solid; PADDING-TOP: 5px
+}
+.tocindent {
+	MARGIN-LEFT: 2em
+}
+.tocline {
+	MARGIN-BOTTOM: 0px
+}
+DIV.floatright {
+	POSITION: relative; MARGIN: 0.5em 0px 0.8em 1.4em; FLOAT: right; CLEAR: =
+right
+}
+DIV.floatright P {
+	FONT-STYLE: italic
+}
+DIV.floatleft {
+	POSITION: relative; MARGIN: 0.5em 1.4em 0.8em 0px; FLOAT: left; CLEAR: =
+left
+}
+DIV.floatleft P {
+	FONT-STYLE: italic
+}
+DIV.center {
+	TEXT-ALIGN: center
+}
+DIV.thumb {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: =
+transparent; MARGIN-TOP: 0.5em; WIDTH: auto; BORDER-TOP-STYLE: none; =
+MARGIN-BOTTOM: 0.8em; BORDER-LEFT-STYLE: none
+}
+DIV.thumbinner {
+	BORDER-BOTTOM: #cccccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#cccccc 1px solid; PADDING-BOTTOM: 3px !important; BACKGROUND-COLOR: =
+white; PADDING-LEFT: 3px !important; PADDING-RIGHT: 3px !important; =
+FONT-SIZE: 94%; OVERFLOW: hidden; BORDER-TOP: #cccccc 1px solid; =
+BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 3px !important
+}
+HTML .thumbimage {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; =
+BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid
+}
+HTML .thumbcaption {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: left; PADDING-BOTTOM: 3px =
+!important; LINE-HEIGHT: 1.4em; BORDER-RIGHT-STYLE: none; PADDING-LEFT: =
+3px !important; PADDING-RIGHT: 3px !important; BORDER-TOP-STYLE: none; =
+FONT-SIZE: 94%; BORDER-LEFT-STYLE: none; PADDING-TOP: 3px !important
+}
+DIV.magnify {
+	DISPLAY: none
+}
+DIV.tright {
+	MARGIN: 0.5em 0px 0.8em 1.4em; FLOAT: right; CLEAR: right
+}
+DIV.tleft {
+	MARGIN: 0.5em 1.4em 0.8em 0px; FLOAT: left; CLEAR: left
+}
+IMG.thumbborder {
+	BORDER-BOTTOM: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; =
+BORDER-TOP: #dddddd 1px solid; BORDER-RIGHT: #dddddd 1px solid
+}
+TABLE.rimage {
+	POSITION: relative; TEXT-ALIGN: center; WIDTH: 1pt; MARGIN-BOTTOM: 1em; =
+FLOAT: right; MARGIN-LEFT: 1em
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; BACKGROUND: white; COLOR: black; PADDING-TOP: 0px
+}
+.noprint {
+	DISPLAY: none
+}
+DIV#jump-to-nav {
+	DISPLAY: none
+}
+DIV.top {
+	DISPLAY: none
+}
+DIV#column-one {
+	DISPLAY: none
+}
+#colophon {
+	DISPLAY: none
+}
+.editsection {
+	DISPLAY: none
+}
+.toctoggle {
+	DISPLAY: none
+}
+.tochidden {
+	DISPLAY: none
+}
+DIV#f-poweredbyico {
+	DISPLAY: none
+}
+DIV#f-copyrightico {
+	DISPLAY: none
+}
+LI#viewcount {
+	DISPLAY: none
+}
+LI#about {
+	DISPLAY: none
+}
+LI#disclaimer {
+	DISPLAY: none
+}
+LI#privacy {
+	DISPLAY: none
+}
+#footer-places {
+	DISPLAY: none
+}
+#mw-hidden-catlinks {
+	DISPLAY: none
+}
+UL {
+	LIST-STYLE-TYPE: square
+}
+#content {
+	BORDER-BOTTOM-STYLE: none !important; PADDING-BOTTOM: 0px !important; =
+BORDER-RIGHT-STYLE: none !important; MARGIN: 0px; PADDING-LEFT: 0px =
+!important; PADDING-RIGHT: 0px !important; DIRECTION: ltr; =
+BORDER-TOP-STYLE: none !important; BACKGROUND: none transparent scroll =
+repeat 0% 0%; BORDER-LEFT-STYLE: none !important; PADDING-TOP: 0px =
+!important
+}
+#footer {
+	MARGIN-TOP: 1em; DIRECTION: ltr; BACKGROUND: white; COLOR: black; =
+BORDER-TOP: #aaa 1px solid
+}
+H1 {
+	FONT-WEIGHT: bold
+}
+H2 {
+	FONT-WEIGHT: bold
+}
+H3 {
+	FONT-WEIGHT: bold
+}
+H4 {
+	FONT-WEIGHT: bold
+}
+H5 {
+	FONT-WEIGHT: bold
+}
+H6 {
+	FONT-WEIGHT: bold
+}
+P {
+	LINE-HEIGHT: 1.2em; MARGIN: 1em 0px
+}
+.documentDescription {
+	LINE-HEIGHT: 1.2em; MARGIN: 1em 0px
+}
+.tocindent P {
+	MARGIN: 0px
+}
+PRE {
+	BORDER-BOTTOM: black 1pt dashed; BORDER-LEFT: black 1pt dashed; =
+PADDING-BOTTOM: 1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WHITE-SPACE: =
+pre; BACKGROUND: white; COLOR: black; FONT-SIZE: 8pt; OVERFLOW: auto; =
+BORDER-TOP: black 1pt dashed; BORDER-RIGHT: black 1pt dashed; =
+PADDING-TOP: 1em
+}
+TABLE.listing {
+	BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; =
+BORDER-COLLAPSE: collapse; BORDER-TOP: black 1pt solid; BORDER-RIGHT: =
+black 1pt solid
+}
+TABLE.listing TD {
+	BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; =
+BORDER-COLLAPSE: collapse; BORDER-TOP: black 1pt solid; BORDER-RIGHT: =
+black 1pt solid
+}
+A {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 0px !important; =
+PADDING-RIGHT: 0px !important; BACKGROUND: none transparent scroll =
+repeat 0% 0%; COLOR: black !important; PADDING-TOP: 0px !important
+}
+A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #520; =
+TEXT-DECORATION: underline
+}
+A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #520; =
+TEXT-DECORATION: underline
+}
+#content A.text.external:after {
+	CONTENT: " (" attr(href) ") "
+}
+#content A.autonumber.external:after {
+	CONTENT: " (" attr(href) ") "
+}
+#globalWrapper {
+	MIN-WIDTH: 0px !important; WIDTH: 100% !important
+}
+#content {
+	BACKGROUND: white; COLOR: black
+}
+#column-content {
+	MARGIN: 0px
+}
+#column-content #content {
+	PADDING-BOTTOM: 1em; MARGIN: 0px; PADDING-LEFT: 1em; PADDING-RIGHT: =
+1em; PADDING-TOP: 1em
+}
+A {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A.external {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A.new {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A.stub {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A {
+=09
+}
+A.external {
+=09
+}
+A.new {
+=09
+}
+A.stub {
+=09
+}
+IMG {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: =
+none; VERTICAL-ALIGN: middle; BORDER-LEFT-STYLE: none
+}
+SPAN.texhtml {
+	FONT-FAMILY: serif
+}
+#siteNotice {
+	DISPLAY: none
+}
+LI.gallerybox {
+	BORDER-BOTTOM: white 2px solid; BORDER-LEFT: white 2px solid; DISPLAY: =
+inline-block; VERTICAL-ALIGN: top; BORDER-TOP: white 2px solid; =
+BORDER-RIGHT: white 2px solid
+}
+UL.gallery {
+	ZOOM: 1; DISPLAY: inline
+}
+LI.gallerybox {
+	ZOOM: 1; DISPLAY: inline
+}
+UL.gallery {
+	PADDING-BOTTOM: 2px; MARGIN: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: =
+2px; DISPLAY: block; PADDING-TOP: 2px
+}
+LI.gallerycaption {
+	TEXT-ALIGN: center; DISPLAY: block; WORD-WRAP: break-word; FONT-WEIGHT: =
+bold
+}
+LI.gallerybox DIV.thumb {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc =
+1px solid; MARGIN: 2px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc =
+1px solid
+}
+DIV.gallerytext {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; WORD-WRAP: =
+break-word; FONT-SIZE: 94%; OVERFLOW: hidden; PADDING-TOP: 2px
+}
+TABLE.diff {
+	BACKGROUND: white
+}
+TD.diff-otitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-ntitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-addedline {
+	BORDER-BOTTOM: black 2px solid; BORDER-LEFT: black 2px solid; =
+BACKGROUND: #ccffcc; FONT-SIZE: smaller; BORDER-TOP: black 2px solid; =
+BORDER-RIGHT: black 2px solid
+}
+TD.diff-deletedline {
+	BORDER-BOTTOM: black 2px dotted; BORDER-LEFT: black 2px dotted; =
+BACKGROUND: #ffffaa; FONT-SIZE: smaller; BORDER-TOP: black 2px dotted; =
+BORDER-RIGHT: black 2px dotted
+}
+TD.diff-context {
+	BACKGROUND: #eeeeee; FONT-SIZE: smaller
+}
+.diffchange {
+	COLOR: silver; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+TABLE.wikitable {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; MARGIN: 1em =
+1em 1em 0px; BORDER-COLLAPSE: collapse; BACKGROUND: white; BORDER-TOP: =
+#aaa 1px solid; BORDER-RIGHT: #aaa 1px solid
+}
+.wikitable TH {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+0.2em
+}
+.wikitable TD {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+0.2em
+}
+.wikitable TH {
+	TEXT-ALIGN: center; BACKGROUND: white; FONT-WEIGHT: bold
+}
+.wikitable CAPTION {
+	FONT-WEIGHT: bold
+}
+A.sortheader {
+	MARGIN: 0px 0.3em
+}
+.wikitable {
+	PAGE-BREAK-INSIDE: avoid
+}
+.thumb {
+	PAGE-BREAK-INSIDE: avoid
+}
+IMG {
+	PAGE-BREAK-INSIDE: avoid
+}
+H2 {
+	PAGE-BREAK-AFTER: avoid
+}
+H3 {
+	PAGE-BREAK-AFTER: avoid
+}
+H4 {
+	PAGE-BREAK-AFTER: avoid
+}
+H5 {
+	PAGE-BREAK-AFTER: avoid
+}
+H6 {
+	PAGE-BREAK-AFTER: avoid
+}
+h7 {
+	PAGE-BREAK-AFTER: avoid
+}
+P {
+	WIDOWS: 3; ORPHANS: 3
+}
+.catlinks UL {
+	LIST-STYLE-TYPE: none; MARGIN: 0px; DISPLAY: inline; VERTICAL-ALIGN: =
+middle; LIST-STYLE-IMAGE: none
+}
+.catlinks LI {
+	BORDER-LEFT: #aaa 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.15em; =
+MARGIN: 0.1em 0px; PADDING-LEFT: 0.4em; PADDING-RIGHT: 0.4em; ZOOM: 1; =
+DISPLAY: inline; PADDING-TOP: 0px
+}
+.catlinks LI:first-child {
+	PADDING-LEFT: 0.2em; BORDER-LEFT-STYLE: none
+}
+
+}
+
+@media Screen   =20
+{
+.mw-content-ltr {
+	DIRECTION: ltr
+}
+.mw-content-rtl {
+	DIRECTION: rtl
+}
+.sitedir-ltr TEXTAREA {
+	DIRECTION: ltr
+}
+.sitedir-ltr INPUT {
+	DIRECTION: ltr
+}
+.sitedir-rtl TEXTAREA {
+	DIRECTION: rtl
+}
+.sitedir-rtl INPUT {
+	DIRECTION: rtl
+}
+INPUT[type=3D'submit'] {
+	DIRECTION: ltr
+}
+INPUT[type=3D'button'] {
+	DIRECTION: ltr
+}
+INPUT[type=3D'reset'] {
+	DIRECTION: ltr
+}
+INPUT[type=3D'file'] {
+	DIRECTION: ltr
+}
+TEXTAREA[dir=3D'ltr'] {
+	DIRECTION: ltr
+}
+INPUT[dir=3D'ltr'] {
+	DIRECTION: ltr
+}
+TEXTAREA[dir=3D'rtl'] {
+	DIRECTION: rtl
+}
+INPUT[dir=3D'rtl'] {
+	DIRECTION: rtl
+}
+ABBR {
+	BORDER-BOTTOM: black 1px dotted; CURSOR: help
+}
+ACRONYM {
+	BORDER-BOTTOM: black 1px dotted; CURSOR: help
+}
+.explain {
+	BORDER-BOTTOM: black 1px dotted; CURSOR: help
+}
+.mw-plusminus-pos {
+	COLOR: #006400
+}
+.mw-plusminus-neg {
+	COLOR: #8b0000
+}
+.mw-plusminus-null {
+	COLOR: #aaa
+}
+.allpagesredirect {
+	FONT-STYLE: italic
+}
+.redirect-in-category {
+	FONT-STYLE: italic
+}
+.watchlistredir {
+	FONT-STYLE: italic
+}
+SPAN.comment {
+	FONT-STYLE: italic
+}
+SPAN.changedby {
+	FONT-SIZE: 95%
+}
+.texvc {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+IMG.tex {
+	VERTICAL-ALIGN: middle
+}
+SPAN.texhtml {
+	FONT-FAMILY: serif
+}
+.ontop#wikiPreview {
+	MARGIN-BOTTOM: 1em
+}
+#editform {
+	CLEAR: both
+}
+#toolbar {
+	CLEAR: both
+}
+#wpTextbox1 {
+	CLEAR: both
+}
+#toolbar IMG {
+	CURSOR: pointer
+}
+DIV#mw-js-message {
+	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; =
+PADDING-BOTTOM: 0.5em; BACKGROUND-COLOR: #fcfcfc; MARGIN: 1em 5%; =
+PADDING-LEFT: 2.5%; PADDING-RIGHT: 2.5%; BORDER-TOP: #ddd 1px solid; =
+BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0.5em
+}
+.editsection {
+	FLOAT: right; MARGIN-LEFT: 5px
+}
+.mw-content-ltr .editsection {
+	FLOAT: right
+}
+.mw-content-rtl .mw-content-ltr .editsection {
+	FLOAT: right
+}
+.mw-content-rtl .editsection {
+	FLOAT: left
+}
+.mw-content-ltr .mw-content-rtl .editsection {
+	FLOAT: left
+}
+H2#filehistory {
+	CLEAR: both
+}
+TABLE.filehistory TH {
+	VERTICAL-ALIGN: top
+}
+TABLE.filehistory TD {
+	VERTICAL-ALIGN: top
+}
+TABLE.filehistory TH {
+	TEXT-ALIGN: left
+}
+TABLE.filehistory TD.mw-imagepage-filesize {
+	WHITE-SPACE: nowrap
+}
+TABLE.filehistory TH.mw-imagepage-filesize {
+	WHITE-SPACE: nowrap
+}
+TABLE.filehistory TD.filehistory-selected {
+	FONT-WEIGHT: bold
+}
+LI SPAN.deleted {
+	FONT-STYLE: italic; COLOR: #888; TEXT-DECORATION: line-through
+}
+SPAN.history-deleted {
+	FONT-STYLE: italic; COLOR: #888; TEXT-DECORATION: line-through
+}
+.not-patrolled {
+	BACKGROUND-COLOR: #ffa
+}
+.unpatrolled {
+	COLOR: red; FONT-WEIGHT: bold
+}
+DIV.patrollink {
+	TEXT-ALIGN: right; FONT-SIZE: 75%
+}
+TD.mw-label {
+	TEXT-ALIGN: right
+}
+TD.mw-input {
+	TEXT-ALIGN: left
+}
+TD.mw-submit {
+	TEXT-ALIGN: left
+}
+TD.mw-label {
+	VERTICAL-ALIGN: top
+}
+.prefsection TD.mw-label {
+	WIDTH: 20%
+}
+.prefsection TABLE {
+	WIDTH: 100%
+}
+TD.mw-submit {
+	WHITE-SPACE: nowrap
+}
+TABLE.mw-htmlform-nolabel TD.mw-label {
+	WIDTH: 0px !important
+}
+TR.mw-htmlform-vertical-label TD.mw-label {
+	TEXT-ALIGN: left !important
+}
+.mw-htmlform-invalid-input TD.mw-input INPUT {
+	BORDER-BOTTOM-COLOR: red; BORDER-TOP-COLOR: red; BORDER-RIGHT-COLOR: =
+red; BORDER-LEFT-COLOR: red
+}
+.mw-htmlform-multiselect-flatlist DIV.mw-htmlform-multiselect-item {
+	DISPLAY: inline; WHITE-SPACE: nowrap; MARGIN-RIGHT: 1em
+}
+INPUT#wpSummary {
+	WIDTH: 80%
+}
+.thumbcaption {
+	TEXT-ALIGN: left
+}
+.magnify {
+	FLOAT: right
+}
+#catlinks {
+	TEXT-ALIGN: left
+}
+#catlinks UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; DISPLAY: inline; VERTICAL-ALIGN: middle; =
+LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#catlinks LI {
+	BORDER-LEFT: #aaa 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.35em; =
+MARGIN: 0.3em 0px; PADDING-LEFT: 0.7em; PADDING-RIGHT: 0.7em; ZOOM: 1; =
+DISPLAY: inline; PADDING-TOP: 0px
+}
+#catlinks LI:first-child {
+	PADDING-LEFT: 0.4em; BORDER-LEFT-STYLE: none
+}
+.mw-hidden-cats-hidden {
+	DISPLAY: none
+}
+.catlinks-allhidden {
+	DISPLAY: none
+}
+P.mw-ipb-conveniencelinks {
+	TEXT-ALIGN: right; FONT-SIZE: 90%
+}
+P.mw-protect-editreasons {
+	TEXT-ALIGN: right; FONT-SIZE: 90%
+}
+P.mw-filedelete-editreasons {
+	TEXT-ALIGN: right; FONT-SIZE: 90%
+}
+P.mw-delete-editreasons {
+	TEXT-ALIGN: right; FONT-SIZE: 90%
+}
+P.mw-revdel-editreasons {
+	TEXT-ALIGN: right; FONT-SIZE: 90%
+}
+.os-suggest {
+	Z-INDEX: 99; BORDER-BOTTOM: #aaaaaa 1px solid; POSITION: absolute; =
+BORDER-LEFT: #aaaaaa 1px solid; OVERFLOW-X: hidden; BACKGROUND-COLOR: =
+window; WIDTH: 0px; FONT-SIZE: 95%; OVERFLOW: auto; BORDER-TOP: #aaaaaa =
+1px solid; TOP: 0px; BORDER-RIGHT: #aaaaaa 1px solid; LEFT: 0px
+}
+TABLE.os-suggest-results {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 100%; BORDER-COLLAPSE: collapse; =
+BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; FONT-SIZE: 95%; =
+BORDER-LEFT-WIDTH: 0px; CURSOR: pointer
+}
+.os-suggest-result {
+	PADDING-BOTTOM: 2px; BACKGROUND-COLOR: window; PADDING-LEFT: 2px; =
+PADDING-RIGHT: 2px; WHITE-SPACE: nowrap; COLOR: windowtext; PADDING-TOP: =
+2px
+}
+.os-suggest-result-hl {
+	PADDING-BOTTOM: 2px; BACKGROUND-COLOR: window; PADDING-LEFT: 2px; =
+PADDING-RIGHT: 2px; WHITE-SPACE: nowrap; COLOR: windowtext; PADDING-TOP: =
+2px
+}
+.os-suggest-result-hl {
+	BACKGROUND-COLOR: #4c59a6; COLOR: white
+}
+.os-suggest-result-hl-webkit {
+	BACKGROUND-COLOR: #4c59a6; COLOR: white
+}
+.os-suggest-result-hl {
+	BACKGROUND-COLOR: highlight; COLOR: highlighttext
+}
+.os-suggest-toggle {
+	POSITION: relative; FONT-SIZE: 65%; LEFT: 1ex
+}
+.os-suggest-toggle-def {
+	POSITION: absolute; VISIBILITY: hidden; FONT-SIZE: 65%; TOP: 0px; LEFT: =
+0px
+}
+.autocomment {
+	COLOR: gray
+}
+#pagehistory .history-user {
+	MARGIN-LEFT: 0.4em; MARGIN-RIGHT: 0.2em
+}
+#pagehistory SPAN.minor {
+	FONT-WEIGHT: bold
+}
+#pagehistory LI {
+	BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; =
+BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid
+}
+#pagehistory LI.selected {
+	BORDER-BOTTOM: #aaa 1px dashed; BORDER-LEFT: #aaa 1px dashed; =
+BACKGROUND-COLOR: #f9f9f9; BORDER-TOP: #aaa 1px dashed; BORDER-RIGHT: =
+#aaa 1px dashed
+}
+.mw-history-revisiondelete-button {
+	FLOAT: right
+}
+#mw-fileduplicatesearch-icon {
+	FLOAT: right
+}
+.newpage {
+	FONT-WEIGHT: bold
+}
+.minor {
+	FONT-WEIGHT: bold
+}
+.bot {
+	FONT-WEIGHT: bold
+}
+#shared-image-dup {
+	FONT-STYLE: italic
+}
+#shared-image-conflict {
+	FONT-STYLE: italic
+}
+DIV.mw-warning-with-logexcerpt {
+	BORDER-BOTTOM: #2f6fab 2px solid; BORDER-LEFT: #2f6fab 2px solid; =
+PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; =
+MARGIN-BOTTOM: 3px; CLEAR: both; BORDER-TOP: #2f6fab 2px solid; =
+BORDER-RIGHT: #2f6fab 2px solid; PADDING-TOP: 3px
+}
+DIV.mw-warning-with-logexcerpt UL LI {
+	FONT-SIZE: 90%
+}
+SPAN.mw-revdelundel-link {
+	FONT-SIZE: 90%
+}
+STRONG.mw-revdelundel-link {
+	FONT-SIZE: 90%
+}
+SPAN.mw-revdelundel-hidden {
+	VISIBILITY: hidden
+}
+INPUT.mw-revdelundel-hidden {
+	VISIBILITY: hidden
+}
+TD.mw-revdel-checkbox {
+	TEXT-ALIGN: center; PADDING-RIGHT: 10px
+}
+TH.mw-revdel-checkbox {
+	TEXT-ALIGN: center; PADDING-RIGHT: 10px
+}
+A.feedlink {
+	PADDING-LEFT: 16px; BACKGROUND: =
+url(/common/images/feed-icon.png?2012-04-17T16:48:20Z) no-repeat left =
+center
+}
+.plainlinks A {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 0px !important; =
+PADDING-RIGHT: 0px !important; BACKGROUND: none transparent scroll =
+repeat 0% 0%; PADDING-TOP: 0px !important
+}
+.rtl A.free.external {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+.rtl A.autonumber.external {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+TABLE.wikitable {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; MARGIN: 1em =
+1em 1em 0px; BORDER-COLLAPSE: collapse; BACKGROUND: #f9f9f9; COLOR: =
+black; BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid
+}
+.wikitable TH {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+0.2em
+}
+.wikitable TD {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+0.2em
+}
+.wikitable TH {
+	TEXT-ALIGN: center; BACKGROUND: #f2f2f2
+}
+.wikitable CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.collapsed TR.collapsable {
+	DISPLAY: none
+}
+.success {
+	COLOR: green; FONT-SIZE: larger
+}
+.warning {
+	COLOR: #ffa500; FONT-SIZE: larger
+}
+.error {
+	COLOR: red; FONT-SIZE: larger
+}
+.errorbox {
+	BORDER-BOTTOM: 2px solid; BORDER-LEFT: 2px solid; PADDING-BOTTOM: =
+0.5em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; MARGIN-BOTTOM: 2em; FLOAT: =
+left; COLOR: #000; FONT-SIZE: larger; BORDER-TOP: 2px solid; =
+BORDER-RIGHT: 2px solid; PADDING-TOP: 0.5em
+}
+.warningbox {
+	BORDER-BOTTOM: 2px solid; BORDER-LEFT: 2px solid; PADDING-BOTTOM: =
+0.5em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; MARGIN-BOTTOM: 2em; FLOAT: =
+left; COLOR: #000; FONT-SIZE: larger; BORDER-TOP: 2px solid; =
+BORDER-RIGHT: 2px solid; PADDING-TOP: 0.5em
+}
+.successbox {
+	BORDER-BOTTOM: 2px solid; BORDER-LEFT: 2px solid; PADDING-BOTTOM: =
+0.5em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; MARGIN-BOTTOM: 2em; FLOAT: =
+left; COLOR: #000; FONT-SIZE: larger; BORDER-TOP: 2px solid; =
+BORDER-RIGHT: 2px solid; PADDING-TOP: 0.5em
+}
+.errorbox {
+	BORDER-BOTTOM-COLOR: red; BACKGROUND-COLOR: #fff2f2; BORDER-TOP-COLOR: =
+red; BORDER-RIGHT-COLOR: red; BORDER-LEFT-COLOR: red
+}
+.warningbox {
+	BORDER-BOTTOM-COLOR: #ff8c00; BACKGROUND-COLOR: #ffffc0; =
+BORDER-TOP-COLOR: #ff8c00; BORDER-RIGHT-COLOR: #ff8c00; =
+BORDER-LEFT-COLOR: #ff8c00
+}
+.successbox {
+	BORDER-BOTTOM-COLOR: green; BACKGROUND-COLOR: #dfd; BORDER-TOP-COLOR: =
+green; BORDER-RIGHT-COLOR: green; BORDER-LEFT-COLOR: green
+}
+.errorbox H2 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; MARGIN: 0px 0.5em =
+0px 0px; DISPLAY: inline; BORDER-TOP-STYLE: none; FONT-SIZE: 1em; =
+BORDER-LEFT-STYLE: none; FONT-WEIGHT: bold
+}
+.warningbox H2 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; MARGIN: 0px 0.5em =
+0px 0px; DISPLAY: inline; BORDER-TOP-STYLE: none; FONT-SIZE: 1em; =
+BORDER-LEFT-STYLE: none; FONT-WEIGHT: bold
+}
+.successbox H2 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; MARGIN: 0px 0.5em =
+0px 0px; DISPLAY: inline; BORDER-TOP-STYLE: none; FONT-SIZE: 1em; =
+BORDER-LEFT-STYLE: none; FONT-WEIGHT: bold
+}
+.mw-infobox {
+	BORDER-BOTTOM: #ff7f00 2px solid; BORDER-LEFT: #ff7f00 2px solid; =
+MARGIN: 0.5em; CLEAR: left; OVERFLOW: hidden; BORDER-TOP: #ff7f00 2px =
+solid; BORDER-RIGHT: #ff7f00 2px solid
+}
+.mw-infobox-left {
+	MARGIN: 7px; WIDTH: 35px; FLOAT: left
+}
+.mw-infobox-right {
+	MARGIN: 0.5em 0.5em 0.5em 49px
+}
+.previewnote {
+	MARGIN-BOTTOM: 1em; COLOR: #c00
+}
+.previewnote P {
+	TEXT-INDENT: 3em; MARGIN: 0.8em 0px
+}
+.visualClear {
+	CLEAR: both
+}
+#mw_trackbacks {
+	BORDER-BOTTOM: #bbbbff 1px solid; BORDER-LEFT: #bbbbff 1px solid; =
+PADDING-BOTTOM: 0.2em; BACKGROUND-COLOR: #eeeeff; PADDING-LEFT: 0.2em; =
+PADDING-RIGHT: 0.2em; BORDER-TOP: #bbbbff 1px solid; BORDER-RIGHT: =
+#bbbbff 1px solid; PADDING-TOP: 0.2em
+}
+.TablePager {
+	MIN-WIDTH: 80%; BORDER-COLLAPSE: collapse
+}
+.TablePager_nav {
+	MARGIN: 0px auto
+}
+.TablePager_nav TD {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; =
+PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.TablePager_nav A {
+	TEXT-DECORATION: none
+}
+.TablePager {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0.15em; PADDING-RIGHT: 0.15em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; =
+PADDING-TOP: 0px
+}
+.TablePager TD {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0.15em; PADDING-RIGHT: 0.15em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; =
+PADDING-TOP: 0px
+}
+.TablePager TH {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0.15em; PADDING-RIGHT: 0.15em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; =
+PADDING-TOP: 0px
+}
+.TablePager TH {
+	BACKGROUND-COLOR: #eeeeff
+}
+.TablePager TD {
+	BACKGROUND-COLOR: #ffffff
+}
+.TablePager TR:hover TD {
+	BACKGROUND-COLOR: #eeeeff
+}
+.imagelist TD {
+	WHITE-SPACE: nowrap
+}
+.imagelist TH {
+	WHITE-SPACE: nowrap
+}
+.imagelist .TablePager_col_links {
+	BACKGROUND-COLOR: #eeeeff
+}
+.imagelist .TablePager_col_img_description {
+	WHITE-SPACE: normal
+}
+.imagelist TH.TablePager_sort {
+	BACKGROUND-COLOR: #ccccff
+}
+UL#filetoc {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; =
+PADDING-LEFT: 5px; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 0.5em; =
+MARGIN-LEFT: 0px; FONT-SIZE: 95%; BORDER-TOP: #aaaaaa 1px solid; =
+MARGIN-RIGHT: 0px; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 5px
+}
+#filetoc LI {
+	LIST-STYLE-TYPE: none; PADDING-RIGHT: 2em; DISPLAY: inline
+}
+TABLE.mw_metadata {
+	WIDTH: 400px; MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: 0.5em; FONT-SIZE: =
+0.8em
+}
+TABLE.mw_metadata CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.mw_metadata TH {
+	FONT-WEIGHT: normal
+}
+TABLE.mw_metadata TD {
+	PADDING-BOTTOM: 0.1em; PADDING-LEFT: 0.1em; PADDING-RIGHT: 0.1em; =
+PADDING-TOP: 0.1em
+}
+TABLE.mw_metadata {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-COLLAPSE: =
+collapse; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+TABLE.mw_metadata TD {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: =
+#aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid
+}
+TABLE.mw_metadata TH {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: =
+#aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid
+}
+TABLE.mw_metadata TH {
+	BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.mw_metadata TD {
+	BACKGROUND-COLOR: #fcfcfc
+}
+TABLE.mw_metadata UL.metadata-langlist {
+	LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: =
+5px; LIST-STYLE-IMAGE: none
+}
+.mw-content-ltr UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 0px 0px 1.5em; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-rtl .mw-content-ltr UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 0px 0px 1.5em; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-rtl UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 1.5em 0px 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-ltr .mw-content-rtl UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 1.5em 0px 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-ltr OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 0px 0px 3.2em; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-rtl .mw-content-ltr OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 0px 0px 3.2em; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-rtl OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 3.2em 0px 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-ltr .mw-content-rtl OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0.3em 3.2em 0px 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.mw-content-ltr UL {
+	MARGIN: 0.3em 0px 0px 1.5em
+}
+.mw-content-rtl .mw-content-ltr UL {
+	MARGIN: 0.3em 0px 0px 1.5em
+}
+.mw-content-rtl UL {
+	MARGIN: 0.3em 1.5em 0px 0px
+}
+.mw-content-ltr .mw-content-rtl UL {
+	MARGIN: 0.3em 1.5em 0px 0px
+}
+.mw-content-ltr OL {
+	MARGIN: 0.3em 0px 0px 3.2em
+}
+.mw-content-rtl .mw-content-ltr OL {
+	MARGIN: 0.3em 0px 0px 3.2em
+}
+.mw-content-rtl OL {
+	MARGIN: 0.3em 3.2em 0px 0px
+}
+.mw-content-ltr .mw-content-rtl OL {
+	MARGIN: 0.3em 3.2em 0px 0px
+}
+LI.gallerybox {
+	BORDER-BOTTOM: white 2px solid; BORDER-LEFT: white 2px solid; DISPLAY: =
+inline-block; VERTICAL-ALIGN: top; BORDER-TOP: white 2px solid; =
+BORDER-RIGHT: white 2px solid
+}
+UL.gallery {
+	ZOOM: 1; DISPLAY: inline
+}
+LI.gallerybox {
+	ZOOM: 1; DISPLAY: inline
+}
+UL.gallery {
+	PADDING-BOTTOM: 2px; MARGIN: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: =
+2px; DISPLAY: block; PADDING-TOP: 2px
+}
+LI.gallerycaption {
+	TEXT-ALIGN: center; DISPLAY: block; WORD-WRAP: break-word; FONT-WEIGHT: =
+bold
+}
+LI.gallerybox DIV.thumb {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc =
+1px solid; BACKGROUND-COLOR: #f9f9f9; MARGIN: 2px; BORDER-TOP: #ccc 1px =
+solid; BORDER-RIGHT: #ccc 1px solid
+}
+LI.gallerybox DIV.thumb IMG {
+	MARGIN: 0px auto; DISPLAY: block
+}
+DIV.gallerytext {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; WORD-WRAP: =
+break-word; FONT-SIZE: 94%; OVERFLOW: hidden; PADDING-TOP: 2px
+}
+.mw-ajax-loader {
+	BACKGROUND-IMAGE: =
+url(/common/images/ajax-loader.gif?2012-04-17T16:48:20Z); POSITION: =
+relative; PADDING-BOTTOM: 16px; PADDING-LEFT: 16px; PADDING-RIGHT: 16px; =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center center; TOP: =
+-16px; PADDING-TOP: 16px
+}
+.mw-small-spinner {
+	BACKGROUND-IMAGE: url(/common/images/spinner.gif?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 10px !important; PADDING-LEFT: 10px !important; =
+PADDING-RIGHT: 10px !important; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: center center; MARGIN-RIGHT: 0.6em; PADDING-TOP: =
+10px !important
+}
+UNKNOWN {
+=09
+}
+UNKNOWN {
+=09
+}
+UNKNOWN {
+=09
+}
+UNKNOWN {
+=09
+}
+#toc UL {
+	MARGIN: 0.3em 0px
+}
+.toc UL {
+	MARGIN: 0.3em 0px
+}
+.mw-content-ltr .toc UL {
+	TEXT-ALIGN: left
+}
+.mw-content-ltr #toc UL {
+	TEXT-ALIGN: left
+}
+.mw-content-rtl .mw-content-ltr .toc UL {
+	TEXT-ALIGN: left
+}
+.mw-content-rtl .mw-content-ltr #toc UL {
+	TEXT-ALIGN: left
+}
+.mw-content-rtl .toc UL {
+	TEXT-ALIGN: right
+}
+.mw-content-rtl #toc UL {
+	TEXT-ALIGN: right
+}
+.mw-content-ltr .mw-content-rtl .toc UL {
+	TEXT-ALIGN: right
+}
+.mw-content-ltr .mw-content-rtl #toc UL {
+	TEXT-ALIGN: right
+}
+.mw-content-ltr .toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.mw-content-ltr #toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.mw-content-rtl .mw-content-ltr .toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.mw-content-rtl .mw-content-ltr #toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.mw-content-rtl .toc UL UL {
+	MARGIN: 0px 2em 0px 0px
+}
+.mw-content-rtl #toc UL UL {
+	MARGIN: 0px 2em 0px 0px
+}
+.mw-content-ltr .mw-content-rtl .toc UL UL {
+	MARGIN: 0px 2em 0px 0px
+}
+.mw-content-ltr .mw-content-rtl #toc UL UL {
+	MARGIN: 0px 2em 0px 0px
+}
+#toc #toctitle {
+	DIRECTION: ltr
+}
+.toc #toctitle {
+	DIRECTION: ltr
+}
+#toc .toctitle {
+	DIRECTION: ltr
+}
+.toc .toctitle {
+	DIRECTION: ltr
+}
+.mw-help-field-hint {
+	BACKGROUND-IMAGE: =
+url(/common/images/help-question.gif?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 0px; DISPLAY: =
+none; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left center; =
+MARGIN-BOTTOM: -8px; COLOR: #0645ad; MARGIN-LEFT: 2px; FONT-SIZE: 0.8em; =
+CURSOR: pointer; TEXT-DECORATION: underline; PADDING-TOP: 0px
+}
+.mw-help-field-hint:hover {
+	BACKGROUND-IMAGE: =
+url(/common/images/help-question-hover.gif?2012-04-17T16:48:20Z)
+}
+.mw-help-field-data {
+	BORDER-BOTTOM: #5dc9f4 1px solid; BORDER-LEFT: #5dc9f4 1px solid; =
+PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #d6f3ff; PADDING-LEFT: 8px; =
+PADDING-RIGHT: 8px; DISPLAY: block; MARGIN-LEFT: 20px; BORDER-TOP: =
+#5dc9f4 1px solid; BORDER-RIGHT: #5dc9f4 1px solid; PADDING-TOP: 5px
+}
+.tipsy {
+	Z-INDEX: 100000; POSITION: absolute; PADDING-BOTTOM: 10px; =
+PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FONT-SIZE: 12px; OVERFLOW: =
+visible; PADDING-TOP: 5px
+}
+.tipsy-inner {
+	BORDER-BOTTOM: #5dc9f4 1px solid; TEXT-ALIGN: left; BORDER-LEFT: =
+#5dc9f4 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #d6f3ff; =
+PADDING-LEFT: 8px; PADDING-RIGHT: 8px; MAX-WIDTH: 300px; COLOR: black; =
+BORDER-TOP: #5dc9f4 1px solid; BORDER-RIGHT: #5dc9f4 1px solid; =
+PADDING-TOP: 5px
+}
+.tipsy-arrow {
+	POSITION: absolute; WIDTH: 13px; BACKGROUND: =
+url(/common/images/tipsy-arrow.gif?2012-04-17T16:48:20Z) no-repeat left =
+top; HEIGHT: 13px
+}
+.tipsy-se .tipsy-arrow {
+	BOTTOM: -2px; BACKGROUND-POSITION: 0% 100%; RIGHT: 10px
+}
+TABLE.sortable TH.headerSort {
+	BACKGROUND-IMAGE: =
+url(/common/images/sort_both.gif?2012-04-17T16:48:20Z); PADDING-RIGHT: =
+21px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right center; =
+CURSOR: pointer
+}
+TABLE.sortable TH.headerSortUp {
+	BACKGROUND-IMAGE: url(/common/images/sort_up.gif?2012-04-17T16:48:20Z)
+}
+TABLE.sortable TH.headerSortDown {
+	BACKGROUND-IMAGE: =
+url(/common/images/sort_down.gif?2012-04-17T16:48:20Z)
+}
+.ltr {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+#mw-clearyourcache {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+#mw-sitecsspreview {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+#mw-sitejspreview {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+#mw-usercsspreview {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+#mw-userjspreview {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+.diff-currentversion-title {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+.diff {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+.diff-contentalign-right TD {
+	unicode-bidi: embed; DIRECTION: rtl
+}
+.diff-contentalign-left TD {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+.diff-otitle {
+	unicode-bidi: embed; DIRECTION: ltr !important
+}
+.diff-ntitle {
+	unicode-bidi: embed; DIRECTION: ltr !important
+}
+.diff-lineno {
+	unicode-bidi: embed; DIRECTION: ltr !important
+}
+#mw-revision-info {
+	DIRECTION: ltr
+}
+#mw-revision-nav {
+	DIRECTION: ltr
+}
+DIV.tright {
+	FLOAT: right; CLEAR: right
+}
+DIV.floatright {
+	FLOAT: right; CLEAR: right
+}
+TABLE.floatright {
+	FLOAT: right; CLEAR: right
+}
+DIV.tleft {
+	FLOAT: left; CLEAR: left
+}
+DIV.floatleft {
+	FLOAT: left; CLEAR: left
+}
+TABLE.floatleft {
+	FLOAT: left; CLEAR: left
+}
+DIV.floatright {
+	POSITION: relative
+}
+TABLE.floatright {
+	POSITION: relative
+}
+DIV.floatleft {
+	POSITION: relative
+}
+TABLE.floatleft {
+	POSITION: relative
+}
+#mw-credits A {
+	unicode-bidi: embed
+}
+HTML {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; FONT-FAMILY: sans-serif; HEIGHT: 100%; FONT-SIZE: 1em; PADDING-TOP: =
+0px
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; FONT-FAMILY: sans-serif; HEIGHT: 100%; FONT-SIZE: 1em; PADDING-TOP: =
+0px
+}
+BODY {
+	BACKGROUND-IMAGE: =
+url(/vector/images/page-base.png?2012-04-17T16:48:20Z); =
+BACKGROUND-COLOR: #f3f3f3
+}
+DIV#content {
+	BACKGROUND-IMAGE: url(/vector/images/border.png?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 1em; BACKGROUND-COLOR: white; PADDING-LEFT: 1em; =
+PADDING-RIGHT: 1em; BACKGROUND-REPEAT: repeat-y; DIRECTION: ltr; =
+BACKGROUND-POSITION: left top; COLOR: black; MARGIN-LEFT: 12em; =
+PADDING-TOP: 1em
+}
+#mw-page-base {
+	BACKGROUND-IMAGE: =
+url(/vector/images/page-fade.png?2012-04-17T16:48:20Z); =
+BACKGROUND-COLOR: white; BACKGROUND-REPEAT: repeat-x; =
+BACKGROUND-POSITION: left bottom; HEIGHT: 5em
+}
+#mw-head-base {
+	BACKGROUND-IMAGE: url(/vector/images/border.png?2012-04-17T16:48:20Z); =
+MARGIN-TOP: -5em; BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: left =
+bottom; HEIGHT: 5em; MARGIN-LEFT: 10em
+}
+DIV#mw-head {
+	POSITION: absolute; WIDTH: 100%; TOP: 0px; RIGHT: 0px
+}
+DIV#mw-head H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+DIV.emptyPortlet {
+	DISPLAY: none
+}
+#p-personal {
+	POSITION: absolute; TOP: 0px; RIGHT: 0.75em
+}
+#p-personal H5 {
+	DISPLAY: none
+}
+#p-personal UL {
+	LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 10em
+}
+#p-personal LI {
+	LINE-HEIGHT: 1.12em; FLOAT: left
+}
+#p-personal LI {
+	MARGIN-TOP: 0.5em; WHITE-SPACE: nowrap; MARGIN-LEFT: 0.75em; FONT-SIZE: =
+0.75em
+}
+#left-navigation {
+	POSITION: absolute; TOP: 2.5em; LEFT: 12em
+}
+#right-navigation {
+	MARGIN-TOP: 2.5em; FLOAT: right
+}
+DIV.vectorTabs H5 {
+	DISPLAY: none
+}
+DIV.vectorMenu H5 SPAN {
+	DISPLAY: none
+}
+DIV.vectorTabs {
+	FLOAT: left; HEIGHT: 2.5em
+}
+DIV.vectorTabs {
+	BACKGROUND-IMAGE: =
+url(/vector/images/tab-break.png?2012-04-17T16:48:20Z); PADDING-LEFT: =
+1px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left bottom
+}
+DIV.vectorTabs UL {
+	FLOAT: left
+}
+DIV.vectorTabs UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; HEIGHT: 100%; PADDING-TOP: 0px
+}
+DIV.vectorTabs UL LI {
+	FLOAT: left
+}
+DIV.vectorTabs UL LI {
+	BACKGROUND-IMAGE: =
+url(/vector/images/tab-normal-fade.png?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.12em; BACKGROUND-COLOR: #f3f3f3; =
+MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: =
+inline-block; BACKGROUND-REPEAT: repeat-x; WHITE-SPACE: nowrap; =
+BACKGROUND-POSITION: left bottom; HEIGHT: 100%; PADDING-TOP: 0px
+}
+DIV.vectorTabs UL > LI {
+	DISPLAY: block
+}
+DIV.vectorTabs LI.selected {
+	BACKGROUND-IMAGE: =
+url(/vector/images/tab-current-fade.png?2012-04-17T16:48:20Z)
+}
+DIV.vectorTabs LI A {
+	PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; DISPLAY: inline-block; =
+HEIGHT: 1.9em; COLOR: #0645ad; FONT-SIZE: 0.8em; CURSOR: pointer
+}
+DIV.vectorTabs LI > A {
+	DISPLAY: block
+}
+DIV.vectorTabs LI.icon A {
+	BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right bottom
+}
+DIV.vectorTabs SPAN A {
+	DISPLAY: inline-block; PADDING-TOP: 1.25em
+}
+DIV.vectorTabs SPAN > A {
+	DISPLAY: block; FLOAT: left
+}
+DIV.vectorTabs SPAN {
+	BACKGROUND-IMAGE: =
+url(/vector/images/tab-break.png?2012-04-17T16:48:20Z); DISPLAY: =
+inline-block; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right =
+bottom
+}
+DIV.vectorTabs LI.selected A {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+DIV.vectorTabs LI.selected A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+DIV.vectorTabs LI.new A {
+	COLOR: #a55858
+}
+DIV.vectorTabs LI.new A:visited {
+	COLOR: #a55858
+}
+DIV.vectorMenu {
+	BACKGROUND-IMAGE: =
+url(/vector/images/arrow-down-icon.png?2012-04-17T16:48:20Z); =
+BACKGROUND-REPEAT: no-repeat; DIRECTION: ltr; BACKGROUND-POSITION: 0px =
+60%; FLOAT: left; CURSOR: pointer
+}
+DIV.vectorMenuFocus {
+	BACKGROUND-IMAGE: url(images/arrow-down-focus-icon.png); =
+BACKGROUND-POSITION: 100% 60%
+}
+BODY.rtl DIV.vectorMenu {
+	DIRECTION: rtl
+}
+DIV#mw-head DIV.vectorMenu H5 {
+	BACKGROUND-IMAGE: =
+url(/vector/images/tab-break.png?2012-04-17T16:48:20Z); =
+BACKGROUND-REPEAT: no-repeat; FLOAT: left
+}
+DIV#mw-head DIV.vectorMenu H5 {
+	BACKGROUND-POSITION: left bottom; MARGIN-LEFT: -1px
+}
+DIV#mw-head DIV.vectorMenu > H5 {
+	BACKGROUND-IMAGE: none
+}
+DIV#mw-head DIV.vectorMenu H4 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; PADDING-LEFT: =
+0.5em; DISPLAY: inline-block; BORDER-TOP-STYLE: none; FLOAT: left; =
+FONT-SIZE: 0.8em; BORDER-LEFT-STYLE: none; FONT-WEIGHT: normal; =
+PADDING-TOP: 1.37em
+}
+DIV.vectorMenu H5 A {
+	BACKGROUND-IMAGE: =
+url(/vector/images/tab-break.png?2012-04-17T16:48:20Z); WIDTH: 24px; =
+DISPLAY: inline-block; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2.5em; =
+TEXT-DECORATION: none
+}
+DIV.vectorMenu H5 A {
+	BACKGROUND-POSITION: right bottom
+}
+DIV.vectorMenu H5 > A {
+	DISPLAY: block
+}
+DIV.vectorMenu DIV.menu {
+	POSITION: relative; TEXT-ALIGN: left; DISPLAY: none; CLEAR: both
+}
+BODY.rtl DIV.vectorMenu DIV.menu {
+	MARGIN-LEFT: 24px
+}
+BODY.rtl DIV.vectorMenu > DIV.menu {
+	MARGIN-LEFT: auto
+}
+BODY.rtl DIV.vectorMenu > DIV.menu {
+	MARGIN-LEFT: 23px
+}
+x:unknown {
+	MARGIN-LEFT: 23px
+}
+DIV.vectorMenu:hover DIV.menu {
+	DISPLAY: block
+}
+DIV.vectorMenu DIV.menuForceShow {
+	DISPLAY: block
+}
+DIV.vectorMenu UL {
+	BORDER-BOTTOM: silver 1px solid; POSITION: absolute; TEXT-ALIGN: left; =
+BORDER-LEFT: silver 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: =
+white; LIST-STYLE-TYPE: none; MARGIN: 0px 0px 0px -1px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; BORDER-TOP: silver 0px solid; LIST-STYLE-IMAGE: =
+none; BORDER-RIGHT: silver 1px solid; PADDING-TOP: 0px
+}
+DIV.vectorMenu UL {
+	MIN-WIDTH: 5em
+}
+x:unknown {
+	MIN-WIDTH: 5em
+}
+DIV.vectorMenu UL {
+	MIN-WIDTH: 0px
+}
+x:unknown {
+	MIN-WIDTH: 0px
+}
+x:unknown {
+	MIN-WIDTH: 0px
+}
+DIV.vectorMenu LI {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1em; MARGIN: 0px; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV.vectorMenu LI A {
+	PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; =
+DISPLAY: inline-block; WHITE-SPACE: nowrap; COLOR: #0645ad; FONT-SIZE: =
+0.8em; CURSOR: pointer; PADDING-TOP: 0.5em
+}
+DIV.vectorMenu LI > A {
+	DISPLAY: block
+}
+DIV.vectorMenu LI.selected A {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+DIV.vectorMenu LI.selected A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#p-search H5 {
+	DISPLAY: none
+}
+#p-search {
+	FLOAT: left
+}
+#p-search {
+	MARGIN-LEFT: 0.5em; MARGIN-RIGHT: 0.5em
+}
+#p-search FORM {
+	MARGIN: 0.4em 0px 0px
+}
+#p-search INPUT {
+	MARGIN: 0.4em 0px 0px
+}
+DIV#simpleSearch {
+	BACKGROUND-IMAGE: =
+url(/vector/images/search-fade.png?2012-04-17T16:48:20Z); BORDER-BOTTOM: =
+#aaaaaa 1px solid; POSITION: relative; BORDER-LEFT: #aaaaaa 1px solid; =
+BACKGROUND-COLOR: white; MARGIN-TOP: 0.65em; MIN-HEIGHT: 1px; WIDTH: =
+10em; DISPLAY: block; BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: =
+left top; HEIGHT: 1.4em; COLOR: black; BORDER-TOP: #aaaaaa 1px solid; =
+BORDER-RIGHT: #aaaaaa 1px solid
+}
+DIV#simpleSearch LABEL {
+	DIRECTION: ltr; FONT-SIZE: 13px; TOP: 0.25em
+}
+DIV#simpleSearch INPUT {
+	DIRECTION: ltr; COLOR: black
+}
+DIV#simpleSearch INPUT:focus {
+	OUTLINE-STYLE: none
+}
+DIV#simpleSearch INPUT.placeholder {
+	COLOR: #999999
+}
+DIV#simpleSearch INPUT:unknown {
+	COLOR: #999999
+}
+DIV#simpleSearch INPUT#searchInput {
+	POSITION: absolute; BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 0.2em; =
+BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: transparent; MARGIN: 0px; =
+OUTLINE-STYLE: none; PADDING-LEFT: 0.2em; WIDTH: 90%; PADDING-RIGHT: =
+0px; DIRECTION: ltr; BORDER-TOP-STYLE: none; FONT-SIZE: 13px; =
+BORDER-LEFT-STYLE: none; TOP: 0px; PADDING-TOP: 0.2em; LEFT: 0px
+}
+DIV#simpleSearch BUTTON#searchButton {
+	BACKGROUND-IMAGE: none; POSITION: absolute; BORDER-BOTTOM-STYLE: none; =
+PADDING-BOTTOM: 0.2em; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: =
+transparent; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 10%; PADDING-RIGHT: =
+0.4em; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none; TOP: 0px; =
+CURSOR: pointer; RIGHT: 0px; PADDING-TOP: 0.3em
+}
+DIV#simpleSearch BUTTON#searchButton IMG {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 0px; BORDER-RIGHT-STYLE: =
+none; MARGIN: -3px 0px 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none; PADDING-TOP: 0px
+}
+DIV#simpleSearch BUTTON#searchButton > IMG {
+	MARGIN: 0px
+}
+DIV#mw-panel {
+	POSITION: absolute; WIDTH: 10em; TOP: 160px; PADDING-TOP: 1em; LEFT: =
+0px
+}
+DIV#mw-panel DIV.portal {
+	PADDING-BOTTOM: 1.5em; DIRECTION: ltr
+}
+DIV#mw-panel DIV.portal H5 {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 0.25em; BORDER-RIGHT-STYLE: =
+none; PADDING-LEFT: 1.75em; PADDING-RIGHT: 0.25em; BORDER-TOP-STYLE: =
+none; COLOR: #444444; FONT-SIZE: 0.75em; BORDER-LEFT-STYLE: none; =
+CURSOR: default; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+DIV#mw-panel DIV.portal DIV.body {
+	BACKGROUND-IMAGE: =
+url(/vector/images/portal-break.png?2012-04-17T16:48:20Z); MARGIN: 0px =
+0px 0px 1.25em; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left =
+top; PADDING-TOP: 0.5em
+}
+DIV#mw-panel DIV.portal DIV.body UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+DIV#mw-panel DIV.portal DIV.body UL LI {
+	PADDING-BOTTOM: 0.5em; LINE-HEIGHT: 1.12em; MARGIN: 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; FONT-SIZE: 0.75em; OVERFLOW: hidden; =
+PADDING-TOP: 0px
+}
+DIV#mw-panel DIV.portal DIV.body UL LI A {
+	COLOR: #0645ad
+}
+DIV#mw-panel DIV.portal DIV.body UL LI A:visited {
+	COLOR: #0b0080
+}
+DIV#footer {
+	BACKGROUND-IMAGE: url(/vector/images/border.png?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 0.75em; MARGIN-TOP: 0px; PADDING-LEFT: 0.75em; =
+PADDING-RIGHT: 0.75em; BACKGROUND-REPEAT: repeat-x; DIRECTION: ltr; =
+BACKGROUND-POSITION: left top; MARGIN-LEFT: 12em; PADDING-TOP: 0.75em
+}
+DIV#footer UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+DIV#footer UL LI {
+	PADDING-BOTTOM: 0.5em; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; COLOR: #333333; FONT-SIZE: 0.7em; PADDING-TOP: 0.5em
+}
+DIV#footer #footer-icons {
+	FLOAT: right
+}
+BODY.ltr DIV#footer #footer-places {
+	FLOAT: left
+}
+DIV#footer #footer-info LI {
+	LINE-HEIGHT: 1.4em
+}
+DIV#footer #footer-icons LI {
+	TEXT-ALIGN: right; LINE-HEIGHT: 2em; FLOAT: left; MARGIN-LEFT: 0.5em
+}
+DIV#footer #footer-places LI {
+	LINE-HEIGHT: 2em; FLOAT: left; MARGIN-RIGHT: 1em
+}
+#p-logo {
+	POSITION: absolute; WIDTH: 10em; HEIGHT: 160px; TOP: -160px; LEFT: 0px
+}
+#p-logo A {
+	WIDTH: 10em; DISPLAY: block; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: center center; HEIGHT: 160px; TEXT-DECORATION: none
+}
+#preftoc {
+	BACKGROUND-IMAGE: =
+url(/vector/images/preferences-break.png?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 0px !important; MARGIN: 0px; PADDING-LEFT: 0px =
+!important; WIDTH: 100%; PADDING-RIGHT: 0px !important; =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left bottom; FLOAT: =
+left; CLEAR: both; PADDING-TOP: 0px !important
+}
+#preftoc LI {
+	BACKGROUND-IMAGE: =
+url(/vector/images/preferences-break.png?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 1px; BACKGROUND-REPEAT: no-repeat; WHITE-SPACE: =
+nowrap; BACKGROUND-POSITION: right bottom; FLOAT: left; HEIGHT: 2.25em; =
+LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#preftoc LI:first-child {
+	MARGIN-LEFT: 1px
+}
+#preftoc A {
+	BACKGROUND-IMAGE: none; POSITION: relative; PADDING-BOTTOM: 0.5em; =
+PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; DISPLAY: inline-block; COLOR: =
+#0645ad; FONT-SIZE: 0.9em; TEXT-DECORATION: none; PADDING-TOP: 0.5em
+}
+#preftoc A:active {
+	BACKGROUND-IMAGE: none; POSITION: relative; PADDING-BOTTOM: 0.5em; =
+PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; DISPLAY: inline-block; COLOR: =
+#0645ad; FONT-SIZE: 0.9em; TEXT-DECORATION: none; PADDING-TOP: 0.5em
+}
+#preftoc A:hover {
+	TEXT-DECORATION: underline
+}
+#preftoc A:focus {
+	TEXT-DECORATION: underline
+}
+#preftoc LI.selected A {
+	BACKGROUND-IMAGE: =
+url(/vector/images/preferences-fade.png?2012-04-17T16:48:20Z); =
+BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: 50% bottom; COLOR: =
+#333333; TEXT-DECORATION: none
+}
+#preferences {
+	BACKGROUND-IMAGE: =
+url(/vector/images/preferences-base.png?2012-04-17T16:48:20Z); =
+BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; =
+BACKGROUND-COLOR: #f9f9f9; MARGIN: -2px 0px 0px; WIDTH: 100%; FLOAT: =
+left; CLEAR: both; BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc =
+1px solid
+}
+#preferences FIELDSET {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; BORDER-TOP: #cccccc 1px solid
+}
+#preferences FIELDSET.prefsection {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 0px; BORDER-RIGHT-STYLE: =
+none; MARGIN: 1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none; PADDING-TOP: 0px
+}
+#preferences LEGEND {
+	COLOR: #666666
+}
+#preferences FIELDSET.prefsection LEGEND.mainLegend {
+	DISPLAY: none
+}
+#preferences TD {
+	PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em
+}
+#preferences TD.htmlform-tip {
+	PADDING-BOTTOM: 0.2em; PADDING-LEFT: 2em; PADDING-RIGHT: 2em; COLOR: =
+#666666; FONT-SIZE: x-small; PADDING-TOP: 0.2em
+}
+#preferences DIV.mw-prefs-buttons {
+	PADDING-BOTTOM: 1em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; =
+PADDING-TOP: 1em
+}
+#preferences DIV.mw-prefs-buttons INPUT {
+	MARGIN-RIGHT: 0.25em
+}
+#userlogin {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; =
+PADDING-BOTTOM: 1.2em; MARGIN: 0.5em; PADDING-LEFT: 1.2em; =
+PADDING-RIGHT: 1.2em; FLOAT: left; BORDER-TOP: #cccccc 1px solid; =
+BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 1.2em
+}
+#userloginForm {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; =
+PADDING-BOTTOM: 1.2em; MARGIN: 0.5em; PADDING-LEFT: 1.2em; =
+PADDING-RIGHT: 1.2em; FLOAT: left; BORDER-TOP: #cccccc 1px solid; =
+BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 1.2em
+}
+#userlogin {
+	MIN-WIDTH: 20em; WIDTH: 40em; MAX-WIDTH: 90%
+}
+DIV#content {
+	LINE-HEIGHT: 1.5em
+}
+#bodyContent {
+	FONT-SIZE: 0.8em
+}
+A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #0645ad; =
+TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0b0080
+}
+A:active {
+	COLOR: #faa700
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:focus {
+	TEXT-DECORATION: underline
+}
+A.stub {
+	COLOR: #772233
+}
+A.new {
+	COLOR: #ba0000
+}
+#p-personal A.new {
+	COLOR: #ba0000
+}
+A.new:visited {
+	COLOR: #a55858
+}
+#p-personal A.new:visited {
+	COLOR: #a55858
+}
+IMG {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: =
+none; VERTICAL-ALIGN: middle; BORDER-LEFT-STYLE: none
+}
+HR {
+	BORDER-RIGHT-WIDTH: 0px; BACKGROUND-COLOR: #aaa; MARGIN: 0.2em 0px; =
+BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 1px; COLOR: =
+#aaa; BORDER-LEFT-WIDTH: 0px
+}
+H1 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+WIDTH: auto; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: =
+black; OVERFLOW: hidden; FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H2 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+WIDTH: auto; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: =
+black; OVERFLOW: hidden; FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H3 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+WIDTH: auto; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: =
+black; OVERFLOW: hidden; FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H4 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+WIDTH: auto; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: =
+black; OVERFLOW: hidden; FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H5 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+WIDTH: auto; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: =
+black; OVERFLOW: hidden; FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H6 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+WIDTH: auto; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: =
+black; OVERFLOW: hidden; FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H1 {
+	FONT-SIZE: 188%
+}
+H1 .editsection {
+	FONT-SIZE: 53%
+}
+H2 {
+	FONT-SIZE: 150%
+}
+H2 .editsection {
+	FONT-SIZE: 67%
+}
+H3 {
+	BORDER-BOTTOM-STYLE: none; FONT-WEIGHT: bold
+}
+H4 {
+	BORDER-BOTTOM-STYLE: none; FONT-WEIGHT: bold
+}
+H5 {
+	BORDER-BOTTOM-STYLE: none; FONT-WEIGHT: bold
+}
+H6 {
+	BORDER-BOTTOM-STYLE: none; FONT-WEIGHT: bold
+}
+H3 {
+	FONT-SIZE: 132%
+}
+H3 .editsection {
+	FONT-SIZE: 76%; FONT-WEIGHT: normal
+}
+H4 {
+	FONT-SIZE: 116%
+}
+H4 .editsection {
+	FONT-SIZE: 86%; FONT-WEIGHT: normal
+}
+H5 {
+	FONT-SIZE: 100%
+}
+H5 .editsection {
+	FONT-WEIGHT: normal
+}
+H6 {
+	FONT-SIZE: 80%
+}
+H6 .editsection {
+	FONT-SIZE: 125%; FONT-WEIGHT: normal
+}
+.editsection {
+	FLOAT: right
+}
+P {
+	LINE-HEIGHT: 1.5em; MARGIN: 0.4em 0px 0.5em
+}
+P IMG {
+	MARGIN: 0px
+}
+Q {
+	FONT-STYLE: italic; FONT-FAMILY: Times,"Times New Roman",serif
+}
+PRE {
+	FONT-FAMILY: monospace,"Courier New"
+}
+CODE {
+	FONT-FAMILY: monospace,"Courier New"
+}
+TT {
+	FONT-FAMILY: monospace,"Courier New"
+}
+KBD {
+	FONT-FAMILY: monospace,"Courier New"
+}
+SAMP {
+	FONT-FAMILY: monospace,"Courier New"
+}
+CODE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+PRE {
+	BORDER-BOTTOM: #2f6fab 1px dashed; BORDER-LEFT: #2f6fab 1px dashed; =
+PADDING-BOTTOM: 1em; LINE-HEIGHT: 1.3em; BACKGROUND-COLOR: #f9f9f9; =
+PADDING-LEFT: 1em; PADDING-RIGHT: 1em; COLOR: black; BORDER-TOP: #2f6fab =
+1px dashed; BORDER-RIGHT: #2f6fab 1px dashed; PADDING-TOP: 1em
+}
+UL {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5em; LIST-STYLE-TYPE: square; =
+MARGIN: 0.3em 0px 0px 1.5em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+LIST-STYLE-IMAGE: =
+url(/vector/images/bullet-icon.png?2012-04-17T16:48:20Z); PADDING-TOP: =
+0px
+}
+OL {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5em; MARGIN: 0.3em 0px 0px 3.2em; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; =
+PADDING-TOP: 0px
+}
+LI {
+	MARGIN-BOTTOM: 0.1em
+}
+DT {
+	MARGIN-BOTTOM: 0.1em; FONT-WEIGHT: bold
+}
+DL {
+	MARGIN-TOP: 0.2em; MARGIN-BOTTOM: 0.5em
+}
+DD {
+	LINE-HEIGHT: 1.5em; MARGIN-BOTTOM: 0.1em; MARGIN-LEFT: 2em
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+FIELDSET {
+	BORDER-BOTTOM: #2f6fab 1px solid; BORDER-LEFT: #2f6fab 1px solid; =
+PADDING-BOTTOM: 1em; LINE-HEIGHT: 1.5em; MARGIN: 1em 0px; PADDING-LEFT: =
+1em; PADDING-RIGHT: 1em; BORDER-TOP: #2f6fab 1px solid; BORDER-RIGHT: =
+#2f6fab 1px solid; PADDING-TOP: 0px
+}
+FIELDSET.nested {
+	PADDING-BOTTOM: 0.5em; MARGIN: 0px 0px 0.5em; PADDING-LEFT: 0.5em; =
+PADDING-RIGHT: 0.5em; PADDING-TOP: 0px
+}
+LEGEND {
+	PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; =
+FONT-SIZE: 95%; PADDING-TOP: 0.5em
+}
+FORM {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; MARGIN: 0px; =
+BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+TEXTAREA {
+	PADDING-BOTTOM: 0.1em; PADDING-LEFT: 0.1em; WIDTH: 100%; PADDING-RIGHT: =
+0.1em; PADDING-TOP: 0.1em
+}
+SELECT {
+	VERTICAL-ALIGN: top
+}
+#toc {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+.toc {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+.mw-warning {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+#toc H2 {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 0px; BORDER-RIGHT-STYLE: =
+none; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline; =
+BORDER-TOP-STYLE: none; FONT-SIZE: 100%; BORDER-LEFT-STYLE: none; =
+FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.toc H2 {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 0px; BORDER-RIGHT-STYLE: =
+none; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline; =
+BORDER-TOP-STYLE: none; FONT-SIZE: 100%; BORDER-LEFT-STYLE: none; =
+FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+#toc #toctitle {
+	TEXT-ALIGN: center
+}
+.toc #toctitle {
+	TEXT-ALIGN: center
+}
+#toc .toctitle {
+	TEXT-ALIGN: center
+}
+.toc .toctitle {
+	TEXT-ALIGN: center
+}
+#toc UL {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-LEFT: 0px; =
+LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+.toc UL {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-LEFT: 0px; =
+LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+#toc .toctoggle {
+	FONT-SIZE: 94%
+}
+.toc .toctoggle {
+	FONT-SIZE: 94%
+}
+DIV.floatright {
+	BORDER-RIGHT-WIDTH: 0px; MARGIN: 0px 0px 0.5em 0.5em; BORDER-TOP-WIDTH: =
+0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+TABLE.floatright {
+	BORDER-RIGHT-WIDTH: 0px; MARGIN: 0px 0px 0.5em 0.5em; BORDER-TOP-WIDTH: =
+0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+DIV.floatright P {
+	FONT-STYLE: italic
+}
+DIV.floatleft {
+	BORDER-RIGHT-WIDTH: 0px; MARGIN: 0px 0.5em 0.5em 0px; BORDER-TOP-WIDTH: =
+0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+TABLE.floatleft {
+	BORDER-RIGHT-WIDTH: 0px; MARGIN: 0px 0.5em 0.5em 0px; BORDER-TOP-WIDTH: =
+0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+DIV.floatleft P {
+	FONT-STYLE: italic
+}
+DIV.thumb {
+	BACKGROUND-COLOR: transparent; WIDTH: auto; MARGIN-BOTTOM: 0.5em
+}
+DIV.thumbinner {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc =
+1px solid; PADDING-BOTTOM: 3px !important; BACKGROUND-COLOR: #f9f9f9; =
+PADDING-LEFT: 3px !important; PADDING-RIGHT: 3px !important; FONT-SIZE: =
+94%; OVERFLOW: hidden; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc =
+1px solid; PADDING-TOP: 3px !important
+}
+HTML .thumbimage {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: =
+#ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+HTML .thumbcaption {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: left; PADDING-BOTTOM: 3px =
+!important; LINE-HEIGHT: 1.4em; BORDER-RIGHT-STYLE: none; PADDING-LEFT: =
+3px !important; PADDING-RIGHT: 3px !important; BORDER-TOP-STYLE: none; =
+FONT-SIZE: 94%; BORDER-LEFT-STYLE: none; PADDING-TOP: 3px !important
+}
+DIV.magnify {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-RIGHT-STYLE: none =
+!important; BORDER-TOP-STYLE: none !important; BACKGROUND: none =
+transparent scroll repeat 0% 0%; FLOAT: right; BORDER-LEFT-STYLE: none =
+!important
+}
+DIV.magnify A {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-RIGHT-STYLE: none =
+!important; DISPLAY: block; BORDER-TOP-STYLE: none !important; =
+BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-LEFT-STYLE: =
+none !important
+}
+DIV.magnify IMG {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-RIGHT-STYLE: none =
+!important; DISPLAY: block; BORDER-TOP-STYLE: none !important; =
+BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-LEFT-STYLE: =
+none !important
+}
+DIV.tright {
+	MARGIN: 0.5em 0px 1.3em 1.4em
+}
+DIV.tleft {
+	MARGIN: 0.5em 1.4em 1.3em 0px
+}
+IMG.thumbborder {
+	BORDER-BOTTOM: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; =
+BORDER-TOP: #dddddd 1px solid; BORDER-RIGHT: #dddddd 1px solid
+}
+.mw-warning {
+	TEXT-ALIGN: center; MARGIN-LEFT: 50px; MARGIN-RIGHT: 50px
+}
+.usermessage {
+	BORDER-BOTTOM: #ffa500 1px solid; BORDER-LEFT: #ffa500 1px solid; =
+PADDING-BOTTOM: 0.5em; BACKGROUND-COLOR: #ffce7b; MARGIN: 2em 0px 1em; =
+PADDING-LEFT: 1em; PADDING-RIGHT: 1em; COLOR: black; VERTICAL-ALIGN: =
+middle; BORDER-TOP: #ffa500 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: =
+#ffa500 1px solid; PADDING-TOP: 0.5em
+}
+#siteNotice {
+	POSITION: relative; TEXT-ALIGN: center; MARGIN: 0px; FONT-SIZE: 0.8em
+}
+#localNotice {
+	MARGIN-BOTTOM: 0.9em
+}
+.catlinks {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; MARGIN-TOP: 1em; =
+PADDING-LEFT: 5px; PADDING-RIGHT: 5px; CLEAR: both; BORDER-TOP: #aaa 1px =
+solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+#siteSub {
+	DISPLAY: none
+}
+#jump-to-nav {
+	DISPLAY: none
+}
+#contentSub {
+	LINE-HEIGHT: 1.2em; MARGIN: 0px 0px 1.4em 1em; WIDTH: auto; COLOR: =
+#7d7d7d; FONT-SIZE: 84%
+}
+#contentSub2 {
+	LINE-HEIGHT: 1.2em; MARGIN: 0px 0px 1.4em 1em; WIDTH: auto; COLOR: =
+#7d7d7d; FONT-SIZE: 84%
+}
+SPAN.subpages {
+	DISPLAY: block
+}
+.center {
+	TEXT-ALIGN: center; WIDTH: 100%
+}
+*.center * {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.small {
+	FONT-SIZE: 94%
+}
+TABLE.small {
+	FONT-SIZE: 100%
+}
+H1 {
+	MARGIN-BOTTOM: 0.6em
+}
+H2 {
+	MARGIN-BOTTOM: 0.6em
+}
+H3 {
+	MARGIN-BOTTOM: 0.3em
+}
+H4 {
+	MARGIN-BOTTOM: 0.3em
+}
+H5 {
+	MARGIN-BOTTOM: 0.3em
+}
+#firstHeading {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.2em; MARGIN-TOP: 0px; =
+MARGIN-BOTTOM: 0.1em; FONT-SIZE: 1.6em; PADDING-TOP: 0px
+}
+DIV#content A.external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/external-link-ltr-icon.png?2012-04-17T16:48:20Z) =
+no-repeat right center
+}
+DIV#content A[href^=3D'gopher://'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/external-link-ltr-icon.png?2012-04-17T16:48:20Z) =
+no-repeat right center
+}
+DIV#content A[href^=3D'https://'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/lock-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+.link-https {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/lock-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href^=3D'mailto:'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/mail-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+.link-mailto {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/mail-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href^=3D'news://'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/news-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href^=3D'ftp://'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/file-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+.link-ftp {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/file-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href^=3D'irc://'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/talk-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href^=3D'ircs://'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/talk-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+.link-irc {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/talk-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.ogg'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.OGG'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.mid'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.MID'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.midi'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.MIDI'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.mp3'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.MP3'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.wav'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.WAV'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.wma'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.WMA'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+.link-audio {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/audio-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.ogm'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.OGM'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.avi'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.AVI'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.mpeg'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.MPEG'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.mpg'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.MPG'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+.link-video {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/video-icon.png?2012-04-17T16:48:20Z) no-repeat right =
+center
+}
+DIV#content A[href$=3D'.pdf'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/document-icon.png?2012-04-17T16:48:20Z) no-repeat =
+right center
+}
+DIV#content A[href$=3D'.PDF'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/document-icon.png?2012-04-17T16:48:20Z) no-repeat =
+right center
+}
+DIV#content A[href*=3D'.pdf#'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/document-icon.png?2012-04-17T16:48:20Z) no-repeat =
+right center
+}
+DIV#content A[href*=3D'.PDF#'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/document-icon.png?2012-04-17T16:48:20Z) no-repeat =
+right center
+}
+DIV#content A[href*=3D'.pdf?'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/document-icon.png?2012-04-17T16:48:20Z) no-repeat =
+right center
+}
+DIV#content A[href*=3D'.PDF?'].external {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/document-icon.png?2012-04-17T16:48:20Z) no-repeat =
+right center
+}
+.link-document {
+	PADDING-RIGHT: 13px; BACKGROUND: =
+url(/vector/images/document-icon.png?2012-04-17T16:48:20Z) no-repeat =
+right center
+}
+DIV#content A.extiw {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: =
+none transparent scroll repeat 0% 0%; COLOR: #36b; PADDING-TOP: 0px
+}
+DIV#content A.extiw:active {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: =
+none transparent scroll repeat 0% 0%; COLOR: #36b; PADDING-TOP: 0px
+}
+DIV#content A.extiw:visited {
+	COLOR: #636
+}
+DIV#content A.extiw:active {
+	COLOR: #b63
+}
+DIV#content A.external {
+	COLOR: #36b
+}
+DIV#content A.external:visited {
+	COLOR: #636
+}
+DIV#content A.external:active {
+	COLOR: #b63
+}
+DIV#content .printfooter {
+	DISPLAY: none
+}
+#pt-userpage {
+	TEXT-TRANSFORM: none; PADDING-LEFT: 15px !important; BACKGROUND: =
+url(/vector/images/user-icon.png?2012-04-17T16:48:20Z) no-repeat left =
+top
+}
+#pt-anonuserpage {
+	TEXT-TRANSFORM: none; PADDING-LEFT: 15px !important; BACKGROUND: =
+url(/vector/images/user-icon.png?2012-04-17T16:48:20Z) no-repeat left =
+top
+}
+#pt-login {
+	TEXT-TRANSFORM: none; PADDING-LEFT: 15px !important; BACKGROUND: =
+url(/vector/images/user-icon.png?2012-04-17T16:48:20Z) no-repeat left =
+top
+}
+.redirectText {
+	FONT-SIZE: 140%
+}
+.redirectMsg IMG {
+	VERTICAL-ALIGN: text-bottom
+}
+.toccolours {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+#bodyContent {
+	POSITION: relative; WIDTH: 100%
+}
+#mw-js-message {
+	FONT-SIZE: 0.8em
+}
+DIV#bodyContent {
+	LINE-HEIGHT: 1.5em
+}
+.icon#ca-unwatch A {
+	BACKGROUND-IMAGE: =
+url(/vector/images/watch-icons.png?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 0px; MARGIN: -0.8em 0px 0px; OUTLINE-STYLE: none; =
+PADDING-LEFT: 0px; WIDTH: 26px; PADDING-RIGHT: 0px; DISPLAY: block; =
+HEIGHT: 0px; OVERFLOW: hidden; PADDING-TOP: 3.1em
+}
+.icon#ca-watch A {
+	BACKGROUND-IMAGE: =
+url(/vector/images/watch-icons.png?2012-04-17T16:48:20Z); =
+PADDING-BOTTOM: 0px; MARGIN: -0.8em 0px 0px; OUTLINE-STYLE: none; =
+PADDING-LEFT: 0px; WIDTH: 26px; PADDING-RIGHT: 0px; DISPLAY: block; =
+HEIGHT: 0px; OVERFLOW: hidden; PADDING-TOP: 3.1em
+}
+.icon#ca-unwatch A {
+	BACKGROUND-POSITION: -43px 60%
+}
+.icon#ca-watch A {
+	BACKGROUND-POSITION: 5px 60%
+}
+.icon#ca-unwatch A:hover {
+	BACKGROUND-POSITION: -67px 60%
+}
+.icon#ca-unwatch A:focus {
+	BACKGROUND-POSITION: -67px 60%
+}
+.icon#ca-watch A:hover {
+	BACKGROUND-POSITION: -19px 60%
+}
+.icon#ca-watch A:focus {
+	BACKGROUND-POSITION: -19px 60%
+}
+.icon#ca-unwatch A.loading {
+	BACKGROUND-IMAGE: =
+url(/vector/images/watch-icon-loading.gif?2012-04-17T16:48:20Z); =
+BACKGROUND-POSITION: 5px 60%
+}
+.icon#ca-watch A.loading {
+	BACKGROUND-IMAGE: =
+url(/vector/images/watch-icon-loading.gif?2012-04-17T16:48:20Z); =
+BACKGROUND-POSITION: 5px 60%
+}
+.icon#ca-unwatch A SPAN {
+	DISPLAY: none
+}
+.icon#ca-watch A SPAN {
+	DISPLAY: none
+}
+DIV.vectorTabs UL {
+	BACKGROUND-IMAGE: =
+url(/vector/images/tab-break.png?2012-04-17T16:48:20Z); =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right bottom
+}
+.tipsy {
+	FONT-SIZE: 0.8em
+}
+
+}
+
+------=_NextPart_000_0000_01CEB83C.62D7EE30
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://wiki.ghostbsd.org/load.php?debug=false&lang=en&modules=site&only=styles&skin=vector&*
+
+.ns--2 #content {
+	BACKGROUND-COLOR: #f4f4f4
+}
+.ns--2 DIV.thumb {
+	BORDER-BOTTOM-COLOR: #f4f4f4; BORDER-TOP-COLOR: #f4f4f4; =
+BORDER-RIGHT-COLOR: #f4f4f4; BORDER-LEFT-COLOR: #f4f4f4
+}
+.ns-4 #content {
+	BACKGROUND-COLOR: #f8fcff
+}
+.ns-5 #content {
+	BACKGROUND-COLOR: #f8fcff
+}
+.ns-4 DIV.thumb {
+	BORDER-BOTTOM-COLOR: #f8fcff; BORDER-TOP-COLOR: #f8fcff; =
+BORDER-RIGHT-COLOR: #f8fcff; BORDER-LEFT-COLOR: #f8fcff
+}
+.ns-5 DIV.thumb {
+	BORDER-BOTTOM-COLOR: #f8fcff; BORDER-TOP-COLOR: #f8fcff; =
+BORDER-RIGHT-COLOR: #f8fcff; BORDER-LEFT-COLOR: #f8fcff
+}
+.ns-8 #content {
+	BACKGROUND-COLOR: #f4f4f4
+}
+.ns-9 #content {
+	BACKGROUND-COLOR: #f4f4f4
+}
+.ns-8 DIV.thumb {
+	BORDER-BOTTOM-COLOR: #f4f4f4; BORDER-TOP-COLOR: #f4f4f4; =
+BORDER-RIGHT-COLOR: #f4f4f4; BORDER-LEFT-COLOR: #f4f4f4
+}
+.ns-9 DIV.thumb {
+	BORDER-BOTTOM-COLOR: #f4f4f4; BORDER-TOP-COLOR: #f4f4f4; =
+BORDER-RIGHT-COLOR: #f4f4f4; BORDER-LEFT-COLOR: #f4f4f4
+}
+.ns-100 #content {
+	BACKGROUND-COLOR: #f3f3ff
+}
+.ns-101 #content {
+	BACKGROUND-COLOR: #f3f3ff
+}
+.ns-100 DIV.thumb {
+	BORDER-BOTTOM-COLOR: #f3f3ff; BORDER-TOP-COLOR: #f3f3ff; =
+BORDER-RIGHT-COLOR: #f3f3ff; BORDER-LEFT-COLOR: #f3f3ff
+}
+.ns-101 DIV.thumb {
+	BORDER-BOTTOM-COLOR: #f3f3ff; BORDER-TOP-COLOR: #f3f3ff; =
+BORDER-RIGHT-COLOR: #f3f3ff; BORDER-LEFT-COLOR: #f3f3ff
+}
+.ns-12 #content {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/mediawiki/b/b8/PD-banner.png); =
+BORDER-BOTTOM: #0000cc 2px solid; BORDER-LEFT: #0000cc 2px solid; =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right top; =
+BORDER-TOP: #0000cc 2px solid; BORDER-RIGHT: #0000cc 2px
+}
+.ns-12 #bodyContent {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/mediawiki/6/67/PD-icon-faded.png); =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right 5em
+}
+.borderc1 {
+	BORDER-BOTTOM-COLOR: #e9e9e9; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #e9e9e9; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #e9e9e9; BORDER-LEFT-COLOR: #e9e9e9; =
+BORDER-LEFT-WIDTH: thin
+}
+.borderc2 {
+	BORDER-BOTTOM-COLOR: #aaaaaa; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #aaaaaa; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #aaaaaa; BORDER-LEFT-COLOR: #aaaaaa; =
+BORDER-LEFT-WIDTH: thin
+}
+.borderc3 {
+	BORDER-BOTTOM-COLOR: #777777; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #777777; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #777777; BORDER-LEFT-COLOR: #777777; =
+BORDER-LEFT-WIDTH: thin
+}
+.borderc4 {
+	BORDER-BOTTOM-COLOR: #000000; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #000000; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #000000; BORDER-LEFT-COLOR: #000000; =
+BORDER-LEFT-WIDTH: thin
+}
+.borderc5 {
+	BORDER-BOTTOM-COLOR: #c00000; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #c00000; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #c00000; BORDER-LEFT-COLOR: #c00000; =
+BORDER-LEFT-WIDTH: thin
+}
+.borderc6 {
+	BORDER-BOTTOM-COLOR: #025e9d; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #025e9d; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #025e9d; BORDER-LEFT-COLOR: #025e9d; =
+BORDER-LEFT-WIDTH: thin
+}
+.borderc7 {
+	BORDER-BOTTOM-COLOR: #008040; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #008040; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #008040; BORDER-LEFT-COLOR: #008040; =
+BORDER-LEFT-WIDTH: thin
+}
+.borderc8 {
+	BORDER-BOTTOM-COLOR: #ffcc00; BORDER-RIGHT-WIDTH: thin; =
+BORDER-TOP-COLOR: #ffcc00; BORDER-TOP-WIDTH: thin; BORDER-BOTTOM-WIDTH: =
+thin; BORDER-RIGHT-COLOR: #ffcc00; BORDER-LEFT-COLOR: #ffcc00; =
+BORDER-LEFT-WIDTH: thin
+}
+.backgroundc1 {
+	BACKGROUND-COLOR: #ffffff
+}
+.backgroundc2 {
+	BACKGROUND-COLOR: #f9f9f9
+}
+.backgroundc3 {
+	BACKGROUND-COLOR: #eeeeee
+}
+.backgroundc4 {
+	BACKGROUND-COLOR: #e0e0e0
+}
+.backgroundc5 {
+	BACKGROUND-COLOR: #d2d2d2
+}
+.backgroundc6 {
+	BACKGROUND-COLOR: #b7b7b7
+}
+.backgroundc7 {
+	BACKGROUND-COLOR: #a3a3a3
+}
+.backgroundc8 {
+	BACKGROUND-COLOR: #444455
+}
+.SpecialPageInfo {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/8/89/Exquisite-khelpce=
+nter.png/35px-Exquisite-khelpcenter.png); BORDER-BOTTOM: #025e9d solid; =
+BORDER-LEFT: #025e9d 1px solid; PADDING-BOTTOM: 0.3em; BACKGROUND-COLOR: =
+#f9f9f9; PADDING-LEFT: 5em; PADDING-RIGHT: 0.5em; BACKGROUND-REPEAT: =
+no-repeat; BACKGROUND-POSITION: 0.8em 0.5em; MARGIN-BOTTOM: 1em; =
+BORDER-TOP: #025e9d 1px solid; BORDER-RIGHT: #025e9d 1px solid; =
+PADDING-TOP: 0.3em
+}
+.mw-viewprevnext {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; =
+PADDING-BOTTOM: 0.2em; BACKGROUND-COLOR: #f9f9f2; PADDING-LEFT: 0.4em; =
+PADDING-RIGHT: 0.4em; DISPLAY: block; BORDER-TOP: #cccccc 1px solid; =
+BORDER-RIGHT: #cccccc 1px solid; PADDING-TOP: 0.2em
+}
+#mainpage_topbox {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; MARGIN: 0.2em 10px 10px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; BACKGROUND: #f9f9f9; BORDER-TOP: #aaaaaa 1px solid; =
+BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 0px
+}
+.mainpage_boxtitle {
+	BORDER-BOTTOM: #aaaaaa 1px solid; PADDING-BOTTOM: 0.4em; =
+BACKGROUND-COLOR: #eeeeee; PADDING-LEFT: 0.4em; PADDING-RIGHT: 0.4em; =
+FONT-SIZE: 105%; PADDING-TOP: 0.4em
+}
+.mainpage_hubtitle {
+	BORDER-BOTTOM: #aaaaaa 1px solid; PADDING-BOTTOM: 0.4em; =
+BACKGROUND-COLOR: #eeeeee; PADDING-LEFT: 0.4em; PADDING-RIGHT: 0.4em; =
+FONT-SIZE: 105%; PADDING-TOP: 0.4em
+}
+#mainpage_pagetitle {
+	BORDER-BOTTOM: #aaaaaa 1px solid; PADDING-BOTTOM: 0.4em; =
+BACKGROUND-COLOR: #eeeeee; PADDING-LEFT: 0.4em; PADDING-RIGHT: 0.4em; =
+FONT-SIZE: 105%; PADDING-TOP: 0.4em
+}
+.mainpage_boxtitle {
+	LINE-HEIGHT: 120%
+}
+#mainpage_pagetitle {
+	COLOR: #cf7606; FONT-SIZE: 200% !important
+}
+#mainpage_sitelinks {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0.2em; BACKGROUND-COLOR: white; =
+PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; PADDING-TOP: 0.2em
+}
+.mainpage_hubtitle {
+	TEXT-ALIGN: center
+}
+.mainpage_boxcontents {
+	PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.4em; PADDING-RIGHT: 0.4em; =
+BACKGROUND: #ffffff; PADDING-TOP: 0.2em
+}
+.mainpage_boxcontents_small {
+	PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.4em; PADDING-RIGHT: 0.4em; =
+BACKGROUND: #ffffff; PADDING-TOP: 0.2em
+}
+.mainpage_boxcontents_small {
+	FONT-SIZE: 95%
+}
+.mainpage_hubbox {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: =
+#aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 0px
+}
+#mainpage_newscell {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: =
+#aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 0px
+}
+#mainpage_downloadcell {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: =
+#aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 0px
+}
+#mainpage_opportunitiescell {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: =
+#aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 0px
+}
+#mainpage_featuredpagescell {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: =
+#aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 0px
+}
+.mainpage_hubbox {
+	MARGIN-BOTTOM: 0px
+}
+#mainpage_newscell {
+	MARGIN-TOP: 0px !important; MARGIN-BOTTOM: 15px
+}
+#mainpage_newscell .mainpage_boxtitle {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/8/89/Exquisite-khelpce=
+nter.png/20px-Exquisite-khelpcenter.png); PADDING-RIGHT: 25px; =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 99% 0.3em
+}
+#mainpage_downloadcell {
+	WIDTH: 17em; MARGIN-BOTTOM: 5px
+}
+#mainpage_downloadcell .mainpage_boxtitle {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Crystal_Clear_act=
+ion_build.png/18px-Crystal_Clear_action_build.png); PADDING-RIGHT: 25px; =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 96% 0.33em
+}
+#mainpage_opportunitiescell {
+	MARGIN-TOP: 0px !important; MAX-WIDTH: 25em; MARGIN-BOTTOM: 15px
+}
+#mainpage_opportunitiescell .mainpage_boxtitle {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/6/63/User-online.svg/2=
+0px-User-online.svg.png); PADDING-RIGHT: 25px; BACKGROUND-REPEAT: =
+no-repeat; BACKGROUND-POSITION: 98% 0.15em
+}
+#mainpage_featuredpagescell {
+	MARGIN-TOP: 0px !important; MAX-WIDTH: 25em; MARGIN-BOTTOM: 15px
+}
+#mainpage_featuredpagescell .mainpage_boxtitle {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Note_icon.svg/20p=
+x-Note_icon.svg.png); PADDING-RIGHT: 25px; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: 98% 0.15em
+}
+#mainpage_mwtitle {
+	COLOR: #005288
+}
+.mainpage #lastmod {
+	DISPLAY: none !important
+}
+.mainpage #siteSub {
+	DISPLAY: none !important
+}
+.mainpage H1.firstHeading {
+	DISPLAY: none !important
+}
+.mainpage #content {
+	PADDING-TOP: 1em
+}
+.mainpage_boxcontents UL LI:first-child {
+	BORDER-BOTTOM: #aaa 1px solid; TEXT-ALIGN: center; LIST-STYLE-TYPE: =
+none; MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: -1.5em
+}
+.wikitable TD.hl3 {
+	BACKGROUND-COLOR: #8da7d6
+}
+.wikitable TH.hl3 {
+	BACKGROUND-COLOR: #8da7d6
+}
+.wikitable TD.hl1 {
+	BACKGROUND: #c5d8fc
+}
+.wikitable TH.hl1 {
+	BACKGROUND: #c5d8fc
+}
+.wikitable TD.hl2 {
+	BACKGROUND: #a7c1f2
+}
+.wikitable TH.hl2 {
+	BACKGROUND: #a7c1f2
+}
+.vatop TR {
+	VERTICAL-ALIGN: top
+}
+TR.vatop {
+	VERTICAL-ALIGN: top
+}
+.vatop TD {
+	VERTICAL-ALIGN: top
+}
+.vatop TH {
+	VERTICAL-ALIGN: top
+}
+TABLE.datatable {
+	BACKGROUND-COLOR: transparent
+}
+TABLE.datatable TH {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; =
+PADDING-TOP: 4px
+}
+TABLE.datatable TD {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; =
+PADDING-TOP: 4px
+}
+TABLE.datatable TH {
+	TEXT-ALIGN: left; BACKGROUND-COLOR: #999999
+}
+TABLE.datatable TR {
+	BACKGROUND-COLOR: #cccccc
+}
+TABLE.datatable TR:hover {
+	BACKGROUND-COLOR: #ffffcc
+}
+DIV.sideBox {
+	BORDER-BOTTOM: gray 1px solid; POSITION: relative; BORDER-LEFT: gray =
+1px solid; PADDING-BOTTOM: 0.3em; PADDING-LEFT: 0.3em; WIDTH: 200px; =
+PADDING-RIGHT: 0.3em; BACKGROUND: white; FLOAT: right; MARGIN-LEFT: 1em; =
+CLEAR: right; OVERFLOW: hidden; BORDER-TOP: gray 1px solid; =
+BORDER-RIGHT: gray 1px solid; PADDING-TOP: 0.3em
+}
+DIV.sideBox DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0.3em; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; FONT-SIZE: 96%; PADDING-TOP: 0px
+}
+DIV.sideBox DL DT {
+	MARGIN: 0.4em 0px 0px; BACKGROUND: none transparent scroll repeat 0% 0%
+}
+DIV.sideBox DL DD {
+	BACKGROUND-COLOR: #f3f3f3; MARGIN: 0.1em 0px 0px 1.1em
+}
+.ext-infobox {
+	BORDER-BOTTOM: #aaaaaa 2px solid; BORDER-LEFT: #aaaaaa 2px solid; =
+BACKGROUND-COLOR: white; MARGIN: 0px 0px 0.5em 0.5em; WIDTH: 280px; =
+BORDER-COLLAPSE: collapse; FLOAT: right; CLEAR: right; BORDER-TOP: =
+#aaaaaa 2px solid; BORDER-RIGHT: #aaaaaa 2px solid
+}
+.ext-infobox TD {
+	BORDER-BOTTOM: #f0f0f0 1px solid; BORDER-LEFT: #aaaaaa 2px; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; =
+BORDER-TOP: #aaaaaa 2px; BORDER-RIGHT: #aaaaaa 2px; PADDING-TOP: 0.2em
+}
+.ext-header {
+	TEXT-ALIGN: left; BACKGROUND-COLOR: #aaaaaa; COLOR: white
+}
+.ext-header TD {
+	PADDING-TOP: 0.5em
+}
+.ext-header IMG {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.2em; =
+PADDING-TOP: 0px
+}
+.ext-status-unstable {
+	BORDER-BOTTOM-COLOR: #990000; BORDER-TOP-COLOR: #990000; =
+BORDER-RIGHT-COLOR: #990000; BORDER-LEFT-COLOR: #990000
+}
+.ext-status-unstable TD {
+	BORDER-BOTTOM-COLOR: #990000; BORDER-TOP-COLOR: #990000; =
+BORDER-RIGHT-COLOR: #990000; BORDER-LEFT-COLOR: #990000
+}
+.ext-status-unstable .ext-header {
+	BACKGROUND-COLOR: #990000; COLOR: #ffff00
+}
+.ext-status-experimental {
+	BORDER-BOTTOM-COLOR: #ff4500; BORDER-TOP-COLOR: #ff4500; =
+BORDER-RIGHT-COLOR: #ff4500; BORDER-LEFT-COLOR: #ff4500
+}
+.ext-status-experimental TD {
+	BORDER-BOTTOM-COLOR: #ff4500; BORDER-TOP-COLOR: #ff4500; =
+BORDER-RIGHT-COLOR: #ff4500; BORDER-LEFT-COLOR: #ff4500
+}
+.ext-status-experimental .ext-header {
+	BACKGROUND-COLOR: #ff4500
+}
+.ext-status-beta {
+	BORDER-BOTTOM-COLOR: #ffba01; BORDER-TOP-COLOR: #ffba01; =
+BORDER-RIGHT-COLOR: #ffba01; BORDER-LEFT-COLOR: #ffba01
+}
+.ext-status-beta TD {
+	BORDER-BOTTOM-COLOR: #ffba01; BORDER-TOP-COLOR: #ffba01; =
+BORDER-RIGHT-COLOR: #ffba01; BORDER-LEFT-COLOR: #ffba01
+}
+.ext-status-beta .ext-header {
+	BACKGROUND-COLOR: #ffba01
+}
+.ext-status-stable {
+	BORDER-BOTTOM-COLOR: #32cd32; BORDER-TOP-COLOR: #32cd32; =
+BORDER-RIGHT-COLOR: #32cd32; BORDER-LEFT-COLOR: #32cd32
+}
+.ext-status-stable TD {
+	BORDER-BOTTOM-COLOR: #32cd32; BORDER-TOP-COLOR: #32cd32; =
+BORDER-RIGHT-COLOR: #32cd32; BORDER-LEFT-COLOR: #32cd32
+}
+.ext-status-stable .ext-header {
+	BACKGROUND-COLOR: #32cd32
+}
+.ext-status-magic {
+	BORDER-BOTTOM-COLOR: #fe57a1; BORDER-TOP-COLOR: #fe57a1; =
+BORDER-RIGHT-COLOR: #fe57a1; BORDER-LEFT-COLOR: #fe57a1
+}
+.ext-status-magic TD {
+	BORDER-BOTTOM-COLOR: #fe57a1; BORDER-TOP-COLOR: #fe57a1; =
+BORDER-RIGHT-COLOR: #fe57a1; BORDER-LEFT-COLOR: #fe57a1
+}
+.ext-status-magic .ext-header {
+	BACKGROUND: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/2/20/Magic_wand.svg/60=
+px-Magic_wand.svg.png) #ffdbeb no-repeat 0px 0px; COLOR: #000
+}
+.ext-status-magic .ext-header IMG {
+	PADDING-RIGHT: 1em; VISIBILITY: hidden
+}
+.tip {
+	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; =
+PADDING-BOTTOM: 0.5em; BACKGROUND-COLOR: #f9f9f9; MARGIN: 0.5em 0px; =
+PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: 4px 2px; OVERFLOW: hidden; BORDER-TOP: #ddd 1px =
+solid; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0.5em
+}
+.note {
+	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; =
+PADDING-BOTTOM: 0.5em; BACKGROUND-COLOR: #f9f9f9; MARGIN: 0.5em 0px; =
+PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: 4px 2px; OVERFLOW: hidden; BORDER-TOP: #ddd 1px =
+solid; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0.5em
+}
+.tip-info {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Appunti_architett=
+o_franc_01.svg/22px-Appunti_architetto_franc_01.svg.png); =
+BORDER-BOTTOM-COLOR: #cc9933; BACKGROUND-COLOR: #f0f0e7; =
+BORDER-TOP-COLOR: #cc9933; MIN-HEIGHT: 28px; PADDING-LEFT: 30px; =
+BORDER-RIGHT-COLOR: #cc9933; BORDER-LEFT-COLOR: #cc9933
+}
+.note-info {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Appunti_architett=
+o_franc_01.svg/22px-Appunti_architetto_franc_01.svg.png); =
+BORDER-BOTTOM-COLOR: #cc9933; BACKGROUND-COLOR: #f0f0e7; =
+BORDER-TOP-COLOR: #cc9933; MIN-HEIGHT: 28px; PADDING-LEFT: 30px; =
+BORDER-RIGHT-COLOR: #cc9933; BORDER-LEFT-COLOR: #cc9933
+}
+.tip-reminder {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bulbgraph.png/23p=
+x-Bulbgraph.png); BORDER-BOTTOM-COLOR: #d6e434; BACKGROUND-COLOR: =
+#f6fdea; BORDER-TOP-COLOR: #d6e434; MIN-HEIGHT: 28px; PADDING-LEFT: =
+31px; BORDER-RIGHT-COLOR: #d6e434; BORDER-LEFT-COLOR: #d6e434
+}
+.note-reminder {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bulbgraph.png/23p=
+x-Bulbgraph.png); BORDER-BOTTOM-COLOR: #d6e434; BACKGROUND-COLOR: =
+#f6fdea; BORDER-TOP-COLOR: #d6e434; MIN-HEIGHT: 28px; PADDING-LEFT: =
+31px; BORDER-RIGHT-COLOR: #d6e434; BORDER-LEFT-COLOR: #d6e434
+}
+.tip-error {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/5/51/Attention_niels_e=
+pting.svg/24px-Attention_niels_epting.svg.png); BORDER-BOTTOM-COLOR: =
+#cc3333; BACKGROUND-COLOR: #f0e7e7; BORDER-TOP-COLOR: #cc3333; =
+MIN-HEIGHT: 25px; PADDING-LEFT: 32px; BORDER-RIGHT-COLOR: #cc3333; =
+BORDER-LEFT-COLOR: #cc3333
+}
+.note-error {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/5/51/Attention_niels_e=
+pting.svg/24px-Attention_niels_epting.svg.png); BORDER-BOTTOM-COLOR: =
+#cc3333; BACKGROUND-COLOR: #f0e7e7; BORDER-TOP-COLOR: #cc3333; =
+MIN-HEIGHT: 25px; PADDING-LEFT: 32px; BORDER-RIGHT-COLOR: #cc3333; =
+BORDER-LEFT-COLOR: #cc3333
+}
+#DownloadVersionBox {
+	BORDER-BOTTOM: black 2px solid; BORDER-LEFT: black 2px solid; MARGIN: =
+auto; WIDTH: 50%; BORDER-COLLAPSE: collapse; COLOR: black; BORDER-TOP: =
+black 2px solid; BORDER-RIGHT: black 2px solid
+}
+#DownloadVersionBox TD {
+	BORDER-BOTTOM: black 2px solid; BORDER-LEFT: black 2px solid; =
+PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; =
+BORDER-TOP: black 2px solid; BORDER-RIGHT: black 2px solid; PADDING-TOP: =
+20px
+}
+.majorwarning {
+	BORDER-BOTTOM: red 2px solid; TEXT-ALIGN: center; BORDER-LEFT: red 2px =
+solid; PADDING-BOTTOM: 0.3em; PADDING-LEFT: 0.3em; PADDING-RIGHT: 0.3em; =
+BACKGROUND: yellow; FONT-SIZE: 125%; BORDER-TOP: red 2px solid; =
+BORDER-RIGHT: red 2px solid; PADDING-TOP: 0.3em
+}
+.page-notice {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; =
+PADDING-BOTTOM: 0.3em; PADDING-LEFT: 0.5em; WIDTH: 95%; PADDING-RIGHT: =
+0.5em; MARGIN-BOTTOM: 1em; MARGIN-LEFT: auto; BORDER-TOP: 1px solid; =
+MARGIN-RIGHT: auto; BORDER-RIGHT: 1px solid; PADDING-TOP: 0.3em
+}
+.page-warning {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; =
+PADDING-BOTTOM: 0.3em; PADDING-LEFT: 0.5em; WIDTH: 95%; PADDING-RIGHT: =
+0.5em; MARGIN-BOTTOM: 1em; MARGIN-LEFT: auto; BORDER-TOP: 1px solid; =
+MARGIN-RIGHT: auto; BORDER-RIGHT: 1px solid; PADDING-TOP: 0.3em
+}
+.page-notice {
+	BORDER-BOTTOM-COLOR: #025e9d; TEXT-ALIGN: left; BACKGROUND-COLOR: =
+#f9f9f9; BORDER-TOP-COLOR: #025e9d; BORDER-RIGHT-COLOR: #025e9d; =
+BORDER-LEFT-COLOR: #025e9d
+}
+.page-warning {
+	BORDER-BOTTOM-COLOR: #c51919; BORDER-RIGHT-WIDTH: 2px; =
+BACKGROUND-COLOR: #ffffff; BORDER-TOP-COLOR: #c51919; BORDER-TOP-WIDTH: =
+2px; BORDER-BOTTOM-WIDTH: 2px; BORDER-RIGHT-COLOR: #c51919; =
+BORDER-LEFT-COLOR: #c51919; BORDER-LEFT-WIDTH: 2px
+}
+.pw-head {
+	COLOR: #c51919; FONT-WEIGHT: bold
+}
+.block-note {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bulbgraph.png/18p=
+x-Bulbgraph.png); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: =
+left top
+}
+.block-contents {
+	PADDING-LEFT: 20px; DISPLAY: block
+}
+.template-documentation {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #ecfcf4; MARGIN: 1em 0px 0px; =
+PADDING-LEFT: 5px; PADDING-RIGHT: 5px; CLEAR: both; BORDER-TOP: #aaa 1px =
+solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+TABLE.navbox {
+	BORDER-BOTTOM: #aaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #aaa =
+1px solid; PADDING-BOTTOM: 1px; MARGIN: auto; PADDING-LEFT: 1px; WIDTH: =
+100%; PADDING-RIGHT: 1px; CLEAR: both; FONT-SIZE: 88%; BORDER-TOP: #aaa =
+1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 1px
+}
+TABLE.navbox + TABLE.navbox {
+	MARGIN-TOP: -1px
+}
+.navbox TH {
+	TEXT-ALIGN: center; PADDING-LEFT: 1em; PADDING-RIGHT: 1em
+}
+.navbox-title {
+	TEXT-ALIGN: center; PADDING-LEFT: 1em; PADDING-RIGHT: 1em
+}
+.navbox-abovebelow {
+	TEXT-ALIGN: center; PADDING-LEFT: 1em; PADDING-RIGHT: 1em
+}
+TH.navbox-group {
+	TEXT-ALIGN: right; WHITE-SPACE: nowrap
+}
+.navbox {
+	BACKGROUND: #fdfdfd
+}
+.navbox-subgroup {
+	BACKGROUND: #fdfdfd
+}
+.navbox-list {
+	BORDER-BOTTOM-COLOR: #fdfdfd; BORDER-TOP-COLOR: #fdfdfd; =
+BORDER-RIGHT-COLOR: #fdfdfd; BORDER-LEFT-COLOR: #fdfdfd
+}
+.navbox TH {
+	BACKGROUND: #ccccff
+}
+.navbox-title {
+	BACKGROUND: #ccccff
+}
+.navbox-abovebelow {
+	BACKGROUND: #ddddff
+}
+TH.navbox-group {
+	BACKGROUND: #ddddff
+}
+.navbox-subgroup .navbox-title {
+	BACKGROUND: #ddddff
+}
+.navbox-subgroup .navbox-group {
+	BACKGROUND: #e6e6ff
+}
+.navbox-subgroup .navbox-abovebelow {
+	BACKGROUND: #e6e6ff
+}
+.navbox-even {
+	BACKGROUND: #f7f7f7
+}
+.navbox-odd {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.navbox .hlist TD DL {
+	PADDING-BOTTOM: 0.12em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0.12em
+}
+.navbox .hlist TD OL {
+	PADDING-BOTTOM: 0.12em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0.12em
+}
+.navbox .hlist TD UL {
+	PADDING-BOTTOM: 0.12em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0.12em
+}
+.navbox TD.hlist DL {
+	PADDING-BOTTOM: 0.12em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0.12em
+}
+.navbox TD.hlist OL {
+	PADDING-BOTTOM: 0.12em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0.12em
+}
+.navbox TD.hlist UL {
+	PADDING-BOTTOM: 0.12em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0.12em
+}
+.navbox .hlist DD {
+	WHITE-SPACE: normal
+}
+.navbox .hlist DT {
+	WHITE-SPACE: normal
+}
+.navbox .hlist LI {
+	WHITE-SPACE: normal
+}
+.navbox .hlist DD DL {
+	WHITE-SPACE: normal
+}
+.navbox .hlist DT DL {
+	WHITE-SPACE: normal
+}
+.navbox .hlist LI OL {
+	WHITE-SPACE: normal
+}
+.navbox .hlist LI UL {
+	WHITE-SPACE: normal
+}
+OL + TABLE.navbox {
+	MARGIN-TOP: 0.5em
+}
+UL + TABLE.navbox {
+	MARGIN-TOP: 0.5em
+}
+.navbar {
+	DISPLAY: inline; FONT-SIZE: 88%; FONT-WEIGHT: normal
+}
+.navbar UL {
+	DISPLAY: inline; WHITE-SPACE: nowrap
+}
+.navbar LI {
+	WORD-SPACING: -0.12em
+}
+.navbox .navbar {
+	DISPLAY: block; FONT-SIZE: 100%
+}
+.navbox-title .navbar {
+	TEXT-ALIGN: left; WIDTH: 6em; FLOAT: left; MARGIN-RIGHT: 0.5em
+}
+DIV.wrapPreLines PRE {
+	WHITE-SPACE: pre-wrap
+}
+#toc {
+	MARGIN: 1em 0px
+}
+.toclimit-2 .toclevel-1 UL {
+	DISPLAY: none
+}
+.toclimit-3 .toclevel-2 UL {
+	DISPLAY: none
+}
+.toclimit-4 .toclevel-3 UL {
+	DISPLAY: none
+}
+.toclimit-5 .toclevel-4 UL {
+	DISPLAY: none
+}
+.toclimit-6 .toclevel-5 UL {
+	DISPLAY: none
+}
+.toclimit-7 .toclevel-6 UL {
+	DISPLAY: none
+}
+OL.references {
+	FONT-SIZE: 100%
+}
+.references-small {
+	FONT-SIZE: 90%
+}
+OL.references > LI:unknown {
+	BACKGROUND-COLOR: #ddeeff
+}
+SUP.reference:unknown {
+	BACKGROUND-COLOR: #ddeeff
+}
+.mw-charinsert-buttons {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 1px; MARGIN-TOP: 10px; PADDING-LEFT: =
+1px; PADDING-RIGHT: 1px; FONT-SIZE: 110%; BORDER-TOP: #aaaaaa 1px solid; =
+BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 1px
+}
+.mw-charinsert-buttons A {
+	BORDER-BOTTOM: #069 thin outset; BORDER-LEFT: #069 thin outset; =
+PADDING-BOTTOM: 0.1em; BACKGROUND-COLOR: #cde !important; PADDING-LEFT: =
+0.1em; PADDING-RIGHT: 0.1em; COLOR: black; FONT-SIZE: 0.9em; BORDER-TOP: =
+#069 thin outset; FONT-WEIGHT: bold; BORDER-RIGHT: #069 thin outset; =
+TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.mw-charinsert-buttons A:hover {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; =
+BACKGROUND-COLOR: #bcd; BORDER-TOP-STYLE: inset; BORDER-LEFT-STYLE: =
+inset
+}
+.mw-charinsert-buttons A:active {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; =
+BACKGROUND-COLOR: #bcd; BORDER-TOP-STYLE: inset; BORDER-LEFT-STYLE: =
+inset
+}
+.client-js .mw-edittools-section {
+	DISPLAY: inline
+}
+.client-js .mw-edittools-section INPUT[type=3D'button'] {
+	PADDING-LEFT: 1px; PADDING-RIGHT: 1px; MARGIN-LEFT: 1px; FONT-SIZE: =
+0.9em
+}
+.imagelink_wikilogo A {
+	BACKGROUND-IMAGE: =
+url(//upload.wikimedia.org/wikipedia/mediawiki/b/bc/Wiki.png); WIDTH: =
+135px; DISPLAY: block; HEIGHT: 135px; TEXT-DECORATION: none
+}
+.infobox {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; =
+MARGIN-BOTTOM: 0.5em; BACKGROUND: #f9f9f9; FLOAT: right; COLOR: black; =
+MARGIN-LEFT: 1em; CLEAR: right; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 0.2em
+}
+.infobox TD {
+	VERTICAL-ALIGN: top
+}
+.infobox TH {
+	VERTICAL-ALIGN: top
+}
+.infobox CAPTION {
+	FONT-SIZE: larger
+}
+.bordered.infobox {
+	BORDER-COLLAPSE: collapse
+}
+.bordered.infobox TD {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; BORDER-TOP: =
+#aaa 1px solid; BORDER-RIGHT: #aaa 1px solid
+}
+.bordered.infobox TH {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; BORDER-TOP: =
+#aaa 1px solid; BORDER-RIGHT: #aaa 1px solid
+}
+.bordered.infobox .borderless TD {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-LEFT-WIDTH: 0px
+}
+.bordered.infobox .borderless TH {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-LEFT-WIDTH: 0px
+}
+.mw-inputbox-hideapicheck LABEL[for=3D'mw-inputbox-ns104'] {
+	DISPLAY: none
+}
+#mw-inputbox-ns104 {
+	DISPLAY: none
+}
+DIV.mw-wordcloud {
+	TEXT-ALIGN: justify; WIDTH: 100%
+}
+.mw-wordcloud-size-1 {
+	COLOR: #222; FONT-SIZE: 2.4em
+}
+.mw-wordcloud-size-2 {
+	COLOR: #333; FONT-SIZE: 2.2em
+}
+.mw-wordcloud-size-3 {
+	COLOR: #444; FONT-SIZE: 2em
+}
+.mw-wordcloud-size-4 {
+	COLOR: #555; FONT-SIZE: 1.8em
+}
+.mw-wordcloud-size-5 {
+	COLOR: #666; FONT-SIZE: 1.6em
+}
+.mw-wordcloud-size-6 {
+	COLOR: #777; FONT-SIZE: 1.4em
+}
+.mw-wordcloud-size-7 {
+	COLOR: #888; FONT-SIZE: 1.2em
+}
+.mw-wordcloud-size-8 {
+	COLOR: #999; FONT-SIZE: 1em
+}
+.mw-wordcloud-size-9 {
+	LETTER-SPACING: 3px; COLOR: #aaa; FONT-SIZE: 0.8em
+}
+.mw-wordcloud-size-10 {
+	COLOR: #bbb; FONT-SIZE: 0.8em
+}
+.mw-wordcloud-size-0 {
+	COLOR: #bbb; FONT-SIZE: 0.8em
+}
+.rellink {
+	FONT-STYLE: italic; PADDING-LEFT: 2em; MARGIN-BOTTOM: 0.5em
+}
+.dablink {
+	FONT-STYLE: italic; PADDING-LEFT: 2em; MARGIN-BOTTOM: 0.5em
+}
+#signuptopbox LI {
+	LIST-STYLE-TYPE: none; FONT-FAMILY: sans-serif; FLOAT: left
+}
+#signuptopbox LI {
+	LINE-HEIGHT: 2.8em; PADDING-RIGHT: 0.5em; BACKGROUND: #c2e1f9; COLOR: =
+#3ca7d4; MARGIN-RIGHT: 0.25em
+}
+#signuptopbox LI.pr-active {
+	BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND: #d4f9c2; =
+COLOR: #67ca36; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #67ca36
+}
+#signuptopbox LI.pr-active DIV {
+	BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND: #d4f9c2; =
+COLOR: #67ca36; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #67ca36
+}
+#signuptopbox LI DIV {
+	BORDER-BOTTOM: #fff 1.4em solid; BORDER-LEFT: #3ca7d4 1.4em solid; =
+WIDTH: 0px; FLOAT: left; HEIGHT: 0px; BORDER-TOP: #fff 1.4em solid; =
+BORDER-RIGHT: #fff 0.3em solid
+}
+#signuptopbox LI SPAN.pr-number {
+	TEXT-ALIGN: center; LINE-HEIGHT: 1.8em; MARGIN: 0.5em; WIDTH: 1.8em; =
+DISPLAY: block; BACKGROUND: #3ca7d4; FLOAT: left; COLOR: #c2e1f9; =
+FONT-WEIGHT: 600; -webkit-border-radius: 50%; -moz-border-radius: 50%; =
+-ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%
+}
+#signuptopbox LI.pr-active SPAN.pr-number {
+	BACKGROUND: #67ca36; COLOR: #d4f9c2
+}
+#signuptopbox LI SPAN {
+	FLOAT: left
+}
+#signuptopbox LI.pr-spacer {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0px
+}
+.breadcrumb {
+	LIST-STYLE-TYPE: none; FONT: 14px Helvetica,Arial,sans-serif; OVERFLOW: =
+hidden
+}
+.breadcrumb LI {
+	MARGIN-BOTTOM: 0px; FLOAT: left
+}
+.breadcrumb LI A {
+	POSITION: relative; PADDING-BOTTOM: 10px; PADDING-LEFT: 45px; =
+PADDING-RIGHT: 0px; DISPLAY: block; FLOAT: left; COLOR: white; =
+TEXT-DECORATION: none; PADDING-TOP: 10px
+}
+.breadcrumb LI A:after {
+	Z-INDEX: 2; BORDER-BOTTOM: transparent 50px solid; POSITION: absolute; =
+MARGIN-TOP: -50px; WIDTH: 0px; DISPLAY: block; HEIGHT: 0px; BORDER-TOP: =
+transparent 50px solid; CONTENT: " "; TOP: 50%; LEFT: 100%
+}
+.breadcrumb LI A:before {
+	Z-INDEX: 1; BORDER-BOTTOM: transparent 50px solid; POSITION: absolute; =
+BORDER-LEFT: white 31px solid; MARGIN-TOP: -50px; WIDTH: 0px; DISPLAY: =
+block; HEIGHT: 0px; MARGIN-LEFT: 1px; BORDER-TOP: transparent 50px =
+solid; CONTENT: " "; TOP: 50%; LEFT: 100%
+}
+.breadcrumb LI:first-child A {
+	PADDING-LEFT: 20px
+}
+.currentcrumb A {
+	BACKGROUND: #069
+}
+.currentcrumb A:after {
+	BORDER-LEFT: #069 30px solid
+}
+.currentcrumb A:hover {
+	BACKGROUND: #002d44
+}
+.prevcrumb A:hover {
+	BACKGROUND: #002d44
+}
+.nextcrumb A:hover {
+	BACKGROUND: #002d44
+}
+.currentcrumb A:hover:after {
+	BORDER-LEFT-COLOR: #002d44 !important
+}
+.prevcrumb A:hover:after {
+	BORDER-LEFT-COLOR: #002d44 !important
+}
+.nextcrumb A:hover:after {
+	BORDER-LEFT-COLOR: #002d44 !important
+}
+.prevcrumb A {
+	BACKGROUND: #396
+}
+.prevcrumb A:after {
+	BORDER-LEFT: #396 30px solid
+}
+.nextcrumb A {
+	BACKGROUND: #999
+}
+.nextcrumb A:after {
+	BORDER-LEFT: #999 30px solid
+}
+#bodyContent .table-RTL A {
+	PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#bodyContent .table-RTL UL {
+	DISPLAY: table; MARGIN-RIGHT: 10px
+}
+UNKNOWN {
+	WHITE-SPACE: nowrap
+}
+.persian {
+	FONT-FAMILY: Tahoma
+}
+DIV.mw-geshi DIV {
+	FONT-FAMILY: monospace,"Courier New" !important
+}
+DIV.mw-geshi DIV PRE {
+	FONT-FAMILY: monospace,"Courier New" !important
+}
+SPAN.mw-geshi {
+	FONT-FAMILY: monospace,"Courier New" !important
+}
+PRE.source-css {
+	FONT-FAMILY: monospace,"Courier New" !important
+}
+PRE.source-javascript {
+	FONT-FAMILY: monospace,"Courier New" !important
+}
+.mwmanual-dbview-box IMG {
+	opacity: 0.5
+}
+.mwmanual-dbview-box:hover IMG {
+	opacity: 0.8
+}
+.mwmanual-dbview-link {
+	BORDER-BOTTOM: #0645ad 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#0645ad 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; BACKGROUND: rgb(198,212,235); BORDER-TOP: #0645ad =
+1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #0645ad 1px solid; =
+PADDING-TOP: 10px; border-radius: 4px
+}
+.mwmanual-dbview-box:hover .mwmanual-dbview-link {
+=09
+}
+.mwmanual-dbview-link:hover {
+=09
+}
+BODY.page-VisualEditor_Welcome LI#ca-edit {
+	DISPLAY: none
+}
+
+------=_NextPart_000_0000_01CEB83C.62D7EE30
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://wiki.ghostbsd.org/load.php?debug=false&lang=en&modules=startup&only=scripts&skin=vector&*
+
+var =
+isCompatible=3Dfunction(){if(navigator.appVersion.indexOf('MSIE')!=3D=3D-=
+1&&parseFloat(navigator.appVersion.split('MSIE')[1])<6){return =
+false;}return true;};var startUp=3Dfunction(){mw.config=3Dnew =
+mw.Map(true);mw.loader.register([["site","1362953780",[],"site"],["noscri=
+pt","1359318743",[],"noscript"],["startup","1379898425",[],"startup"],["u=
+ser","1359318743",[],"user"],["user.groups","1359318743",[],"user"],["use=
+r.options","1379898425",[],"private"],["user.tokens","1359318743",[],"pri=
+vate"],["filepage","1359318743",[]],["skins.vector","1359318743",[]],["sk=
+ins.monobook","1359318743",[]],["skins.simple","1359318743",[]],["skins.c=
+hick","1359318743",[]],["skins.modern","1359318743",[]],["skins.colognebl=
+ue","1359318743",[]],["skins.nostalgia","1359318743",[]],["skins.standard=
+","1359318743",[]],["jquery","1359318743",[]],["jquery.async","1359318743=
+",[]],["jquery.appear","1359318743",[]],["jquery.autoEllipsis","135931874=
+3",["jquery.highlightText"]],["jquery.byteLength","1359318743",[]],[=0A=
+"jquery.byteLimit","1359318743",["jquery.byteLength"]],["jquery.checkboxS=
+hiftClick","1359318743",[]],["jquery.client","1359318743",[]],["jquery.co=
+llapsibleTabs","1359318743",[]],["jquery.colorUtil","1359318743",[]],["jq=
+uery.color","1359318743",["jquery.colorUtil"]],["jquery.cookie","13593187=
+43",[]],["jquery.delayedBind","1359318743",[]],["jquery.expandableField",=
+"1359318743",["jquery.delayedBind"]],["jquery.form","1359318743",[]],["jq=
+uery.getAttrs","1359318743",[]],["jquery.highlightText","1359318743",[]],=
+["jquery.hoverIntent","1359318743",[]],["jquery.messageBox","1359318743",=
+[]],["jquery.placeholder","1359318743",[]],["jquery.json","1359318743",[]=
+],["jquery.localize","1359318743",[]],["jquery.makeCollapsible","13793263=
+64",[]],["jquery.mwPrototypes","1359318743",[]],["jquery.qunit","13593187=
+43",[]],["jquery.suggestions","1359318743",["jquery.autoEllipsis"]],["jqu=
+ery.tabIndex","1359318743",[]],["jquery.tablesorter","1359318743",[]],["j=
+query.textSelection","1359318743",[]],[=0A=
+"jquery.tipsy","1359318743",[]],["jquery.ui.core","1359318743",["jquery"]=
+,"jquery.ui"],["jquery.ui.widget","1359318743",[],"jquery.ui"],["jquery.u=
+i.mouse","1359318743",["jquery.ui.widget"],"jquery.ui"],["jquery.ui.posit=
+ion","1359318743",[],"jquery.ui"],["jquery.ui.draggable","1359318743",["j=
+query.ui.core","jquery.ui.mouse","jquery.ui.widget"],"jquery.ui"],["jquer=
+y.ui.droppable","1359318743",["jquery.ui.core","jquery.ui.mouse","jquery.=
+ui.widget","jquery.ui.draggable"],"jquery.ui"],["jquery.ui.resizable","13=
+59318743",["jquery.ui.core","jquery.ui.widget","jquery.ui.mouse"],"jquery=
+.ui"],["jquery.ui.selectable","1359318743",["jquery.ui.core","jquery.ui.w=
+idget","jquery.ui.mouse"],"jquery.ui"],["jquery.ui.sortable","1359318743"=
+,["jquery.ui.core","jquery.ui.widget","jquery.ui.mouse"],"jquery.ui"],["j=
+query.ui.accordion","1359318743",["jquery.ui.core","jquery.ui.widget"],"j=
+query.ui"],["jquery.ui.autocomplete","1359318743",["jquery.ui.core","jque=
+ry.ui.widget","jquery.ui.position"],"jquery.ui"],[=0A=
+"jquery.ui.button","1359318743",["jquery.ui.core","jquery.ui.widget"],"jq=
+uery.ui"],["jquery.ui.datepicker","1359318743",["jquery.ui.core"],"jquery=
+.ui"],["jquery.ui.dialog","1359318743",["jquery.ui.core","jquery.ui.widge=
+t","jquery.ui.button","jquery.ui.draggable","jquery.ui.mouse","jquery.ui.=
+position","jquery.ui.resizable"],"jquery.ui"],["jquery.ui.progressbar","1=
+359318743",["jquery.ui.core","jquery.ui.widget"],"jquery.ui"],["jquery.ui=
+.slider","1359318743",["jquery.ui.core","jquery.ui.widget","jquery.ui.mou=
+se"],"jquery.ui"],["jquery.ui.tabs","1359318743",["jquery.ui.core","jquer=
+y.ui.widget"],"jquery.ui"],["jquery.effects.core","1359318743",["jquery"]=
+,"jquery.ui"],["jquery.effects.blind","1359318743",["jquery.effects.core"=
+],"jquery.ui"],["jquery.effects.bounce","1359318743",["jquery.effects.cor=
+e"],"jquery.ui"],["jquery.effects.clip","1359318743",["jquery.effects.cor=
+e"],"jquery.ui"],["jquery.effects.drop","1359318743",["jquery.effects.cor=
+e"],"jquery.ui"],["jquery.effects.explode",=0A=
+"1359318743",["jquery.effects.core"],"jquery.ui"],["jquery.effects.fold",=
+"1359318743",["jquery.effects.core"],"jquery.ui"],["jquery.effects.highli=
+ght","1359318743",["jquery.effects.core"],"jquery.ui"],["jquery.effects.p=
+ulsate","1359318743",["jquery.effects.core"],"jquery.ui"],["jquery.effect=
+s.scale","1359318743",["jquery.effects.core"],"jquery.ui"],["jquery.effec=
+ts.shake","1359318743",["jquery.effects.core"],"jquery.ui"],["jquery.effe=
+cts.slide","1359318743",["jquery.effects.core"],"jquery.ui"],["jquery.eff=
+ects.transfer","1359318743",["jquery.effects.core"],"jquery.ui"],["mediaw=
+iki","1359318743",[]],["mediawiki.Title","1359318743",["mediawiki.util"]]=
+,["mediawiki.Uri","1359318743",[]],["mediawiki.htmlform","1359318743",[]]=
+,["mediawiki.user","1359318743",["jquery.cookie"]],["mediawiki.page.start=
+up","1359318743",["jquery.client"]],["mediawiki.page.ready","1359318743",=
+["jquery.checkboxShiftClick","jquery.makeCollapsible","jquery.placeholder=
+"]],["mediawiki.util","1359318743",["jquery.client"=0A=
+,"jquery.cookie","jquery.messageBox","jquery.mwPrototypes"]],["mediawiki.=
+libs.jpegmeta","1359318743",[]],["mediawiki.action.history","1359318743",=
+["jquery.ui.button"],"mediawiki.action.history"],["mediawiki.action.histo=
+ry.diff","1359318743",[],"mediawiki.action.history"],["mediawiki.action.e=
+dit","1359318743",["jquery.textSelection","jquery.byteLimit"]],["mediawik=
+i.action.view.rightClickEdit","1359318743",[]],["mediawiki.action.view.me=
+tadata","1379469269",[]],["mediawiki.action.watch.ajax","1379336787",[]],=
+["mediawiki.special","1359318743",[]],["mediawiki.special.preferences","1=
+359318743",[]],["mediawiki.special.changeslist","1359318743",["jquery.mak=
+eCollapsible"]],["mediawiki.special.search","1359318743",[]],["mediawiki.=
+special.block","1359318743",[]],["mediawiki.special.undelete","1359318743=
+",[]],["mediawiki.special.movePage","1359318743",["jquery.byteLimit"]],["=
+mediawiki.special.recentchanges","1359318743",["mediawiki.special"]],["me=
+diawiki.special.upload","1359318743",[=0A=
+"mediawiki.libs.jpegmeta"]],["mediawiki.language","1359318743",[]],["medi=
+awiki.legacy.ajax","1359318743",["mediawiki.legacy.wikibits"]],["mediawik=
+i.legacy.commonPrint","1359318743",[]],["mediawiki.legacy.config","135931=
+8743",["mediawiki.legacy.wikibits"]],["mediawiki.legacy.IEFixes","1359318=
+743",["mediawiki.legacy.wikibits"]],["mediawiki.legacy.mwsuggest","135931=
+8743",["mediawiki.legacy.wikibits"]],["mediawiki.legacy.preview","1359318=
+743",["mediawiki.legacy.wikibits"]],["mediawiki.legacy.protect","13593187=
+43",["mediawiki.legacy.wikibits","jquery.byteLimit"]],["mediawiki.legacy.=
+shared","1359318743",[]],["mediawiki.legacy.oldshared","1359318743",[]],[=
+"mediawiki.legacy.upload","1359318743",["mediawiki.legacy.wikibits"]],["m=
+ediawiki.legacy.wikibits","1379326364",["mediawiki.language"]],["mediawik=
+i.legacy.wikiprintable","1359318743",[]],["contentCollector","1359318743"=
+,[],"ext.wikiEditor"],["jquery.wikiEditor","1359318743",["jquery.client",=
+"jquery.textSelection","jquery.delayedBind"],=0A=
+"ext.wikiEditor"],["jquery.wikiEditor.iframe","1359318743",["jquery.wikiE=
+ditor","contentCollector"],"ext.wikiEditor"],["jquery.wikiEditor.dialogs"=
+,"1359318743",["jquery.wikiEditor","jquery.wikiEditor.toolbar","jquery.ui=
+.dialog","jquery.ui.button","jquery.ui.draggable","jquery.ui.resizable","=
+jquery.tabIndex"],"ext.wikiEditor"],["jquery.wikiEditor.dialogs.config","=
+1359318743",["jquery.wikiEditor","jquery.wikiEditor.dialogs","jquery.wiki=
+Editor.toolbar.i18n","jquery.suggestions","mediawiki.Title"],"ext.wikiEdi=
+tor"],["jquery.wikiEditor.highlight","1359318743",["jquery.wikiEditor","j=
+query.wikiEditor.iframe"],"ext.wikiEditor"],["jquery.wikiEditor.preview",=
+"1359318743",["jquery.wikiEditor"],"ext.wikiEditor"],["jquery.wikiEditor.=
+previewDialog","1359318743",["jquery.wikiEditor","jquery.wikiEditor.dialo=
+gs"],"ext.wikiEditor"],["jquery.wikiEditor.publish","1359318743",["jquery=
+.wikiEditor","jquery.wikiEditor.dialogs"],"ext.wikiEditor"],["jquery.wiki=
+Editor.templateEditor","1359318743",[=0A=
+"jquery.wikiEditor","jquery.wikiEditor.iframe","jquery.wikiEditor.dialogs=
+"],"ext.wikiEditor"],["jquery.wikiEditor.templates","1359318743",["jquery=
+.wikiEditor","jquery.wikiEditor.iframe"],"ext.wikiEditor"],["jquery.wikiE=
+ditor.toc","1359318743",["jquery.wikiEditor","jquery.wikiEditor.iframe","=
+jquery.ui.draggable","jquery.ui.resizable","jquery.autoEllipsis","jquery.=
+color"],"ext.wikiEditor"],["jquery.wikiEditor.toolbar","1359318743",["jqu=
+ery.wikiEditor","jquery.wikiEditor.toolbar.i18n"],"ext.wikiEditor"],["jqu=
+ery.wikiEditor.toolbar.config","1359318743",["jquery.wikiEditor","jquery.=
+wikiEditor.toolbar.i18n","jquery.wikiEditor.toolbar","jquery.cookie","jqu=
+ery.async"],"ext.wikiEditor"],["jquery.wikiEditor.toolbar.i18n","13593187=
+43",[],"ext.wikiEditor"],["ext.wikiEditor","1359318743",["jquery.wikiEdit=
+or"],"ext.wikiEditor"],["ext.wikiEditor.dialogs","1359318743",["ext.wikiE=
+ditor","ext.wikiEditor.toolbar","jquery.wikiEditor.dialogs","jquery.wikiE=
+ditor.dialogs.config"],"ext.wikiEditor"],[=0A=
+"ext.wikiEditor.highlight","1359318743",["ext.wikiEditor","jquery.wikiEdi=
+tor.highlight"],"ext.wikiEditor"],["ext.wikiEditor.preview","1359318743",=
+["ext.wikiEditor","jquery.wikiEditor.preview"],"ext.wikiEditor"],["ext.wi=
+kiEditor.previewDialog","1359318743",["ext.wikiEditor","jquery.wikiEditor=
+.previewDialog"],"ext.wikiEditor"],["ext.wikiEditor.publish","1359318743"=
+,["ext.wikiEditor","jquery.wikiEditor.publish"],"ext.wikiEditor"],["ext.w=
+ikiEditor.templateEditor","1359318743",["ext.wikiEditor","ext.wikiEditor.=
+highlight","jquery.wikiEditor.templateEditor"],"ext.wikiEditor"],["ext.wi=
+kiEditor.templates","1359318743",["ext.wikiEditor","ext.wikiEditor.highli=
+ght","jquery.wikiEditor.templates"],"ext.wikiEditor"],["ext.wikiEditor.to=
+c","1359318743",["ext.wikiEditor","ext.wikiEditor.highlight","jquery.wiki=
+Editor.toc"],"ext.wikiEditor"],["ext.wikiEditor.tests.toolbar","135931874=
+3",["ext.wikiEditor.toolbar"],"ext.wikiEditor"],["ext.wikiEditor.toolbar"=
+,"1359318743",["ext.wikiEditor",=0A=
+"jquery.wikiEditor.toolbar","jquery.wikiEditor.toolbar.config"],"ext.wiki=
+Editor"],["ext.wikiEditor.toolbar.hideSig","1359318743",[],"ext.wikiEdito=
+r"]]);mw.config.set({"wgLoadScript":"/load.php","debug":false,"skin":"vec=
+tor","stylepath":"","wgUrlProtocols":"http\\:\\/\\/|https\\:\\/\\/|ftp\\:=
+\\/\\/|irc\\:\\/\\/|ircs\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:=
+\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/|git\\:\\/\\/|mms=
+\\:\\/\\/|\\/\\/","wgArticlePath":"/index.php?title=3D$1","wgScriptPath":=
+"","wgScriptExtension":".php","wgScript":"/index.php","wgVariantArticlePa=
+th":false,"wgActionPaths":[],"wgServer":"http://wiki.ghostbsd.org","wgUse=
+rLanguage":"en","wgContentLanguage":"en","wgVersion":"1.18.2","wgEnableAP=
+I":true,"wgEnableWriteAPI":true,"wgDefaultDateFormat":"dmy","wgMonthNames=
+":["","January","February","March","April","May","June","July","August","=
+September","October","November","December"],"wgMonthNamesShort":["","Jan"=
+,"Feb","Mar","Apr","May","Jun","Jul","Aug","Sep",=0A=
+"Oct","Nov","Dec"],"wgSeparatorTransformTable":["",""],"wgDigitTransformT=
+able":["",""],"wgMainPageTitle":"Main =
+Page","wgFormattedNamespaces":{"-2":"Media","-1":"Special","0":"","1":"Ta=
+lk","2":"User","3":"User talk","4":"GhostBSD Wiki","5":"GhostBSD Wiki =
+talk","6":"File","7":"File talk","8":"MediaWiki","9":"MediaWiki =
+talk","10":"Template","11":"Template talk","12":"Help","13":"Help =
+talk","14":"Category","15":"Category =
+talk"},"wgNamespaceIds":{"media":-2,"special":-1,"":0,"talk":1,"user":2,"=
+user_talk":3,"ghostbsd =
+wiki":4,"ghostbsd_wiki_talk":5,"file":6,"file_talk":7,"mediawiki":8,"medi=
+awiki_talk":9,"template":10,"template_talk":11,"help":12,"help_talk":13,"=
+category":14,"category_talk":15,"image":6,"image_talk":7,"project":4,"pro=
+ject_talk":5},"wgSiteName":"GhostBSD =
+Wiki","wgFileExtensions":["png","gif","jpg","jpeg","doc","xls","pdf"],"wg=
+DBname":"ericbsd_mdwk1","wgFileCanRotate":true,"wgAvailableSkins":{"chick=
+":"Chick","myskin":"MySkin","vector":"Vector","standard":"Standard","mono=
+book":=0A=
+"MonoBook","cologneblue":"CologneBlue","modern":"Modern","simple":"Simple=
+","nostalgia":"Nostalgia"},"wgExtensionAssetsPath":"/extensions","wgCooki=
+ePrefix":"ericbsd_mdwk1_phpw_","wgResourceLoaderMaxQueryLength":-1,"wgLeg=
+acyJavaScriptGlobals":true,"wgCaseSensitiveNamespaces":[],"wgWikiEditorTo=
+olbarClickTracking":false,"wgWikiEditorMagicWords":{"redirect":"#REDIRECT=
+","img_right":"right","img_left":"left","img_none":"none","img_center":"c=
+enter","img_thumbnail":"thumbnail","img_framed":"framed","img_frameless":=
+"frameless"}});};if(isCompatible()){document.write("\x3cscript =
+src=3D\"/load.php?debug=3Dfalse\x26amp;lang=3Den\x26amp;modules=3Djquery%=
+2Cmediawiki\x26amp;only=3Dscripts\x26amp;skin=3Dvector\x26amp;version=3D2=
+0120417T164806Z\"\x3e\x3c/script\x3e");}delete isCompatible;;=0A=
+=0A=
+/* cache key: =
+ericbsd_mdwk1-phpw_:resourceloader:filter:minify-js:4:9d4f1eb30fcb1678a93=
+17057b47971eb */=0A=
+
+------=_NextPart_000_0000_01CEB83C.62D7EE30
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://pagead2.googlesyndication.com/pagead/show_ads.js
+
+<!--//-->
+------=_NextPart_000_0000_01CEB83C.62D7EE30
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://wiki.ghostbsd.org/load.php?debug=false&lang=en&modules=skins.vector&only=scripts&skin=vector&*
+
+jQuery(function($){var $pCactions=3D$('#p-cactions');$pCactions.find('h5 =
+a').click(function(e){$pCactions.find('.menu').toggleClass('menuForceShow=
+');e.preventDefault();}).focus(function(){$pCactions.addClass('vectorMenu=
+Focus');}).blur(function(){$pCactions.removeClass('vectorMenuFocus');});}=
+);;mw.loader.state({"skins.vector":"ready"});=0A=
+=0A=
+/* cache key: =
+ericbsd_mdwk1-phpw_:resourceloader:filter:minify-js:4:26824a89365a40f4af7=
+e018abc19d2da */=0A=
+
+------=_NextPart_000_0000_01CEB83C.62D7EE30
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://wiki.ghostbsd.org/load.php?debug=false&lang=en&modules=site&only=scripts&skin=vector&*
+
+;mw.loader.state({"site":"ready"});=0A=
+=0A=
+/* cache key: =
+ericbsd_mdwk1-phpw_:resourceloader:filter:minify-js:4:7ae2d4bbda341e08f06=
+179ae4946fe6c */=0A=
+
+------=_NextPart_000_0000_01CEB83C.62D7EE30--

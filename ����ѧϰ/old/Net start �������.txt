@@ -1,0 +1,174 @@
+Net start 命令详解
+
+启动服务，或显示已启动服务的列表。两个或多个词组成的服务名，例如 Net Logon 或 Co 
+mputer Browser，必须两边加引号。 
+
+net start [service] 
+参数 
+无 
+键入不带参数的 net start 显示正在运行服务的列表。 
+service 
+包括 alerter、client service for netware、clipbook server、content 
+index、comput 
+er browser、dhcp client、directory replicator、eventlog、ftp publishing 
+service、 
+hypermedia object manager、logical disk manager、lpdsvc、media services 
+managemen 
+t, messenger、Fax Service、Microsoft install server、net logon、network 
+dde、netw 
+ork dde dsdm、nt lm security support provider、ole、plug and 
+play、remote access 
+connection manager、remote access isnsap service、remote access 
+server、remote pr 
+ocedure call (rpc) locator、remote procedure call (rpc) 
+service、schedule、server 
+、simple tcp/ip services、site server ldap service、smartcard resource 
+manager、s 
+nmp、spooler、task scheduler、tcp/ip netbios helper、telephony 
+service、tracking 
+service、tracking (server) service、ups、Windows time service 和 
+workstation。 
+下面服务只有在 Windows 2000 上可用：file service for macintosh、gateway service 
+for netware、microsoft dhcp service、print service for 
+macintosh、windows interne 
+t name service。 
+
+Net start Alerter 
+启动“警报器”服务。“警报器”服务发送警告消息。 
+Net start Alerter 
+Net start Client Service for NetWare 
+启动“NetWare 客户服务”。该命令只有在安装了 NetWare 客户服务的情况下才能在 Wind 
+ows 2000 Professional 上使用。 
+net start "client service for netware" 
+Net start ClipBook Server 
+启动“剪贴簿服务器”服务。两个单词组成的服务名，例如 ClipBook Server，必须两边加 
+引号 ("。 
+net start "clipbook server" 
+
+Net start Computer Browser 
+启动“计算机浏览器”服务。 
+net start "computer browser" 
+
+Net start DHCP Client 
+启动“DHCP 客户”服务。该命令只有在安装了 TCP/IP 协议之后才可用。 
+net start "dhcp client" 
+
+Net start Directory Replicator 
+启动“目录复制程序”服务。“目录复制程序”服务将指定的文件复制到指定服务器上。两 
+个词组成的服务名，例如 Directory Replicator，必须两边加引号 ("。也可以用命令 net 
+start replicator 启动该服务。 
+net start "directory replicator" 
+
+Net start Eventlog 
+启动“事件日志”服务，该服务将事件记录在本地计算机上。必须在使用事件查看器查看记 
+录的事件之前启动该服务。 
+net start Eventlog 
+
+Net start File Server for Macintosh 
+启动 Macintosh 文件服务，允许 Macintosh 计算机使用共享文件。该命令只能在运行 Win 
+dows 2000 Server 的计算机上可用。 
+net start "file service for macintosh" 
+Net start FTP Publishing Service 
+启动 FTP 发布服务。该命令只有在安装了 Internet 信息服务后才可用。 
+net start "ftp publishing service" 
+Net start Gateway Service for NetWare 
+启动 NetWare 网关服务。该命令只有在安装了 NetWare 网关服务的情况下才能在 Windows 
+2000 Server 上可用。 
+net start "gateway service for netware" 
+Net start Lpdsvc 
+启动 TCP/IP 打印服务器服务。该命令只有在 UNIX 打印服务和 TCP/IP 协议安装后方可使 
+用。 
+net start lpdsvc 
+
+Net start Messenger 
+启动“信使”服务。“信使”?裨市砑扑慊?邮沼始?? 
+net start messenger 
+
+Net start Microsoft DHCP Service 
+启动 Microsoft DHCP 服务。该命令只有在运行 Windows 2000 Server 并且已安装 TCP/IP 
+协议和 DHCP 服务的情况下才可用。 
+net start "microsoft dhcp service" 
+
+Net start Net Logon 
+启动“网络登录”服务。“网络登录”服务验证登录请求并控制复制用户帐户数据库域宽。 
+两个词组成的服务名，例如 Net Logon，必须两边加引号 ("。该服务也可以使用命令 net 
+start netlogon 启动。 
+net start "net logon" 
+
+Net start Network DDE 
+启动“网络 DDE”服务。 
+net start "network dde" 
+Net start NT LM Security Support Provider 
+启动“NT LM 安全支持提供程序”服务。该命令只有在安装了“NT LM 安全支持提供程序” 
+后才可用。 
+net start "nt lm security support provider" 
+Net start OLE 
+启动对象链接和嵌入服务。 
+net start ole 
+Net start Print Server for Macintosh 
+启动 Macintosh 打印服务器服务，允许从 Macintosh 计算机打印。该命令只能在运行 Win 
+dows 2000 Server 的计算机上可用。 
+net start "print server for macintosh" 
+Net start Remote Access Connection Manager 
+启动“远程访问连接管理器”服务。该命令只有在安装了“远程访问服务”后才可用。 
+net start "remote access connection manager" 
+Net start Remote Access ISNSAP Service 
+启动“远程访问 ISNSAP 服务”。该命令只有在安装了“远程访问服务”后才可用。 
+net start "remote access isnsap service" 
+Net start Remote Procedure Call (RPC) Locator 
+启动 RPC 定位器服务。“定位器”服务是 Microsoft Windows 2000 的 RPC 名称服务。 
+net start "remote procedure call (rpc) locator" 
+
+Net start Remote Procedure Call (RPC) Service 
+启动“远程过程调用 (RPC) 服务”。“远程过程调用 (RPC) 服务”是 Microsoft Windows 
+2000 的 RPC 子系统。RPC 子系统包括终结点映射器和其他各种 RPC 服务。 
+net start "remote procedure call (rpc) service" 
+
+Net start Schedule 
+启动“计划”服务。“计划”服务使计算机可以使用 at 命令在指定时间启动程序。 
+net start schedule 
+
+Net start Server 
+启动“服务器”服务。“服务器”服务使计算机可以共享网络上的资源。 
+net start server 
+
+Net start Simple TCP/IP Services 
+启动“简单 TCP/IP 服务”服务。该命令只有在安装了 TCP/IP 和“简单 TCP/IP 服务”后 
+才可以使用。 
+net start "simple tcp/ip services" 
+Net start Site Server LDAP Service 
+启动“Site Server LDAP 服务”。“Site Server LDAP 服务”在 Windows 2000 Active D 
+
+irectory 中发布 IP 多播会议。该命令只有在安装了“Site Server LDAP 服务”后才可以使 
+用。 
+net start "site server ldap service" 
+
+Net start SNMP 
+启动 SNMP 服务。SNMP 服务允许服务器向 TCP/IP 网络上的 SNMP 管理系统报告当前状态。 
+该命令只有在安装了 TCP/IP 和 SNMP 后才可以使用。 
+net start snmp 
+
+Net start Spooler 
+启动“后台打印程序”。 
+net start spooler 
+Net start TCP/IP NetBIOS Helper 
+在 TCP 服务上启用 Netbios 支持。该命令只有在安装了 TCP/IP 才可用。 
+net start "tcp/ip netbios helper" 
+Net start UPS 
+启动“不间断电源 (UPS)”服务 
+net start ups 
+
+Net start Windows Internet Name Service 
+启动“Windows Internet 命名服务”。该命令只有在安装了 TCP/IP 和“Windows Interne 
+t 命名服务”后在 Windows 2000 Servers 上才可以使用。 
+net start "windows internet name service" 
+
+Net start Workstation 
+启动“工作站”服务。“工作站”服务使计算机可以连接并使用网络资源。 
+net start workstation 
+Net start Schedule 
+有的地方称为“定时”服务，叫法不同，请大家注意了，其实是一回事！ 
+Net start Telnet 
+启动telnet服务，打开23端口，有的情况下需先运行NTLM.exe
+
+

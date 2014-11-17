@@ -1,0 +1,16 @@
+Microsoft JET Database Engine 错误 '80040e09' 解决方法
+
+Microsoft JET Database Engine 错误 '80040e09' 解决方法Microsoft JET Database Engine 错误 '80040e09' 解决方法 环境：windows 2003 server sp2+IIS6+Access
+错误：增加数据时出现错误信息：
+
+Microsoft JET Database Engine 错误 '80040e09' 
+
+不能更新。数据库或对象为只读。 
+
+/script/guestbook/save.asp，行 108 
+
+
+
+解决方法：
+
+找到数据库文件，然后单击右键，属性，安全标签，增加Internet来宾帐户有写入权限即可。 

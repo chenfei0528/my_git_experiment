@@ -1,0 +1,4 @@
+修改XP系统默认字体的方法如下：
+
+ 
+常规修改默认字体的方法：在桌面空白处右键－－属性－－外观－－高级－－选择项目，然后修改想要的字体即可。 通过注册表修改默认字体： 点击“开始”--“运行”，在“打开”中输入“regedit”打开注册表。 在注册表编辑器中找到[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize]。 把“GUIFont.Facename”字符串的值改为自己想要的字体，如Tahoma。 把“GUIFont.Height”DWORD值改为自己想要的字体大小。 通过修改win.ini文件修改默认字体： 首先确保所需要的字体文件是在windows/fonts/的目录下。 然后在windows目录下找到win.ini文件。 用记事本打开win.ini文件，修改：“Font=Modern”为“Font=你要使用的字体”。 修改完后重新启动即可

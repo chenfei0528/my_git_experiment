@@ -1,0 +1,64 @@
+grub-install /dev/sda does not have any corresponding bios driver
+
+Error /dev/hdX does not have any corresponding BIOS drive and Solution
+
+Q. After windows XP installation I lost my Grub boot loader and now when I try to run grub-install command to restore Grub in master boot record. But I am getting an error that read as follows:
+
+/dev/sda does not have any corresponding BIOS drive
+
+How do I fix this problem?
+
+A. grub-install is use to install GRUB on your drive. If you are getting error try to recheck device map. Type the command as follows:
+
+# grub-install --recheck /dev/sda
+
+Where,--recheck: Probe a device map even if it already exists 
+
+/dev/sda : Replace /dev/sda with your actual device name.
+
+
+我对两块硬盘做了软件RAID1，如果第一快硬盘坏了或是被物理的移除了，此时通过grub-insall设置第二块硬盘成可引导的时候会失败，并且提示如下错误，'/dev/hdx does not have any corresponding BIOS drive.'， 如何设置第二块硬盘的GRUB？ 
+解决方法： 
+相关版本：Red Hat Enterprise Linux 3 
+故障现象： 
+当软件RAID中的第一个硬盘被移除，第二快硬盘是无法引导系统的，如果执行grub-install的，你会得到如下报错:'/dev/hdx does not have any corresponding BIOS drive'. 
+解决方法： 
+请注意在执行下述命令之前，确保你的关键数据有一个有效的当前备份，不管什么原因导致你的第一快硬盘无法引导，你就需要使用Red Hat Enterprise Linux 的第一张安装光盘引导系统进入RESCUE模式。 
+要想在RESCUE模式下运行grub-install命令, 首先需要手动的mount相关的分区。可以通过fdisk -l 查看当前系统的分区： 
+# fdisk -l
+     
+你需要手动的mount所有类型是Linux和Linux RAID autodetect的分区，在如下的例子中，／boot分区是/dev/hda1， ／分区是/dev/hda2。 
+   Device Boot    Start       End    Blocks   Id  System
+/dev/hda1             1        13    104391   fd  Linux raid autodetect
+/dev/hda2            14      1288  10241437+  fd  Linux raid autodetect
+/dev/hda3          1289      1352    514080   82  Linux swap
+     
+在如下的样例中，你可以通过如下命令挂载分区: 
+# mkdir /mnt/sysimage
+# mount /dev/hda2 /mnt/sysimage
+# mount /dev/hda1 /mnt/sysimage/boot
+# chroot /mnt/sysimage
+     
+下一个步骤是编辑文件/etc/grub.conf(或者是/boot/grub/grub.conf)，按照下述描述取消文件中的一些注释。 
+修改 
+#boot=/dev/hda
+成为 
+boot=/dev/hda
+     
+重新运行命令grub去安装GRUB到第二个硬盘的MBR上，从而使第二个硬盘可以引导。 
+# grub --batch --device-map=/boot/grub/device.map 
+   --config-file=/boot/grub/grub.conf --no-floppy
+     
+在grub命令的提示下，执行如下命令 
+grub> root (hd0,0)
+grub> setup (hd0)
+grub> quit
+     
+setup命令会把Grub写入到MBR。使得第二块硬盘可以引导。 
+----------------------
+请大家注意以下信息。（troubleshooting了一晚上，就学到了这点体会）
+附：
+cat /boot/grub/device.map 
+(fd0)   /dev/fd0
+(hd0)   /dev/cciss/c0d0
+

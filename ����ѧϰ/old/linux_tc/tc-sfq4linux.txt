@@ -1,0 +1,114 @@
+     1	TC(8)                                Linux                               TC(8)
+
+
+
+     2	NAME
+     3	       sfq - Stochastic Fairness Queueing
+
+     4	SYNOPSIS
+     5	       tc qdisc ... perturb seconds quantum bytes
+
+
+     6	DESCRIPTION
+     7	       Stochastic  Fairness Queueing is a classless queueing discipline avail-
+     8	       able for traffic control with the tc(8) command.
+
+     9	       SFQ does not shape traffic but only schedules the transmission of pack-
+    10	       ets,  based  on  'flows'.   The goal is to ensure fairness so that each
+    11	       flow is able to send data in turn, thus preventing any single flow from
+    12	       drowning out the rest.
+
+    13	       This  may  in  fact  have some effect in mitigating a Denial of Service
+    14	       attempt.
+
+    15	       SFQ is work-conserving and therefore always delivers a packet if it has
+    16	       one available.
+
+    17	ALGORITHM
+    18	       On enqueueing, each packet is assigned to a hash bucket, based on
+
+    19	       (i)    Source address
+
+    20	       (ii)   Destination address
+
+    21	       (iii)  Source port
+
+    22	       If these are available. SFQ knows about ipv4 and ipv6 and also UDP, TCP
+    23	       and ESP.  Packets with other protocols are hashed based on  the  32bits
+    24	       representation  of  their  destination and the socket they belong to. A
+    25	       flow corresponds mostly to a TCP/IP connection.
+
+    26	       Each of these buckets should represent a unique flow. Because  multiple
+    27	       flows  may get hashed to the same bucket, the hashing algorithm is per-
+    28	       turbed at configurable intervals so that the unfairness lasts only  for
+    29	       a  short  while. Perturbation may however cause some inadvertent packet
+    30	       reordering to occur.
+
+    31	       When dequeuing, each hashbucket with data is queried in a  round  robin
+    32	       fashion.
+
+    33	       The compile time maximum length of the SFQ is 128 packets, which can be
+    34	       spread over at most 128 buckets of 1024 available. In case of overflow,
+    35	       tail-drop  is  performed  on the fullest bucket, thus maintaining fair-
+    36	       ness.
+
+
+    37	PARAMETERS
+    38	       perturb
+    39	              Interval in seconds for queue algorithm  perturbation.  Defaults
+    40	              to  0,  which  means that no perturbation occurs. Do not set too
+    41	              low for each perturbation  may  cause  some  packet  reordering.
+    42	              Advised value: 10
+
+    43	       quantum
+    44	              Amount  of  bytes a flow is allowed to dequeue during a round of
+    45	              the round robin process.  Defaults to the MTU of  the  interface
+    46	              which is also the advised value and the minimum value.
+
+
+    47	EXAMPLE & USAGE
+    48	       To attach to device ppp0:
+
+    49	       # tc qdisc add dev ppp0 root sfq perturb 10
+
+    50	       Please note that SFQ, like all non-shaping (work-conserving) qdiscs, is
+    51	       only useful if it owns the queue.  This is the case when the link speed
+    52	       equals  the  actually available bandwidth. This holds for regular phone
+    53	       modems, ISDN connections and direct non-switched ethernet links.
+
+    54	       Most often, cable modems and DSL devices do not fall  into  this  cate-
+    55	       gory. The same holds for when connected to a switch  and trying to send
+    56	       data to a congested segment also connected to the switch.
+
+    57	       In this case, the effective queue does not reside within Linux  and  is
+    58	       therefore not available for scheduling.
+
+    59	       Embed SFQ in a classful qdisc to make sure it owns the queue.
+
+
+    60	SOURCE
+    61	       o      Paul E. McKenney "Stochastic Fairness Queuing", IEEE INFOCOMM'90
+    62	              Proceedings, San Francisco, 1990.
+
+
+    63	       o      Paul E. McKenney "Stochastic Fairness  Queuing",  "Interworking:
+    64	              Research and Experience", v.2, 1991, p.113-131.
+
+
+    65	       o      See also: M. Shreedhar and George Varghese "Efficient Fair Queu-
+    66	              ing using Deficit Round Robin", Proc. SIGCOMM 95.
+
+
+    67	SEE ALSO
+    68	       tc(8)
+
+
+    69	AUTHOR
+    70	       Alexey N. Kuznetsov, <kuznet@ms2.inr.ac.ru>. This manpage maintained by
+    71	       bert hubert <ahu@ds9a.nl>
+
+
+
+
+
+    72	iproute2                        8 December 2001                          TC(8)

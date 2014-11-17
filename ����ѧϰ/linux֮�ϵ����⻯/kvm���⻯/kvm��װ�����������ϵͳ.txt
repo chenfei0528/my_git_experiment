@@ -1,0 +1,10 @@
+qemu-img create -f qcow2 ubuntu.img 20G
+
+kvm -m 256 -cdrom ubuntu-12.04.2-server-amd64.iso -drive file=ubuntu.img,if=virtio,index=0 -boot d -net nic -net user -nographic -vnc :0
+
+kvm -m 256 -drive file=ubuntu.img,if=virtio,index=0 -boot c -net nic -net user -nographic -vnc :0
+
+
+glance image-create 每name centos6.5 每disk-format=qcow2 每container-format=bare 每is-public=True 每file=/mnt/image/centos6.5.img
+
+

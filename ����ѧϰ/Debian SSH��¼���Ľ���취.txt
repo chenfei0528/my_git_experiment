@@ -1,0 +1,16 @@
+Debian SSH登录慢的解决办法 
+
+
+偶然发现通过SSH登录无外网连接的Debian的时候，提示输入密码前会有一个延时。Google了一下，通常的答案是关闭GSSAPI认证。打开/etc/ssh/ssh_config
+
+　　修改其中的：
+
+　　GSSAPIAuthentication no
+
+　　但是为什么会这样哪？想到在有外网连接时正常，怀疑是DNS解析造成的影响，通过抓包验证了这个推断。原来在登录时，SSH服务端会对客户端的IP做反向解析，此时连接不到DNS就出现了延时。那么解决办法来了，打开/etc/ssh/sshd_config
+
+　　修改其中的（如果没有就新增一行）：
+
+　　UseDNS no
+
+　　可参考 man 5 sshd_config，这个问题也提示我们，如果设置了DNS，但DNS不可用，也会带来的一些副作用的。

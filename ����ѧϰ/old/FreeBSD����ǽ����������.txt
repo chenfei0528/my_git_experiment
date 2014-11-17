@@ -1,0 +1,197 @@
+FreeBSD防火墙并设置限速 
+
+FreeBSD 的基本系统内建了三种不同的防火墙软件包。 它们是 IPFILTER (也被称作 IPF)、 IPFIREWALL (也被称作 ipfw)， 以及 OpenBSD 的 PacketFilter (也被称为 PF)。 freebsd 也提供了两个内建的、 用于流量整形 (基本上是控制带宽占用) 的软件包： altq(4) 和 dummynet(4)。 Dummynet 在过去一直和 IPFW 紧密集成， 而 ALTQ 则需要配合 IPF/PF 使用。
+
+花了两天时间琢磨一下防火墙限速的配置方法，目前配置过的防火墙主要是IPF和IPF，限速的软件包配置的是Dummynet（配合IPFW使用）和ALTQ（配合IPF使用）。
+
+一、配置IPFW Dummynet
+
+IPFIREWALL (IPFW) 是一个由 FreeBSD 发起的防火墙应用软件， 它由 FreeBSD 的志愿者成员编写和维护。标准的 FreeBSD 安装中， IPFW 所给出的规则集例子 (可以在 /etc/rc.firewall 中找到) 非常简单，以至于没有办法不加修改地加以使用。IPFW 由几部分组成， 其主要组件是内核的防火墙过滤规则处理器，及其集成的数据包记帐工具、 日志工具、 用以触发 NAT 工具的 'divert' (转发) 规则、 高级特殊用途工具、 dummynet 流量整形机制， 'fwd rule' 转发工具， 桥接工具， 以及 ipstealth 工具。IPFW 是基本的 FreeBSD 安装的一部分， www.adbrite.cc以单独的可加载内核模块的形式提供。 如果在 rc.conf 中加入 firewall_enable="YES" 语句， 就会自动地加载对应的内核模块。 除非您打算使用由它提供的 NAT 功能， 一般情况下并不需要把 IPFW 编进 FreeBSD 的内核。不过我刚开始安装防火墙时没有注意到这句话，所以选择的是编译内核的方式。
+
+# cd /usr/src/sys/i386/conf
+
+# cp GENERIC ipfw //备份原有内核的配置文件
+
+#ee ipfw
+在ipfw中做以下修改：
+ident ipfw 
+
+添加以下选项：
+options IPFIREWALL
+options IPFIREWALL_VERBOSE
+options IPFIREWALL_VERBOSE_LIMITS=5
+options IPFIREWALL_DEFAULT_TO_ACCEPT
+options DUMMYNET
+
+#diff GENERIC ipfw //查看原有的内核文件与ipfw的区别
+25c25
+< ident GENERIC
+---
+> ident ipfw
+59a60,66
+> 
+> options IPFIREWALL
+> options IPFIREWALL_VERBOSE
+> options IPFIREWALL_VERBOSE_LIMIT=5
+> options IPFIREWALL_DEFAULT_TO_ACCEPT 
+> options IPDIVERT
+> options DUMMYNET
+
+#/usr/sbin/config ipfw
+
+#cd ../compile/ipfw //根据配置文件生成/usr/src/sys/i386/ipfw下的内核源程序文件
+
+# make depend
+
+# make
+
+#make install //编译安装新内核
+
+修改/etc/rc.conf,添加以下选项:
+firewall_enable="YES" //启用防火墙 
+firewall_script="/etc/ipfw.rules" //读取防火墙规则
+firewall_logging="YES" //记录日志 
+firewall_type="open" //选择防火墙使用open模式
+################################################################################### open -允许任何人进入
+# client -只保护这台机器
+# simple -保护整个网络
+# closed -除了lo0接口上的服务，禁用其它任何IP服务 
+# UNKNOWN -不加载防火墙规则
+# filename -加载给定文件中的规则（要指定完全路径）
+##################################################################################
+
+编写防火墙规则：
+
+#ee /etc/ipfw.rules
+/sbin/ipfw add 100 pipe 1 ip from any to any out //设定流出的流量
+/sbin/ipfw add 200 pipe 2 ip from any to any in //设定流入的流量
+/sbin/ipfw pipe 1 config bw 1Mbit/s //设定流出流量的带宽为1Mbit/s
+/sbin/ipfw pipe 2 config bw 1Mbit/s //设定流入流量的带宽为1Mbit/s
+
+最后重启机器：
+# reboot
+
+现在防火墙已经启动起来了。可以用ipfw show查看当前的防火墙规则：
+# ipfw show
+00100 69 7973 pipe 1 ip from any to any out 
+00200 91 15534 pipe 2 ip from any to any in
+65535 0 0 allow ip from any to any
+
+此时可以做一个小实验来测试限速是否有效。从另一台机器向安装了ipfw的机器发送流量， 测试发出的流量和收到的流量之间是否有差距；然后再反过来，从安装ipfw的机器向其他机器发送流量，在两台机器上监控发送和接收的流量，比较流量的变化情况。此处发送流量的程序是预先调试好的，不同的程序分别可发送的流量是不同的。经过测试证明，防火墙的限速还是有效果的。
+
+注：防火墙加载有两种方式，可以在/etc/rc.conf中写入启用防火墙的选项，也可以将防火墙选项写入内核的配置文件，重新编译安装内核。编译内核的方式一般是需要要用到防火墙的NAT功能是采用。www.adbrite.cc但是如果要使用防火墙的限速功能，需要在内核中加载带宽整形模块。IPFW相对应的模块是Dummynet，这个模块需要在内核中写入，并且编译。有一种办法未尝试，即将防火墙写入/etc/rc.conf。将内核配置文件中只加入Dummynet，然后编译，安装内核。有时间可以尝试一下。
+
+二、配置IPFILTER ALTQ
+IPFILTER 基于内核模式的防火墙和 NAT 机制，这些机制可以通过用户模式运行的接口程序中进行控制。防火墙规则可以使用 ipf(8) 工具来动态地设置和删除。 NAT 规则可以通过 ipnat(1) 工具来维护。 ipfstat(8) 工具则可以用来显示 IPFILTER 内核部分的统计数据。 最后， 使用 ipmon(8) 程序可以把 IPFILTER 的动作记录到系统日志文件中。（因为我没有用到NAT，所以没有配置这个）。
+IPF 作为 FreeBSD 基本安装的一部分， 以一个独立的内核模块的形式提供。 如果在 rc.conf 中配置了 ipfilter_enable="YES"， 系统就会自动地动态加载 IPF 内核模块。 这个内核模块在创建时启用了日志支持， 并加入了 default pass all 选项。 如果只是需要把默认的规则设置为 block all 的话， 并不需要把 IPF 编译到内核中。可以简单地通过把这条规则加入自己的规则集来达到同样的目的。我刚开始没有看到这个，也是采用编译内核的方式实现的。:( 
+
+# cd /usr/src/sys/i386/conf
+
+# cp GENERIC ipfilter
+
+#ee ipfilter
+在ipfilter中做以下修改：
+
+ident ipfilter 
+
+
+添加以下选项：
+options IPFILTER //启用 “IPFILTER” 防火墙的支持
+
+options IPFILTER_LOG //用于启用 IPF 的日志支持，所有匹配了包含 log 的规则的包， 都会被记录到 ipl 这个包记录伪──设备中。
+
+options IPFILTER_DEFAULT_BLOCK //将改变防火墙的默认动作，进而， 所有不匹配防火墙的 pass 规则的包都会被阻止。
+
+options ALTQ //启用 ALTQ 框架的支持。
+
+options ALTQ_CBQ //用于启用基于分类的队列 (CBQ) 支持。 CBQ 允许您将连接分成不同的类别， 或者说， 队列， 以便在规则中为它们指定不同的优先级。
+
+options ALTQ_RED //将启用随机预检测 (RED)。 RED 是一种用于防止网络拥塞的技术。 RED 度量队列的长度，并将其与队列的最大和最小长度阈值进行比较。 如果队列过长， 则新的包将被丢弃。 如名所示， RED 从不同的连接中随机地丢弃数据包。
+
+options ALTQ_RIO //将启用出入的随机预检测。
+
+options ALTQ_HFSC //启用层次式公平服务平滑包调度器。
+
+options ALTQ_PRIQ //启用优先队列 (PRIQ)。 PRIQ 首先允许高优先级队列中的包通过。
+
+options ALTQ_NOPCC // 启用 ALTQ 的 SMP 支持。 如果是 SMP 系统， 则必须使用它。
+
+#diff GENERIC ipfw 
+25c25
+< ident GENERIC
+---
+> ident altq
+59a60,62
+> options IPFILTER
+> options IPFILTER_LOG
+> options IPFILTER_DEFAULT_BLOCK
+60a64,70
+> options ALTQ
+> options ALTQ_CBQ
+> options ALTQ_RED
+> options ALTQ_RIO
+> options ALTQ_HFSC
+> options ALTQ_PRIQ
+> options ALTQ_NOPCC
+
+#cd ../compile/ipfilter
+
+# make depend
+
+# make
+
+#make install
+
+修改/etc/rc.conf,添加以下选项:
+ipfilter_enable="YES" # 启动 ipf 防火墙
+ipfilter_rules="/etc/ipf.rules" # 将被加载的规则定义， 这是一个文本文件
+ipmon_enable="YES" # 启动 IP 监视日志
+ipmon_flags="-Ds" # D = 作为服务程序启动
+# s = 使用 syslog 记录
+# v = 记录 tcp 窗口大小、 ack 和顺序号(seq)
+# n = 将 IP 和端口映射为名字
+
+编写防火墙规则：
+
+#ee /etc/ipf.rules
+pass in quick on lo0 all
+pass out quick on lo0 all
+pass in quick on lnc0 all
+pass out quick on lnc0 all
+pass out quick on lnc0 proto tcp from any to any port = 53 flags S keep state keep frags
+pass out quick on lnc0 proto udp from any to any port = 53 keep state keep frags
+pass out quick on lnc0 proto tcp from any to any port = 21 flags S keep state keep frags
+pass out quick on lnc0 proto tcp from any to any port = 80 flags S keep state keep frags
+pass out quick on lnc0 proto tcp from any to any port = 443 flags S keep state keep frags
+pass out quick on lnc0 proto tcp from any to any port = 43 flags S keep state keep frags
+pass out quick on lnc0 proto tcp from any to any port = 23 flags S keep state keep frags
+pass out quick on lnc0 proto icmp from any to any keep state keep frags
+pass out quick on lnc0 proto udp from any to any port 33434 >< 33525 keep state keep frags
+pass in quick on lnc0 proto icmp from any to any icmp-type 3 keep state keep frags
+pass in quick on lnc0 proto icmp from any to any icmp-type 11 keep state keep frags
+altq on lnc0 cbq bandwidth 2048Kb queue { std,ssh,ftp,tcp }
+queue std bandwidth 50% cbq(default)
+queue ssh priority 4 cbq(ecn)
+queue ftp bandwidth 500Kb priority 5 cbq(borrow red)
+queue tcp priority 6
+
+在/usr/local/etc/rc.d下加入一个启动脚本ipf.loadrules.sh,使防火墙开机后自动读取设置规则：
+#!/bin/sh
+/sbin/ipf -Fa -f /etc/ipf.rules -Fa 表示清除所有的内部规则表。
+-f 用于指定将要被读取的规则定义文件。
+
+最后重启机器：
+# reboot
+
+现在防火墙已经启动起来了。可以用ipf show查看当前的防火墙规则：
+# ipf -hio
+empty list for ipfilter(out)
+empty list for ipfilter(in)
+
+同样可以重复上面的实验，用调试好的发送不同大小流量的程序从不同的方向发包，通过监控不同机器上流量的显示来测试防火墙的限速功能是否有效。实验证明，防火墙对限速还是有效的，但是限制的大小不够准确。
+三、恢复没有配置防火墙的内核环境
+注释掉/etc/rc.conf中加入的防火墙相关的语句，然后做以下操作：
+#cd /boot
+#mv kernel kernel.ipfw 将带防火墙内核备份
+#mv kernel.old kernel 将原有内核恢复为启动内核
+#reboot 

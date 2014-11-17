@@ -1,0 +1,147 @@
+远程修改FTP密码
+
+现在我们搭建好一个
+ftp://192.168.54.174
+ FTP
+服务器。
+  
+前提条件
+  
+首先要确保
+FTP
+服务器为该用户的账户提供了修改密码的权限。
+  
+
+  
+修改密码
+  
+1. 
+点击“开始——运行”，输入“
+cmd
+”并回车。
+ 
+ 
+ 
+2. 
+在
+DOS
+窗口内输入“
+ftp 192.168.54.174
+”并回车。
+ 
+ 
+ 
+C:Documents and SettingsAdministrator> ftp 192.168.54.174 
+ 
+ 
+屏幕提示如下：
+  
+ 
+ 
+Connected to 192.168.54.174  
+ 
+ 
+220 Serv-U FTP Server v6.4 for WinSock ready... 
+ 
+ 
+User (192.168.54.174:(none)):  
+ 
+ 
+3. 
+在光标处输入你的
+FTP
+用户的账号（如：
+aaa
+）并回车。
+ 
+ 
+ 
+屏幕提示：
+  
+ 
+ 
+User (192.168.54.174:(none)): aaa 
+ 
+ 
+331 User name okay, need password. 
+ 
+ 
+Password:  
+ 
+ 
+4. 
+接着输入你的
+FTP
+账号的密码（如：
+aaa123
+，
+请注意此处的密码并不显示
+）。
+ 
+ 
+ 
+屏幕提示：
+ 
+ 
+ 
+Password:  
+ 
+ 
+230 User logged in, proceed. 
+ 
+ 
+ftp> 
+  
+ 
+ 
+5. 
+然后输入如下命令，即可将你的
+FTP
+账号的密码修改为“
+123aaa
+”：
+ 
+ 
+ 
+quote site pswd aaa123 123aaa  
+ 
+ 
+（注：命令格式为“
+quote site pswd 
+初始密码
+ 
+修改密码”）
+ 
+ 
+ 
+屏幕提示：
+  
+ 
+ 
+ftp> quote site pswd aaa123 123aaa 
+ 
+ 
+230 Password changed okay.  
+ 
+ 
+6. 
+屏幕提示“
+230 Password changed okay. 
+”，说明密码修改成功。最后输入
+“
+quit
+”
+退出
+FTP
+登录。
+ 
+ 
+ 
+屏幕提示：
+ 
+ 
+ 
+ftp> quit 
+ 
+ 
+221 Goodbye!  

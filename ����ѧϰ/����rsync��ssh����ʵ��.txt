@@ -1,0 +1,75 @@
+利用rsync和ssh备份实例
+
+摘要：针对较小的备份量做的入门级备份方案。
+
+备份的重要性不言而喻,现在向大家介绍一种本人在实际工作中用到的几乎是完全免费,但又非常实用的备份方法.
+一,简述:
+ 备份主要采用rsync利用sshd服务进行备份,而无需建立任何其他服务.
+二, 服务器配置:
+   1,RedHat AS3
+   2,rsync 2.4.6 [RedHat AS3 自带]
+   3,ssh-keygen [RedHat AS3 自带]
+   4,sshd[RedHat AS3 自带]
+三, 环境描述:
+   1,111.111.111.111 ---需被备份的资料存储于该服务器
+   2,222.222.222.222 ---备份服务器
+四, 备份设置
+1,添加帐号:
+分别在111.111.111.111和222.222.222.222上建立备份专用帐号如bak确保在111.111.111.111上的bak具有读取需备份资料的权限,在222.222.222.222上的bak具有写权限,用来执行备份脚本.
+2,添加备份脚本:
+
+CODE:#######################################################
+# ........
+# .....222.222.222.222
+# 
+# #####################################################3#
+#
+backup_dir="/backup/db_backup"
+tbd=`date +%Y%m%d`
+mkdir -p $backup_dir/$tbd
+chown bak.bak  $backup_dir/$tbd
+# delete old backup
+find /backup/db_backup -maxdepth 1 -type d -mtime +3 | xargs rm -Rf
+# 备份IP:111.111.111.111
+# 下的/db/mysql/3306/data下的abc文件夹,其他文件和文件夹一律不做备份.
+#
+mkdir -p $backup_dir/$tbd/111.111.111.111/3306
+rsync -avl --delete -e ssh  --include=data/abc --exclude=data/* bak@111.111.111.111:/db/mysql/3306/data /backup/db_backup/`date +%Y%m%d`/111.111.111.111/3306
+说明:在222.222.222.222的/backup/db_backup/"日期"/111.111.111.111/3306/下备份
+   111.111.111.111的/db/mysql/3306/data/abc文件夹 .并按照日期保留最近4日的数据.
+   参数 “-e ssh”直接用222.222.222.222上执行该脚本的用户登录到111.111.111.111.
+   将脚本保存到/home/bak/backupdata.sh 加上可执行属性.
+ 3,添加crontab:
+    命令:$crontab -e
+               添加如下语句后保存
+
+CODE:0 2  * * *  /home/bak/backupdata.sh
+以后就每天凌晨2点执行
+但这样还不能无人守候的情况下自动运行,要想自动完成备份工作还需要分发bak帐号公钥.接下来就来讲讲怎样做:
+五, sshd的配置
+   1,建立key:
+    在111.111.111.111下用bak帐号执行如下命令:
+
+CODE:$ ssh-keygen -t dsa -b 2048 -f /home/bak/111.111.111.111-rsync-key
+    Generating public/private dsa key pair.
+Enter passphrase (empty for no passphrase): [press enter here]
+Enter same passphrase again: [press enter here]
+Your identification has been saved in /home/bak/111.111.111.111-rsync-key.
+Your public key has been saved in /home/bak/111.111.111.111-rsync-key.pub.
+The key fingerprint is:
+2e:28:d9:ec:85:21:e7:ff:73:df:2e:07:78:f0:d0:a0 bak@111.111.111.111
+注意这里不需要输入passphrase.
+     2,分发公钥:
+       使用scp命令
+
+CODE:scp /home/bak/111.111.111.111-rsync-key.pub bak@222.222.222.222:/home/bak
+3,为222.222.222.222的bak添加公钥
+       在222.222.222.222的/home/bak/.ssh/下建立文件authorized_keys (如没有.ssh文件夹请自行建立,接下来将刚拷贝到 /home/bak/下的111.111.111.111-rsync-key.pub的内容导入 /home/bak/.ssh/authorized_keys
+      用如下命令:
+
+CODE:$ mkdir /home/bak/.ssh
+      $ cat /home/bak/111.111.111.111-rsync-key.pub >;>; /home/bak/.ssh/authorized_keys
+4,现在用bak登录111.111.111.111,输入如下命令:
+
+CODE:$ ssh 222.222.222.222 
+如果不用密码可以直接登录了那就成功了....

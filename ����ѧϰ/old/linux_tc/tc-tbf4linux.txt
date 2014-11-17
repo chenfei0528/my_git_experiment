@@ -1,0 +1,147 @@
+     1	TC(8)                                Linux                               TC(8)
+
+
+
+     2	NAME
+     3	       tbf - Token Bucket Filter
+
+     4	SYNOPSIS
+     5	       tc  qdisc ... tbf rate rate burst bytes/cell ( latency ms | limit bytes
+     6	       ) [ mpu bytes [ peakrate rate mtu bytes/cell ] ]
+
+     7	       burst is also known as buffer and maxburst. mtu is also known  as  min-
+     8	       burst.
+
+     9	DESCRIPTION
+    10	       The  Token  Bucket  Filter is a classless queueing discipline available
+    11	       for traffic control with the tc(8) command.
+
+    12	       TBF is a pure shaper and never schedules traffic. It  is  non-work-con-
+    13	       serving  and  may  throttle  itself, although packets are available, to
+    14	       ensure that the configured rate is  not  exceeded.   On  all  platforms
+    15	       except  for  Alpha, it is able to shape up to 1mbit/s of normal traffic
+    16	       with ideal minimal burstiness, sending out  data exactly at the config-
+    17	       ured rates.
+
+    18	       Much  higher  rates  are possible but at the cost of losing the minimal
+    19	       burstiness. In that case, data is on average dequeued at the configured
+    20	       rate  but may be sent much faster at millisecond timescales. Because of
+    21	       further queues living in network adaptors, this is often not a problem.
+
+    22	       Kernels  with  a  higher  'HZ'  can  achieve  higher rates with perfect
+    23	       burstiness. On Alpha, HZ is ten times higher,  leading  to  a  10mbit/s
+    24	       limit  to perfection. These calculations hold for packets of on average
+    25	       1000 bytes.
+
+
+    26	ALGORITHM
+    27	       As the name implies, traffic is filtered based on  the  expenditure  of
+    28	       tokens.   Tokens  roughly correspond to bytes, with the additional con-
+    29	       straint that each packet consumes some tokens, no matter how  small  it
+    30	       is.  This  reflects the fact that even a zero-sized packet occupies the
+    31	       link for some time.
+
+    32	       On creation, the TBF is stocked with tokens  which  correspond  to  the
+    33	       amount  of  traffic  that  can  be  burst in one go. Tokens arrive at a
+    34	       steady rate, until the bucket is full.
+
+    35	       If no tokens are available, packets are  queued,  up  to  a  configured
+    36	       limit.  The  TBF  now calculates the token deficit, and throttles until
+    37	       the first packet in the queue can be sent.
+
+    38	       If it is not acceptable to  burst  out  packets  at  maximum  speed,  a
+    39	       peakrate  can be configured to limit the speed at which the bucket emp-
+    40	       ties. This peakrate is implemented as a second TBF with  a  very  small
+    41	       bucket, so that it doesn't burst.
+
+    42	       To  achieve  perfection,  the  second  bucket may contain only a single
+    43	       packet, which leads to the earlier mentioned 1mbit/s limit.
+
+    44	       This limit is caused by the fact that the kernel can only throttle  for
+    45	       at minimum 1 'jiffy', which depends on HZ as 1/HZ. For perfect shaping,
+    46	       only a single packet can get sent per jiffy - for  HZ=100,  this  means
+    47	       100 packets of on average 1000 bytes each, which roughly corresponds to
+    48	       1mbit/s.
+
+
+    49	PARAMETERS
+    50	       See tc(8) for how to specify the units of these values.
+
+    51	       limit or latency
+    52	              Limit is the number of bytes that  can  be  queued  waiting  for
+    53	              tokens  to become available. You can also specify this the other
+    54	              way around by setting the latency parameter, which specifies the
+    55	              maximum  amount  of time a packet can sit in the TBF. The latter
+    56	              calculation takes into account the size of the bucket, the  rate
+    57	              and  possibly  the  peakrate  (if set). These two parameters are
+    58	              mutually exclusive.
+
+    59	       burst  Also known as buffer or maxburst.  Size of the bucket, in bytes.
+    60	              This is the maximum amount of bytes that tokens can be available
+    61	              for instantaneously.  In general, larger shaping rates require a
+    62	              larger  buffer. For 10mbit/s on Intel, you need at least 10kbyte
+    63	              buffer if you want to reach your configured rate!
+
+    64	              If your buffer is too small, packets may be dropped because more
+    65	              tokens arrive per timer tick than fit in your bucket.  The mini-
+    66	              mum buffer size can be calculated by dividing the rate by HZ.
+
+    67	              Token usage calculations are performed using a  table  which  by
+    68	              default  has  a resolution of 8 packets.  This resolution can be
+    69	              changed by specifying the cell size with the burst. For example,
+    70	              to  specify  a  6000 byte buffer with a 16 byte cell size, set a
+    71	              burst of 6000/16. You will probably never have to set this. Must
+    72	              be an integral power of 2.
+
+    73	       mpu    A  zero-sized  packet does not use zero bandwidth. For ethernet,
+    74	              no packet uses less than  64  bytes.  The  Minimum  Packet  Unit
+    75	              determines  the  minimal  token usage (specified in bytes) for a
+    76	              packet. Defaults to zero.
+
+    77	       rate   The speed knob. See remarks above about limits!  See  tc(8)  for
+    78	              units.
+
+    79	       Furthermore,  if  a  peakrate  is desired, the following parameters are
+    80	       available:
+
+
+    81	       peakrate
+    82	              Maximum depletion rate of the  bucket.  Limited  to  1mbit/s  on
+    83	              Intel,  10mbit/s on Alpha. The peakrate does not need to be set,
+    84	              it is only necessary if perfect millisecond timescale shaping is
+    85	              required.
+
+
+    86	       mtu/minburst
+    87	              Specifies the size of the peakrate bucket. For perfect accuracy,
+    88	              should be set to the MTU of the interface.   If  a  peakrate  is
+    89	              needed,  but  some  burstiness  is  acceptable, this size can be
+    90	              raised. A 3000 byte minburst allows around 3mbit/s of  peakrate,
+    91	              given 1000 byte packets.
+
+    92	              Like the regular burstsize you can also specify a cell size.
+
+    93	EXAMPLE & USAGE
+    94	       To  attach a TBF with a sustained maximum rate of 0.5mbit/s, a peakrate
+    95	       of 1.0mbit/s, a 5kilobyte buffer, with a pre-bucket  queue  size  limit
+    96	       calculated  so  the  TBF  causes  at most 70ms of latency, with perfect
+    97	       peakrate behaviour, issue:
+
+    98	       # tc qdisc add dev eth0 root tbf rate 0.5mbit \
+    99	         burst 5kb latency 70ms peakrate 1mbit       \
+   100	         minburst 1540
+
+
+   101	SEE ALSO
+   102	       tc(8)
+
+
+   103	AUTHOR
+   104	       Alexey N. Kuznetsov, <kuznet@ms2.inr.ac.ru>. This manpage maintained by
+   105	       bert hubert <ahu@ds9a.nl>
+
+
+
+
+
+   106	iproute2                       13 December 2001                          TC(8)

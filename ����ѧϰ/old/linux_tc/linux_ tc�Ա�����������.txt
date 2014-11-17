@@ -1,0 +1,42 @@
+linux tc 对本机网卡限速
+
+今天由于项目要测试在网络环境不好的情况下，会不会对平台有所影响，要求测试限制服务器流量，我想到了TC，我对TC不是很了解， google了一下，看到了不少文章都是做路由用的，对我来说不是很实用，因为我是对单机测试。先看看TC命令在说，没想到报错，错误如下：
+shell$> tc -s qdisc
+RTNETLINK answers: Invalid argument
+看到这个错误很迷茫，命令是支持的啊，在网上查询了很久，发现是内核不支持，不支持QOS，不支持正常，因为我的内部测试服务器用XEN，虚拟的系统，所以我重新编译DomU内核，添加 QOS,CBQ等
+环境:
+xen domU : ubuntu-server 8.0.4  IP:192.168.6.101
+kernel : linux-2.6.18-xen
+xen dom0 : ubuntu-server 8.0.4  IP:192.168.6.209
+操作：
+DomU $> tc -s qdisc
+RTNETLINK answers: Invalid argument
+进入父系统：
+Dom0 $> cd xen-3.4.2
+编译xen DomU 内核
+Dom0 $> make linux-2.6-xenU-config CONFIGMODE=menuconfig
+选择 Networking  —>
+          Networking options  —>
+                QoS and/or fair queueing  —>
+                      [*] QoS and/or fair queueing
+把下面的最好都选上吧 * 是打入内核，M 是以模块方式。我全选择 *
+选择好，保存退出
+Dom0 $> make linux-2.6-xenU-build        
+Dom0 $> cd xen-3.4.2/dist/install/boot
+Dom0 $> scp vmlinuz-2.6.18.8-xenU root@192.168.6.101:~好，然后进入 DomU
+DomU $> ls
+vmlinuz-2.6.18.8-xenU
+覆盖 以前的vmlinuz-2.6.18.8-xenU
+DomU $> mv vmlinuz-2.6.18.8-xenU /boot/
+DomU $> reboot
+重启后，在进入系统，看是否还报错：
+DomU $> tc -s qdisc
+好没有报错“下来我们对 服务器 1935 端口进行限速，限制为 上传下载都为50Kbit
+CBQ 算法：
+DomU $> tc qdisc del dev eth0 root
+DomU $> tc qdisc add dev eth0 root handle 1:0 cbq bandwidth 100Mbit avpkt 1000 cell 8
+DomU $> tc class add dev eth0 parent 1:0 classid 1:1 cbq bandwidth 100Mbit rate 50Kbit weight 50Kbit prio 8 allot 1514 cell 8 maxburst 20 avpkt 1000 bounded
+DomU $> tc class add dev eth0 parent 1:1 classid 1:4 cbq bandwidth 100Mbit rate 50Kbit weight 50Kbit prio 5 allot 1514 cell 8 maxburst 20 avpkt 1000
+DomU $> tc qdisc add dev eth0 parent 1:4 handle 40: sfq
+DomU $> tc filter add dev eth0 parent 1:0 protocol ip prio 1 u32 match ip sport 1935 0xffff flowid 1:4
+好了 连接 1935 试试吧`.

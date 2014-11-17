@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>20.2. The Z File System (ZFS)</title><link rel="stylesheet" type="text/css" href="docbook.css" /><link rev="made" href="doc@FreeBSD.org" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><link rel="home" href="index.html" title="FreeBSD Handbook" /><link rel="up" href="filesystems.html" title="Chapter 20. File Systems Support" /><link rel="prev" href="filesystems.html" title="Chapter 20. File Systems Support" /><link rel="next" href="filesystems-linux.html" title="20.3. Linux® File Systems" /><link rel="copyright" href="legalnotice.html" title="Copyright" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">20.2. The Z File System (ZFS)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="filesystems.html">Prev</a> </td><th width="60%" align="center">Chapter 20. File Systems Support</th><td width="20%" align="right"> <a accesskey="n" href="filesystems-linux.html">Next</a></td></tr></table><hr /></div><div class="sect1"><div xmlns="" class="titlepage"><div><div><h2 xmlns="http://www.w3.org/1999/xhtml" class="title" style="clear: both"><a id="filesystems-zfs"></a>20.2. The Z File System (ZFS)</h2></div></div></div><p>The Z file system, originally developed by <span class="trademark">Sun</span>&#8482;,
+      is designed to use a pooled storage method in that space is only
+      used as it is needed for data storage.  It is also designed for
+      maximum data integrity, supporting data snapshots, multiple
+      copies, and data checksums.  It uses a software data replication
+      model, known as <acronym class="acronym">RAID</acronym>-Z.
+      <acronym class="acronym">RAID</acronym>-Z provides redundancy similar to
+      hardware <acronym class="acronym">RAID</acronym>, but is designed to prevent
+      data write corruption and to overcome some of the limitations
+      of hardware <acronym class="acronym">RAID</acronym>.</p><div class="sect2"><div xmlns="" class="titlepage"><div><div><h3 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79586992"></a>20.2.1. ZFS Tuning</h3></div></div></div><p>Some of the features provided by <acronym class="acronym">ZFS</acronym>
+	are RAM-intensive, so some tuning may be required to provide
+	maximum efficiency on systems with limited RAM.</p><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79588400"></a>20.2.1.1. Memory</h4></div></div></div><p>At a bare minimum, the total system memory should be at
+	  least one gigabyte.  The amount of recommended RAM depends
+	  upon the size of the pool and the ZFS features which are
+	  used.  A general rule of thumb is 1GB of RAM for every 1TB
+	  of storage.  If the deduplication feature is used, a general
+	  rule of thumb is 5GB of RAM per TB of storage to be
+	  deduplicated.  While some users successfully use ZFS with
+	  less RAM, it is possible that when the system is under heavy
+	  load, it may panic due to memory exhaustion.  Further tuning
+	  may be required for systems with less than the recommended
+	  RAM requirements.</p></div><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79589552"></a>20.2.1.2. Kernel Configuration</h4></div></div></div><p>Due to the RAM limitations of the <span class="trademark">i386</span>&#8482; platform, users
+	  using ZFS on the <span class="trademark">i386</span>&#8482; architecture should add the
+	  following option to a custom kernel configuration file,
+	  rebuild the kernel, and reboot:</p><pre class="programlisting">options 	KVA_PAGES=512</pre><p>This option expands the kernel address space, allowing
+	  the <code class="varname">vm.kvm_size</code> tunable to be pushed
+	  beyond the currently imposed limit of 1 GB, or the
+	  limit of 2 GB for <acronym class="acronym">PAE</acronym>.  To find the
+	  most suitable value for this option, divide the desired
+	  address space in megabytes by four (4).  In this example, it
+	  is <code class="literal">512</code> for 2 GB.</p></div><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79601840"></a>20.2.1.3. Loader Tunables</h4></div></div></div><p>The <code class="filename">kmem</code> address space can
+	  be increased on all FreeBSD architectures.  On a test system
+	  with one gigabyte of physical memory, success was achieved
+	  with the following options added to
+	  <code class="filename">/boot/loader.conf</code>, and the system
+	  restarted:</p><pre class="programlisting">vm.kmem_size="330M"
+vm.kmem_size_max="330M"
+vfs.zfs.arc_max="40M"
+vfs.zfs.vdev.cache.size="5M"</pre><p>For a more detailed list of recommendations for
+	  ZFS-related tuning, see <code class="uri"><a class="uri" href="http://wiki.freebsd.org/ZFSTuningGuide" target="_top">http://wiki.freebsd.org/ZFSTuningGuide</a></code>.</p></div></div><div class="sect2"><div xmlns="" class="titlepage"><div><div><h3 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79605168"></a>20.2.2. Using <acronym class="acronym">ZFS</acronym></h3></div></div></div><p>There is a start up mechanism that allows FreeBSD to mount
+	<acronym class="acronym">ZFS</acronym> pools during system initialization.  To
+	set it, issue the following commands:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>echo 'zfs_enable="YES"' &gt;&gt; /etc/rc.conf</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>service zfs start</code></strong></pre><p>The examples in this section assume three
+	<acronym class="acronym">SCSI</acronym> disks with the device names
+	<code class="filename"><em class="replaceable"><code>da0</code></em></code>,
+	<code class="filename"><em class="replaceable"><code>da1</code></em></code>,
+	and <code class="filename"><em class="replaceable"><code>da2</code></em></code>.
+	Users of <acronym class="acronym">IDE</acronym> hardware should instead use
+	<code class="filename"><em class="replaceable"><code>ad</code></em></code>
+	device names.</p><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79615920"></a>20.2.2.1. Single Disk Pool</h4></div></div></div><p>To create a simple, non-redundant <acronym class="acronym">ZFS</acronym>
+	  pool using a single disk device, use
+	  <code class="command">zpool</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool create example /dev/da0</code></strong></pre><p>To view the new pool, review the output of
+	  <code class="command">df</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>df</code></strong>
+Filesystem  1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a   2026030  235230  1628718    13%    /
+devfs               1       1        0   100%    /dev
+/dev/ad0s1d  54098308 1032846 48737598     2%    /usr
+example      17547136       0 17547136     0%    /example</pre><p>This output shows that the <code class="literal">example</code>
+	  pool has been created and <span class="emphasis"><em>mounted</em></span>.  It
+	  is now accessible as a file system.  Files may be created
+	  on it and users can browse it, as seen in the following
+	  example:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>cd /example</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>ls</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>touch testfile</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>ls -al</code></strong>
+total 4
+drwxr-xr-x   2 root  wheel    3 Aug 29 23:15 .
+drwxr-xr-x  21 root  wheel  512 Aug 29 23:12 ..
+-rw-r--r--   1 root  wheel    0 Aug 29 23:15 testfile</pre><p>However, this pool is not taking advantage of any
+	  <acronym class="acronym">ZFS</acronym> features.  To create a dataset on
+	  this pool with compression enabled:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs create example/compressed</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>zfs set compression=gzip example/compressed</code></strong></pre><p>The <code class="literal">example/compressed</code> dataset is now
+	  a <acronym class="acronym">ZFS</acronym> compressed file system.  Try
+	  copying some large files to
+	  <code class="filename">/example/compressed</code>.</p><p>Compression can be disabled with:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set compression=off example/compressed</code></strong></pre><p>To unmount a file system, issue the following command
+	  and then verify by using <code class="command">df</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs umount example/compressed</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>df</code></strong>
+Filesystem  1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a   2026030  235232  1628716    13%    /
+devfs               1       1        0   100%    /dev
+/dev/ad0s1d  54098308 1032864 48737580     2%    /usr
+example      17547008       0 17547008     0%    /example</pre><p>To re-mount the file system to make it accessible
+	  again, and verify with <code class="command">df</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs mount example/compressed</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>df</code></strong>
+Filesystem         1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a          2026030  235234  1628714    13%    /
+devfs                      1       1        0   100%    /dev
+/dev/ad0s1d         54098308 1032864 48737580     2%    /usr
+example             17547008       0 17547008     0%    /example
+example/compressed  17547008       0 17547008     0%    /example/compressed</pre><p>The pool and file system may also be observed by viewing
+	  the output from <code class="command">mount</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>mount</code></strong>
+/dev/ad0s1a on / (ufs, local)
+devfs on /dev (devfs, local)
+/dev/ad0s1d on /usr (ufs, local, soft-updates)
+example on /example (zfs, local)
+example/data on /example/data (zfs, local)
+example/compressed on /example/compressed (zfs, local)</pre><p><acronym class="acronym">ZFS</acronym> datasets, after creation, may be
+	  used like any file systems.  However, many other features
+	  are available which can be set on a per-dataset basis.  In
+	  the following example, a new file system,
+	  <code class="literal">data</code> is created.  Important files will be
+	  stored here, the file system is set to keep two copies of
+	  each data block:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs create example/data</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>zfs set copies=2 example/data</code></strong></pre><p>It is now possible to see the data and space utilization
+	  by issuing <code class="command">df</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>df</code></strong>
+Filesystem         1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a          2026030  235234  1628714    13%    /
+devfs                      1       1        0   100%    /dev
+/dev/ad0s1d         54098308 1032864 48737580     2%    /usr
+example             17547008       0 17547008     0%    /example
+example/compressed  17547008       0 17547008     0%    /example/compressed
+example/data        17547008       0 17547008     0%    /example/data</pre><p>Notice that each file system on the pool has the same
+	  amount of available space.  This is the reason for using
+	  <code class="command">df</code> in these examples, to show that the
+	  file systems use only the amount of space they need and all
+	  draw from the same pool.  The <acronym class="acronym">ZFS</acronym> file
+	  system does away with concepts such as volumes and
+	  partitions, and allows for several file systems to occupy
+	  the same pool.</p><p>To destroy the file systems and then destroy the pool as
+	  they are no longer needed:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs destroy example/compressed</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>zfs destroy example/data</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>zpool destroy example</code></strong></pre></div><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79675056"></a>20.2.2.2. <acronym class="acronym">ZFS</acronym> RAID-Z</h4></div></div></div><p>There is no way to prevent a disk from failing.  One
+	  method of avoiding data loss due to a failed hard disk is to
+	  implement <acronym class="acronym">RAID</acronym>.  <acronym class="acronym">ZFS</acronym>
+	  supports this feature in its pool design.</p><p>To create a <acronym class="acronym">RAID</acronym>-Z pool, issue the
+	  following command and specify the disks to add to the
+	  pool:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool create storage raidz da0 da1 da2</code></strong></pre><div xmlns="" class="note"><h3 class="admontitle">Note: </h3><p xmlns="http://www.w3.org/1999/xhtml"><span class="trademark">Sun</span>&#8482; recommends that the amount of devices used in
+	    a <acronym class="acronym">RAID</acronym>-Z configuration is between
+	    three and nine.  For environments requiring a single pool
+	    consisting of 10 disks or more, consider breaking it up
+	    into smaller <acronym class="acronym">RAID</acronym>-Z groups.  If only
+	    two disks are available and redundancy is a requirement,
+	    consider using a <acronym class="acronym">ZFS</acronym> mirror.  Refer to
+	    <a class="citerefentry" href="http://www.FreeBSD.org/cgi/man.cgi?query=zpool&amp;sektion=8"><span class="citerefentry"><span class="refentrytitle">zpool</span>(8)</span></a> for more details.</p></div><p>This command creates the <code class="literal">storage</code>
+	  zpool.  This may be verified using <a class="citerefentry" href="http://www.FreeBSD.org/cgi/man.cgi?query=mount&amp;sektion=8"><span class="citerefentry"><span class="refentrytitle">mount</span>(8)</span></a> and
+	  <a class="citerefentry" href="http://www.FreeBSD.org/cgi/man.cgi?query=df&amp;sektion=1"><span class="citerefentry"><span class="refentrytitle">df</span>(1)</span></a>.  This command makes a new file system in the
+	  pool called <code class="literal">home</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs create storage/home</code></strong></pre><p>It is now possible to enable compression and keep extra
+	  copies of directories and files using the following
+	  commands:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set copies=2 storage/home</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>zfs set compression=gzip storage/home</code></strong></pre><p>To make this the new home directory for users, copy the
+	  user data to this directory, and create the appropriate
+	  symbolic links:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>cp -rp /home/* /storage/home</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>rm -rf /home /usr/home</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>ln -s /storage/home /home</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>ln -s /storage/home /usr/home</code></strong></pre><p>Users should now have their data stored on the freshly
+	  created <code class="filename">/storage/home</code>.  Test by
+	  adding a new user and logging in as that user.</p><p>Try creating a snapshot which may be rolled back
+	  later:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs snapshot storage/home@08-30-08</code></strong></pre><p>Note that the snapshot option will only capture a real
+	  file system, not a home directory or a file.  The
+	  <code class="literal">@</code> character is a delimiter used between
+	  the file system name or the volume name.  When a user's
+	  home directory gets trashed, restore it with:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs rollback storage/home@08-30-08</code></strong></pre><p>To get a list of all available snapshots, run
+	  <code class="command">ls</code> in the file system's
+	  <code class="filename">.zfs/snapshot</code> directory.  For example,
+	  to see the previously taken snapshot:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>ls /storage/home/.zfs/snapshot</code></strong></pre><p>It is possible to write a script to perform regular
+	  snapshots on user data.  However, over time, snapshots
+	  may consume a great deal of disk space.  The previous
+	  snapshot may be removed using the following command:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs destroy storage/home@08-30-08</code></strong></pre><p>After testing, <code class="filename">/storage/home</code> can be
+	  made the real <code class="filename">/home</code> using this
+	  command:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set mountpoint=/home storage/home</code></strong></pre><p>Run <code class="command">df</code> and
+	  <code class="command">mount</code> to confirm that the system now
+	  treats the file system as the real
+	  <code class="filename">/home</code>:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>mount</code></strong>
+/dev/ad0s1a on / (ufs, local)
+devfs on /dev (devfs, local)
+/dev/ad0s1d on /usr (ufs, local, soft-updates)
+storage on /storage (zfs, local)
+storage/home on /home (zfs, local)
+<code class="prompt">#</code> <strong class="userinput"><code>df</code></strong>
+Filesystem   1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a    2026030  235240  1628708    13%    /
+devfs                1       1        0   100%    /dev
+/dev/ad0s1d   54098308 1032826 48737618     2%    /usr
+storage       26320512       0 26320512     0%    /storage
+storage/home  26320512       0 26320512     0%    /home</pre><p>This completes the <acronym class="acronym">RAID</acronym>-Z
+	  configuration.  To get status updates about the file systems
+	  created during the nightly <a class="citerefentry" href="http://www.FreeBSD.org/cgi/man.cgi?query=periodic&amp;sektion=8"><span class="citerefentry"><span class="refentrytitle">periodic</span>(8)</span></a> runs, issue the
+	  following command:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>echo 'daily_status_zfs_enable="YES"' &gt;&gt; /etc/periodic.conf</code></strong></pre></div><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79714608"></a>20.2.2.3. Recovering <acronym class="acronym">RAID</acronym>-Z</h4></div></div></div><p>Every software <acronym class="acronym">RAID</acronym> has a method of
+	  monitoring its <code class="literal">state</code>.  The status of
+	  <acronym class="acronym">RAID</acronym>-Z devices may be viewed with the
+	  following command:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool status -x</code></strong></pre><p>If all pools are healthy and everything is normal, the
+	  following message will be returned:</p><pre class="screen">all pools are healthy</pre><p>If there is an issue, perhaps a disk has gone offline,
+	  the pool state will look similar to:</p><pre class="screen">  pool: storage
+ state: DEGRADED
+status: One or more devices has been taken offline by the administrator.
+	Sufficient replicas exist for the pool to continue functioning in a
+	degraded state.
+action: Online the device using 'zpool online' or replace the device with
+	'zpool replace'.
+ scrub: none requested
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     DEGRADED     0     0     0
+	  raidz1    DEGRADED     0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     OFFLINE      0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors</pre><p>This indicates that the device was previously taken
+	  offline by the administrator using the following
+	  command:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool offline storage da1</code></strong></pre><p>It is now possible to replace
+	  <code class="filename">da1</code> after the system has been
+	  powered down.  When the system is back online, the following
+	  command may issued to replace the disk:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool replace storage da1</code></strong></pre><p>From here, the status may be checked again, this time
+	  without the <code class="option">-x</code> flag to get state
+	  information:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool status storage</code></strong>
+ pool: storage
+ state: ONLINE
+ scrub: resilver completed with 0 errors on Sat Aug 30 19:44:11 2008
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     ONLINE       0     0     0
+	  raidz1    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors</pre><p>As shown from this example, everything appears to be
+	  normal.</p></div><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79729328"></a>20.2.2.4. Data Verification</h4></div></div></div><p><acronym class="acronym">ZFS</acronym> uses checksums to verify the
+	  integrity of stored data.  These are enabled automatically
+	  upon creation of file systems and may be disabled using the
+	  following command:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set checksum=off storage/home</code></strong></pre><p>Doing so is <span class="emphasis"><em>not</em></span> recommended as
+	  checksums take very little storage space and are used to
+	  check data integrity using checksum verification in a
+	  process is known as <span class="quote">&#8220;<span class="quote">scrubbing.</span>&#8221;</span>  To verify the
+	  data integrity of the <code class="literal">storage</code> pool, issue
+	  this command:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool scrub storage</code></strong></pre><p>This process may take considerable time depending on
+	  the amount of data stored.  It is also very
+	  <acronym class="acronym">I/O</acronym> intensive, so much so that only one
+	  scrub may be run at any given time.  After the scrub has
+	  completed, the status is updated and may be viewed by
+	  issuing a status request:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zpool status storage</code></strong>
+ pool: storage
+ state: ONLINE
+ scrub: scrub completed with 0 errors on Sat Jan 26 19:57:37 2013
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     ONLINE       0     0     0
+	  raidz1    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors</pre><p>The completion time is displayed and helps to ensure
+	  data integrity over a long period of time.</p><p>Refer to <a class="citerefentry" href="http://www.FreeBSD.org/cgi/man.cgi?query=zfs&amp;sektion=8"><span class="citerefentry"><span class="refentrytitle">zfs</span>(8)</span></a> and <a class="citerefentry" href="http://www.FreeBSD.org/cgi/man.cgi?query=zpool&amp;sektion=8"><span class="citerefentry"><span class="refentrytitle">zpool</span>(8)</span></a> for other
+	  <acronym class="acronym">ZFS</acronym> options.</p></div><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="zfs-quotas"></a>20.2.2.5. ZFS Quotas</h4></div></div></div><p>ZFS supports different types of quotas: the refquota,
+	  the general quota, the user quota, and the group quota.
+	  This section explains the basics of each type and includes
+	  some usage instructions.</p><p>Quotas limit the amount of space that a dataset and its
+	  descendants can consume, and enforce a limit on the amount
+	  of space used by file systems and snapshots for the
+	  descendants.  Quotas are useful to limit the amount of space
+	  a particular user can use.</p><div xmlns="" class="note"><h3 class="admontitle">Note: </h3><p xmlns="http://www.w3.org/1999/xhtml">Quotas cannot be set on volumes, as the
+	    <code class="literal">volsize</code> property acts as an implicit
+	    quota.</p></div><p>The
+	  <code class="literal">refquota=<em class="replaceable"><code>size</code></em></code>
+	  limits the amount of space a dataset can consume by
+	  enforcing a hard limit on the space used.  However, this
+	  hard limit does not include space used by descendants, such
+	  as file systems or snapshots.</p><p>To enforce a general quota of 10 GB for
+	  <code class="filename">storage/home/bob</code>, use the
+	  following:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set quota=10G storage/home/bob</code></strong></pre><p>User quotas limit the amount of space that can be used
+	  by the specified user.  The general format is
+	  <code class="literal">userquota@<em class="replaceable"><code>user</code></em>=<em class="replaceable"><code>size</code></em></code>,
+	  and the user's name must be in one of the following
+	  formats:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><acronym class="acronym">POSIX</acronym> compatible name such as
+	      <em class="replaceable"><code>joe</code></em>.</p></li><li class="listitem"><p><acronym class="acronym">POSIX</acronym> numeric ID such as
+	      <em class="replaceable"><code>789</code></em>.</p></li><li class="listitem"><p><acronym class="acronym">SID</acronym> name
+	      such as
+	      <em class="replaceable"><code>joe.bloggs@example.com</code></em>.</p></li><li class="listitem"><p><acronym class="acronym">SID</acronym>
+	      numeric ID such as
+	      <em class="replaceable"><code>S-1-123-456-789</code></em>.</p></li></ul></div><p>For example, to enforce a quota of 50 GB for a user
+	  named <em class="replaceable"><code>joe</code></em>, use the
+	  following:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set userquota@joe=50G</code></strong></pre><p>To remove the quota or make sure that one is not set,
+	  instead use:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set userquota@joe=none</code></strong></pre><p>User quota properties are not displayed by
+	  <code class="command">zfs get all</code>.
+	  Non-<code class="systemitem">root</code> users can
+	  only see their own quotas unless they have been granted the
+	  <code class="literal">userquota</code> privilege.  Users with this
+	  privilege are able to view and set everyone's quota.</p><p>The group quota limits the amount of space that a
+	  specified group can consume.  The general format is
+	  <code class="literal">groupquota@<em class="replaceable"><code>group</code></em>=<em class="replaceable"><code>size</code></em></code>.</p><p>To set the quota for the group
+	  <em class="replaceable"><code>firstgroup</code></em> to 50 GB,
+	  use:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set groupquota@firstgroup=50G</code></strong></pre><p>To remove the quota for the group
+	  <em class="replaceable"><code>firstgroup</code></em>, or to make sure that
+	  one is not set, instead use:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set groupquota@firstgroup=none</code></strong></pre><p>As with the user quota property,
+	  non-<code class="systemitem">root</code> users can
+	  only see the quotas associated with the groups that they
+	  belong to.  However, <code class="systemitem">root</code> or a user with the
+	  <code class="literal">groupquota</code> privilege can view and set all
+	  quotas for all groups.</p><p>To display the amount of space consumed by each user on
+	  the specified file system or snapshot, along with any
+	  specified quotas, use <code class="command">zfs userspace</code>.
+	  For group information, use <code class="command">zfs
+	    groupspace</code>.  For more information about
+	  supported options or how to display only specific options,
+	  refer to <a class="citerefentry" href="http://www.FreeBSD.org/cgi/man.cgi?query=zfs&amp;sektion=1"><span class="citerefentry"><span class="refentrytitle">zfs</span>(1)</span></a>.</p><p>Users with sufficient privileges and <code class="systemitem">root</code> can list the quota for
+	  <code class="filename">storage/home/bob</code> using:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs get quota storage/home/bob</code></strong></pre></div><div class="sect3"><div xmlns="" class="titlepage"><div><div><h4 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="idp79780144"></a>20.2.2.6. ZFS Reservations</h4></div></div></div><p>ZFS supports two types of space reservations.  This
+	  section explains the basics of each and includes some usage
+	  instructions.</p><p>The <code class="literal">reservation</code> property makes it
+	  possible to reserve a minimum amount of space guaranteed
+	  for a dataset and its descendants.  This means that if a
+	  10 GB reservation is set on
+	  <code class="filename">storage/home/bob</code>, if disk
+	  space gets low, at least 10 GB of space is reserved
+	  for this dataset.  The <code class="literal">refreservation</code>
+	  property sets or indicates the minimum amount of space
+	  guaranteed to a dataset excluding descendants, such as
+	  snapshots.  As an example, if a snapshot was taken of
+	  <code class="filename">storage/home/bob</code>, enough disk space
+	  would have to exist outside of the
+	  <code class="literal">refreservation</code> amount for the operation
+	  to succeed because descendants of the main data set are
+	  not counted by the <code class="literal">refreservation</code>
+	  amount and so do not encroach on the space set.</p><p>Reservations of any sort are useful in many situations,
+	  such as planning and testing the suitability of disk space
+	  allocation in a new system, or ensuring that enough space is
+	  available on file systems for system recovery procedures and
+	  files.</p><p>The general format of the <code class="literal">reservation</code>
+	  property is
+	  <code class="literal">reservation=<em class="replaceable"><code>size</code></em></code>,
+	  so to set a reservation of 10 GB on
+	  <code class="filename">storage/home/bob</code>, use:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set reservation=10G storage/home/bob</code></strong></pre><p>To make sure that no reservation is set, or to remove a
+	  reservation, use:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs set reservation=none storage/home/bob</code></strong></pre><p>The same principle can be applied to the
+	  <code class="literal">refreservation</code> property for setting a
+	  refreservation, with the general format
+	  <code class="literal">refreservation=<em class="replaceable"><code>size</code></em></code>.</p><p>To check if any reservations or refreservations exist on
+	  <code class="filename">storage/home/bob</code>, execute one of the
+	  following commands:</p><pre class="screen"><code class="prompt">#</code> <strong class="userinput"><code>zfs get reservation storage/home/bob</code></strong>
+<code class="prompt">#</code> <strong class="userinput"><code>zfs get refreservation storage/home/bob</code></strong></pre></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="filesystems.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="filesystems.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="filesystems-linux.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 20. File Systems Support </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 20.3. <span class="trademark">Linux</span>® File Systems</td></tr></table></div><p xmlns="" align="center"><small>All FreeBSD documents are available for download
+    at <a href="http://ftp.FreeBSD.org/pub/FreeBSD/doc/">http://ftp.FreeBSD.org/pub/FreeBSD/doc/</a></small></p><p xmlns="" align="center"><small>Questions that are not answered by the
+    <a href="http://www.FreeBSD.org/docs.html">documentation</a> may be
+    sent to &lt;<a href="mailto:freebsd-questions@FreeBSD.org">freebsd-questions@FreeBSD.org</a>&gt;.<br />
+    Send questions about this document to &lt;<a href="mailto:freebsd-doc@FreeBSD.org">freebsd-doc@FreeBSD.org</a>&gt;.</small></p></body></html>

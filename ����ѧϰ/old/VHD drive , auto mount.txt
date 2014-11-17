@@ -1,0 +1,15 @@
+VHD drive , auto mount
+
+First, you need to create a script file for diskpart containing commands to mount desired images. Create a text file (e.g. in notepad) and insert folowing lines here replacing %path to vhd% with full path to the vhd image (e.g. c:\work\Virtual Disk.vhd):
+SELECT VDISK FILE="%path to vhd%"
+ATTACH VDISK
+
+You can duplicate these lines for every vhd image you need to have been mounted.
+Save this file on your local disk with any name (e.g. c:\work\vhdmount.s).
+Then create a text file containing folowing line (replacing %path to script% with the full path to the script from previous step):
+diskpart -s "%path to script%"
+
+And save this file as .cmd file (e.g. vhdmount.cmd).
+Place this file in the windows startup folder (e.g. C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup).
+Reboot your pc and specified image file(s) will be automatically mounted.
+

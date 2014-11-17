@@ -1,0 +1,41 @@
+MBR硬盘上实现BIOS和UEFI双模式启动分享
+
+核心提示： 
+之前我在好几个帖子中提到过MBR+UEFI方式启动普通win7/win8，现在总结一下，主要分以下两个方面： 一、为已有的mbr+bios启动的nt 6.x添加UEFI启动 
+二、MBR硬盘下安装bios+uefi双模式启动的nt.
+之前我在好几个帖子中提到过MBR+UEFI方式启动普通win7/win8，现在总结一下，主要分以下两个方面：
+
+一、为已有的mbr+bios启动的nt 6.x添加UEFI启动
+二、MBR硬盘下安装bios+uefi双模式启动的nt 6.x
+
+以下教程适用于64位vista/win7/win8，以及32位win8 (32位win8必须是要求主板是32位UEFI)
+
+一、为已有的mbr+bios启动的NT 6.x添加UEFI启动
+
+如果你现在已有MBR+BIOS方式启动的vista/win7/win8，并且主板支持uefi启动的话，可以直接添加UEFI启动，而不需要转换成GPT分区，也不用重装系统。分两种情况
+1、如果你的boot文件夹和windows文件夹在同一个分区，请调整分区，另外创建一个1G一下容量的FAT16/32主分区，并激活之，假设此分区盘盘符为d:，然后用win8的bcdboot添加启动文件
+  
+
+U盘之家
+
+
+bcdboot c:\windows /f all /s d: /l zh-cn U盘之家 
+2、如果你使用了win7/win8默认方式安装，则boot文件夹会在独立的一个激活的ntfs分区中，先用DiskGenius或者其他第三方工具把此分区格式化成FAT16/32格式（windows自带工具会拒绝格式化此分区），并分配盘符，假设为d:，再用win8的bcdboot执行前面提到的命令。
+
+
+二、在MBR硬盘上安装UEFI+bios双模式启动的系统
+
+在winpe下分两个分区，一个FAT分区，建议1G容量，并激活之；一个ntfs分区容量大于10G。然后用NT6.X快速安装器
+或者其他imagex解压方式安装系统，其中ntfs分区为系统所在分区，FAT分区为启动文件所在分区。然后用bios模式启动完成正常安装过程，等系统安装完毕之后，进入系统，用win8的bcdboot执行前面的命令(依旧假设FAT分区盘符为d:)。 
+
+优盘之家
+
+
+
+以上两种情况完成后bios模式能直接正常启动系统，uefi启动一般也能自动执行激活主分区中的\efi\boot\bootx64.efi或者EFI\Microsoft\Boot\bootmgrfw.efi来启动windows。
+
+如果主板没能自动执行，还需要在主板的文件启动(boot from file)中手动选择那个FAT分区中的EFI\Microsoft\Boot\bootmgrfw.efi作为启动文件，来添加到启动项中。
+
+如果主板既不能自动执行所提到的efi文件，又没有提供手动选择efi文件启动的功能，则需要用win8的启动光盘进入uefi启动的winpe中，然后再执行上面所提到的bcdboot命令，这样bcdboot会自动为主板设置中添加EFI\Microsoft\Boot\bootmgrfw.efi启动项
+
+注意：mbr+uefi方式启动后，win7的bcdedit会无法识别bcd文件，可以用win8的bcdedit代替

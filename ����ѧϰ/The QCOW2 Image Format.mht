@@ -1,0 +1,365 @@
+From: <ÓÉ Windows Internet Explorer 8 ±£´æ>
+Subject: The QCOW2 Image Format
+Date: Tue, 16 Sep 2014 08:02:00 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://people.gnome.org/~markmc/qcow-image-format.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.6157
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>The QCOW2 Image Format</TITLE>
+<META content=3D"text/html; charset=3Dutf-8" http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.23580"></HEAD>
+<BODY bgColor=3D#ffffff>
+<CENTER>
+<H1>The QCOW2 Image Format</H1></CENTER>
+<P>The QCOW image format is one of the disk image formats supported by =
+the QEMU=20
+processor emulator. It is a representation of a fixed size block device =
+in a=20
+file. Benefits it offers over using raw dump representation include: =
+</P>
+<OL>
+  <LI>Smaller file size, even on filesystems which don't support =
+<I>holes</I>=20
+  (i.e. sparse files)=20
+  <LI>Copy-on-write support, where the image only represents changes =
+made to an=20
+  underlying disk image=20
+  <LI>Snapshot support, where the image can contain multiple snapshots =
+of the=20
+  images history=20
+  <LI>Optional zlib based compression=20
+  <LI>Optional AES encryption </LI></OL>
+<P>The qemu-img command is the most common way of manipulating these =
+images e.g.=20
+<PRE>  $&gt; qemu-img create -f qcow2 test.qcow2 4G
+  Formating 'test.qcow2', fmt=3Dqcow2, size=3D4194304 kB
+  $&gt; qemu-img convert test.qcow2 -O raw test.img
+</PRE>
+<P></P>
+<H2>The Header</H2>
+<P>Each QCOW2 file begins with a header, in big endian format, as =
+follows: <PRE>  typedef struct QCowHeader {
+      uint32_t magic;
+      uint32_t version;
+
+      uint64_t backing_file_offset;
+      uint32_t backing_file_size;
+
+      uint32_t cluster_bits;
+      uint64_t size; /* in bytes */
+      uint32_t crypt_method;
+
+      uint32_t l1_size;
+      uint64_t l1_table_offset;
+
+      uint64_t refcount_table_offset;
+      uint32_t refcount_table_clusters;
+
+      uint32_t nb_snapshots;
+      uint64_t snapshots_offset;
+  } QCowHeader;
+</PRE>
+<P></P>
+<UL>
+  <LI>The first 4 bytes contain the characters 'Q', 'F', 'I' followed by =
+
+  <TT>0xfb</TT>.=20
+  <LI>The next 4 bytes contain the format version used by the file. =
+Currently,=20
+  there has been two versions of the format, version 1 and version2. We =
+are=20
+  discussing the latter here, and the former is discussed at the end.=20
+  <LI>The <TT>backing_file_offset</TT> field gives the offset from the =
+beginning=20
+  of the file to a string containing the path to a file;=20
+  <TT>backing_file_size</TT> gives the length of this string, which =
+isn't a=20
+  nul-terminated. If this image is a copy-on-write image, then this will =
+be the=20
+  path to the original file. More on that below.=20
+  <LI>The <TT>cluster_bits</TT> fields them, describe how to map an =
+image offset=20
+  address to a location within the file; it determines the number of =
+lower bits=20
+  of the offset address are used as an index within a cluster. Since L2 =
+tables=20
+  occupy a single cluster and contain 8 byte entires, the next most =
+significant=20
+  <TT>cluster_bits</TT>, less three bits, are used as an index into the =
+L2=20
+  table. the L2 table. More on the format's 2-level lookup system below. =
+
+  <LI>The next 8 bytes contain the size, in bytes, of the block device=20
+  represented by the image.=20
+  <LI>The <TT>crypt_method</TT> field is 0 if no encryption has been =
+used, and 1=20
+  if AES encryption has been used.=20
+  <LI>The <TT>l1_size</TT> field gives the number of 8 byte entries =
+available in=20
+  the L1 table and <TT>l1_table_offset</TT> gives the offset within the =
+file of=20
+  the start of the table.=20
+  <LI>Similarily, <TT>refcount_table_offset</TT> gives the offset to the =
+start=20
+  of the refcount table, but <TT>refcount_table_clusters</TT> describes =
+the size=20
+  of the refcount table in units of clusters.
+  <LI>
+  <LI><TT>nb_snapshots</TT> gives the number of snapshots contained in =
+the image=20
+  and <TT>snapshots_offset</TT> gives the offset of the=20
+  <TT>QCowSnapshotHeader</TT> headers, one for each snapshot. </LI></UL>
+<P>Typically the image file will be laid out as follows:=20
+<UL>
+  <LI>The header, as described above.=20
+  <LI>Starting at the next cluster boundary, the L1 table.=20
+  <LI>The refcount table, again boundary aligned.=20
+  <LI>One or more refcount blocks.=20
+  <LI>Snapshot headers, the first boundary aligned and the following =
+headers=20
+  aligned on 8 byte boundaries.=20
+  <LI>L2 tables, each one occupying a single cluster.=20
+  <LI>Data clusters. </LI></UL>
+<P></P>
+<H2>2-Level Lookups</H2>
+<P>With QCOW, the contents of the device are stored in <I>clusters</I>. =
+Each=20
+cluster contains a number of 512 byte sectors. </P>
+<P>In order to find the cluster for a given address within the device, =
+you must=20
+traverse two levels of tables. The L1 table is an array of file offsets =
+to L2=20
+tables, and each L2 table is an array of file offsets to clusters.</P>
+<P>So, an address is split into three separate offsets according to the=20
+<TT>cluster_bits</TT> field. For example, if <TT>cluster_bits</TT> is =
+12, then=20
+the address is split up as follows: </P>
+<UL>
+  <LI>the lower 12 is an offset within a 4Kb cluster=20
+  <LI>the next 9 bits is an offset within a 512 entry array of 8 byte =
+file=20
+  offsets, the L2 table. The number of bits needed here is given by =
+<TT>l2_bits=20
+  =3D cluster_bits - 3</TT> since the L2 table is a single cluster =
+containing 8=20
+  byte entries=20
+  <LI>the remaining 43 bits is an offset within another array of 8 byte =
+file=20
+  offsets, the L1 table </LI></UL>
+<P>Note, the minimum size of the L1 table is a function of the size of =
+the=20
+represented disk image: <PRE> l1_size =3D round_up(disk_size / =
+(cluster_size * l2_size), cluster_size)
+</PRE>
+<P></P>
+<P>In other words, in order to map a given disk address to an offset =
+within the=20
+image:=20
+<OL>
+  <LI>Obtain the L1 table address using the <TT>l1_table_offset</TT> =
+header=20
+  field=20
+  <LI>Use the top (64 - <TT>l2_bits</TT> - <TT>cluster_bits</TT>) bits =
+of the=20
+  address to index the L1 table as an array of 64 bit entries=20
+  <LI>Obtain the L2 table address using the offset in the L1 table=20
+  <LI>Use the next <TT>l2_bits</TT> of the address to index the L2 table =
+as an=20
+  array of 64 bit entries=20
+  <LI>Obtain the cluster address using the offset in the L2 table.=20
+  <LI>Use the remaining cluster_bits of the address as an offset within =
+the=20
+  cluster itself </LI></OL>
+<P>If the offset found in either the L1 or L2 table is zero, that area =
+of the=20
+disk is not allocated within the image. </P>
+<P>Note also, that the top two bits of each of the offsets found in the =
+L1 and=20
+L2 tables are reserved for "copied" and "compressed" flags. More on that =
+below.=20
+</P>
+<H2>Reference Counting</H2>
+<P>Each cluster is reference counted, allowing clusters to be freed if, =
+and only=20
+if, they are no longer used by any snapshots.=20
+<P>
+<P>The 2 byte reference count for each cluster is kept in cluster sized =
+blocks.=20
+A table, given by <TT>refcount_table_offset</TT> and occupying=20
+<TT>refcount_table_clusters</TT> clusters, gives the offset in the image =
+of each=20
+of these refcount blocks. </P>
+<P>In order to obtain the reference count of a given cluster, you split =
+the=20
+cluster offset into a refcount table offset and refcount block offset. =
+Since a=20
+refcount block is a single cluster of 2 byte entries, the lower =
+<TT>cluster_size=20
+- 1</TT> bits is used as the block offset and the rest of the bits are =
+used as=20
+the table offset. </P>
+<P>One optimization is that if any cluster pointed to by an L1 or L2 =
+table entry=20
+has a refcount exactly equal to one, the most significant bit of the =
+L1/L2 entry=20
+is set as a "copied" flag. This indicates that no snapshots are using =
+this=20
+cluster and it can be immediately written to without having to make a =
+copy for=20
+any snapshots referencing it. </P>
+<H2>Copy-on-Write Images</H2>
+<P>A QCOW image can be used to store the changes to another disk image, =
+without=20
+actually affecting the contents of the original image. The image, known =
+as a=20
+copy-on-write image, looks like a standalone image to the user but most =
+of its=20
+data is obtained from the original image. Only the clusters which differ =
+from=20
+the original image are stored in the copy-on-write image file itself. =
+</P>
+<P>The representation is very simple. The copy-on-write image contains =
+the path=20
+to the original disk image, and the image header gives the location of =
+the path=20
+string within the file. </P>
+<P>When you want to read an cluster from the copy-on-write image, you =
+first=20
+check to see if that area is allocated within the copy-on-write image. =
+If not,=20
+you read the area from the original disk image. </P>
+<H2>Snapshots</H2>
+<P>Snapshots are a similar notion to the copy-on-write feature, except =
+it is the=20
+original image that is writable, not the snapshots. </P>
+<P>To explain further - a copy-on-write image could confusingly be =
+called a=20
+"snapshot", since it does indeed represent a snapshot of the original =
+images=20
+state. You can make multiple of these "snapshots" of the original image =
+by=20
+creating multiple copy-on-write images, each referring to the same =
+original=20
+image. What's noteworthy here, though, is that the original image must =
+be=20
+considered read-only and it is the copy-on-write snapshots which are =
+writable.=20
+</P>
+<P>Snapshots - "real snapshots" - are represented in the original image =
+itself.=20
+Each snapshot is a read-only record of the image a past instant. The =
+original=20
+image remains writable and as modifications are made to it, a copy of =
+the=20
+original data is made for any snapshots referring to it. </P>
+<P>Each snapshot is described by a header: <PRE>  typedef struct =
+QCowSnapshotHeader {
+      /* header is 8 byte aligned */
+      uint64_t l1_table_offset;
+
+      uint32_t l1_size;
+      uint16_t id_str_size;
+      uint16_t name_size;
+
+      uint32_t date_sec;
+      uint32_t date_nsec;
+
+      uint64_t vm_clock_nsec;
+
+      uint32_t vm_state_size;
+      uint32_t extra_data_size; /* for extension */
+      /* extra data follows */
+      /* id_str follows */
+      /* name follows  */
+  } QCowSnapshotHeader;
+</PRE>Details are as follows=20
+<UL>
+  <LI>A snapshot has both a name and ID, represented by strings (not=20
+  zero-terminated) which follow the header.=20
+  <LI>A snapshot also has a copy, at least, of the original L1 table =
+given by=20
+  <TT>l1_table_offset</TT> and <TT>l1_size</TT>.=20
+  <LI><TT>date_sec</TT> and <TT>date_nsec</TT> give the host machine=20
+  <TT>gettimeofday()</TT> when the snapshot was created.
+  <LI>
+  <LI><TT>vm_clock_nsec</TT> gives the current state of the VM clock.=20
+  <LI><TT>vm_state_size</TT> gives the size of the virtual machine state =
+which=20
+  was saved as part of this snapshot. The state is saved to the location =
+of the=20
+  original L1 table, directly after the image header.=20
+  <LI><TT>extra_data_size</TT> species the number of bytes of data which =
+follow=20
+  the header, before the id and name strings. This is provided for =
+future=20
+  expansion. </LI></UL>
+<P>A snapshot is created by adding one of these headers, making a copy =
+of the L1=20
+table and incrementing the reference counts of all L2 tables and data =
+clusters=20
+referenced by the L1 table. Later, if any L2 table or data clusters of =
+the=20
+underlying image are to be modified - i.e. if the reference count of the =
+cluster=20
+is greater than 1 and/or the "copied" flag is set for that cluster - =
+they will=20
+first be copied and then written to. That way, all snapshots remains =
+unmodified.=20
+</P>
+<H2>Compression</H2>
+<P>The QCOW format supports compression by allowing each cluster to be=20
+independently compressed with zlib. </P>
+<P>This is represented in the cluster offset obtained from the L2 table =
+as=20
+follows: </P>
+<UL>
+  <LI>If the second most significant bit of the cluster offset is 1, =
+this is a=20
+  compressed cluster=20
+  <LI>The next <TT>cluster_bits - 8</TT>of the cluster offset is the =
+size of the=20
+  compressed cluster, in 512 byte sectors=20
+  <LI>The remaining bits of the cluster offset is the actual address of =
+the=20
+  compressed cluster within the image </LI></UL>
+<H2>Encryption</H2>
+<P>The QCOW format also supports the encryption of clusters. </P>
+<P>If the crypt_method header field is 1, then a 16 character password =
+is used=20
+as the 128 bit AES key. </P>
+<P>Each sector within each cluster is independently encrypted using AES =
+Cipher=20
+Block Chaining mode, using the sector's offset (relative to the start of =
+the=20
+device) in little-endian format as the first 64 bits of the 128 bit=20
+initialisation vector. </P>
+<H2>The QCOW Format</H2>
+<P>Version 2 of the QCOW format differs from the original version in the =
+
+following ways: </P>
+<OL>
+  <LI>It supports the concepts of snapshots; version 1 only had the =
+concept of=20
+  copy-on-write image=20
+  <LI>Clusters are reference counted in version 2; reference counting =
+was added=20
+  to support snapshots=20
+  <LI>L2 tables always occupy a single cluster in version 2; previously =
+their=20
+  size was given by a <TT>l2_bits</TT> header field=20
+  <LI>The size of compressed clusters is now given in sectors instead of =
+bytes=20
+  </LI></OL>
+<P>A previous version of this document which described version 1 only is =
+
+available <A=20
+href=3D"https://people.gnome.org/~markmc/qcow-image-format-version-1.html=
+">here</A>.=20
+</P>
+<P><SMALL><A href=3D"http://blogs.gnome.org/markmc">Mark McLoughlin</A>. =
+Sep 11,=20
+2008.</SMALL> </P></BODY></HTML>

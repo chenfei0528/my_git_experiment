@@ -1,0 +1,6 @@
+$MFT是什么文件？--NTFS文件系统才有的NTFS是Windows NT引入的新型文件系统，它具有许多新特性。NTFS中，卷中所有存放的数据均在一个叫$MFT的文件中，叫主文件表(Master File Table)。而$MFT则由文件记录(File Record)数组构成。File Record的大小一般是固定的，通常情况下均为1KB，这个概念相当于Linux中的inode。File Record在$MFT文件中物理上是连续的，且从0开始编号。$MFT仅供File System本身组织、架构文件系统使用，这在NTFS中称为元数据(Metadata)。 
+
+在 NTFS 文件系统里面，磁盘上的所有东西都以文件的形式出现。即使是元数据也是以一组文件的形式存储的。 
+主文件表（ MFT ）是这个卷上每一个文件的索引。 MFT 为每一个文件保存着一组称为“属性”的记录，每个属性存储了不同类型的信息。为主文件表（MFT）保留适当的空间。MFT在NTFS卷中扮演着重要的角色，对其性能的影响很大，系统空间分配、读写磁盘时会频繁地访问MFT，因此 MFT对NTFS的卷的性能有着至关重要的影响。NTFS文件系统的开发者在MFT附近预留着一个特定区域，用来减少MFT中的碎片，缺省状态下，这一区域占整个卷大小的12.5%，尽管这个区域能使得MFT中的碎片最少，但它并非总是合适的。 
+
+要对MFT的空间进行管理，可以在HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \FileSystem中增加一个类型为REG_DWORD的NtfsMftZoneReservation，它的缺省值是1，其范围是1-4（1表示MFT占整个卷的12.5%，2表示25%，3表示37.5%，4表示50%）。 

@@ -1,0 +1,32 @@
+如何创建一个可从硬盘启动 WIM 映像的条目
+
+要创建一个可启动 Windows 映像格式 (WIM) 映像的条目，您需要创建一个 OSloader 类型的条目，并带有指向启动分区的 RAMDISK 选项。为此，请使用以下过程。在此过程中，arcpath multi(0)disk(0)rdisk(0)partition(1) 是指计算机上的 C: 驱动器，Boot.wim 是一个常规 Boot.wim，其中 Winload.exe 位于该 WIM 映像的 System32 文件夹中。
+
+创建一个可从硬盘启动 WIM 映像的条目
+通过指定以下内容，在您的 BCD 存储中创建 {ramdisktoptions} 对象。Drive 应是包含该映像的驱动器。 
+bcdedit /create {ramdiskoptions} /d "Ramdisk options"
+
+bcdedit /set {ramdiskoptions} ramdisksdidevice partition=Drive
+
+bcdedit /set {ramdiskoptions} ramdisksdipath "boot"boot.sdi
+
+通过指定以下内容，创建新的启动应用程序条目： 
+bcdedit /create /d "Boot from WIM" /application OSLOADER
+
+这将为新创建的条目返回一个标识符 (GUID)。此过程的其他部分将使用 {GUID} 指代该新条目。接下来指定以下内容： 
+bcdedit /set {GUID} device ramdisk=[c:]"sources"boot.wim,{ramdiskoptions}
+
+bcdedit /set {GUID} path "windows"system32"winload.exe
+
+bcdedit /set {GUID} osdevice ramdisk=[c:]"sources"boot.wim,{ramdiskoptions}
+
+bcdedit /set {GUID} systemroot "windows
+
+如果要引导到 Windows 预安装环境 (Windows PE)，则还需要指定： 
+bcdedit /set {GUID} winpe yes
+
+bcdedit /set {GUID} detecthal yes
+
+继续指定以下内容，将新条目添加到显示顺序中： 
+bcdedit /displayorder {GUID} /addlast
+

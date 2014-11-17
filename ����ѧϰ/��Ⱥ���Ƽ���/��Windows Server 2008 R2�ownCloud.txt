@@ -1,0 +1,27 @@
+在Windows Server 2008 R2搭建ownCloud
+
+1.先在Windows Server 2008下安装IIS7.0，注意在选择组件的时候选上CGI模块（这样可以启用IIS的FastCGI模块）
+
+　　2.安装PHP，最好是安装带FastCGI快速安装的版本，这样比较方便，在安装的时候直接选择IIS FastCGI即可完成PHP的安装。
+
+　　3.安装MySQL。虽然ownCloud支持三种数据库，但是事实上只有MySQL下的ownCloud比较稳定和功能强大，因此请务必安装MySQL。
+并且在MySQL数据库中添加一个库，字符集为utf8 -- UTF-8 Unicode，排序方法选择utf8_general_ci即可。（请不要选择GBK这一类编码，这样会导致不可预知的问题）
+
+　　4.解压目录和配置权限：将ownCloud解压到一个你指定的地方，并且将该文件夹指定权限为users可写。
+
+　　5.权限配置（2）：在php安装目录下的PHP.ini里面搜索一项为upload_tmp_dir，找到=号后面的地址，这个目录同时也给予users可写权限。
+
+　　6.配置PHP核心参数文件以支持大文件上传：在php安装目录下，找到php.ini，搜索upload_max_filesize和post_max_size，后面的参数值都改为1G。
+这样可以支持大文件上传。
+
+　　7.简单地配置IIS以支持大文件上传：由于IIS存在检查模块，使得大文件上传仍然不可用，此时可以在IIS信息服务管理的左侧点击服务器，选择模块，
+再找到一项叫RequestFilteringModule，选中后在右边点击解除锁定。再新建你的站点，指向owncloud目录（或者是owncloud的上级目录也可以，这样
+可以多网站管理），选中网站后，选择模块，找到一项叫RequestFilteringModule，点中后删除该模块，即可解除IIS的上传限制。
+
+
+　　8.输入http://域名/index.php（如果是owncloud不是根目录，请自行匹配地址），输入管理员账户密码，并且配置数据库连接方式和data目录。
+注意如果data目录要放置于网站根目录外，请确保该data目录users有写权限；另外，如果你以前测试过owncloud，请使用另外一个管理员账户名称，
+因为owncloud默认会创建一个叫oc_xxx的数据库账户来达到操作数据库的目的，否则会出现access denied的错误。
+
+　　 至此，ownCloud的搭建就顺利完成了。
+

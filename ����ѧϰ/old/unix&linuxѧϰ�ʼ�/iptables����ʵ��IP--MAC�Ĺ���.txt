@@ -1,0 +1,15 @@
+iptables变相实现IP--MAC的功能
+
+iptables -A FORWARD -s 192.9.111.159 -m mac --mac-source 00:1A:A0:CC:99:D0 -j ACCEPT
+
+iptables -A FORWARD -s 192.9.111.159 -j DROP
+
+这样，使用这个 IP 的其他机器就无法上网了，但这是 IP/MAC 绑定，保护 IP 的模式
+
+
+如果要保护 MAC 的模式，可以这样
+iptables -A FORWARD -s 192.9.111.159 -m mac --mac-source 00:1A:A0:CC:99:D0 -j ACCEPT
+
+iptables -A FORWARD -m mac --mac-source 00:1A:A0:CC:99:D0 -j DROP
+
+这样，这个 MAC 就只有使用 192.9.111.159 才能上网了

@@ -1,0 +1,18 @@
+在电脑上运行.apk文件
+
+2010-12-25 12:57Android APK文件在电脑上面运行方法。 
+
+　　第一步：下载并解压android SDK到自己硬盘上。
+
+　　第二步：在系统环境变量中增加系统变量SDK_ROOT，并让它指向android SDK安装目录之下的tools文件夹。
+
+　　第三步：在cmd命令状态下进入android SDK安装目录之下的tools文件夹，
+
+并使用“android create avd --name jack --target 1”创建一个叫“jack”(可以自行修改)的ADV。  （target后面跟的是个代表API 版本号的id）
+
+　　第四步：继续在cmd命令状态下输入命令“emulator -avd jack”，既可以启动模拟器进入Android手机的模拟界面了。不要关闭此界面。
+
+       第五步：将你要运行的xxx.apk文件复制到android SDK安装目录之下的tools文件夹中。
+
+       第六步：新开一个cmd命令窗口，并进入android SDK安装目录之下的tools文件夹中输入命令“adb install xxx.apk”，这个apk将会部署到你当前的模拟器中去，这样你刷新Android手机的模拟界面就可以看到你安装的程序了。
+ 

@@ -1,0 +1,180 @@
+     1	PRIO(8)                              Linux                             PRIO(8)
+
+
+
+     2	NAME
+     3	       PRIO - Priority qdisc
+
+     4	SYNOPSIS
+     5	       tc  qdisc ... dev dev ( parent classid | root) [ handle major: ] prio [
+     6	       bands bands ] [ priomap band,band,band...  ] [ estimator interval time-
+     7	       constant ]
+
+
+     8	DESCRIPTION
+     9	       The  PRIO  qdisc is a simple classful queueing discipline that contains
+    10	       an arbitrary number of classes of differing priority. The  classes  are
+    11	       dequeued in numerical descending order of priority. PRIO is a scheduler
+    12	       and never delays packets - it is a work-conserving  qdisc,  though  the
+    13	       qdiscs contained in the classes may not be.
+
+    14	       Very useful for lowering latency when there is no need for slowing down
+    15	       traffic.
+
+
+    16	ALGORITHM
+    17	       On creation with 'tc qdisc add', a fixed number of  bands  is  created.
+    18	       Each  band is a class, although is not possible to add classes with 'tc
+    19	       qdisc add', the number of bands to be created must instead be specified
+    20	       on the command line attaching PRIO to its root.
+
+    21	       When dequeueing, band 0 is tried first and only if it did not deliver a
+    22	       packet does PRIO try band 1, and so onwards. Maximum reliability  pack-
+    23	       ets should therefore go to band 0, minimum delay to band 1 and the rest
+    24	       to band 2.
+
+    25	       As the PRIO qdisc itself will have minor number 0, band 0  is  actually
+    26	       major:1, band 1 is major:2, etc. For major, substitute the major number
+    27	       assigned to the qdisc on 'tc qdisc add' with the handle parameter.
+
+
+    28	CLASSIFICATION
+    29	       Three methods are available to PRIO to determine in which band a packet
+    30	       will be enqueued.
+
+    31	       From userspace
+    32	              A  process with sufficient privileges can encode the destination
+    33	              class directly with SO_PRIORITY, see tc(7).
+
+    34	       with a tc filter
+    35	              A tc filter  attached  to  the  root  qdisc  can  point  traffic
+    36	              directly to a class
+
+    37	       with the priomap
+    38	              Based  on the packet priority, which in turn is derived from the
+    39	              Type of Service assigned to the packet.
+
+    40	       Only the priomap is specific to this qdisc.
+
+    41	QDISC PARAMETERS
+    42	       bands  Number of bands. If changed from the default of 3, priomap  must
+    43	              be updated as well.
+
+    44	       priomap
+    45	              The priomap maps the priority of a packet to a class. The prior-
+    46	              ity can either be set directly from  userspace,  or  be  derived
+    47	              from the Type of Service of the packet.
+
+    48	              Determines how packet priorities, as assigned by the kernel, map
+    49	              to bands. Mapping occurs based on the TOS octet of  the  packet,
+    50	              which looks like this:
+
+    51	              0   1   2   3   4   5   6   7
+    52	              +---+---+---+---+---+---+---+---+
+    53	              |           |               |   |
+    54	              |PRECEDENCE |      TOS      |MBZ|
+    55	              |           |               |   |
+    56	              +---+---+---+---+---+---+---+---+
+
+    57	              The four TOS bits (the 'TOS field') are defined as:
+
+    58	              Binary Decimal  Meaning
+    59	              -----------------------------------------
+    60	              1000   8         Minimize delay (md)
+    61	              0100   4         Maximize throughput (mt)
+    62	              0010   2         Maximize reliability (mr)
+    63	              0001   1         Minimize monetary cost (mmc)
+    64	              0000   0         Normal Service
+
+    65	              As  there  is  1 bit to the right of these four bits, the actual
+    66	              value of the TOS field is double the value of the TOS bits. Tcp-
+    67	              dump -v -v shows you the value of the entire TOS field, not just
+    68	              the four bits. It is the value you see in the  first  column  of
+    69	              this table:
+
+    70	              TOS     Bits  Means                    Linux Priority    Band
+    71	              ------------------------------------------------------------
+    72	              0x0     0     Normal Service           0 Best Effort     1
+    73	              0x2     1     Minimize Monetary Cost   1 Filler          2
+    74	              0x4     2     Maximize Reliability     0 Best Effort     1
+    75	              0x6     3     mmc+mr                   0 Best Effort     1
+    76	              0x8     4     Maximize Throughput      2 Bulk            2
+    77	              0xa     5     mmc+mt                   2 Bulk            2
+    78	              0xc     6     mr+mt                    2 Bulk            2
+    79	              0xe     7     mmc+mr+mt                2 Bulk            2
+    80	              0x10    8     Minimize Delay           6 Interactive     0
+    81	              0x12    9     mmc+md                   6 Interactive     0
+    82	              0x14    10    mr+md                    6 Interactive     0
+    83	              0x16    11    mmc+mr+md                6 Interactive     0
+    84	              0x18    12    mt+md                    4 Int. Bulk       1
+    85	              0x1a    13    mmc+mt+md                4 Int. Bulk       1
+    86	              0x1c    14    mr+mt+md                 4 Int. Bulk       1
+    87	              0x1e    15    mmc+mr+mt+md             4 Int. Bulk       1
+
+    88	              The  second  column  contains the value of the relevant four TOS
+    89	              bits, followed by their  translated  meaning.  For  example,  15
+    90	              stands for a packet wanting Minimal Monetary Cost, Maximum Reli-
+    91	              ability, Maximum Throughput AND Minimum Delay.
+
+    92	              The fourth column lists the way the Linux kernel interprets  the
+    93	              TOS bits, by showing to which Priority they are mapped.
+
+    94	              The  last column shows the result of the default priomap. On the
+    95	              command line, the default priomap looks like this:
+
+    96	                  1, 2, 2, 2, 1, 2, 0, 0 , 1, 1, 1, 1, 1, 1, 1, 1
+
+    97	              This means that priority 4, for example,  gets  mapped  to  band
+    98	              number 1.  The priomap also allows you to list higher priorities
+    99	              (> 7) which do not correspond to TOS mappings, but which are set
+   100	              by other means.
+
+   101	              This table from RFC 1349 (read it for more details) explains how
+   102	              applications might very well set their TOS bits:
+
+   103	              TELNET                   1000           (minimize delay)
+   104	              FTP
+   105	                      Control          1000           (minimize delay)
+   106	                      Data             0100           (maximize throughput)
+
+   107	              TFTP                     1000           (minimize delay)
+
+   108	              SMTP
+   109	                      Command phase    1000           (minimize delay)
+   110	                      DATA phase       0100           (maximize throughput)
+
+   111	              Domain Name Service
+   112	                      UDP Query        1000           (minimize delay)
+   113	                      TCP Query        0000
+   114	                      Zone Transfer    0100           (maximize throughput)
+
+   115	              NNTP                     0001           (minimize monetary cost)
+
+   116	              ICMP
+   117	                      Errors           0000
+   118	                      Requests         0000 (mostly)
+   119	                      Responses        <same as request> (mostly)
+
+
+
+   120	CLASSES
+   121	       PRIO classes cannot be configured further - they are automatically cre-
+   122	       ated  when  the  PRIO qdisc is attached. Each class however can contain
+   123	       yet a further qdisc.
+
+
+   124	BUGS
+   125	       Large amounts of traffic in the lower bands  can  cause  starvation  of
+   126	       higher  bands. Can be prevented by attaching a shaper (for example, tc-
+   127	       tbf(8) to these bands to make sure they cannot dominate the link.
+
+
+   128	AUTHORS
+   129	       Alexey   N.   Kuznetsov,   <kuznet@ms2.inr.ac.ru>,    J   Hadi    Salim
+   130	       <hadi@cyberus.ca>. This manpage maintained by bert hubert <ahu@ds9a.nl>
+
+
+
+
+
+   131	iproute2                       16 December 2001                        PRIO(8)

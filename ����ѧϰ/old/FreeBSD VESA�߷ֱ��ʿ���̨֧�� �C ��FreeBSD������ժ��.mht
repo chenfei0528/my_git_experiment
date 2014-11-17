@@ -1,0 +1,2236 @@
+From: <ÓÉ Windows Internet Explorer 8 ±£´æ>
+Subject: =?gb2312?B?RnJlZUJTRCBWRVNBuN+31rHmwsq/2NbGzKjWp7PWIKhDIKG+RnJlZUJTRLy8?=
+	=?gb2312?B?yvXOxNWqob8=?=
+Date: Thu, 12 Dec 2013 09:58:07 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CEF720.A84B3BC0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.6157
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.bsdart.org/archives/20101214/382.html
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Dzh-CN xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD=20
+profile=3D"http://gmpg.org/xfn/11"><TITLE>FreeBSD =
+VESA=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=94=
+=AF=E6=8C=81 =E2=80=93 =
+=E3=80=90FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98=E3=80=91</TITLE>
+<META content=3D"text/html; charset=3DUTF-8" =
+http-equiv=3DContent-Type><LINK=20
+rel=3Dstylesheet type=3Dtext/css=20
+href=3D"http://www.bsdart.org/wp-content/themes/inews-v2/style.css"=20
+media=3Dscreen><LINK =
+title=3D"FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98 RSS Feed" =
+rel=3Dalternate=20
+type=3Dapplication/rss+xml href=3D"http://www.bsdart.org/feed"><LINK =
+rel=3Dpingback=20
+href=3D"http://www.bsdart.org/xmlrpc.php">
+<META name=3Ddescription=20
+content=3D"FreeBSD =
+VESA=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=94=
+=AF=E6=8C=81, VESA =
+=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=98=AF=E4=
+=BD=BF=E7=94=A8=E6=98=BE=E5=8D=A1=E6=8F=90=E4=BE=9B=E7=9A=84 VESA =
+=E6=8E=A5=E5=8F=A3=E6=9D=A5=E6=94=B9=E5=96=84=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=
+=98=BE=E7=A4=BA=E5=88=86=E8=BE=A8=E7=8E=87=E7=9A=84=E4=B8=80=E9=A1=B9=E5=8A=
+=9F=E8=83=BD=E3=80=82=E4=BE=8B=E5=A6=82=EF=BC=8C=E5=9C=A8=E7=AC=94=E8=AE=B0=
+=E6=9C=AC=E4=B8=8A=E5=8F=AF=E4=BB=A5=E4=BD=BF=E7=94=A8 1440=C3=97900 =
+=E8=BF=99=E6=A0=B7=E7=9A=84=E5=88=86=E8=BE=A8=E7=8E=87=EF=BC=8C=E4=BB=8E=E8=
+=80=8C=E6=8F=90=E4=BE=9B=E6=9B=B4=E5=A5=BD=E7=9A=84=E6=98=BE=E7=A4=BA=E6=95=
+=88=E6=9E=9C=E3=80=82=E6=97=A9=E6=9C=9F=E7=89=88=E6=9C=AC=E7=9A=84 =
+FreeBSD =E4=B8=AD=E7=9A=84 VESA =
+=E6=94=AF=E6=8C=81=E5=8F=AA=E9=80=82=E7=94=A8=E4=BA=8E i386 =
+=E5=B9=B3=E5=8F=B0=E3=80=82=E4=BB=8E FreeBSD 8.1-RELEASE =
+=E5=BC=80=E5=A7=8B=EF=BC=8C FreeBSD =E5=9C=A8 amd64 =E5=92=8C i386 =
+=E5=B9=B3=E5=8F=B0=E4=B8=8A=E9=83=BD=E5=8F=AF=E4=BB=A5=E6=94=AF=E6=8C=81=E9=
+=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E4=BA=86=E3=80=
+=82">
+<META name=3Dkeywords=20
+content=3D"configure, freebsd, syscons, VESA, =
+=E6=98=BE=E7=A4=BA=E6=A8=A1=E5=BC=8F, =E9=85=8D=E7=BD=AE, =
+=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87, FreeBSD, =
+=E6=9C=8D=E5=8A=A1=E5=99=A8, =E7=B3=BB=E7=BB=9F=E7=AE=A1=E7=90=86, =
+=E5=AE=89=E5=85=A8=E8=B5=84=E8=AE=AF, =
+=E6=8A=80=E6=9C=AF=E6=96=87=E6=A1=A3, =
+=E5=AD=A6=E4=B9=A0=E8=B5=84=E6=96=99, =
+=E4=B8=AD=E6=96=87=E8=B5=84=E6=96=99, =
+=E5=AD=A6=E4=B9=A0=E6=89=8B=E5=86=8C, =
+=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98"><LINK=20
+title=3D"FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98 =C2=BB FreeBSD =
+VESA=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=94=
+=AF=E6=8C=81 =E8=AF=84=E8=AE=BA Feed" rel=3Dalternate=20
+type=3Dapplication/rss+xml=20
+href=3D"http://www.bsdart.org/archives/20101214/382.html/feed"><LINK=20
+id=3Dwp-pagenavi-css rel=3Dstylesheet type=3Dtext/css=20
+href=3D"http://www.bsdart.org/wp-content/plugins/wp-pagenavi/pagenavi-css=
+.css?ver=3D2.70"=20
+media=3Dall><LINK title=3DRSD rel=3DEditURI type=3Dapplication/rsd+xml=20
+href=3D"http://www.bsdart.org/xmlrpc.php?rsd"><LINK rel=3Dwlwmanifest=20
+type=3Dapplication/wlwmanifest+xml=20
+href=3D"http://www.bsdart.org/wp-includes/wlwmanifest.xml"><LINK=20
+title=3D"FreeBSD =
+DHCP=E6=9C=8D=E5=8A=A1=E5=AE=89=E8=A3=85=E7=AC=94=E8=AE=B0" rel=3Dprev=20
+href=3D"http://www.bsdart.org/archives/20101213/381.html"><LINK=20
+title=3DFreeBSD=E6=8C=82=E8=BD=BD=E5=85=89=E9=A9=B1=E3=80=81U=E7=9B=98=E3=
+=80=81ISO=E4=BB=A5=E5=8F=8ANTFS rel=3Dnext=20
+href=3D"http://www.bsdart.org/archives/20101215/393.html">
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.23536"><LINK =
+rel=3Dcanonical=20
+href=3D"http://www.bsdart.org/archives/20101214/382.html"><LINK =
+rel=3Dshortlink=20
+href=3D"http://www.bsdart.org/?p=3D382">
+<SCRIPT type=3Dtext/javascript>=0A=
+	window._wp_rp_static_base_url =3D =
+'http://dtmvdvtzf8rz0.cloudfront.net/static/';=0A=
+	window._wp_rp_wp_ajax_url =3D =
+"http://www.bsdart.org/wp-admin/admin-ajax.php";=0A=
+	window._wp_rp_plugin_version =3D '2.5';=0A=
+	window._wp_rp_post_id =3D '382';=0A=
+	window._wp_rp_num_rel_posts =3D '5';=0A=
+</SCRIPT>
+<LINK rel=3Dstylesheet=20
+href=3D"http://dtmvdvtzf8rz0.cloudfront.net/static/wp-rp-css/plain.css?ve=
+rsion=3D2.5"></HEAD>
+<BODY>
+<DIV id=3Dmininav class=3D"ar clearfloat"></SCRIPT>
+<SCRIPT type=3Dtext/javascript=20
+src=3D"http://www.bsdart.org/wp-content/themes/inews-v2/language.js"></SC=
+RIPT>
+</DIV>
+<DIV id=3Dheader class=3Dclearfloat>
+<DIV id=3Dheader_l>
+<DIV id=3Dsiteinfo>
+<DIV style=3D"LETTER-SPACING: 3px" id=3Dsitename>
+<H1><A title=3DFreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98=20
+href=3D"http://www.bsdart.org/">FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98=
+</A></H1></DIV>
+<DIV style=3D"LETTER-SPACING: 1px"=20
+id=3Dsitedesc>=E5=85=B3=E6=B3=A8FreeBSD=E6=96=B0=E9=97=BB=E8=B5=84=E8=AE=AF=
+=E3=80=81=E5=AE=89=E5=85=A8=E5=85=AC=E5=91=8A=EF=BC=8C=E6=94=B6=E9=9B=86F=
+reeBSD=E6=96=B0=E6=89=8B=E8=B5=84=E6=96=99=E3=80=81=E6=A1=8C=E9=9D=A2=E5=BA=
+=94=E7=94=A8=E3=80=81=E5=BA=94=E7=94=A8=E6=8A=80=E6=9C=AF=E3=80=81=E5=BC=80=
+=E5=8F=91=E6=8A=80=E6=9C=AF=E7=AD=89=E4=B8=AD=E6=96=87=E6=8A=80=E6=9C=AF=E6=
+=96=87=E6=A1=A3=E2=80=A6</DIV></DIV></DIV>
+<DIV id=3Dheader_r><A=20
+href=3D"javascript:window.external.AddFavorite('http://www.bsdart.org', =
+'FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98')">=E6=94=B6=E8=97=8F=E6=9C=AC=
+=E7=AB=99</A>=20
+| <A=20
+onclick=3D"this.style.behavior=3D'url(#default#homepage)';this.sethomepag=
+e('http://www.bsdart.org');return false;"=20
+href=3D"http://www.bsdart.org/archives/20101214/382.html#">=E8=AE=BE=E4=B8=
+=BA=E9=A6=96=E9=A1=B5</A><BR><A=20
+href=3D"http://www.feedsky.com/msub_wr.html?burl=3Dbsdart" =
+target=3D_blank>=E9=82=AE=E4=BB=B6=E8=AE=A2=E9=98=85</A> |=20
+<A href=3D"http://feed.feedsky.com/bsdart" =
+target=3D_blank>Rss=E8=AE=A2=E9=98=85</A> </DIV></DIV>
+<DIV class=3D"nav avt clearfloat">
+<LI><A href=3D"http://www.bsdart.org/">=E9=A6=96=E9=A1=B5</A> </LI>
+<LI class=3D"cat-item cat-item-1"><A title=3D"=E6=9F=A5=E7=9C=8B =
+=E6=96=B0=E9=97=BB=E8=B5=84=E8=AE=AF =
+=E4=B8=8B=E7=9A=84=E6=89=80=E6=9C=89=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e6%96%b0%e9%97%bb%e8%b5%=
+84%e8%ae%af">=E6=96=B0=E9=97=BB=E8=B5=84=E8=AE=AF</A>=20
+</LI>
+<LI class=3D"cat-item cat-item-3"><A title=3D"=E6=9F=A5=E7=9C=8B =
+=E6=96=B0=E6=89=8B=E8=B5=84=E6=96=99 =
+=E4=B8=8B=E7=9A=84=E6=89=80=E6=9C=89=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e6%96%b0%e6%89%8b%e8%b5%=
+84%e6%96%99">=E6=96=B0=E6=89=8B=E8=B5=84=E6=96=99</A>=20
+</LI>
+<LI class=3D"cat-item cat-item-4"><A title=3D"=E6=9F=A5=E7=9C=8B =
+=E6=A1=8C=E9=9D=A2=E5=BA=94=E7=94=A8 =
+=E4=B8=8B=E7=9A=84=E6=89=80=E6=9C=89=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e6%a1%8c%e9%9d%a2%e5%ba%=
+94%e7%94%a8">=E6=A1=8C=E9=9D=A2=E5=BA=94=E7=94=A8</A>=20
+</LI>
+<LI class=3D"cat-item cat-item-5"><A title=3D"=E6=9F=A5=E7=9C=8B =
+=E5=BA=94=E7=94=A8=E6=8A=80=E6=9C=AF =
+=E4=B8=8B=E7=9A=84=E6=89=80=E6=9C=89=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e5%ba%94%e7%94%a8%e6%8a%=
+80%e6%9c%af">=E5=BA=94=E7=94=A8=E6=8A=80=E6=9C=AF</A>=20
+</LI>
+<LI class=3D"cat-item cat-item-6"><A title=3D"=E6=9F=A5=E7=9C=8B =
+=E5=BC=80=E5=8F=91=E6=8A=80=E6=9C=AF =
+=E4=B8=8B=E7=9A=84=E6=89=80=E6=9C=89=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e5%bc%80%e5%8f%91%e6%8a%=
+80%e6%9c%af">=E5=BC=80=E5=8F=91=E6=8A=80=E6=9C=AF</A>=20
+</LI>
+<LI class=3D"cat-item cat-item-10"><A title=3D"=E6=9F=A5=E7=9C=8B =
+=E5=AE=89=E5=85=A8=E5=85=AC=E5=91=8A =
+=E4=B8=8B=E7=9A=84=E6=89=80=E6=9C=89=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e5%ae%89%e5%85%a8%e5%85%=
+ac%e5%91%8a">=E5=AE=89=E5=85=A8=E5=85=AC=E5=91=8A</A>=20
+</LI></DIV>
+<DIV id=3Dpage class=3Dclearfloat>
+<DIV id=3Dcenter>
+<DIV class=3Dcol>
+<DIV id=3Dpost-382 class=3Dpost>
+<DIV class=3Dpostnav>=E5=BD=93=E5=89=8D=E4=BD=8D=E7=BD=AE=EF=BC=9A<A =
+href=3D"http://www.bsdart.org/">FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98=
+</A> &gt; <A=20
+title=3D"=E6=9F=A5=E7=9C=8B =E6=A1=8C=E9=9D=A2=E5=BA=94=E7=94=A8 =
+=E4=B8=AD=E7=9A=84=E5=85=A8=E9=83=A8=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e6%a1%8c%e9%9d%a2%e5%ba%=
+94%e7%94%a8"=20
+rel=3D"category tag">=E6=A1=8C=E9=9D=A2=E5=BA=94=E7=94=A8</A> &gt; <A=20
+href=3D"http://www.bsdart.org/archives/20101214/382.html">FreeBSD=20
+VESA=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=94=
+=AF=E6=8C=81</A></DIV>
+<H2>FreeBSD =
+VESA=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=94=
+=AF=E6=8C=81</H2>
+<DIV class=3D"postmeat =
+ac">=E5=8F=91=E8=A1=A8=E6=97=B6=E9=97=B4=EF=BC=9A2010-12-14 &nbsp; =
+=E5=85=B3=E6=B3=A8=E5=BA=A6=EF=BC=9A2,864 views &nbsp; =
+=E8=AF=84=E8=AE=BA=E6=95=B0=EF=BC=9A<A=20
+href=3D"http://www.bsdart.org/archives/20101214/382.html#respond">0</A> =
+&nbsp;=20
+</DIV>
+<DIV id=3Dckepop class=3Dsharebox><A class=3D"jiathis jiathis_txt jtico =
+jtico_jiathis"=20
+href=3D"http://www.jiathis.com/share/?uid=3D889384" =
+target=3D_blank>=E5=88=86=E4=BA=AB=E5=88=B0</A> <SPAN=20
+class=3Djiathis_separator>|</SPAN> <A class=3Djiathis_button_tsina=20
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0=E6=96=B0=E6=B5=AA=E5=BE=AE=E5=8D=9A><=
+/A><A class=3Djiathis_button_qzone =
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0QQ=E7=A9=BA=E9=97=B4></A><A=20
+class=3Djiathis_button_kaixin001 =
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0=E5=BC=80=E5=BF=83=E7=BD=91></A><A =
+class=3Djiathis_button_renren=20
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0=E4=BA=BA=E4=BA=BA=E7=BD=91></A><A =
+class=3Djiathis_button_t163 =
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0=E7=BD=91=E6=98=93=E5=BE=AE=E5=8D=9A><=
+/A><A=20
+class=3Djiathis_button_tsohu =
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0=E6=90=9C=E7=8B=90=E5=BE=AE=E5=8D=9A><=
+/A><A class=3Djiathis_button_twitter=20
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0twitter></A><A =
+class=3Djiathis_button_fb =
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0facebook></A><A=20
+class=3Djiathis_button_douban =
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0=E8=B1=86=E7=93=A3></A><A =
+class=3Djiathis_button_digu=20
+title=3D=E5=88=86=E4=BA=AB=E5=88=B0=E5=98=80=E5=92=95=E7=BD=91></A></DIV>=
+
+<DIV class=3Dentry>
+<DIV class=3Dentry_ads>
+<SCRIPT type=3Dtext/javascript>=0A=
+var sogou_ad_id=3D66111;=0A=
+var sogou_ad_height=3D250;=0A=
+var sogou_ad_width=3D300;=0A=
+</SCRIPT>
+
+<SCRIPT language=3DJavaScript type=3Dtext/javascript=20
+src=3D"http://images.sohu.com/cs/jsfile/js/c.js"></SCRIPT>
+</DIV>
+<P>FreeBSD =
+VESA=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=94=
+=AF=E6=8C=81</P>
+<P>=E4=BB=8B=E7=BB=8D</P>
+<P>VESA =
+=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=98=AF=E4=
+=BD=BF=E7=94=A8=E6=98=BE=E5=8D=A1=E6=8F=90=E4=BE=9B=E7=9A=84 VESA =
+=E6=8E=A5=E5=8F=A3=E6=9D=A5=E6=94=B9=E5=96=84=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=
+=98=BE=E7=A4=BA=E5=88=86=E8=BE=A8=E7=8E=87=E7=9A=84=E4=B8=80=E9=A1=B9=E5=8A=
+=9F=E8=83=BD=E3=80=82=E4=BE=8B=E5=A6=82=EF=BC=8C=E5=9C=A8=E7=AC=94=E8=AE=B0=
+=E6=9C=AC=E4=B8=8A=E5=8F=AF=E4=BB=A5=E4=BD=BF=E7=94=A8 1440=C3=97900=20
+=E8=BF=99=E6=A0=B7=E7=9A=84=E5=88=86=E8=BE=A8=E7=8E=87=EF=BC=8C=E4=BB=8E=E8=
+=80=8C=E6=8F=90=E4=BE=9B=E6=9B=B4=E5=A5=BD=E7=9A=84=E6=98=BE=E7=A4=BA=E6=95=
+=88=E6=9E=9C=E3=80=82</P>
+<P>=E6=97=A9=E6=9C=9F=E7=89=88=E6=9C=AC=E7=9A=84 FreeBSD =
+=E4=B8=AD=E7=9A=84 VESA =
+=E6=94=AF=E6=8C=81=E5=8F=AA=E9=80=82=E7=94=A8=E4=BA=8E i386 =
+=E5=B9=B3=E5=8F=B0=E3=80=82=E4=BB=8E FreeBSD 8.1-RELEASE =
+=E5=BC=80=E5=A7=8B=EF=BC=8C FreeBSD =E5=9C=A8=20
+amd64 =E5=92=8C i386 =
+=E5=B9=B3=E5=8F=B0=E4=B8=8A=E9=83=BD=E5=8F=AF=E4=BB=A5=E6=94=AF=E6=8C=81=E9=
+=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E4=BA=86=E3=80=
+=82</P>
+<P>=E5=86=85=E6=A0=B8=E9=85=8D=E7=BD=AE</P>
+<P>=E9=80=9A=E5=B8=B8=E6=89=80=E8=AF=B4=E7=9A=84=E9=AB=98=E5=88=86=E8=BE=A8=
+=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E5=AE=9E=E9=99=85=E4=B8=8A=E6=98=AF=E4=
+=BD=BF=E7=94=A8 VESA=20
+=E7=9A=84=E5=9B=BE=E5=BD=A2=E6=A8=A1=E5=BC=8F=E3=80=82=E8=BF=99=E7=A7=8D=E6=
+=A8=A1=E5=BC=8F=E4=B8=8B=E5=86=85=E6=A0=B8=E9=9C=80=E8=A6=81=E8=87=AA=E8=A1=
+=8C=E2=80=9C=E7=94=BB=E2=80=9D=E5=87=BA=E6=AF=8F=E4=B8=80=E4=B8=AA=E5=AD=97=
+=E7=AC=A6=EF=BC=8C=E8=80=8C=E4=B8=8D=E6=98=AF=E5=83=8F=E5=9C=A8=E6=96=87=E6=
+=9C=AC=E6=A8=A1=E5=BC=8F=E9=82=A3=E6=A0=B7=E7=9B=B4=E6=8E=A5=E5=9C=A8=E6=98=
+=BE=E7=A4=BA=E7=BC=93=E5=86=B2=E5=8C=BA=E4=B8=AD=E5=86=99=E5=85=A5=E5=AD=97=
+=E7=AC=A6=E7=9A=84=E9=A2=9C=E8=89=B2=E5=92=8CASCII=E7=A0=81=E3=80=82=E4=B8=
+=BA=E4=BA=86=E8=AE=A9=E5=86=85=E6=A0=B8=E5=85=B7=E6=9C=89=E7=BB=98=E5=88=B6=
+=E5=AD=97=E7=AC=A6=E7=9A=84=E8=83=BD=E5=8A=9B=EF=BC=8C=E9=9C=80=E8=A6=81=E5=
+=9C=A8=E9=85=8D=E7=BD=AE=E5=86=85=E6=A0=B8=E6=97=B6=E5=8A=A0=E5=85=A5=E4=B8=
+=8B=E9=9D=A2=E7=9A=84=E9=85=8D=E7=BD=AE=EF=BC=9A</P>
+<P>options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+SC_PIXEL_MODE</P>
+<P>=E6=AD=A4=E5=A4=96=EF=BC=8C=E5=8F=AF=E4=BB=A5=E5=B0=86 VESA =
+=E6=94=AF=E6=8C=81=E7=9B=B4=E6=8E=A5=E9=9D=99=E6=80=81=E8=81=94=E7=BC=96=E8=
+=BF=9B=E5=86=85=E6=A0=B8=EF=BC=8C=E4=BB=A5=E5=87=8F=E5=B0=91=E5=90=AF=E5=8A=
+=A8=E6=97=B6=E9=97=B4=EF=BC=9A</P>
+<P>options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86BIOS=20
+<BR>device&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+vesa</P>
+<P>=E5=BC=95=E5=AF=BC=E5=8A=A0=E8=BD=BD=E5=99=A8=E9=85=8D=E7=BD=AE</P>
+<P>FreeBSD =E9=BB=98=E8=AE=A4=E7=9A=84=E4=BC=A0=E7=BB=9F VESA =
+=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=A8=A1=E5=BC=8F=E6=98=AF=20
+800=C3=97600=EF=BC=8C=E4=B8=8D=E8=BF=87=E5=9C=A8=E7=8E=B0=E6=97=B6=E7=9A=84=
+=E6=98=BE=E7=A4=BA=E5=99=A8=E4=B8=8A=EF=BC=8C=E8=BF=99=E4=B8=AA=E5=88=86=E8=
+=BE=A8=E7=8E=87=E5=8F=AF=E8=83=BD=E4=BB=8D=E7=84=B6=E5=81=8F=E4=BD=8E=E3=80=
+=82=E4=BD=BF=E7=94=A8=E4=B8=8B=E9=9D=A2=E7=9A=84=E5=91=BD=E4=BB=A4=E5=8F=AF=
+=E4=BB=A5=E8=8E=B7=E5=BE=97=E6=9C=AC=E6=9C=BA=E6=94=AF=E6=8C=81=E7=9A=84=E6=
+=98=BE=E7=A4=BA=E6=A8=A1=E5=BC=8F=EF=BC=9A</P>
+<P>vidcontrol -i mode &lt; /dev/ttyv0</P>
+<P>=E5=85=B6=E8=BE=93=E5=87=BA=E7=B1=BB=E4=BC=BC=E4=B8=8B=E9=9D=A2=E8=BF=99=
+=E6=A0=B7=EF=BC=9A</P>
+<P>mode#&nbsp;&nbsp;&nbsp;&nbsp; flags&nbsp;&nbsp; =
+type&nbsp;&nbsp;&nbsp;=20
+size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+font&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+window&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linear buffer=20
+<BR>=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=
+=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=
+=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=
+=80=94=E2=80=94 <BR>24 (0=C3=97018) 0=C3=9700000001 T=20
+80=C3=9725&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+8=C3=9716&nbsp;=20
+0xb8000 32k 32k 0=C3=9700000000 32k <BR>30 (0x01e) 0=C3=9700000001 T=20
+80=C3=9750&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+8=C3=978&nbsp;&nbsp; 0xb8000 32k 32k 0=C3=9700000000 32k <BR>32 =
+(0=C3=97020) 0=C3=9700000001 T=20
+80=C3=9730&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+8=C3=9716&nbsp;=20
+0xb8000 32k 32k 0=C3=9700000000 32k <BR>34 (0=C3=97022) 0=C3=9700000001 =
+T=20
+80=C3=9760&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+8=C3=978&nbsp;&nbsp; 0xb8000 32k 32k 0=C3=9700000000 32k <BR>256 =
+(0=C3=97100) 0x0000001f G=20
+640x400x8 1&nbsp;&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k =
+0xf3000000 250k=20
+<BR>257 (0=C3=97101) 0x0000001f G 640x480x8 1&nbsp;&nbsp;&nbsp;&nbsp; =
+8=C3=9716&nbsp;=20
+0xa0000 64k 64k 0xf3000000 300k <BR>258 (0=C3=97102) 0x0000001b G =
+800x600x4=20
+4&nbsp;&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k =
+0=C3=9700000000 234k <BR>259=20
+(0=C3=97103) 0x0000001f G 800x600x8 1&nbsp;&nbsp;&nbsp;&nbsp; =
+8=C3=9716&nbsp; 0xa0000 64k=20
+64k 0xf3000000 468k <BR>260 (0=C3=97104) 0x0000001b G 1024x768x4 =
+4&nbsp;&nbsp;&nbsp;=20
+8=C3=9716&nbsp; 0xa0000 64k 64k 0=C3=9700000000 384k <BR>261 =
+(0=C3=97105) 0x0000001f G=20
+1024x768x8 1&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k =
+0xf3000000 768k=20
+<BR>270 (0x10e) 0x0000001f G 320x200x16 1&nbsp;&nbsp;&nbsp; =
+8=C3=978&nbsp;&nbsp;=20
+0xa0000 64k 64k 0xf3000000 125k <BR>271 (0x10f) 0x0000001f G 320x200x32=20
+1&nbsp;&nbsp;&nbsp; 8=C3=978&nbsp;&nbsp; 0xa0000 64k 64k 0xf3000000 250k =
+<BR>273=20
+(0=C3=97111) 0x0000001f G 640x480x16 1&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; =
+0xa0000 64k 64k=20
+0xf3000000 600k <BR>274 (0=C3=97112) 0x0000001f G 640x480x32 =
+1&nbsp;&nbsp;&nbsp;=20
+8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 1200k <BR>276 (0=C3=97114) =
+0x0000001f G=20
+800x600x16 1&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k =
+0xf3000000 937k=20
+<BR>277 (0=C3=97115) 0x0000001f G 800x600x32 1&nbsp;&nbsp;&nbsp; =
+8=C3=9716&nbsp; 0xa0000=20
+64k 64k 0xf3000000 1875k <BR>279 (0=C3=97117) 0x0000001f G 1024x768x16 =
+1&nbsp;&nbsp;=20
+8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 1536k <BR>280 (0=C3=97118) =
+0x0000001f G=20
+1024x768x32 1&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 =
+3072k <BR>304=20
+(0=C3=97130) 0x0000001f G 320x200x8 1&nbsp;&nbsp;&nbsp;&nbsp; =
+8=C3=978&nbsp;&nbsp; 0xa0000=20
+64k 64k 0xf3000000 62k <BR>305 (0=C3=97131) 0x0000001f G 320x400x8=20
+1&nbsp;&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 =
+125k <BR>306=20
+(0=C3=97132) 0x0000001f G 320x400x16 1&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; =
+0xa0000 64k 64k=20
+0xf3000000 250k <BR>307 (0=C3=97133) 0x0000001f G 320x400x32 =
+1&nbsp;&nbsp;&nbsp;=20
+8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 500k <BR>308 (0=C3=97134) =
+0x0000001f G=20
+320x240x8 1&nbsp;&nbsp;&nbsp;&nbsp; 8=C3=978&nbsp;&nbsp; 0xa0000 64k 64k =
+0xf3000000=20
+75k <BR>309 (0=C3=97135) 0x0000001f G 320x240x16 1&nbsp;&nbsp;&nbsp; =
+8=C3=978&nbsp;&nbsp;=20
+0xa0000 64k 64k 0xf3000000 150k <BR>310 (0=C3=97136) 0x0000001f G =
+320x240x32=20
+1&nbsp;&nbsp;&nbsp; 8=C3=978&nbsp;&nbsp; 0xa0000 64k 64k 0xf3000000 300k =
+<BR>317=20
+(0x13d) 0x0000001f G 640x400x16 1&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; =
+0xa0000 64k 64k=20
+0xf3000000 500k <BR>318 (0x13e) 0x0000001f G 640x400x32 =
+1&nbsp;&nbsp;&nbsp;=20
+8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 1000k <BR>352 (0=C3=97160) =
+0x0000001f G=20
+1280x800x8 1&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k =
+0xf3000000 1000k=20
+<BR>353 (0=C3=97161) 0x0000001f G 1280x800x32 1&nbsp;&nbsp; =
+8=C3=9716&nbsp; 0xa0000 64k=20
+64k 0xf3000000 4000k <BR>354 (0=C3=97162) 0x0000001f G 768x480x8=20
+1&nbsp;&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 =
+360k <BR>356=20
+(0=C3=97164) 0x0000001f G 1440x900x8 1&nbsp;&nbsp;&nbsp; 8=C3=9716&nbsp; =
+0xa0000 64k 64k=20
+0xf3000000 1265k <BR>357 (0=C3=97165) 0x0000001f G 1440x900x32 =
+1&nbsp;&nbsp;=20
+8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 5062k <BR>379 (0x17b) =
+0x0000001f G=20
+1280x720x32 1&nbsp;&nbsp; 8=C3=9716&nbsp; 0xa0000 64k 64k 0xf3000000 =
+3600k</P>
+<P>=E6=9C=80=E5=B7=A6=E8=BE=B9=E4=B8=80=E5=88=97=E6=98=AF=E6=98=BE=E7=A4=BA=
+=E6=A8=A1=E5=BC=8F=E7=9A=84=E4=BB=A3=E7=A0=81=E3=80=82=E4=B8=80=E8=88=AC=E8=
+=80=8C=E8=A8=80=E6=88=91=E4=BB=AC=E5=B8=8C=E6=9C=9B=E9=80=89=E6=8B=A9=E5=88=
+=86=E8=BE=A8=E7=8E=87=E6=9C=80=E9=AB=98=E7=9A=84=E6=98=BE=E7=A4=BA=E6=A8=A1=
+=E5=BC=8F=E4=B8=AD=E9=A2=9C=E8=89=B2=E6=95=B0=E6=9C=80=E5=B0=91=E7=9A=84=E4=
+=B8=80=E7=A7=8D=E6=A8=A1=E5=BC=8F=EF=BC=8C=E5=9C=A8=E8=BF=99=E4=B8=AA=E4=BE=
+=8B=E5=AD=90=E4=B8=AD=EF=BC=8C=E6=98=AF 1440x900x8 =
+=EF=BC=88256=E8=89=B2=EF=BC=89=EF=BC=8C=E4=BB=A3=E7=A0=81=E4=B8=BA=20
+356=E3=80=82=E6=88=91=E4=BB=AC=E5=8F=AF=E4=BB=A5=E5=9C=A8 =
+/boot/loader.conf =
+=E4=B8=AD=E5=8A=A0=E5=85=A5=E4=B8=8B=E9=9D=A2=E7=9A=84=E9=85=8D=E7=BD=AE=EF=
+=BC=9A</P>
+<P>hint.sc.0.flags=3D0=C3=970180 <BR>hint.sc.0.vesa_mode=3D356</P>
+<P>=E8=BF=99=E6=A0=B7=EF=BC=8C=E7=B3=BB=E7=BB=9F=E5=9C=A8=E5=BC=95=E5=AF=BC=
+=E5=88=B0=E5=88=9D=E5=A7=8B=E5=8C=96=E7=B3=BB=E7=BB=9F=E6=8E=A7=E5=88=B6=E5=
+=8F=B0=E7=9A=84=E6=97=B6=E5=80=99=EF=BC=8C=E4=BE=BF=E4=BC=9A=E8=87=AA=E5=8A=
+=A8=E5=88=87=E6=8D=A2=E6=98=BE=E7=A4=BA=E6=A8=A1=E5=BC=8F=E4=BA=86=E3=80=82=
+</P>
+<P>=E6=9B=B4=E5=A4=9A=E7=BB=86=E8=8A=82=EF=BC=8C=E8=AF=B7=E5=8F=82=E9=98=85=
+=20
+syscons(4)[URL:http://www.freebsd.org/cgi/man.cgi?query=3Dsc&amp;sektion=3D=
+4]=E3=80=82</P>
+<P>=E5=8E=9F=E6=96=87=E9=93=BE=E6=8E=A5: =
+http://wiki.freebsdchina.org/feature/v/vesa_console</P>
+<P>=E8=BD=AC=E8=BD=BD=E8=AF=B7=E6=B3=A8=E6=98=8E=E6=96=87=E7=AB=A0=E8=BD=AC=
+=E8=BD=BD=E8=87=AA=EF=BC=9A<A =
+href=3D"http://www.bsdart.org/">FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98=
+</A>=20
+[http://www.bsdart.org]<BR>=E6=9C=AC=E6=96=87=E9=93=BE=E6=8E=A5=E5=9C=B0=E5=
+=9D=80=EF=BC=9A<A=20
+href=3D"http://www.bsdart.org/archives/20101214/382.html" =
+rel=3Dbookmark>FreeBSD=20
+VESA=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87=E6=8E=A7=E5=88=B6=E5=8F=B0=E6=94=
+=AF=E6=8C=81</A></P>
+<P>=E6=89=80=E5=B1=9E=E5=88=86=E7=B1=BB=EF=BC=9A<A =
+title=3D"=E6=9F=A5=E7=9C=8B =E6=A1=8C=E9=9D=A2=E5=BA=94=E7=94=A8 =
+=E4=B8=AD=E7=9A=84=E5=85=A8=E9=83=A8=E6=96=87=E7=AB=A0"=20
+href=3D"http://www.bsdart.org/archives/category/%e6%a1%8c%e9%9d%a2%e5%ba%=
+94%e7%94%a8"=20
+rel=3D"category =
+tag">=E6=A1=8C=E9=9D=A2=E5=BA=94=E7=94=A8</A><BR>=E6=A0=87=E7=AD=BE=EF=BC=
+=9A<A=20
+href=3D"http://www.bsdart.org/archives/tag/configure" =
+rel=3Dtag>configure</A>, <A=20
+href=3D"http://www.bsdart.org/archives/tag/freebsd-2" =
+rel=3Dtag>freebsd</A>, <A=20
+href=3D"http://www.bsdart.org/archives/tag/syscons" =
+rel=3Dtag>syscons</A>, <A=20
+href=3D"http://www.bsdart.org/archives/tag/vesa" rel=3Dtag>VESA</A>, <A=20
+href=3D"http://www.bsdart.org/archives/tag/%e6%98%be%e7%a4%ba%e6%a8%a1%e5=
+%bc%8f"=20
+rel=3Dtag>=E6=98=BE=E7=A4=BA=E6=A8=A1=E5=BC=8F</A>, <A=20
+href=3D"http://www.bsdart.org/archives/tag/%e9%85%8d%e7%bd%ae" =
+rel=3Dtag>=E9=85=8D=E7=BD=AE</A>, <A=20
+href=3D"http://www.bsdart.org/archives/tag/%e9%ab%98%e5%88%86%e8%be%a8%e7=
+%8e%87"=20
+rel=3Dtag>=E9=AB=98=E5=88=86=E8=BE=A8=E7=8E=87</A></P></DIV><!--END =
+ENTRY-->
+<DIV class=3Dsingle_ads>
+<SCRIPT=20
+type=3Dtext/javascript>/*468*60=EF=BC=8C=E5=88=9B=E5=BB=BA=E4=BA=8E2011-5=
+-20*/ var cpro_id =3D 'u481751';</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript =
+src=3D"http://cpro.baidu.com/cpro/ui/c.js"></SCRIPT>
+</DIV>
+<DIV class=3Dpostfooter>=E4=B8=8A=E4=B8=80=E7=AF=87=EF=BC=9A<A=20
+href=3D"http://www.bsdart.org/archives/20101213/381.html" =
+rel=3Dprev>FreeBSD=20
+DHCP=E6=9C=8D=E5=8A=A1=E5=AE=89=E8=A3=85=E7=AC=94=E8=AE=B0</A></DIV>
+<DIV class=3Dpostfooter>=E4=B8=8B=E4=B8=80=E7=AF=87=EF=BC=9A<A=20
+href=3D"http://www.bsdart.org/archives/20101215/393.html"=20
+rel=3Dnext>FreeBSD=E6=8C=82=E8=BD=BD=E5=85=89=E9=A9=B1=E3=80=81U=E7=9B=98=
+=E3=80=81ISO=E4=BB=A5=E5=8F=8ANTFS</A></DIV>
+<DIV id=3Dwp_rp_first class=3D"wp_rp_wrap  wp_rp_plain">
+<DIV class=3Dwp_rp_content>
+<H3 =
+class=3Drelated_post_title>=E7=9B=B8=E5=85=B3=E6=96=87=E7=AB=A0=E6=8E=A8=E8=
+=8D=90=EF=BC=9A</H3>
+<UL style=3D"VISIBILITY: visible" class=3D"related_post wp_rp">
+  <LI><A class=3Dwp_rp_title=20
+  href=3D"http://www.bsdart.org/archives/20101119/321.html">FreeBSD=20
+  =
+ATI=E6=98=BE=E5=8D=A1=E4=B8=8Exorg=E9=85=8D=E7=BD=AE=E8=AE=B0=E5=BD=95</A=
+></LI>
+  <LI><A class=3Dwp_rp_title=20
+  =
+href=3D"http://www.bsdart.org/archives/20101105/125.html">FreeBSD=E4=B8=8B=
+KDE=E6=A1=8C=E9=9D=A2=E7=B3=BB=E7=BB=9F=E9=85=8D=E7=BD=AE=E4=B8=8E=E4=BD=BF=
+=E7=94=A8</A></LI>
+  <LI><A class=3Dwp_rp_title=20
+  href=3D"http://www.bsdart.org/archives/20101104/105.html">FreeBSD 8.0=20
+  Gnome=E6=A1=8C=E9=9D=A2=E5=AE=89=E8=A3=85=E7=AC=94=E8=AE=B0</A></LI>
+  <LI><A class=3Dwp_rp_title=20
+  =
+href=3D"http://www.bsdart.org/archives/20101105/132.html">=E5=9C=A8FreeBS=
+D=E4=B8=8B=E9=85=8D=E7=BD=AEHP LaserJet=20
+  4000=E5=92=8CHP LaserJet 2100=E6=89=93=E5=8D=B0=E6=9C=BA</A></LI>
+  <LI><A class=3Dwp_rp_title=20
+  href=3D"http://www.bsdart.org/archives/20101125/356.html">FreeBSD 7 =
+Xorg7.3=20
+  KDE3.5 =
+=E6=A1=8C=E9=9D=A2=E7=B3=BB=E7=BB=9F=E5=AE=89=E8=A3=85=E5=8F=8A=E7=BE=8E=E5=
+=8C=96</A></LI></UL>
+<DIV class=3Dwp_rp_footer><A class=3Dwp_rp_backlink=20
+href=3D"http://www.zemanta.com/?wp-related-posts" rel=3Dnofollow=20
+target=3D_blank>Zemanta</A></DIV></DIV></DIV><!--END POSTFOOTER--><!-- =
+You can start editing here. --><!-- If comments are open, but there are =
+no comments. -->
+<H3 =
+id=3Drespond>=E6=AC=A2=E8=BF=8E=E6=82=A8=E5=8F=91=E8=A1=A8=E8=AF=84=E8=AE=
+=BA=EF=BC=9A</H3>
+<FORM id=3Dcommentform method=3Dpost=20
+action=3Dhttp://www.bsdart.org/wp-comments-post.php>
+<P><INPUT id=3Dauthor tabIndex=3D1 size=3D22 name=3Dauthor> <LABEL =
+for=3Dauthor>=E7=A7=B0=E5=91=BC<SMALL>=20
+( =E5=B0=86=E4=BC=9A=E6=98=BE=E7=A4=BA )</SMALL></LABEL></P>
+<P><INPUT id=3Demail tabIndex=3D2 size=3D22 name=3Demail> <LABEL =
+for=3Demail>=E9=82=AE=E7=AE=B1<SMALL> (=20
+=E5=86=B3=E4=B8=8D=E5=85=AC=E5=BC=80 )</SMALL></LABEL></P>
+<P><INPUT id=3Durl tabIndex=3D3 size=3D22 name=3Durl> <LABEL =
+for=3Durl>=E7=BD=91=E5=9D=80<SMALL> ( =
+=E5=8F=AF=E4=BB=A5=E4=B8=8D=E5=A1=AB=20
+)</SMALL></LABEL></P>
+<P><TEXTAREA id=3Dcomment tabIndex=3D4 rows=3D8 cols=3D100 =
+name=3Dcomment></TEXTAREA></P>
+<DIV =
+id=3Dwp_seccode><SPAN>=E8=AF=B7=E8=BE=93=E5=85=A5=E9=AA=8C=E8=AF=81=E7=A0=
+=81=EF=BC=9A</SPAN><INPUT style=3D"WIDTH: 55px" id=3Dseccode=20
+tabIndex=3D4 maxLength=3D4 size=3D5 name=3Dseccode><IMG =
+style=3D"MARGIN-BOTTOM: -3px"=20
+id=3Dseccode=20
+onclick=3D"this.src=3D'http://www.bsdart.org/wp-content/plugins/wp-seccod=
+e/wp-seccode.php?update=3D' + Math.random()"=20
+border=3D0 alt=3D"click to change"=20
+src=3D"http://www.bsdart.org/wp-content/plugins/wp-seccode/wp-seccode.php=
+"></DIV>
+<P><INPUT id=3Dsubmit class=3Dbutton tabIndex=3D5 =
+value=3D=E5=8F=91=E8=A1=A8=E8=AF=84=E8=AE=BA type=3Dsubmit =
+name=3Dsubmit>=20
+<INPUT value=3D382 type=3Dhidden =
+name=3Dcomment_post_ID></P></FORM></DIV><!--END POST--></DIV><!--END =
+COL--></DIV><!--END CENTER-->
+<DIV id=3Dleft><!--=E5=B7=A6=E4=BE=A7=E5=BC=80=E5=A7=8B-->
+<H4>=E5=BF=AB=E9=80=9F=E6=90=9C=E7=B4=A2=E6=A0=8F</H4>
+<FORM id=3Dsearchform method=3Dget =
+action=3Dhttp://www.bsdart.org/><INPUT=20
+onblur=3D"if(this.value=3D=3D'') =
+this.value=3D'=E8=AF=B7=E8=BE=93=E5=85=A5=E5=85=B3=E9=94=AE=E8=AF=8D';" =
+id=3Ds class=3Dinput=20
+onfocus=3D"if(this.value=3D=3D'=E8=AF=B7=E8=BE=93=E5=85=A5=E5=85=B3=E9=94=
+=AE=E8=AF=8D') this.value=3D'';" =
+value=3D=E8=AF=B7=E8=BE=93=E5=85=A5=E5=85=B3=E9=94=AE=E8=AF=8D name=3Ds> =
+<INPUT id=3Dsearchsubmit class=3Dbutton value=3DSearch type=3Dsubmit =
+name=3Dsubmit>=20
+</FORM>
+<H2>=E7=83=AD=E9=97=A8=E6=A0=87=E7=AD=BE=E6=8E=92=E8=A1=8C</H2>
+<UL class=3Dwp-tag-cloud>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-7 title=3D"147 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/freebsd-2">freebsd</A> =
+</LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-46 title=3D"43 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e5%ae%89%e8%a3%85">=E5=AE=89=E8=
+=A3=85</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-47 title=3D"38 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/install">install</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-134 title=3D"32 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/configure">configure</A> =
+</LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-133 title=3D"31 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e9%85%8d%e7%bd%ae">=E9=85=8D=E7=
+=BD=AE</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-143 title=3D"30 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e5%ae%89%e5%85%a8">=E5=AE=89=E5=
+=85=A8</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-144 title=3D"29 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e8%a1%a5%e4%b8%81">=E8=A1=A5=E4=
+=B8=81</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-41 title=3D"29 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/patch">patch</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-40 title=3D"29 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/security">security</A> =
+</LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-88 title=3D"12 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e5%91%bd%e4%bb%a4">=E5=91=BD=E4=
+=BB=A4</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-70 title=3D"7 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e8%bd%af%e4%bb%b6">=E8=BD=AF=E4=
+=BB=B6</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-21 title=3D"7 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/ports">ports</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-15 title=3D"7 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/bind">bind</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-9 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/php-2">php</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-43 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/desktop">desktop</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-44 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e6%a1%8c%e9%9d%a2">=E6=A1=8C=E9=
+=9D=A2</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-172 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e8%ae%be%e7%bd%ae">=E8=AE=BE=E7=
+=BD=AE</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-174 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e8%af%a6%e8%a7%a3">=E8=AF=A6=E8=
+=A7=A3</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-136 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e7%b3%bb%e7%bb%9f">=E7=B3=BB=E7=
+=BB=9F</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-135 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/service">service</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-81 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/zfs">zfs</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-132 title=3D"6 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e6%9c%8d%e5%8a%a1">=E6=9C=8D=E5=
+=8A=A1</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-153 title=3D"5 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/release">release</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-113 title=3D"5 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/virtualbox">VirtualBox</A> =
+</LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-181 title=3D"4 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e5%9b%be%e8%a7%a3">=E5=9B=BE=E8=
+=A7=A3</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-205 title=3D"4 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/lighttpd">lighttpd</A> =
+</LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-180 title=3D"4 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  =
+href=3D"http://www.bsdart.org/archives/tag/%e5%b8%b8%e7%94%a8">=E5=B8=B8=E7=
+=94=A8</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-145 title=3D"4 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/openssl">openssl</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-14 title=3D"4 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/csh">csh</A> </LI>
+  <LI><A style=3D"FONT-SIZE: 12px" class=3Dtag-link-117 title=3D"4 =
+=E4=B8=AA=E8=AF=9D=E9=A2=98"=20
+  href=3D"http://www.bsdart.org/archives/tag/linux">linux</A> </LI></UL>
+<H3>=E9=A1=B5=E9=9D=A2=E5=AF=BC=E8=88=AA=E6=A0=8F</H3>
+<UL class=3Dpagelist>
+  <LI class=3D"page_item page-item-335"><A=20
+  =
+href=3D"http://www.bsdart.org/sitemap">=E7=BD=91=E7=AB=99=E5=9C=B0=E5=9B=BE=
+</A> =
+</LI></UL><!--<h3>=E5=8E=86=E5=8F=B2=E6=96=87=E7=AB=A0=E7=B4=A2=E5=BC=95<=
+/h3><ul>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2013/07' title=3D'2013 =
+=E5=B9=B4=E4=B8=83=E6=9C=88'>2013 =E5=B9=B4=E4=B8=83=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2013/01' title=3D'2013 =
+=E5=B9=B4=E4=B8=80=E6=9C=88'>2013 =E5=B9=B4=E4=B8=80=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/12' title=3D'2012 =
+=E5=B9=B4=E5=8D=81=E4=BA=8C=E6=9C=88'>2012 =
+=E5=B9=B4=E5=8D=81=E4=BA=8C=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/11' title=3D'2012 =
+=E5=B9=B4=E5=8D=81=E4=B8=80=E6=9C=88'>2012 =
+=E5=B9=B4=E5=8D=81=E4=B8=80=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/08' title=3D'2012 =
+=E5=B9=B4=E5=85=AB=E6=9C=88'>2012 =E5=B9=B4=E5=85=AB=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/06' title=3D'2012 =
+=E5=B9=B4=E5=85=AD=E6=9C=88'>2012 =E5=B9=B4=E5=85=AD=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/05' title=3D'2012 =
+=E5=B9=B4=E4=BA=94=E6=9C=88'>2012 =E5=B9=B4=E4=BA=94=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/04' title=3D'2012 =
+=E5=B9=B4=E5=9B=9B=E6=9C=88'>2012 =E5=B9=B4=E5=9B=9B=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/03' title=3D'2012 =
+=E5=B9=B4=E4=B8=89=E6=9C=88'>2012 =E5=B9=B4=E4=B8=89=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2012/01' title=3D'2012 =
+=E5=B9=B4=E4=B8=80=E6=9C=88'>2012 =E5=B9=B4=E4=B8=80=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/12' title=3D'2011 =
+=E5=B9=B4=E5=8D=81=E4=BA=8C=E6=9C=88'>2011 =
+=E5=B9=B4=E5=8D=81=E4=BA=8C=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/11' title=3D'2011 =
+=E5=B9=B4=E5=8D=81=E4=B8=80=E6=9C=88'>2011 =
+=E5=B9=B4=E5=8D=81=E4=B8=80=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/10' title=3D'2011 =
+=E5=B9=B4=E5=8D=81=E6=9C=88'>2011 =E5=B9=B4=E5=8D=81=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/09' title=3D'2011 =
+=E5=B9=B4=E4=B9=9D=E6=9C=88'>2011 =E5=B9=B4=E4=B9=9D=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/08' title=3D'2011 =
+=E5=B9=B4=E5=85=AB=E6=9C=88'>2011 =E5=B9=B4=E5=85=AB=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/05' title=3D'2011 =
+=E5=B9=B4=E4=BA=94=E6=9C=88'>2011 =E5=B9=B4=E4=BA=94=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/04' title=3D'2011 =
+=E5=B9=B4=E5=9B=9B=E6=9C=88'>2011 =E5=B9=B4=E5=9B=9B=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/03' title=3D'2011 =
+=E5=B9=B4=E4=B8=89=E6=9C=88'>2011 =E5=B9=B4=E4=B8=89=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/02' title=3D'2011 =
+=E5=B9=B4=E4=BA=8C=E6=9C=88'>2011 =E5=B9=B4=E4=BA=8C=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2011/01' title=3D'2011 =
+=E5=B9=B4=E4=B8=80=E6=9C=88'>2011 =E5=B9=B4=E4=B8=80=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2010/12' title=3D'2010 =
+=E5=B9=B4=E5=8D=81=E4=BA=8C=E6=9C=88'>2010 =
+=E5=B9=B4=E5=8D=81=E4=BA=8C=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2010/11' title=3D'2010 =
+=E5=B9=B4=E5=8D=81=E4=B8=80=E6=9C=88'>2010 =
+=E5=B9=B4=E5=8D=81=E4=B8=80=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2010/10' title=3D'2010 =
+=E5=B9=B4=E5=8D=81=E6=9C=88'>2010 =E5=B9=B4=E5=8D=81=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2010/09' title=3D'2010 =
+=E5=B9=B4=E4=B9=9D=E6=9C=88'>2010 =E5=B9=B4=E4=B9=9D=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2010/07' title=3D'2010 =
+=E5=B9=B4=E4=B8=83=E6=9C=88'>2010 =E5=B9=B4=E4=B8=83=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2010/05' title=3D'2010 =
+=E5=B9=B4=E4=BA=94=E6=9C=88'>2010 =E5=B9=B4=E4=BA=94=E6=9C=88</a></li>=0A=
+	<li><a href=3D'http://www.bsdart.org/archives/2010/01' title=3D'2010 =
+=E5=B9=B4=E4=B8=80=E6=9C=88'>2010 =E5=B9=B4=E4=B8=80=E6=9C=88</a></li>=0A=
+</ul>=0A=
+-->
+<H3>=E5=8F=8B=E6=83=85=E9=93=BE=E6=8E=A5</H3>
+<UL>
+  <LI><A title=3DFreeBSD=E5=AE=98=E7=BD=91 =
+href=3D"http://www.freebsd.org/"=20
+  target=3D_blank>FreeBSD=E5=AE=98=E7=BD=91</A> </LI>
+  <LI><A title=3DFreeBSD=E4=B8=AD=E6=96=87=E8=AE=BA=E5=9D=9B =
+href=3D"http://www.freebsdchina.org/"=20
+  target=3D_blank>FreeBSD=E4=B8=AD=E6=96=87=E8=AE=BA=E5=9D=9B</A> </LI>
+  <LI><A =
+title=3DFreeBSD=E4=B8=AD=E6=96=87=E7=A4=BE=E5=8C=BA=E2=80=93ChinaUnix=20
+  =
+href=3D"http://freebsd.chinaunix.net/">FreeBSD=E4=B8=AD=E6=96=87=E7=A4=BE=
+=E5=8C=BA</A> </LI>
+  <LI><A title=3D=E5=BC=80=E6=BA=90=E4=B8=AD=E5=9B=BD=E7=A4=BE=E5=8C=BA =
+href=3D"http://www.oschina.net/">=E5=BC=80=E6=BA=90=E4=B8=AD=E5=9B=BD=E7=A4=
+=BE=E5=8C=BA</A> </LI>
+  <LI><A title=3D"Garey=E2=80=99s Blog" =
+href=3D"http://garey.bsdart.org/"=20
+  target=3D_blank>Garey's Blog</A> </LI>
+  <LI><A title=3D"delphij=E2=80=99s Chaos" =
+href=3D"https://blog.delphij.net/"=20
+  target=3D_blank>delphij's Chaos</A> </LI>
+  <LI><A title=3D"SpriteRay=E2=80=99s Blog" =
+href=3D"http://ray.bsdart.org/"=20
+  target=3D_blank>SpriteRay's Blog</A> </LI>
+  <LI><A title=3D=E6=98=86=E5=B1=B1=E4=BA=BA =
+href=3D"http://www.kunshanren.com/">=E6=98=86=E5=B1=B1=E4=BA=BA</A> =
+</LI></UL>
+<DIV>
+<SCRIPT type=3Dtext/javascript> =0A=
+alimama_pid=3D"mm_23472546_2331668_11234627"; =0A=
+alimama_width=3D120; =0A=
+alimama_height=3D240; =0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript src=3D""> =0A=
+</SCRIPT>
+</DIV></DIV><!--=E5=B7=A6=E4=BE=A7=E7=BB=93=E6=9D=9F-->
+<DIV id=3Dright><!--=E5=8F=B3=E4=BE=A7=E5=BC=80=E5=A7=8B-->
+<DIV class=3Dbox>
+<SCRIPT type=3Dtext/javascript>=0A=
+var sogou_ad_id=3D67370;=0A=
+var sogou_ad_height=3D200;=0A=
+var sogou_ad_width=3D200;=0A=
+</SCRIPT>
+
+<SCRIPT language=3DJavaScript type=3Dtext/javascript=20
+src=3D"http://images.sohu.com/cs/jsfile/js/c.js"></SCRIPT>
+<!--<script type=3D"text/javascript"> =0A=
+alimama_pid=3D"mm_23472546_2331668_11232358"; =0A=
+alimama_width=3D200; =0A=
+alimama_height=3D200; =0A=
+</script> =0A=
+<script src=3D"http://a.alimama.cn/inf.js" type=3D"text/javascript"> =0A=
+</script>=0A=
+--></DIV>
+<DIV class=3Dlist>
+<H3>=E6=9C=80=E6=96=B0=E8=AF=84=E8=AE=BA=E5=88=97=E8=A1=A8</H3>
+<UL>
+  <LI><A title=3D"=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8AFreeBSD cshrc =
+tips=E3=80=8B"=20
+  =
+href=3D"http://www.bsdart.org/archives/20130111/703.html#comment-48">=E5=AD=
+=A6=E4=B9=A0=E4=B8=AD......</A>=20
+  </LI>
+  <LI><A =
+title=3D=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8A=E4=BD=BF=E7=94=A8FreeBSD=E9=BB=
+=98=E8=AE=A4=E7=9A=84csh=E6=9B=BF=E4=BB=A3bash=E3=80=8B=20
+  =
+href=3D"http://www.bsdart.org/archives/20101103/103.html#comment-47">=E8=BF=
+=98=E6=98=AFbash=E5=8A=9F=E8=83=BD=E5=BC=BA=E5=A4=A7=E5=95=8A...</A>=20
+  </LI>
+  <LI><A title=3D"=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8AFreeBSD =
+8.0=E9=80=9A=E8=BF=87VirtualBox 3.1.2=E5=AE=89=E8=A3=85Windows =
+XP=E8=99=9A=E6=8B=9F=E6=9C=BA=E3=80=8B"=20
+  =
+href=3D"http://www.bsdart.org/archives/20101221/429.html#comment-46">=E4=B8=
+=8D=E7=9F=A5=E9=81=93=E6=92=AD=E6=94=BE=20
+  hdtv=E7=9A=84=E8=A6=96=E9=A0=BB=E6=95=88=E6=9E=9C=E5=A6=82=E4=BD=95.. =
+=E7=8E=A9=E9=A1=9E=E4=BC=BC =
+wow=E7=9A=84=E6=B8=B8=E6=88=B2=E5=91=A2?...</A> </LI>
+  <LI><A =
+title=3D=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8AFreeBSD=E4=B8=8BKDE=E6=A1=8C=E9=
+=9D=A2=E7=B3=BB=E7=BB=9F=E9=85=8D=E7=BD=AE=E4=B8=8E=E4=BD=BF=E7=94=A8=E3=80=
+=8B=20
+  =
+href=3D"http://www.bsdart.org/archives/20101105/125.html#comment-33">=E8=BF=
+=99=E7=A1=AE=E5=AE=9E=E8=A7=A3=E5=86=B3=E6=88=91=E7=9A=84=E9=97=AE=E9=A2=98=
+=EF=BC=8C=E8=B0=A2=E8=B0=A2=EF=BC=81...</A>=20
+  </LI>
+  <LI><A =
+title=3D=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8AFreeBSD=E9=85=8D=E7=BD=AEZFS=E5=
+=81=9A=E4=B8=BA=E6=A0=B9=E7=B3=BB=E7=BB=9F=E3=80=8B=20
+  =
+href=3D"http://www.bsdart.org/archives/20101124/342.html#comment-30">I=E2=
+=80=99ve=20
+  recently started a blog, the information you provide on this site has =
+helped=20
+  me tremendously. Thank you for all of your time &amp; work....</A> =
+</LI>
+  <LI><A title=3D"=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8AFreeBSD =
+ATI=E6=98=BE=E5=8D=A1=E4=B8=8Exorg=E9=85=8D=E7=BD=AE=E8=AE=B0=E5=BD=95=E3=
+=80=8B"=20
+  =
+href=3D"http://www.bsdart.org/archives/20101119/321.html#comment-28">Real=
+ly nice=20
+  post,thank you, best website ever...</A> </LI>
+  <LI><A =
+title=3D=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8A=E5=AE=89=E8=A3=85FreeBSD=E6=A1=
+=8C=E9=9D=A2-Xfce4=E3=80=8B=20
+  href=3D"http://www.bsdart.org/archives/20101115/184.html#comment-21">I =
+usually=20
+  get bored easily and close the tab but i think you have a unique blog. =
+Bravo=20
+  !...</A> </LI>
+  <LI><A =
+title=3D=E5=8F=91=E8=A1=A8=E4=BA=8E=E3=80=8A=E5=AE=89=E8=A3=85FreeBSD=E6=A1=
+=8C=E9=9D=A2-Xfce4=E3=80=8B=20
+  href=3D"http://www.bsdart.org/archives/20101115/184.html#comment-20">I =
+am=20
+  developing a blog and and i want to change the theme.I got some ideas =
+from=20
+  here! Feel free to visit my blog and suggest things!...</A> =
+</LI></UL></DIV>
+<DIV class=3Dlist>
+<H3>=E6=9C=80=E7=83=AD=E6=96=87=E7=AB=A0=E6=8E=A8=E8=8D=90</H3>
+<UL>
+  <LI><A title=3DFreeBSD-SA-10:08.bzip2=20
+  =
+href=3D"http://www.bsdart.org/archives/20100920/167.html">FreeBSD-SA-10:0=
+8.bzip2</A>=20
+  (2) </LI>
+  <LI><A title=3D"FreeBSD =
+ATI=E6=98=BE=E5=8D=A1=E4=B8=8Exorg=E9=85=8D=E7=BD=AE=E8=AE=B0=E5=BD=95"=20
+  href=3D"http://www.bsdart.org/archives/20101119/321.html">FreeBSD=20
+  =
+ATI=E6=98=BE=E5=8D=A1=E4=B8=8Exorg=E9=85=8D=E7=BD=AE=E8=AE=B0=E5=BD=95</A=
+> (2) </LI>
+  <LI><A title=3D=E5=AE=89=E8=A3=85FreeBSD=E6=A1=8C=E9=9D=A2-Xfce4=20
+  =
+href=3D"http://www.bsdart.org/archives/20101115/184.html">=E5=AE=89=E8=A3=
+=85FreeBSD=E6=A1=8C=E9=9D=A2-Xfce4</A>=20
+  (2) </LI>
+  <LI><A =
+title=3DFreeBSD=E5=AE=89=E8=A3=85=E5=9B=BE=E8=A7=A3=EF=BC=88=E8=B6=85=E8=AF=
+=A6=E7=BB=86=EF=BC=89=EF=BC=88=E4=B8=80=EF=BC=89=20
+  =
+href=3D"http://www.bsdart.org/archives/20101102/50.html">FreeBSD=E5=AE=89=
+=E8=A3=85=E5=9B=BE=E8=A7=A3=EF=BC=88=E8=B6=85=E8=AF=A6=E7=BB=86=EF=BC=89=EF=
+=BC=88=E4=B8=80=EF=BC=89</A>=20
+  (1) </LI>
+  <LI><A =
+title=3DFreeBSD=E6=A1=8C=E9=9D=A2=E5=BA=94=E7=94=A8=E8=BD=AF=E4=BB=B6=20
+  =
+href=3D"http://www.bsdart.org/archives/20101119/332.html">FreeBSD=E6=A1=8C=
+=E9=9D=A2=E5=BA=94=E7=94=A8=E8=BD=AF=E4=BB=B6</A> (1)=20
+  </LI>
+  <LI><A title=3D"FreeBSD 7 Xorg7.3 KDE3.5 =
+=E6=A1=8C=E9=9D=A2=E7=B3=BB=E7=BB=9F=E5=AE=89=E8=A3=85=E5=8F=8A=E7=BE=8E=E5=
+=8C=96"=20
+  href=3D"http://www.bsdart.org/archives/20101125/356.html">FreeBSD 7 =
+Xorg7.3=20
+  KDE3.5 =
+=E6=A1=8C=E9=9D=A2=E7=B3=BB=E7=BB=9F=E5=AE=89=E8=A3=85=E5=8F=8A=E7=BE=8E=E5=
+=8C=96</A> (1) </LI>
+  <LI><A =
+title=3DFreeBSD=E7=B3=BB=E7=BB=9F=E9=85=8D=E7=BD=AEJava=E7=8E=AF=E5=A2=83=
+=20
+  =
+href=3D"http://www.bsdart.org/archives/20101129/365.html">FreeBSD=E7=B3=BB=
+=E7=BB=9F=E9=85=8D=E7=BD=AEJava=E7=8E=AF=E5=A2=83</A>=20
+  (1) </LI>
+  <LI><A =
+title=3DFreeBSD=E9=85=8D=E7=BD=AEZFS=E5=81=9A=E4=B8=BA=E6=A0=B9=E7=B3=BB=E7=
+=BB=9F=20
+  =
+href=3D"http://www.bsdart.org/archives/20101124/342.html">FreeBSD=E9=85=8D=
+=E7=BD=AEZFS=E5=81=9A=E4=B8=BA=E6=A0=B9=E7=B3=BB=E7=BB=9F</A>=20
+  (1) </LI></UL></DIV>
+<DIV class=3Dlist>
+<SCRIPT=20
+type=3Dtext/javascript>/*160*600=EF=BC=8C=E5=88=9B=E5=BB=BA=E4=BA=8E2011-=
+5-21*/ var cpro_id =3D 'u482731';</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript =
+src=3D"http://cpro.baidu.com/cpro/ui/c.js"></SCRIPT>
+</DIV></DIV><!--=E5=8F=B3=E4=BE=A7=E7=BB=93=E6=9D=9F--></DIV><!--END =
+PAGE-->
+<DIV class=3Dfooter_ads>
+<SCRIPT=20
+type=3Dtext/javascript>=0A=
+/*960*90=EF=BC=8C=E5=88=9B=E5=BB=BA=E4=BA=8E2011-5-27*/=0A=
+var cpro_id =3D "u488721";=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript=20
+src=3D"http://cpro.baidustatic.com/cpro/ui/c.js"></SCRIPT>
+</DIV>
+<DIV class=3Dfooter>
+<P>Copyright =C2=A9 <A =
+href=3D"http://www.bsdart.org/">FreeBSD=E6=8A=80=E6=9C=AF=E6=96=87=E6=91=98=
+</A> All Rights=20
+Reserved.</P>
+<P>Powered by <A href=3D"http://www.wordpress.org/" =
+target=3D_blank>Wordpress</A>=20
+and Theme by <A href=3D"http://dickeydong.cn/inews-v2.html"=20
+target=3D_blank>iNews-v2</A></P>
+<P><A href=3D"http://www.bsdart.org/sitemap" =
+target=3D_blank>=E7=BD=91=E7=AB=99=E5=9C=B0=E5=9B=BE</A>&nbsp;|&nbsp;<A=20
+href=3D"http://www.miibeian.gov.cn/"=20
+target=3D_blank>=E6=B2=AAICP=E5=A4=8710003256=E5=8F=B7-1</A>&nbsp;|&nbsp;=
+
+<SCRIPT language=3DJavaScript=20
+src=3D"http://s14.cnzz.com/stat.php?id=3D2592751&amp;web_id=3D2592751"></=
+SCRIPT>
+</P></DIV>
+<SCRIPT type=3Dtext/javascript>=0A=
+var _bdhmProtocol =3D (("https:" =3D=3D document.location.protocol) ? " =
+https://" : " http://");=0A=
+document.write(unescape("%3Cscript src=3D'" + _bdhmProtocol + =
+"hm.baidu.com/h.js%3F612c28bc3a7cab02d24efa26bb5f44f8' =
+type=3D'text/javascript'%3E%3C/script%3E"));=0A=
+</SCRIPT>
+<!-- JiaThis Button BEGIN -->
+<SCRIPT type=3Dtext/javascript charset=3Dutf-8=20
+src=3D"http://v1.jiathis.com/code_mini/jia.js?uid=3D889384"></SCRIPT>
+<!-- JiaThis Button END --><!--=0A=
+<script type=3D"text/javascript">=0A=
+/*120*270=EF=BC=8C=E5=88=9B=E5=BB=BA=E4=BA=8E2011-5-23*/=0A=
+var cpro_id =3D "u484283";=0A=
+</script>=0A=
+<script src=3D"http://cpro.baidustatic.com/cpro/ui/f.js" =
+type=3D"text/javascript"></script>=0A=
+--></BODY></HTML>
+
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.bsdart.org/wp-content/plugins/wp-seccode/wp-seccode.php
+
+iVBORw0KGgoAAAANSUhEUgAAADoAAAAWBAMAAABj+5JWAAAAElBMVEX///9ZclVUcnCPV2BIWD7c
+19co0e1SAAAAe0lEQVQokWMIxQcYAhhwA9ZBIqukpIAhy2xszCgoKMjAwKTAoIQha8zAbCjAwCgA
+EmECaXYBI4gsswEDA1wWrBddlhEqC7EXQxZsLx69EACxl8WBBFlDmIMhJiPJQn2EFBouQIASGjCT
+wcDFgQUhiwGQ3YwTUCaLN9UBAK7dJ15NzwwHAAAAAElFTkSuQmCC
+
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: text/css;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.bsdart.org/wp-content/themes/inews-v2/style.css
+
+* {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+BODY {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; BACKGROUND: #fff; COLOR: #555; PADDING-TOP: 0px
+}
+BODY {
+	FONT-FAMILY: Arial, Verdana, Sans-Serif; FONT-SIZE: 12px
+}
+SELECT {
+	FONT-FAMILY: Arial, Verdana, Sans-Serif; FONT-SIZE: 12px
+}
+INPUT {
+	FONT-FAMILY: Arial, Verdana, Sans-Serif; FONT-SIZE: 12px
+}
+TEXTAREA {
+	FONT-FAMILY: Arial, Verdana, Sans-Serif; FONT-SIZE: 12px
+}
+P {
+	MARGIN-TOP: 5px
+}
+A {
+	OUTLINE-STYLE: none; COLOR: #2583ad; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #d54e21; TEXT-DECORATION: underline
+}
+SMALL {
+	PADDING-BOTTOM: 12px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; =
+WHITE-SPACE: nowrap; FONT-SIZE: 12px; OVERFLOW: hidden; PADDING-TOP: 3px
+}
+SMALL {
+	COLOR: #888; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+SMALL A {
+	COLOR: #888; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+SPAN {
+	COLOR: #888; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+SPAN A {
+	COLOR: #888; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-LEFT-WIDTH: 0px
+}
+IMG A {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; BORDER-LEFT-WIDTH: 0px
+}
+.fl {
+	FLOAT: left
+}
+.fr {
+	FLOAT: right
+}
+.al {
+	TEXT-ALIGN: left
+}
+.ar {
+	TEXT-ALIGN: right
+}
+.ac {
+	TEXT-ALIGN: center
+}
+.avm {
+	VERTICAL-ALIGN: middle
+}
+.avt {
+	VERTICAL-ALIGN: top
+}
+.clearfloat:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; CLEAR: both; CONTENT: =
+"."
+}
+.clearfloat {
+	DISPLAY: inline-block
+}
+.clearfloat {
+	DISPLAY: block
+}
+H1 {
+	FONT-SIZE: 28px; FONT-WEIGHT: bold
+}
+H2 {
+	FONT: bold 13px Arial,Helvetica,sans-serif; COLOR: #2583ad
+}
+H3 {
+	FONT: bold 13px Arial,Helvetica,sans-serif; COLOR: #2583ad
+}
+H4 {
+	MARGIN-BOTTOM: 6px; FONT-SIZE: 12px
+}
+#mininav {
+	BORDER-BOTTOM: #e6e6e6 1px solid; LINE-HEIGHT: 24px; MARGIN: 0px auto; =
+WIDTH: 980px; BACKGROUND: #f8f8f8; HEIGHT: 24px; COLOR: #888
+}
+#mininav A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; COLOR: =
+#888; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+#mininav A:hover {
+	COLOR: #009900; TEXT-DECORATION: underline
+}
+#header_r A:hover {
+	COLOR: #009900; TEXT-DECORATION: underline
+}
+#header {
+	MARGIN: 0px auto; WIDTH: 980px; BACKGROUND: url(image/headerbg.jpg) =
+#fff no-repeat right top; HEIGHT: 80px
+}
+#header_l {
+	MARGIN-TOP: 15px; WIDTH: 800px; FLOAT: left
+}
+#logo IMG {
+	WIDTH: 110px; HEIGHT: 50px; MARGIN-LEFT: 12px
+}
+#siteinfo {
+	HEIGHT: 50px
+}
+#sitename {
+	LINE-HEIGHT: 30px; TEXT-INDENT: 15px; HEIGHT: 30px
+}
+#sitename A {
+	COLOR: #2583ad; TEXT-DECORATION: none
+}
+#sitename A:hover {
+	COLOR: #2583ad; TEXT-DECORATION: none
+}
+#sitedesc {
+	LINE-HEIGHT: 13px; TEXT-INDENT: 18px; FONT-FAMILY: Verdana,Arial; =
+WHITE-SPACE: nowrap; HEIGHT: 13px; COLOR: #2583ad; FONT-SIZE: 13px; =
+OVERFLOW: hidden; PADDING-TOP: 6px
+}
+#header_r {
+	LINE-HEIGHT: 25px; MARGIN-TOP: 15px; WIDTH: 122px; FLOAT: right; COLOR: =
+#888
+}
+#header_r A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; COLOR: =
+#009900; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.nav {
+	LINE-HEIGHT: 15px; MARGIN: 0px auto; WIDTH: 980px; WHITE-SPACE: nowrap; =
+BACKGROUND: #e4f2fd; HEIGHT: 26px; FONT-SIZE: 12px; OVERFLOW: hidden; =
+BORDER-TOP: #2583ad 1px solid
+}
+.nav A {
+	DISPLAY: block; TEXT-DECORATION: none
+}
+.nav A:hover {
+	DISPLAY: block; TEXT-DECORATION: none
+}
+.nav LI {
+	LIST-STYLE-TYPE: none; FLOAT: left
+}
+.nav A {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: =
+block; LETTER-SPACING: 1px; COLOR: #2583ad; FONT-WEIGHT: bold; =
+PADDING-TOP: 6px
+}
+.nav A:hover {
+	COLOR: #d54e21
+}
+.on {
+	COLOR: #d54e21
+}
+.on A {
+	COLOR: #d54e21
+}
+.current-cat A {
+	COLOR: #d54e21
+}
+.current_page_item A {
+	COLOR: #d54e21
+}
+#page {
+	POSITION: relative; PADDING-BOTTOM: 18px; MARGIN: 0px auto; =
+PADDING-LEFT: 0px; WIDTH: 980px; PADDING-RIGHT: 0px; BACKGROUND: #fff; =
+FONT-SIZE: 12px; PADDING-TOP: 18px
+}
+#center {
+	BORDER-LEFT: #e6e6e6 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px 222px =
+0px 120px; MIN-HEIGHT: 1300px; PADDING-LEFT: 12px; WIDTH: 613px; =
+PADDING-RIGHT: 12px; HEIGHT: auto !important; OVERFLOW: visible; =
+PADDING-TOP: 0px
+}
+#center2 {
+	BORDER-LEFT: #e6e6e6 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px 222px =
+0px 120px; MIN-HEIGHT: 700px; PADDING-LEFT: 12px; WIDTH: 613px; =
+PADDING-RIGHT: 12px; HEIGHT: auto !important; OVERFLOW: visible; =
+PADDING-TOP: 0px
+}
+#center1 {
+	BORDER-LEFT: #e6e6e6 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px 222px =
+0px 120px; MIN-HEIGHT: 1300px; PADDING-LEFT: 12px; WIDTH: 613px; =
+PADDING-RIGHT: 12px; HEIGHT: auto !important; OVERFLOW: visible; =
+PADDING-TOP: 0px
+}
+#left {
+	POSITION: absolute; WIDTH: 120px; TOP: 18px; LEFT: 0px
+}
+#right {
+	POSITION: absolute; WIDTH: 222px; TOP: 18px; RIGHT: 0px
+}
+#left H2 {
+	PADDING-LEFT: 10px; LETTER-SPACING: 1px; COLOR: #009900; FONT-SIZE: =
+12px; FONT-WEIGHT: bold
+}
+#left H3 {
+	PADDING-LEFT: 10px; LETTER-SPACING: 1px; COLOR: #009900; FONT-SIZE: =
+12px; FONT-WEIGHT: bold
+}
+#left H4 {
+	PADDING-LEFT: 10px; LETTER-SPACING: 1px; COLOR: #009900; FONT-SIZE: =
+12px; FONT-WEIGHT: bold
+}
+#left UL {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; =
+PADDING-TOP: 5px
+}
+#left LI {
+	LINE-HEIGHT: 22px; LIST-STYLE-TYPE: none; WIDTH: 100px; WHITE-SPACE: =
+nowrap; OVERFLOW: hidden
+}
+.pagelist LI.current_page_item A {
+	COLOR: #d54e21
+}
+.pagelist LI A:hover {
+	COLOR: #d54e21
+}
+#searchform {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 10px; WIDTH: 100px; PADDING-RIGHT: =
+10px; PADDING-TOP: 0px
+}
+.input {
+	BORDER-BOTTOM: #2583ad 1px solid; BORDER-LEFT: #2583ad 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; WIDTH: 90px; PADDING-RIGHT: 3px; =
+MARGIN-BOTTOM: 6px; BACKGROUND: #e4f2fd; HEIGHT: 16px; COLOR: #2583ad; =
+BORDER-TOP: #2583ad 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #2583ad =
+1px solid; PADDING-TOP: 3px
+}
+.button {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #f8f8f8 1px solid; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; =
+BACKGROUND: #e6e6e6; HEIGHT: 22px; COLOR: #555; BORDER-TOP: #f8f8f8 1px =
+solid; FONT-WEIGHT: bold; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 0px
+}
+#right H2 {
+	LETTER-SPACING: 1px; COLOR: #009900; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+#right H3 {
+	LETTER-SPACING: 1px; COLOR: #009900; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+#right H4 {
+	LETTER-SPACING: 1px; COLOR: #009900; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+#right .box {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; =
+PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; WIDTH: 200px; PADDING-RIGHT: =
+10px; MARGIN-BOTTOM: 20px; HEIGHT: 200px; BORDER-TOP: #e6e6e6 1px solid; =
+BORDER-RIGHT: #e6e6e6 1px solid; PADDING-TOP: 10px
+}
+#right .list {
+	BORDER-LEFT: #e6e6e6 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: =
+10px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 20px; PADDING-TOP: 0px
+}
+#right UL {
+	PADDING-TOP: 5px
+}
+#right LI {
+	LINE-HEIGHT: 24px; LIST-STYLE-TYPE: none; WIDTH: 200px; WHITE-SPACE: =
+nowrap; OVERFLOW: hidden
+}
+.col {
+	CLEAR: both
+}
+#newest {
+	WIDTH: 350px; MARGIN-BOTTOM: 12px; HEIGHT: 190px; OVERFLOW: hidden
+}
+#newest H2 {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 0px; =
+LETTER-SPACING: 1px; COLOR: #d54e21; FONT-SIZE: 12px; FONT-WEIGHT: bold; =
+PADDING-TOP: 2px
+}
+#newest UL {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+PADDING-TOP: 0px
+}
+#newest LI {
+	LINE-HEIGHT: 22px; LIST-STYLE-TYPE: none; PADDING-LEFT: 3px; =
+WHITE-SPACE: nowrap; COLOR: #888; OVERFLOW: hidden
+}
+#newest LI A {
+	TEXT-DECORATION: none
+}
+#newest LI A:hover {
+	COLOR: #009900; TEXT-DECORATION: underline
+}
+.col1 {
+	WIDTH: 300px; FLOAT: left
+}
+.col2 {
+	WIDTH: 300px; FLOAT: right
+}
+.catlist {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; =
+WIDTH: 298px; MARGIN-BOTTOM: 12px; HEIGHT: 266px; OVERFLOW: hidden; =
+BORDER-TOP: #e6e6e6 1px solid; BORDER-RIGHT: #e6e6e6 1px solid
+}
+.catlist H3 {
+	POSITION: relative; PADDING-BOTTOM: 5px; MARGIN: 4px; PADDING-LEFT: =
+7px; PADDING-RIGHT: 7px; BACKGROUND: #e4f2fd; LETTER-SPACING: 1px; =
+COLOR: #d54e21; FONT-SIZE: 12px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.catlist H3 A {
+	COLOR: #d54e21; TEXT-DECORATION: none
+}
+.catlist H3 SPAN A {
+	POSITION: absolute; FLOAT: right; COLOR: #2583ad; TOP: 5px; RIGHT: 10px
+}
+.catlist UL {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; =
+PADDING-TOP: 0px
+}
+.catlist LI {
+	LINE-HEIGHT: 23px; LIST-STYLE-TYPE: none; WIDTH: 278px; WHITE-SPACE: =
+nowrap; OVERFLOW: hidden
+}
+.catlist LI A {
+	COLOR: #666; TEXT-DECORATION: none
+}
+.catlist LI A:hover {
+	COLOR: #009900; TEXT-DECORATION: underline
+}
+.banner {
+	MARGIN-BOTTOM: 12px; HEIGHT: 80px
+}
+.banner_ads {
+	TEXT-ALIGN: center; WIDTH: 615px; MARGIN-BOTTOM: 10px; FLOAT: left; =
+HEIGHT: 60px
+}
+.banner0_ads {
+	TEXT-ALIGN: center; WIDTH: 615px; MARGIN-BOTTOM: 10px; FLOAT: left; =
+HEIGHT: 15px
+}
+.footer_ads {
+	TEXT-ALIGN: center; MARGIN: 0px auto 10px; WIDTH: 980px; OVERFLOW: =
+hidden
+}
+.pagetitle {
+	LETTER-SPACING: 1px; COLOR: #009900; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.postlist {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; =
+MARGIN-TOP: 12px; HEIGHT: 115px; OVERFLOW: hidden; BORDER-TOP: #e6e6e6 =
+1px solid; BORDER-RIGHT: #e6e6e6 1px solid
+}
+.postlist H4 {
+	POSITION: relative; PADDING-BOTTOM: 5px; MARGIN: 4px; PADDING-LEFT: =
+7px; PADDING-RIGHT: 7px; BACKGROUND: #e4f2fd; LETTER-SPACING: 1px; =
+COLOR: #2583ad; FONT-SIZE: 12px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.postlist H4 SPAN A {
+	COLOR: #009900; MARGIN-LEFT: 20px; TEXT-DECORATION: none
+}
+.postlist DIV {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; OVERFLOW: =
+hidden; PADDING-TOP: 0px
+}
+.postlist DIV.postcontent {
+	LINE-HEIGHT: 19px; HEIGHT: 55px
+}
+.postlist DIV.postcontent P {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 19px; MARGIN: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.postlist DIV.postmeat {
+	LINE-HEIGHT: 24px; MARGIN-TOP: 3px; WIDTH: 580px; WHITE-SPACE: nowrap; =
+HEIGHT: 24px; COLOR: #888
+}
+.postlist DIV.postmeat A {
+	COLOR: #888
+}
+.navigation {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; =
+PADDING-TOP: 15px
+}
+.navigation A {
+	PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #e4f2fd; MARGIN: 0px 10px; =
+PADDING-LEFT: 15px; PADDING-RIGHT: 15px; DISPLAY: block; COLOR: #2583ad; =
+TEXT-DECORATION: none; PADDING-TOP: 5px
+}
+.post {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; =
+PADDING-BOTTOM: 5px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; OVERFLOW: =
+hidden; BORDER-TOP: #e6e6e6 1px solid; BORDER-RIGHT: #e6e6e6 1px solid; =
+PADDING-TOP: 5px
+}
+.post H2 {
+	BORDER-BOTTOM: #e6e6e6 1px solid; POSITION: relative; TEXT-ALIGN: =
+center; PADDING-BOTTOM: 12px; LINE-HEIGHT: 16px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; LETTER-SPACING: 0px; COLOR: =
+#d54e21; FONT-SIZE: 16px; PADDING-TOP: 12px
+}
+.post IMG {
+	MARGIN: 5px 0px
+}
+.post DIV.postmeat {
+	COLOR: #888
+}
+.post DIV.postmeat A {
+	COLOR: #888
+}
+.post DIV.postnav {
+	PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #e4f2fd; MARGIN: 4px; =
+PADDING-LEFT: 7px; PADDING-RIGHT: 7px; OVERFLOW: hidden; PADDING-TOP: =
+5px
+}
+.sharebox {
+	MARGIN: 10px 0px; WIDTH: 600px; HEIGHT: 20px
+}
+.entry {
+	PADDING-BOTTOM: 12px
+}
+.entry .entry_ads {
+	MARGIN: 10px 12px 14px; WIDTH: 300px; FLOAT: left; HEIGHT: 250px; =
+OVERFLOW: hidden
+}
+.entry .entry_ads1 {
+	TEXT-ALIGN: center; MARGIN: 10px 12px 14px; WIDTH: 600px; HEIGHT: 60px
+}
+.entry A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; =
+TEXT-DECORATION: underline; PADDING-TOP: 0px
+}
+.entry A:hover {
+	COLOR: #009900; TEXT-DECORATION: underline
+}
+.entry H3 {
+	MARGIN-TOP: 15px; TEXT-INDENT: 2em; COLOR: #d54e21; FONT-SIZE: 12px; =
+TEXT-DECORATION: underline
+}
+.entry H4 {
+	MARGIN-TOP: 15px; TEXT-INDENT: 2em; COLOR: #d54e21; FONT-SIZE: 12px; =
+TEXT-DECORATION: underline
+}
+.entry H5 {
+	MARGIN-TOP: 15px; TEXT-INDENT: 2em; COLOR: #d54e21; FONT-SIZE: 12px; =
+TEXT-DECORATION: underline
+}
+.entry P {
+	LINE-HEIGHT: 25px
+}
+.entry BLOCKQUOTE {
+	MARGIN: 8px 0px 8px 15px; PADDING-LEFT: 2em
+}
+.entry UL {
+	MARGIN: 8px 0px 8px 15px; PADDING-LEFT: 2em
+}
+.entry LI {
+	LINE-HEIGHT: 24px
+}
+.postfooter {
+	WIDTH: 502px; WHITE-SPACE: nowrap; COLOR: #888; OVERFLOW: hidden; =
+PADDING-TOP: 12px
+}
+.postfooter A {
+	COLOR: #2583ad
+}
+.single_ads {
+	TEXT-ALIGN: center; MARGIN: 10px auto; WIDTH: 600px; HEIGHT: 60px
+}
+.related_post_title {
+	MARGIN: 10px 0px; BORDER-TOP: #e6e6e6 1px solid; PADDING-TOP: 10px
+}
+.related_post LI {
+	LINE-HEIGHT: 22px; LIST-STYLE-TYPE: none; PADDING-LEFT: 3px; =
+WHITE-SPACE: nowrap; COLOR: #888; OVERFLOW: hidden
+}
+H3#comments {
+	MARGIN: 10px 0px; BORDER-TOP: #e6e6e6 1px solid; PADDING-TOP: 10px
+}
+H3#respond {
+	MARGIN: 10px 0px; BORDER-TOP: #e6e6e6 1px solid; PADDING-TOP: 10px
+}
+.commentlist {
+	COLOR: #666
+}
+.commentlist A {
+	COLOR: #73aa00
+}
+.commentlist P {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; MARGIN: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.commentlist SMALL {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; MARGIN: 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.commentlist LI {
+	PADDING-BOTTOM: 6px; LINE-HEIGHT: 20px; PADDING-LEFT: 10px; =
+PADDING-RIGHT: 10px; MARGIN-BOTTOM: 6px; BACKGROUND: #f9f9f9; =
+MARGIN-LEFT: 25px; PADDING-TOP: 6px
+}
+#commentform INPUT {
+	MARGIN: 5px 5px 1px 0px; WIDTH: 170px
+}
+#commentform TEXTAREA {
+	MARGIN-TOP: 5px; WIDTH: 100%
+}
+#commentform P {
+	MARGIN: 8px 0px
+}
+.footer {
+	PADDING-BOTTOM: 10px; MARGIN: 10px auto; PADDING-LEFT: 0px; WIDTH: =
+980px; PADDING-RIGHT: 0px; COLOR: #666; BORDER-TOP: #ddd 1px solid; =
+PADDING-TOP: 10px
+}
+.footer P {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; PADDING-TOP: 3px
+}
+.footer A {
+	COLOR: #666; TEXT-DECORATION: none
+}
+
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.bsdart.org/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70
+
+.wp-pagenavi {
+	CLEAR: both
+}
+.wp-pagenavi A {
+	BORDER-BOTTOM: #bfbfbf 1px solid; BORDER-LEFT: #bfbfbf 1px solid; =
+PADDING-BOTTOM: 3px; MARGIN: 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; =
+BORDER-TOP: #bfbfbf 1px solid; BORDER-RIGHT: #bfbfbf 1px solid; =
+TEXT-DECORATION: none; PADDING-TOP: 3px
+}
+.wp-pagenavi SPAN {
+	BORDER-BOTTOM: #bfbfbf 1px solid; BORDER-LEFT: #bfbfbf 1px solid; =
+PADDING-BOTTOM: 3px; MARGIN: 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; =
+BORDER-TOP: #bfbfbf 1px solid; BORDER-RIGHT: #bfbfbf 1px solid; =
+TEXT-DECORATION: none; PADDING-TOP: 3px
+}
+.wp-pagenavi A:hover {
+	BORDER-BOTTOM-COLOR: #000; BORDER-TOP-COLOR: #000; BORDER-RIGHT-COLOR: =
+#000; BORDER-LEFT-COLOR: #000
+}
+.wp-pagenavi SPAN.current {
+	BORDER-BOTTOM-COLOR: #000; BORDER-TOP-COLOR: #000; BORDER-RIGHT-COLOR: =
+#000; BORDER-LEFT-COLOR: #000
+}
+.wp-pagenavi SPAN.current {
+	FONT-WEIGHT: bold
+}
+
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://dtmvdvtzf8rz0.cloudfront.net/static/wp-rp-css/plain.css?version=2.5
+
+DIV.wp_rp_footer {
+	TEXT-ALIGN: right !important
+}
+DIV.wp_rp_footer A {
+	COLOR: #999 !important; FONT-SIZE: 11px !important; TEXT-DECORATION: =
+none !important
+}
+
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.bsdart.org/wp-content/themes/inews-v2/language.js
+
+document.writeln(" <a =
+href=3D\"http:\/\/translate.google.com\/translate?client=3Dtmpg&hl=3Den&u=
+=3Dhttp:\/\/www.bsdart.org\/&langpair=3Dzh-CN|en\" title=3D\"English\" =
+target=3D\"_top\">English<\/a> | ");
+document.writeln("<a href=3D\"http:\/\/www.bsdart.org\/\" =
+title=3D\"Chinese Simplified\" =
+target=3D\"_top\">=E7=AE=80=E4=BD=93=E4=B8=AD=E6=96=87<\/a> | ");
+document.writeln("<a =
+href=3D\"http:\/\/translate.google.com\/translate?client=3Dtmpg&hl=3Dzh-T=
+W&u=3Dhttp:\/\/www.bsdart.org\/&langpair=3Dzh-CN|zh-TW\" =
+title=3D\"Chinese Traditional\" =
+target=3D\"_top\">=E7=B9=81=E9=AB=94=E4=B8=AD=E6=96=87<\/a>&nbsp;&nbsp;&n=
+bsp;");
+document.writeln("");
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://images.sohu.com/cs/jsfile/js/c.js
+
+;window.onerror=function(){return!0};
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://cpro.baidu.com/cpro/ui/c.js
+
+<!--//-->
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://cpro.baidustatic.com/cpro/ui/c.js
+
+;window.onerror=function(){return!0};
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://s14.cnzz.com/stat.php?id=2592751&web_id=2592751
+
+(function(){function =
+l(){this.c=3D"2592751";this.Q=3D"z";this.M=3D"";this.J=3D"";this.L=3D"";t=
+his.n=3D"1386813485";this.O=3D"hzs14.cnzz.com";this.K=3D"";this.r=3D"CNZZ=
+DATA"+this.c;this.q=3D"_CNZZDbridge_"+this.c;this.F=3D"_cnzz_CV"+this.c;t=
+his.u=3D"0";this.B=3D{};this.a=3D{};this.ka()}function g(a,b){try{var =
+c=3D[];c.push("siteid=3D2592751");=0A=
+c.push("name=3D"+d(a.name));c.push("msg=3D"+d(a.message));c.push("r=3D"+d=
+(h.referrer));c.push("page=3D"+d(f.location.href));c.push("agent=3D"+d(f.=
+navigator.userAgent));c.push("ex=3D"+d(b));c.push("rnd=3D"+Math.floor(214=
+7483648*Math.random()));(new =
+Image).src=3D"http://jserr.cnzz.com/log.php?"+c.join("&")}catch(e){}}var =
+h=3Ddocument,f=3Dwindow,d=3DencodeURIComponent,k=3DdecodeURIComponent,p=3D=
+unescape,r=3Descape,m=3D"https:"=3D=3D=3Df.location.protocol?"https:":"ht=
+tp:",s=3Dm+"//c.cnzz.com/core.php";l.prototype=3D{ka:function(){try{this.=
+T(),=0A=
+this.I(),this.ha(),this.G(),this.l(),this.fa(),this.ea(),this.ia(),this.t=
+(),this.da(),this.ga(),this.ja(),this.ba(),this.$(),this.ca(),this.pa(),f=
+[this.q]=3Df[this.q]||{},this.aa("_cnzz_CV")}catch(a){g(a,"i =
+failed")}},na:function(){try{var =
+a=3Dthis;f._czc=3D{push:function(){return =
+a.C.apply(a,arguments)}}}catch(b){g(b,"oP =
+failed")}},$:function(){try{var a=3Df._czc;if("[object =
+Array]"=3D=3D=3D{}.toString.call(a))for(var b=3D0;b<a.length;b++){var =
+c=3Da[b];switch(c[0]){case "_setAccount":f._cz_account=3D"[object =
+String]"=3D=3D=3D=0A=
+{}.toString.call(c[1])?c[1]:String(c[1]);break;case =
+"_setAutoPageview":"boolean"=3D=3D=3Dtypeof =
+c[1]&&(f._cz_autoPageview=3Dc[1])}}}catch(e){g(e,"cS =
+failed")}},pa:function(){try{if("undefined"=3D=3D=3Dtypeof =
+f._cz_account||f._cz_account=3D=3D=3Dthis.c){f._cz_account=3Dthis.c;if("[=
+object Array]"=3D=3D=3D{}.toString.call(f._czc))for(var =
+a=3Df._czc,b=3D0,c=3Da.length;b<c;b++)this.C(a[b]);this.na()}}catch(e){g(=
+e,"pP failed")}},C:function(a){try{if("[object =
+Array]"=3D=3D=3D{}.toString.call(a))switch(a[0]){case =
+"_trackPageview":if(a[1]){this.a.d=3D=0A=
+m+"//"+f.location.host;"/"!=3D=3Da[1].charAt(0)&&(this.a.d+=3D"/");this.a=
+.d+=3Da[1];if(""=3D=3D=3Da[2])this.a.f=3D"";else if(a[2]){var =
+b=3Da[2];"http"!=3D=3Db.substr(0,4)&&(b=3Dm+"//"+f.location.host,"/"!=3D=3D=
+a[2].charAt(0)&&(b+=3D"/"),b+=3Da[2]);this.a.f=3Db}this.A();"undefined"!=3D=
+=3Dtypeof this.a.f&&delete this.a.f;"undefined"!=3D=3Dtypeof =
+this.a.d&&delete this.a.d}break;case "_trackEvent":var =
+c=3D[];a[1]&&a[2]&&(c.push(d(a[1])),c.push(d(a[2])),c.push(a[3]?d(a[3]):"=
+"),a[4]=3DparseFloat(a[4]),c.push(isNaN(a[4])?0:a[4]),c.push(a[5]?d(a[5])=
+:=0A=
+""),this.k=3Dc.join("|"),this.A(),delete this.k);break;case =
+"_setCustomVar":if(3<=3Da.length){var =
+c=3Da[1],e=3Da[2],q=3Da[3]||0;a=3D0;for(var h in =
+this.a.b)a++;if(5<=3Da)return!1;var k;k=3D0=3D=3Dq?"p":1=3D=3Dq?"m":(new =
+Date).getTime()+1E3*q;this.a.b[c]=3D{};this.a.b[c].S=3De;this.a.b[c].g=3D=
+k;this.w()}break;case =
+"_deleteCustomVar":2<=3Da.length&&(c=3Da[1],this.a.b[c]&&(delete =
+this.a.b[c],this.w()))}}catch(l){g(l,"aC =
+failed")}},ca:function(){try{var =
+a=3Dthis.s(this.F),b,c;this.a.b=3D{};if(a)for(var =
+e=3Da.split("&"),a=3D0;a<e.length;a++)c=3D=0A=
+k(e[a]),b=3Dc.split("|"),this.a.b[k(b[0])]=3D{},this.a.b[k(b[0])].S=3Dk(b=
+[1]),this.a.b[k(b[0])].g=3Dk(b[2])}catch(d){g(d,"gCV =
+failed")}},U:function(){try{var a=3D(new Date).getTime(),b;for(b in =
+this.a.b)"p"=3D=3D=3Dthis.a.b[b].g?this.a.b[b].g=3D0:"m"!=3D=3Dthis.a.b[b=
+].g&&a>this.a.b[b].g&&delete this.a.b[b];this.w()}catch(c){g(c,"cCV =
+failed")}},w:function(){try{var a=3D[],b,c,e;for(e in this.a.b){var =
+f=3D[];f.push(e);f.push(this.a.b[e].S);f.push(this.a.b[e].g);b=3Df.join("=
+|");a.push(b)}if(0=3D=3D=3Da.length)return!0;var k=3Dnew Date;=0A=
+k.setTime(k.getTime()+157248E5);c=3Dthis.F+"=3D";this.b=3Dd(a.join("&"));=
+c+=3Dthis.b;c+=3D"; expires=3D"+k.toUTCString();h.cookie=3Dc+"; =
+path=3D/"}catch(l){g(l,"sCV =
+failed")}},ba:function(){try{if(""!=3D=3Df.location.hash)return =
+this.D=3Df.location.href}catch(a){g(a,"gCP =
+failed")}},t:function(){try{return =
+this.a.qa=3Dh.referrer||""}catch(a){g(a,"gR =
+failed")}},da:function(){try{return =
+this.a.m=3Df.navigator.systemLanguage||f.navigator.language,this.a.m=3Dth=
+is.a.m.toLowerCase(),this.a.m}catch(a){g(a,"gL =
+failed")}},ga:function(){try{return this.a.P=3D=0A=
+f.screen.width&&f.screen.height?f.screen.width+"x"+f.screen.height:"0x0",=
+this.a.P}catch(a){g(a,"gS failed")}},l:function(){try{return =
+this.a.ma=3Dthis.h("ntime")||"none"}catch(a){g(a,"gLVST =
+failed")}},H:function(){try{return this.a.p=3Dthis.h("ltime")||(new =
+Date).getTime()}catch(a){g(a,"gFVBT failed")}},fa:function(){try{var =
+a=3Dthis.h("cnzz_a");if(null=3D=3D=3Da)a=3D0;else{var =
+b=3D1E3*this.l(),c=3Dnew Date;c.setTime(b);(new =
+Date).getDate()=3D=3D=3Dc.getDate()?a++:a=3D0}return =
+this.a.v=3Da}catch(e){g(e,"gRT failed")}},ea:function(){try{return =
+this.a.e=3D=0A=
+this.h("rtime"),null=3D=3D=3Dthis.a.e&&(this.a.e=3D0),0<this.H()&&432E5<(=
+new Date).getTime()-this.H()&&(this.a.e++,this.a.p=3D(new =
+Date).getTime()),this.a.e}catch(a){g(a,"gRVT =
+failed")}},ia:function(){try{return"none"=3D=3D=3Dthis.l()?this.a.R=3D0:t=
+his.a.R=3DparseInt(((new =
+Date).getTime()-1E3*this.l())/1E3)}catch(a){g(a,"gST =
+failed")}},ha:function(){try{var =
+a=3Dthis.h("sin")||"none";if(!h.domain)return =
+this.a.o=3D"none";this.t().split("/")[2]!=3D=3Dh.domain&&(a=3Dthis.t());r=
+eturn this.a.o=3Da}catch(b){g(b,"gS failed")}},G:function(){try{return =
+this.a.i=3D=0A=
+this.h("cnzz_eid")||"none"}catch(a){g(a,"gC =
+failed")}},ra:function(){try{var =
+a=3Ds+"?",b=3D[];b.push("web_id=3D"+d(this.c));this.M&&b.push("show=3D"+d=
+(this.M));this.L&&b.push("online=3D"+d(this.L));this.J&&b.push("l=3D"+d(t=
+his.J));this.Q&&b.push("t=3D"+this.Q);a+=3Db.join("&");this.X(a,"utf-8")}=
+catch(c){g(c,"rN =
+failed")}},T:function(){try{return!1=3D=3D=3Df.navigator.cookieEnabled?th=
+is.a.W=3D!1:this.a.W=3D!0}catch(a){g(a,"cCE =
+failed")}},s:function(a){try{a+=3D"=3D";var =
+b=3Dh.cookie.indexOf(a),c=3D"";if(-1<b){var e=3Dh.cookie.indexOf(";",=0A=
+b);-1=3D=3D=3De&&(e=3Dh.cookie.length);c=3Dk(h.cookie.substring(b+a.lengt=
+h,e))}return c?c:""}catch(d){g(d,"gAC =
+failed")}},aa:function(a){try{h.cookie=3Da+"=3D; expires=3D"+(new =
+Date(0)).toUTCString()+"; path=3D/"}catch(b){g(b,"dAC =
+failed")}},ja:function(){try{for(var =
+a=3Dh.title,b=3Da.length,c=3D0,e=3D"",d=3D0;d<b;d++){var =
+f=3Da[d];this.la(f)?c++:c+=3D2;e+=3Df;if(20<=3Dc){e+=3D"...";break}}this.=
+a.oa=3De}catch(k){g(k,"gT failed")}},I:function(){try{var =
+a=3Dthis.r,b=3D{},c=3Dthis.s(this.r);if(0<c.length)if(1E8<this.c){var =
+e=3Dc.split("|");b.cnzz_eid=3D=0A=
+k(e[0]);b.ntime=3Dk(e[1])}else for(var =
+e=3Dc.split("&"),d=3D0,f=3De.length;d<f;d++){var =
+h=3De[d].split("=3D");b[k(h[0])]=3Dk(h[1])}this.B=3Db}catch(l){g(l,"iC =
+failed:"+a+":"+c)}},N:function(){try{var a=3Dthis.r+"=3D",b=3D[],c=3Dnew =
+Date;c.setTime(c.getTime()+157248E5);if(1E8<this.c){if("none"!=3D=3Dthis.=
+a.i)b.push(d(this.a.i));else{var =
+e=3DMath.floor(2147483648*Math.random())+"-"+this.n+"-"+m+"//"+h.location=
+.hostname;b.push(d(e))}b.push(this.n);0<b.length?(a+=3Dd(b.join("|")),a+=3D=
+"; expires=3D"+c.toUTCString(),a+=3D"; path=3D/"):a+=3D"; expires=3D"+=0A=
+(new =
+Date(0)).toUTCString()}else"none"!=3D=3Dthis.a.i?b.push("cnzz_eid=3D"+d(t=
+his.a.i)):(e=3DMath.floor(2147483648*Math.random())+"-"+this.n+"-"+m+"//"=
++h.location.hostname,b.push("cnzz_eid=3D"+d(e))),b.push("ntime=3D"+this.n=
+),null!=3D=3Dthis.a.v&&b.push("cnzz_a=3D"+d(this.a.v)),this.a.o&&b.push("=
+sin=3D"+d(this.a.o)),this.a.p&&b.push("ltime=3D"+d(this.a.p)),this.a.e&&b=
+.push("rtime=3D"+d(this.a.e)),0<b.length?(a+=3Dd(b.join("&")),a+=3D"; =
+expires=3D"+c.toUTCString(),a+=3D"; path=3D/"):a+=3D"; expires=3D"+(new =
+Date(0)).toUTCString();h.cookie=3D=0A=
+a}catch(f){g(f,"sS =
+failed")}},h:function(a){try{return"undefined"!=3D=3Dtypeof =
+this.B[a]?this.B[a]:null}catch(b){g(b,"gCPa =
+failed")}},X:function(a,b){try{if(b=3Db||"utf-8","1"=3D=3D=3Dthis.u){var =
+c=3Dh.createElement("script");c.type=3D"text/javascript";c.async=3D!0;c.c=
+harset=3Db;c.src=3Da;var =
+e=3Dh.getElementsByTagName("script")[0];e.parentNode&&e.parentNode.insert=
+Before(c,e)}else h.write(p("%3Cscript src=3D'"+a+"' charset=3D'"+b+"' =
+type=3D'text/javascript'%3E%3C/script%3E"))}catch(d){g(d,"cAS =
+failed")}},Z:function(a,b){try{var c=3D=0A=
+h.getElementById("cnzz_stat_icon_"+this.c);if(c){var =
+e=3Dh.createElement("script");e.type=3D"text/javascript";e.async=3D!0;e.c=
+harset=3Db;e.src=3Da;c.appendChild(e)}else"0"=3D=3D=3Dthis.u&&h.write(p("=
+%3Cscript src=3D'"+a+"' charset=3D'"+b+"' =
+type=3D'text/javascript'%3E%3C/script%3E"))}catch(d){g(d,"cSI =
+failed")}},Y:function(a){try{for(var =
+b=3Da.length,c=3D"",e=3D0;e<b;e++)a[e]&&(c+=3Dp(a[e]));var =
+d=3Dh.getElementById("cnzz_stat_icon_"+this.c);d?d.innerHTML=3Dc:"0"=3D=3D=
+=3Dthis.u&&h.write(c)}catch(f){g(f,"cI =
+failed")}},A:function(){try{this.N();=0A=
+this.I();this.G();this.U();var =
+a=3D[];a.push("id=3D"+d(this.c));this.a.f||""=3D=3D=3Dthis.a.f?a.push("r=3D=
+"+d(this.a.f)):a.push("r=3D"+d(this.a.qa));a.push("lg=3D"+d(this.a.m));a.=
+push("ntime=3D"+d(this.a.ma));a.push("repeatip=3D"+this.a.v);a.push("rtim=
+e=3D"+d(this.a.e));a.push("cnzz_eid=3D"+d(this.a.i));a.push("showp=3D"+d(=
+this.a.P));a.push("st=3D"+d(this.a.R));a.push("sin=3D"+d(this.a.o));this.=
+a.d?a.push("p=3D"+d(this.a.d)):"[object =
+String]"=3D=3D=3D{}.toString.call(this.D)&&a.push("p=3D"+d(this.D));"[obj=
+ect String]"=3D=3D=3D{}.toString.call(this.k)&&=0A=
+a.push("ei=3D"+d(this.k));"[object =
+String]"=3D=3D=3D{}.toString.call(this.b)&&a.push("cv=3D"+this.b);a.push(=
+"t=3D"+d(this.a.oa));var b=3Da.join("&");"[object =
+String]"=3D=3D=3D{}.toString.call(this.k)?this.j([m+"//ei.cnzz.com/stat.h=
+tm?"+b]):(this.K&&this.j([m+"//"+this.K+"/stat.htm?"+b]),this.O&&this.j([=
+m+"//"+this.O+"/stat.htm?"+b]))}catch(c){g(c,"sD =
+failed")}},la:function(a){return =
+0>r(a).indexOf("%u")?!1:!0},j:function(a){try{for(var =
+b=3Da.length,c=3Dnull,d=3D0;d<b;d++)a[d]&&(c=3D"cnzz_image_"+Math.floor(2=
+147483648*Math.random()),=0A=
+f[c]=3Dnew =
+Image,f[c].V=3Dc,f[c].onload=3Df[c].onerror=3Df[c].onabort=3Dfunction(){t=
+ry{this.onload=3Dthis.onerror=3Dthis.onabort=3Dnull,f[this.V]=3Dnull}catc=
+h(a){}},f[c].src=3Da[d]+"&rnd=3D"+Math.floor(2147483648*Math.random()))}c=
+atch(h){g(h,"cR failed")}}};try{var n=3Dnew =
+l;f[n.q].bobject=3Dn;!1!=3D=3Df._cz_autoPageview?n.A():n.N();l.prototype.=
+getACookie=3Dl.prototype.s;l.prototype.callRequest=3Dl.prototype.j;l.prot=
+otype.createScriptIcon=3Dl.prototype.Z;l.prototype.createIcon=3Dl.prototy=
+pe.Y;n.ra()}catch(t){g(t,"main failed")}})();=0A=
+=0A=
+
+------=_NextPart_000_0000_01CEF720.A84B3BC0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://v1.jiathis.com/code_mini/jia.js?uid=889384
+
+/* (c) 2013 JiaThis Inc. 1205*/=0A=
+eval(function(p,a,c,k,e,r){e=3Dfunction(c){return(c<a?'':e(parseInt(c/a))=
+)+((c=3Dc%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace=
+(/^/,String)){while(c--)r[e(c)]=3Dk[c]||e(c);k=3D[function(e){return =
+r[e]}];e=3Dfunction(){return'\\w+'};c=3D1};while(c--)if(k[c])p=3Dp.replac=
+e(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('N =
+1b=3D{73:"1B://1h.1J.Z",4Q:"1B://l.1J.Z",3A:"1B://s.1J.Z",74:20,21:"",75:=
+1c,1S:76,4R:"77",4S:"4T",3B:"",30:[],3C:{\'78\':\'=E4=B8=80=E9=94=AE=E5=88=
+=86=E4=BA=AB,79\',\'7a\':\'=E7=8C=9C=E4=BD=A0=E5=96=9C=E6=AC=A2,7b\',\'7c=
+\':\'=E5=A4=8D=E5=88=B6=E7=BD=91=E5=9D=80,7d\',\'7e\':\'=E6=94=B6=E8=97=8F=
+=E5=A4=B9,7f\',\'7g\':\'=E6=89=93=E5=8D=B0,dy\',\'7h\':\'=E9=82=AE=E4=BB=B6=
+,7i\',\'7j\':\'2o=E7=A9=BA=E9=97=B4,7k,4U.2p.1K.Z\',\'7l\':\'=E6=96=B0=E6=
+=B5=AA=E5=BE=AE=E5=8D=9A,7m,7n.Z\',\'7o\':\'=E5=BE=AE=E4=BF=A1,7p,2c,2c.1=
+K.Z\',\'7q\':\'=E8=85=BE=E8=AE=AF=E5=BE=AE=E5=8D=9A,7r,t.1K.Z\',\'7s\':\'=
+=E6=90=9C=E7=8B=90=E5=BE=AE=E5=8D=9A,7t,t.4V.Z\',\'7u\':\'=E7=BD=91=E6=98=
+=93=E5=BE=AE=E5=8D=9A,7v,t.4W.Z\',\'7w\':\'=E4=BA=BA=E4=BA=BA=E7=BD=91,7x=
+,1h.2C.Z\',\'7y\':\'=E5=BC=80=E5=BF=83=E7=BD=91,7z,1h.31.Z\',\'7A\':\'7B+=
+,7C,7D.17.3D.Z\',\'7E\':\'=E8=BD=BB=E7=AC=94=E8=AE=B0,7F\',\'7G\':\'=E6=B7=
+=98=E6=B1=9F=E6=B9=96,7H,i.3E.Z\',\'7I\':\'=E8=B1=86=E7=93=A3,db,1h.3F.Z\=
+',\'7J\':\'=E6=9C=8B=E5=8F=8B=E7=BD=91,7K,32.7L.Z\',\'7M\':\'=E9=BA=A6=E5=
+=BA=93=E8=AE=B0=E4=BA=8B,7N\',\'7O\':\'=E7=99=BE=E5=BA=A6=E6=90=9C=E8=97=8F=
+,7P,7Q.33.Z\',\'7R\':\'=E6=9C=89=E9=81=93=E4=BA=91=E7=AC=94=E8=AE=B0,7S,7=
+T.4X.Z\',\'7U\':\'=E6=89=8B=E6=9C=BA=E5=BF=AB=E4=BC=A0,7V\',\'7W\':\'=E5=A4=
+=A9=E6=B6=AF=E7=A4=BE=E5=8C=BA,7X,4Y.7Y.cn\',\'7Z\':\'=E9=A3=9E=E4=BF=A1,=
+fx,80.81.82.cn\',\'83\':\'=E7=99=BE=E5=BA=A6=E8=B4=B4=E5=90=A7,84,4Z.33.Z=
+\',\'85\':\'=E5=87=A4=E5=87=B0=E5=BE=AE=E5=8D=9A,86,t.52.Z\',\'87\':\'=E4=
+=BC=98=E5=A3=AB=E7=BD=91,88,1h.89.cn\',\'8a\':\'=E9=A5=AD=E5=90=A6,ff,8b.=
+Z\',\'8c\':\'=E7=82=B9=E7=82=B9=E7=BD=91,8d,1h.8e.Z\',\'8f\':\'=E6=98=8E=E9=
+=81=93,8g,1h.8h.Z\',\'8i\':\'=E4=B8=AD=E6=90=9Cv=E5=95=86,8j,8k.8l\',\'8m=
+\':\'=E5=A5=87=E4=B9=90=E6=94=B6=E8=97=8F,8n,1h.8o.Z\',\'8p\':\'=E8=B0=B7=
+=E6=AD=8C,8q\',\'8r\':\'=E8=B0=B7=E6=AD=8C8s,8t\',\'8u\':\'=E6=9C=89=E9=81=
+=93=E4=B9=A6=E7=AD=BE,8v,53.4X.Z\',\'8w\':\'2o=E5=A5=BD=E5=8F=8B,8x,8y,54=
+.1K.Z\',\'8z\':\'2o=E4=B9=A6=E7=AD=BE,8A,53.1K.Z\',\'8B\':\'34,55\',\'8C\=
+':\'8D,8E\',\'8F\':\'=E8=8A=B1=E7=93=A3=E7=BD=91,8G,8H.Z\',\'8I\':\'=E5=A0=
+=86=E7=B3=96,dt,1h.8J.Z\',\'8K\':\'=E7=B2=89=E4=B8=9D=E7=BD=91,8L,8M.8N.Z=
+\',\'8O\':\'=E6=91=87=E7=AF=AE=E5=BE=AE=E5=8D=9A,8P\',\'8Q\':\'8R=E6=94=B6=
+=E8=97=8F,8S\',\'8T\':\'=E7=99=BE=E5=BA=A6=E7=A9=BA=E9=97=B4,8U,8V.56.33.=
+Z\',\'8W\':\'8X=E9=82=AE=E7=AE=B1,8Y,57.3D.Z\',\'8Z\':\'90=E9=82=AE=E7=AE=
+=B1,91\',\'92\':\'=E9=9B=AA=E7=90=83,93,94.Z\',\'95\':\'=E5=92=8C=E8=AE=AF=
+,96,97.58.Z\',\'98\':\'=E5=8D=97=E6=96=B9=E5=BE=AE=E5=8D=9A,99\',\'9a\':\=
+'59=E9=82=AE=E7=AE=B1,9b\',\'9c\':\'5a=E9=82=AE=E7=AE=B1,9d\',\'9e\':\'=E7=
+=88=B1=E5=88=86=E4=BA=AB,9f\',\'9g\':\'9h+=E5=88=86=E4=BA=AB,9i,9j,i.9k.Z=
+.cn\',\'9l\':\'=E7=BF=BC=E5=8F=8B=E5=9C=88,9m,9n.5a.cn\',\'9o\':\'=E7=A7=BB=
+=E5=8A=A8=E5=BE=AE=E5=8D=9A,9p\',\'9q\':\'=E4=BA=BA=E6=B0=91=E5=BE=AE=E5=8D=
+=9A,9r,t.9s.Z.cn\',\'9t\':\'=E4=B8=AD=E9=87=91=E5=BE=AE=E5=8D=9A,9u\',\'9=
+v\':\'=E6=96=B0=E5=8D=8E=E5=BE=AE=E5=8D=9A,9w\',\'9x\':\'=E8=B4=A2=E8=BF=B7=
+,cm,t.9y.Z\',\'9z\':\'=E8=B0=B7=E6=AD=8C=E7=BF=BB=E8=AF=91,9A\',\'9B\':\'=
+=E6=8E=A8=E4=BB=96,9C,1h.9D.Z\',\'9E\':\'=E7=8C=AB=E6=89=91=E6=8E=A8=E5=AE=
+=A2,9F,9G.9H.Z\',\'9I\':\'=E5=98=80=E5=92=95=E7=BD=91,9J,9K.Z\',\'9L\':\'=
+=E9=B2=9C=E6=9E=9C,9M\',\'9N\':\'=E5=8F=91=E7=8E=B0=E5=95=A6,9O\',\'9P\':=
+\'=E8=B5=B6=E7=89=9B=E7=BD=91,9Q,1h.9R.Z\',\'9S\':\'=E7=B1=B3=E8=81=8A,9T=
+\',\'9U\':\'=E6=90=9C=E7=8B=90=E9=9A=8F=E8=BA=AB=E7=9C=8B,9V\',\'9W\':\'5=
+1=E7=A4=BE=E5=8C=BA,9X,9Y.51.Z\',\'9Z\':\'=E5=87=A4=E5=87=B0=E5=BF=AB=E5=8D=
+=9A,a0,k.52.Z\',\'a1\':\'=E6=B3=95=E5=BE=8B=E5=BE=AE=E5=8D=9A,a2\',\'a3\'=
+:\'=E5=85=89=E6=98=8E=E7=BD=91,a4\',\'a5\':\'=E4=BA=BA=E9=97=B4=E7=BD=91,=
+a6,a7.Z\',\'a8\':\'=E9=9B=B7=E7=8C=B4=E7=BD=91,a9,aa.Z\',\'ab\':\'=E5=92=8C=
+=E8=AE=AF=E5=BE=AE=E5=8D=9A,ac,t.58.Z\',\'ad\':\'=E6=B8=B8=E6=88=8F=E6=B1=
+=9F=E6=B9=96,ae,56.4W.Z\',\'af\':\'=E7=8E=9B=E6=92=92=E7=BD=91,ag\',\'ah\=
+':\'=E5=AE=BE=E8=87=B3=E7=BD=91,ai,1h.aj.Z\',\'ak\':\'al,5b,1h.5b.Z\',\'a=
+m\':\'ao,ap,t.co\',\'aq\':\'ar,5c,1h.5c.Z\',\'as\':\'at,au\',\'av\':\'aw,=
+5d,1h.5d.Z\',\'ax\':\'ay,az,aA.Z\',\'aB\':\'=E8=8B=A5=E9=82=BB=E7=BD=91,a=
+C\',\'aD\':\'=E4=B9=90=E6=94=B6,aE,aF.aG.Z\',\'aH\':\'=E6=8C=96=E5=AE=A2=E7=
+=BD=91,aI\',\'aJ\':\'=E5=88=9B=E4=B8=9A=E9=82=A6,aK,u.aL.cn\',\'aM\':\'=E6=
+=95=91=E6=95=91=E5=9C=B0=E7=90=83,aN\',\'aO\':\'=E6=8A=BD=E5=B1=89=E7=BD=91=
+,aP\',\'aQ\':\'=E9=80=92=E5=AE=A2=E7=BD=91,aR,1h.aS.cn\',\'aT\':\'=E8=B1=86=
+=E7=93=A39=E7=82=B9,aU,9.3F.Z\',\'aV\':\'=E7=BE=8E=E4=B8=BD=E8=AF=B4,aW\'=
+,\'aX\':\'=E8=98=91=E8=8F=87=E8=A1=97,aY,aZ.cn\',\'b0\':\'=E5=A4=A9=E9=99=
+=85=E7=BD=91,b1,b2.b3.Z\',\'b4\':\'b5=E7=BD=91,b6,4Y.b7.cn\',\'b8\':\'=E5=
+=AE=9D=E7=9B=92=E7=BD=91,b9,1h.ba.Z\',\'bb\':\'=E6=98=93=E9=9B=86=E7=BD=91=
+,bc,1h.bd.Z\',\'be\':\'bf=E5=9C=A8=E7=BA=BF=E8=BD=AC=E6=8D=A2,bg\',\'bi\'=
+:\'=E5=8F=8B=E5=A5=BD=E6=89=93=E5=8D=B0,bj\',\'bk\':\'bl=E9=AA=8C=E8=AF=81=
+,bm\',\'bn\':\'bo.5e,bp,bq.5e\',\'br\':\'bs,5f,5f.Z\',\'bu\':\'bv.5g,57.5=
+g\',\'bw\':\'bx,by\',\'bz\':\'bA,bB\',\'bC\':\'bD,bE\',\'bF\':\'bG,bH\',\=
+'bI\':\'bJ,bK\',\'bL\':\'bM,bN\',\'bO\':\'bP,bQ\',\'bR\':\'bS,bT\',\'bU\'=
+:\'bV,bW\',\'bX\':\'bY.fm,bZ.fm\',\'c0\':\'c3,c4\',\'c5\':\'c6,5h,1h.5h.Z=
+\',\'c7\':\'c8 =
+c9,ca\',\'cb\':\'cc,cd\',\'ce\':\'cf,cg\',\'ch\':\'cj,ck\',\'cl\':\'cp,cq=
+\',\'cr\':\'cs,ct\'}};(11(){N I=3D1a.2q(\'22\');1f(N =
+i=3D0,ci;ci=3DI[i++];){L(/1J.Z/.1L(ci.1m)){1b.21=3Dci.1m.5i(0,ci.1m.cv("/=
+"));ci.1m.2r(/(1S)=3D([^&]+)/g,11(a,p,v){1b[p]=3Dv})}}N =
+d=3D1a,3G=3Dd.cw=3D=3D"cx",dd=3Dd.5j,db=3Dd.35,m=3D23.5k,3H=3D!!d.5l,3I=3D=
+2s.2t.3J(),24=3Dd.2q("24")[0]||dd,36=3D1p.1T.37,1n=3D(2d(2D)=3D=3D\'1U\')=
+?{}:2D,25=3D1b.4R,1M=3D1b.3C,5m=3Dd.cy,3K=3D1c,5n=3D11(){15{h:(3G?dd:db).=
+cz,w:(3G?dd:db).cA}},39=3D11(){15{t:m(dd.2E,db.2E),l:m(dd.3L,db.3L)}},5o=3D=
+11(a){N =
+r=3D{t:0,l:0},5p=3D/cB/.1L(3I),2u=3D11(t,l){r.l+=3Dl,r.t+=3Dt},p=3Da,3M=3D=
+39();L(a&&a!=3Ddb){L(a.5q){N b=3Da.5q();L(b.1q=3D=3Db.5r){N =
+g=3Da.13.1e;a.13.1e=3D"2e";b.1q=3Db.1q-a.1V;a.13.1e=3Dg}2u(b.1q+3M.t-dd.c=
+C,b.1N+3M.l-dd.cD)}14{N c=3Dd.cE;3N(p){2u(p.5s,p.5t);N =
+e=3Dc.cF(p,20);L(5p){N =
+f=3D1u(e.3O("26-1N-1o"),10)||0,bt=3D1u(e.3O("26-1q-1o"),10)||0;2u(bt,f);L=
+(p!=3Da&&e.3O("2F")!=3D"cG"){2u(bt,f)}}p=3Dp.cH}p=3Da.3a;3N(p&&p!=3Ddb){2=
+u(-p.2E,-p.3L);p=3Dp.3a}}}15 r},1v=3D11(o,t,a){N b=3Dd.2G(t||"18");1f(N =
+p 1D =
+o){p=3D=3D"13"?(b[p].5u=3Do[p]):(b[p]=3Do[p])}15(a||db).cI(b,(a||db).2H)}=
+,5v=3D11(a,b){N c=3D{};1f(N i=3D0;i<a.1r;i++){c[a[i]]=3D1}1f(N =
+i=3D0;i<b.1r;i++){L(!c[b[i]]){a.5w(b[i]);c[b[i]]=3D1}}15 =
+a},5x=3D11(a,b,c){N d=3D2v =
+3P();d.cJ(d.3Q()+c*3b);1a.5y=3Da+"=3D"+5z(b)+(c?";cK=3D"+d.cL():"")+";3R=3D=
+/"},5A=3D11(a){N b=3D1a.5y;N c=3Db.1w(a+"=3D");L(c!=3D-1){c+=3Da.1r+1;N =
+d=3Db.1w(";",c);L(d=3D=3D-1){d=3Db.1r}15 =
+cM(b.5i(c,d))}15""},3c=3D11(w,d,a){w/=3Dd;w=3D23.3S(w*10)/10;L((w+"").1r>=
+=3D4){w=3D23.3S(w)}15 w+a},5B=3D11(a){N =
+d=3D(""+a).1i(".").3d().1r;L(cN(a)){15\'0\'}14{L(d<4){15 =
+23.3S(a)}14{L(d<7){15 3c(a,3b,"K")}14{L(d<10){15 3c(a,cO,"M")}14{15 =
+3c(a,3T,"B")}}}}},3U=3D11(X){N A=3D{},D=3D(2v =
+3P()).3Q(),E,F,G,H,V=3D2I(X);L(V!=3D=3D1U&&V.1w("|")>-1){E=3DV.1i(\'|\');=
+F=3DE[0];G=3DE[1];H=3D23.cP((D-G)/3b);A.1z=3D1u(F);A.cQ=3DG;A.5C=3DH;15 =
+A}15 1c},3e=3D11(){N A=3D5A("5D"),B=3D{};L(A){B=3D3V("("+A+")")}15 =
+B},5E=3D11(U,S,T){N A=3D3e();L(A[U]){cR =
+A[U]}$1g.1z=3D1u(S);A[U]=3D\'"\'+1u(S)+\'|\'+T+\'"\';5x("5D",5F(A),0)},5F=
+=3D11(o){N A=3D\'\',B=3D\'\';1f(N k 1D =
+o){A+=3DB+\'"\'+k+\'":\'+o[k];B=3D!B?\',\':B}15"{"+A+"}"},3W=3D11(a,b){1f=
+(N k 1D a){N =
+c=3Dd.2f(a[k]);L(c){c.1d=3D\'=E7=B4=AF=E8=AE=A1=E5=88=86=E4=BA=AB\'+b+\'=E6=
+=AC=A1\';c.1x=3D5B(b)}}},5G=3D11(){N u=3D1n.cS;L(u){L(!(u cT =
+5H)){u=3D[u]}1f(N a=3D0;a<u.1r;a++){N =
+c=3Du[a];L(c.2g&&c.3X&&c.17){c.2h=3Dc.17=3Dc.17.2r(/ =
+/g,"");c.2h=3Dc.2h.1i("//").2J().1i("?").3d().1i("/").3d().3J();1b.30[c.2=
+h]=3Dc;1b.3C[25+c.2h]=3Dc.2g+\',\'+c.2h+\',\'+c.2h}}}},3Y=3D11(a,b,c){N =
+d=3D"";do{d=3Da[b++]}3N(b<a.1r&&(!1M[25+d]||c[d]));L(c[d]||!1M[25+d]){d=3D=
+\'\';1f(N k 1D 1M){k=3Dk.2K(3);L(!c[k]&&1M[25+k]){d=3Dk;3Z}}}15 =
+d},40=3D11(){5G();N =
+e=3D1n.cU||{},41=3D1n.cV||1c;e.cW&&1v({1m:1b.21+"/cX.cY.2L",2i:"2j-8"},"2=
+2",24);N f=3D1n.5I?1y:1c;L(1b.1S&&36&&!f){N =
+g=3D1y;L(2d(1n.5I)=3D=3D\'1U\'){N =
+j=3D[\'cZ.Z\',\'d0.Z\',\'3E.Z\',\'d3.cn\',\'d4.Z\',\'d5.Z\',\'d6.Z\',\'d7=
+.Z\',\'d8.Z\',\'d9.Z\'];1f(N k 1D j){L(2d(j[k])=3D=3D\'da\'){L(36.1W(2v =
+42(j[k]))){g=3D1c;3Z}}}}L(g){1v({1m:"1B://dc.1K.Z/1J.3f?1S=3D"+1u(1b.1S)+=
+"&dm=3D"+36,2i:"2j-8"},"22")}}N =
+l=3D"2p,43,de,2c,2C,31,df,dg,3F,3E,dh,55,59,4V,4Z,33,3D",5J=3D1b.3B||l,44=
+=3D5v(5J.1i(","),l.1i(",")),2M=3D{},27=3D{},h=3Dd.2q("a"),5K=3D2I(1n.17||=
+d.1T),3g=3D20,19,1E,1C,fl,bt,28;1f(N =
+i=3D0,ci,1j;ci=3Dh[i++];){L(/\\di\\b/.1L(ci.1l)){ci.5L=3D$1g.45;ci.dj=3D$=
+1g.5M;!41&&(ci.2w=3D$1g.3h);ci.5N=3D$1g.5O;ci.dk=3D1y;5P}L(ci.1l&&(1j=3Dc=
+i.1l.1W(/^5Q(\\w+)(?:\\dl|$)(.*)$/))&&1j[1]){L(2d($1g.2N)=3D=3D"5R"){L(!3=
+g){3g=3D1v({2x:1b.21+"/2y/46.2y",3i:"5S",1X:"1Y/2y"},"5T")}L(ci.2H&&ci.2H=
+.dn=3D=3D3){ci.5U(ci.2H)}L(!ci.2H){N =
+B=3D1j[1]=3D=3D\'13\'?\'dp\':1j[1],C=3D1j[2]?1j[2]:\'\',K=3D"5Q"+i,E=3Dd.=
+2G("1F");E.1l=3D\'dq 46 =
+dr\'+B+\'ds\';!41&&(E.2w=3D11(){$1g.3h()});E.1G=3DK;E.2k(d.du("0"));L(C){=
+E.13.5u=3DC}ci.2k(E)}$1g.2N.5w(K)}5P}19=3D\'\',1E=3D\'\',1C=3D1c,fl=3D1c,=
+bt=3D1c,28=3D1c;L(ci.1l&&(1j=3Dci.1l.1W(/^dv([\\w\\.]+)(?:\\s|$)/))&&1j[1=
+]){L(1j[1].1w("5V")>-1||1j[1].1w("dw")>-1){L(1j[1].1w("5V")>-1){1C=3D1y;N=
+ s=3Dci.1l.1W(/dx([0-9]+)(?:\\s|$)/)}14{N =
+s=3Dci.1l.1W(/dz([0-9]+)(?:\\s|$)/)}N =
+n=3D((s&&s.1r)?23.dA(16,23.5k(1,1u(s[1]))):1)-1;19=3D3Y(44,n,2M);28=3D1y}=
+14{19=3D1j[1]}bt=3D1y}L(ci.1l&&(1j=3Dci.1l.1W(/^dB(\\w+)$/))&&1j[1]){19=3D=
+1j[1];fl=3D1y}L(19&&1M[25+19]){bt&&(2M[19]=3D1);N p=3D11(a,b){1f(N c 1D =
+b){N o=3Db[c];L(o.28&&o.19=3D=3Da){15 c}}15 =
+1c},w=3Dp(19,27);L(w!=3D=3D1c){N =
+T=3D27[w]||{};L(T.19&&T.ci){47=3D3Y(44,0,2M);T.bt&&(2M[47]=3D1);27[w]=3D{=
+"ci":T.ci,"19":47,"bt":T.bt,"fl":T.fl,"1C":T.1C,"28":T.28}}}27[i]=3D{"ci"=
+:ci,"19":19,"bt":bt,"fl":fl,"1C":1C,"28":28}}14 =
+L(bt||fl){ci.1x=3D""}L(ci.1l&&(1j=3Dci.1l.1W(/^dC(\\w+)$/))&&1j[1]){1E=3D=
+1j[1];N =
+o=3D5W(ci,\'2O\'),2l=3D\'\',29=3D5K,2m=3D\'\';L(1E=3D=3D\'2p\'){N =
+q=3D1O(o.1K,1c);L(q){29=3D"1B://dD.2p.1K.Z/"+q;2l=3D\'1B://2z.2p.1K.Z/2a?=
+17=3D\'+1H(29)+\'&1X=3D\'+1O(o.1X,\'dE\')}14{2l=3D\'1B://4U.2p.1K.Z/dF-dG=
+/dH/dI?17=3D\'+1H(29)+\'&5X=3D\'+1O(o.5X,1)+\'&13=3D\'+1O(o.13,2)}}14 =
+L(1E=3D=3D\'2C\'){N =
+r=3D1O(o.dJ,1c);29=3Dr?("1B://dK.2C.Z/"+r):29;2l=3D\'1B://1h.54.2C.Z/2a?1=
+7=3D\'+1H(29)+\'&5Y=3D\'+1O(o.5Y,\'1c\')}14 =
+L(1E=3D=3D\'31\'){2l=3D\'1B://1h.31.Z/2a/2a.3f?17=3D\'+1H(29)+\'&5Z=3D\'+=
+1O(o.5Z,\'1c\')}14 L(1E=3D=3D\'43\'||1E=3D=3D\'48\'){N =
+t=3D49(),1s=3D\'\',1d=3D1n.1d||1a.1d,t=3D1n.2b=3D=3D1U?t:1n.2b,1s=3D1n.1s=
+=3D=3D1U?4a():1n.1s,17=3D1n.17=3D=3D1U?1a.1T:1n.17}L(2l){ci.1x=3D\'<1F =
+1P=3D"2P 3j 4b"><1I 1m=3D"\'+2l+\'" dL=3D"1y" dM=3D"61" 26=3D"0" =
+dN=3D"0" =
+13=3D"1o:\'+1O(o.1o,dO)+\'1A;1k:\'+1O(o.1k,38)+\'1A;\'+2m+\'"></1I></1F>\=
+'}14{L(1E=3D=3D\'48\'||1E=3D=3D\'43\'){L(1E=3D=3D\'48\'){ci.1x=3D\'<1F =
+1P=3D"2P 3j 4b"><2Q:2a 1X=3D"1Y"></2Q:2a></1F>\'}14{ci.1x=3D\'<1F =
+1P=3D"2P 3j 4b"><2Q:2a 1X=3D"dP"></2Q:2a></1F>\'}N =
+u=3D[\'2R:1X=3DdQ\',\'2R:17=3D\'+1H(17)+\'\',\'2R:1d=3D\'+1H(1d)+\'\',\'2=
+R:dR=3D\'+1H(1s)+\'\',\'2R:2S=3D\'+1H(t)+\'\'];1f(m=3D0;m<u.1r;m++){3k=3D=
+1a.2G(\'62\');N v=3Du[m].1i(\'=3D\');N w=3Dv[0];N =
+x=3Dv[1];3k.dS(\'dT\',w);3k.2T=3DdU(x);24.2k(3k)}1v({1m:"1B://dV.dW.dX.cn=
+/2z/dY/2L/2Q.2L",2i:"2j-8",1X:"1Y/dZ"},"22")}14{ci.1x=3D\'\'}}}}L(27){1f(=
+N k 1D 27){N =
+o=3D27[k],ci=3Do.ci,bt=3Do.bt,fl=3Do.fl,1C=3Do.1C,19=3Do.19;L(2d(ci)=3D=3D=
+"5R"&&ci.1x.1w(\'4c 4d\')=3D=3D-1){N y=3D1M[25+19].1i(\',\');N =
+z=3Dci.1x.2r(/^\\s+|\\s+$/g,"");N A=3D1b.30[19]||{};N D=3D(A.3X)?\' =
+13=3D"4e:17(\'+A.3X+\') 61-e0 =
+1N;"\':\'\';L(1C||z){z=3Dz?z:y[0];ci.1x=3D\'<1F 1P=3D"2P 3j 4c =
+4d\'+19+\'"\'+D+\'>\'+z+\'</1F>\'}14{ci.1x=3D\'<1F 1P=3D"2P 4c =
+4d\'+19+\'"\'+D+\'></1F>\'}L(fl){ci.2w=3D11(a){15 =
+11(){L(a.1l.1W(/2c$/)){4f(a.3i)}14{1p.2z(a.3i,\'\')}}}(ci);ci.1d=3Dci.1d?=
+ci.1d:"=E5=9C=A8"+y[0]+"=E5=85=B3=E6=B3=A8=E6=88=91=E4=BB=AC"}14{ci.2w=3D=
+11(a){15 =
+11(){63(a)}}(19);L(!ci.1d){L(19=3D=3D\'4g\'||19=3D=3D\'4h\'){ci.1d=3Dy[0]=
+}14 =
+L(19=3D=3D\'4i\'){ci.1d=3D"=E5=8A=A0=E5=85=A5"+y[0]}14{ci.1d=3D"=E5=88=86=
+=E4=BA=AB=E5=88=B0"+y[0]}}}}}}L(3g){$1g.64()}},1O=3D11(v,a){L(v=3D=3D=3D1=
+U){15 a}15 v},5W=3D11(a,b){N =
+p=3D[],c=3Da.e1[b];L(c){o=3Dc.e2.1i(\'&\')||\'\';1f(N i=3Do.1r;i--;){N =
+j=3Do[i].1i(\'=3D\');p[j[0]]=3Dj[1]}}15 =
+p},4j=3D11(e){L(!3K){L(!!e.65&&e.65.2K(-12)=3D=3D".1J.Z"){L(e.2O&&e.2O!=3D=
+"e3"){1b.3B=3De.2O}}40();66();3K=3D1y}},66=3D11(){N =
+a,s,E=3D1H,o=3D67(5m),T=3D1a.1d||"",Y=3D1p.1T.2x||"",an=3DY?Y.1w(1b.4S):-=
+1,d1=3D4k(o.37),d2=3D4k(Y),q=3D20,f=3D(d1&&d2&&d1=3D=3Dd2)?1c:1y;L(an>-1)=
+{a=3DY.68(an);q=3Da.1i("#").2J().1i("-").2J().1i("=3D").2J();q=3D1M[25+q]=
+?q:\'\'}q=3D(!q&&o.19)?o.19:q;L(q&&f){s=3D\'e4=3D\'+q+\'&e5=3D\'+1u(1b.1S=
+)+\'&e6=3D\'+E(o.37)+\'&e7=3D\'+E(o.3R)+\'&e8=3D\'+E(Y)+\'&e9=3D\'+5z(T);=
+(2v ea).1m=3D1b.4Q+"/l.eb?"+s}},4k=3D11(o){N =
+d=3D20;L(o){d=3Do.1i(".").2K(-2).69(".");d=3D(d=3D=3D"Z.cn")?o.1i(".").2K=
+(-3).69("."):d;d=3Dd.1i("/").3d()}15 d},67=3D11(r){N =
+h=3D"",p=3D"",q=3D"",m;L(r.1W(/(?:[a-z]\\:\\/\\/)([^\\/\\?]+)(.*)/ec)){h=3D=
+42.$1;p=3D42.$2;h=3Dh?h:"";p=3Dp?p:"";L(h){1f(N k 1D =
+1M){m=3D1M[k].1i(\',\');L(m[2]&&m[2]=3D=3Dh){q=3Dk.2K(3);3Z}}}}15{37:h,3R=
+:p,19:q}},ed=3D!!1p.6a?1v({13:"1e:1Q;",6b:0,1m:1b.21+"/ee.ef"},"1I"):20,1=
+8=3D1v({1l:"6c",13:"2n:3l;z-6d:3T;1e:1Q;2F:6e;"}),1t=3D1v({1l:"6c",13:"2n=
+:3l;z-6d:3T;1e:1Q;1q:50%;1N:50%;2F:6e;"}),1I=3D1v({13:"2n:"+(/eg/.1L(3I)?=
+"4l":"3l")+";1e:1Q;eh:ei(4m=3D0);4m:0",6b:0},"1I"),3m,4n,2U,4o,h,2V=3D{},=
+1Z,4p;1v({2x:1b.21+"/2y/ej.2y",3i:"5S",1X:"1Y/2y"},"5T");$1g=3D{3n:"",2J:=
+18,ek:1t,1z:0,2N:[],4q:11(a){N =
+b=3D1p.el||a,t=3Db.em||b.4r,3o=3Dt.6f?t.6f.en():"",c=3D18.3p?18.3p(t):!!(=
+18.6g(t)&16),c1=3D1t.3p?1t.3p(t):!!(1t.6g(t)&16),c2=3D1y;L(3o=3D=3D"eo"){=
+c2=3Dt.3a.1l.1w("1J")=3D=3D"-1"}14 =
+L(3o=3D=3D"A"){c2=3Dt.1l.1w("1J")=3D=3D"-1"}14 =
+L(3o=3D=3D"ep"){c2=3Dt.1l.1w("46")=3D=3D"-1"}L(!c&&!c1&&c2){1I.13.1e=3D1t=
+.13.1e=3D\'1Q\'}},5O:11(){N =
+s,T=3D6h,4s,fn=3D11(){4s=3Deq(11(){L(18.1x){N =
+p=3D5o(T),6i=3D5n(),1C=3D39();4t(18.13){1e=3D"2e";N =
+a=3DT.13.1e;T.13.1e=3D"2e";1q=3D(p.t+T.1V+18.1V>6i.h+1C.t?p.t-18.1V:p.t+T=
+.1V)+"1A";1N=3Dp.l+"1A";T.13.1e=3Da}4t(1I.13){1q=3D18.5s+"1A";1N=3D18.5t+=
+"1A";1o=3D18.3q+"1A";1k=3D18.1V+"1A";1R=3D"";1e=3D"2e"}er(4s)}},50)};L(!1=
+Z){1Z=3D1v({1m:1b.21+"/es.2L",2i:"2j-8"},"22",24);1Z.4u=3D0;1Z.et=3D11(){=
+1Z.4u=3D1;!3H&&fn()};1Z.eu=3D11(){/ev|ew/.1L(1Z.ex)&&!1Z.4u&&fn()}}14{fn(=
+)}15 =
+1c},45:11(){3m=3D4v(11(){18.13.1e=3D"1Q";1t.13.1e!=3D"2e"&&(1I.13.1e=3D"1=
+Q")},4w)},5M:11(){4x(3m)},3h:11(){18.13.1e=3D1I.13.1e=3D"1Q";L(!4p){4p=3D=
+1v({1m:1b.21+"/ey.2L",2i:"2j-8"},"22",24);db.13.2n=3D"ez"}14{N =
+a=3D39();1t.13.1e=3D"2e";1t.13.1R=3D(-1t.1V/2+a.t)+"1A =
+"+(-1t.3q/2+a.l)+"1A";2U=3Dd.2f("eA"),4o=3D2U.4y(1y),h=3D4o.2q("eB");1f(N=
+ =
+i=3D0,ci;ci=3Dh[i++];){2V[ci.6j]=3Dci.3a}4t(1I.13){1N=3D1q=3D"50%";1o=3D1=
+t.3q+"1A";1k=3D1t.1V+"1A";1R=3D1t.13.1R;1e=3D"2e"}}15 =
+1c},eC:11(o){4x(4n);4n=3D4v(11(){N =
+s=3Do.6j.2r(/^\\s+|\\s+$/,""),4z=3Dd.eD();1f(N p 1D 2V){3V("N f =3D =
+/"+(s||".")+"/eE.1L(p)");!!2V[p].4y&&(f&&4z.2k(2V[p].4y(1y)))}2U.1x=3D"";=
+2U.2k(4z)},4w)},eF:11(){1I.13.1e=3D1t.13.1e=3D"1Q"},6k:11(o){L(o.1z!=3D=3D=
+1U){N =
+A=3D$1g.2N,B=3D1u(o.1z),C=3D2I(1n.17||d.1T),D=3D3e(),J=3D3U(D[C]),T=3D(2v=
+ 3P()).3Q(),S=3DB;L(J&&J.1z>B){S=3DJ.1z}5E(C,S,T);3W(A,S)}},64:11(){N =
+A=3D$1g.2N,B=3D3e(),C=3D2I(1n.17||d.1T),J=3D3U(B[C]),R=3D1y;L(J&&J.5C<=3D=
+60){$1g.1z=3DJ.1z;3W(A,J.1z);R=3D1c}L(R){1v({1m:"//i.1J.Z/17/1z.3f?17=3D"=
++1H(C),2i:"2j-8"},"22",24)}},2z:11(A){1v({1m:A,2i:"2j-8"},"22",24)},6l:11=
+(F,O){L(F){F=3D2d(F)=3D=3D"11"?F:3V(F);F(O)}}};L(!!1p.3r){!!1p.3r&&1p.3r(=
+"eG",4j,1c)}14{L(!!1p.6a){(!!1p.4A&&1p.4A("eH",4j))}14{40()}}18.5N=3D11()=
+{4x(3m)};18.5L=3D11(){$1g.45()};3H?d.4A("2w",$1g.4q):d.3r("eI",$1g.4q,1c)=
+})();11 63(a){N b=3D49(),1s=3D4a();4B{N c=3D2D||{}}4C(e){N c=3D{}};N =
+d=3D1H,cu=3D1b.30[a]||{},U=3D2I(c.17||1a.1T),W=3D"?19=3D"+a,G=3D"&17=3D"+=
+d(U),T=3D"&1d=3D"+d(c.1d||1a.1d),S=3Dc.2b?"&2b=3D"+d(c.2b):(b?"&2b=3D"+d(=
+b):""),F=3D1b.1S?"&1S=3D"+1u(1b.1S):"",E=3Dc.eJ?"&4T=3D1":"",K=3D(c.3s&&c=
+.3s[a])?"&3s=3D"+c.3s[a]:"",P=3Dc.1s?"&1s=3D"+d(c.1s):(1s?"&1s=3D"+d(1s):=
+\'\'),C=3D$1g.3n?"&3n=3D"+$1g.3n:"",R=3D(c.3t&&c.3t[a])?"&3t=3D"+c.3t[a]:=
+"",Q=3D(c.4D&&c.4D[\'32\'])?c.4D[\'32\']:20,A=3D\'1B://s.1J.Z/\',X=3D(cu.=
+2g&&cu.17)?"&eK=3D"+d(cu.2g)+"&eL=3D"+d(cu.17):"",6m=3Dc.eM=3D=3D1c?\'\':=
+\'&eN=3D1\';B=3DA+W+G+T+F+E+K+P+R+S+X+C+6m;L(a=3D=3D\'4g\'||a=3D=3D\'4i\'=
+||a=3D=3D\'4h\'||a=3D=3D\'2c\'){$1g.2z(B);L(a=3D=3D\'4g\'){6n()}14 =
+L(a=3D=3D\'4i\'){6o()}14 =
+L(a=3D=3D\'2c\'){6p=3Dc.1d||1a.1d;6q=3Dc.2b?c.2b:(b?b:"");6r=3DG.2r(\'&17=
+=3D\',\'\');6s=3D6p+6q;6t=3D6u(6s,eO);6v(d(6t+\'...\'),6r)}14{1p.4h()}}14=
+{1p.2z(B,\'\')}$1g.6k({1z:($1g.1z+1)});$1g.6l(Q,{1X:\'32\',2O:{eP:a,17:U}=
+});15 1c}11 6o(){4B{N d=3D2D||{}}4C(e){N d=3D{}};N a=3Dd.1d||1a.1d;N =
+b=3Dd.17||eQ.1T.2x;N c=3D1p.eR;L(c&&!!c.6w){c.6w(a,b,"")}14 =
+L(1a.5l){1p.eS.eT(b,a)}14{3u(\'=E8=AF=B7=E6=8C=89 6x + D =
+=E4=B8=BA=E4=BD=A0=E7=9A=84=E6=B5=8F=E8=A7=88=E5=99=A8=E6=B7=BB=E5=8A=A0=E4=
+=B9=A6=E7=AD=BE=EF=BC=81\')}}11 6n(){4B{N d=3D2D||{}}4C(e){N d=3D{}};N =
+a=3Dd.17||6h.1T.2x;N b=3Dd.1d||1a.1d;N c=3Db+" "+a;N f=3D2s.2t.3J();N =
+g=3Df.1w(\'6y\')!=3D-1&&6y.eU();N =
+h=3D(f.1w(\'2W\')!=3D-1&&!g)&&f.68(f.1w(\'2W\')+5,3);L(h){eV.eW(\'eX\',c)=
+;3u("=E5=A4=8D=E5=88=B6=E6=88=90=E5=8A=9F,=E8=AF=B7=E7=B2=98=E8=B4=B4=E5=88=
+=B0=E4=BD=A0=E7=9A=842o/34=E4=B8=8A=E6=8E=A8=E8=8D=90=E7=BB=99=E4=BD=A0=E7=
+=9A=84=E5=A5=BD=E5=8F=8B=EF=BC=81")}14 =
+L(eY(\'=E4=BD=A0=E4=BD=BF=E7=94=A8=E7=9A=84=E6=98=AF=E9=9D=9E6z=E6=A0=B8=E5=
+=BF=83=E6=B5=8F=E8=A7=88=E5=99=A8=EF=BC=8C=E8=AF=B7=E6=8C=89=E4=B8=8B =
+6x+C =
+=E5=A4=8D=E5=88=B6=E4=BB=A3=E7=A0=81=E5=88=B0=E5=89=AA=E8=B4=B4=E6=9D=BF\=
+',c)){3u(\'=E5=A4=8D=E5=88=B6=E6=88=90=E5=8A=9F,=E8=AF=B7=E7=B2=98=E8=B4=B4=
+=E5=88=B0=E4=BD=A0=E7=9A=842o/34=E4=B8=8A=E6=8E=A8=E8=8D=90=E7=BB=99=E4=BD=
+=A0=E7=9A=84=E5=A5=BD=E5=8F=8B=EF=BC=81\')}14{3u(\'=E7=9B=AE=E5=89=8D=E5=8F=
+=AA=E6=94=AF=E6=8C=816z=EF=BC=8C=E8=AF=B7=E5=A4=8D=E5=88=B6=E5=9C=B0=E5=9D=
+=80=E6=A0=8FeZ,=E6=8E=A8=E8=8D=90=E7=BB=99=E4=BD=A0=E7=9A=842o/34=E5=A5=BD=
+=E5=8F=8B=EF=BC=81\')}}11 4a(){N =
+a=3D1a.2q(\'4E\'),1s=3D\'\',4F=3D\'\',3v=3D2v =
+5H();1f(i=3D0;i<a.1r;i++){N =
+b=3D1u(a.4G(i).3q),4H=3D1u(a.4G(i).1V),6A=3D3w,6B=3D3x,1o=3D(3w/4H)*3x,1k=
+=3D(3x/b)*3w;L(b>=3D6A&&4H>=3D6B){L((1o-1k)<=3D3x){1s+=3D4F+a.4G(i).1m;4F=
+=3D\',\'}}}3v=3D1s.1i(\',\');N c=3D1u(23.f0()*3v.1r);15 3v[c]}11 49(){N =
+a=3D\'\';N b=3D1a.2q("62");N =
+c=3Db.1r;L(/2W/i.1L(2s.2t)){1f(i=3D0;i<c;i++){L(b[i].2g=3D=3D\'2S\'){a=3D=
+b[i].2T}}L(a=3D=3D\'\'){1f(k 1D b){L(k=3D=3D\'2S\'){a=3Db[k].2T}}}L(/2W =
+6/i.1L(2s.2t)){a=3D\'\'}}14{1f(k 1D =
+b){L(/f1/i.1L(2s.2t)){L(2d(b[k].2g)!=3D\'1U\'){L(b[k].2g=3D=3D\'2S\'){a=3D=
+b[k].2T}}}14{L(k=3D=3D\'2S\'){a=3Db[k].2T}}}}a=3Da.2r(/\\s/g,\'\');15 =
+a}11 6u(a,b){N c=3D0;N s=3D"";1f(N =
+i=3D0;i<a.1r;i++){L(a.f2(i)>f3){c+=3D2}14{c++}s+=3Da.f4(i);L(c>=3Db){15 =
+s}}15 s}11 6v(a,b){4f(\'\',b,a);15 1c}11 4f(c,d,e){N =
+f,3y,ft,3z,2m,1o,1k,bh,2m,6C=3D/2W|f5 =
+6/.1L(2s.2t);L(g=3D1a.2f(\'2X\')){g=3D1a.2f(\'2X\')}14{N =
+g=3D1a.2G("18");g.13.2n=3D"4l";g.13.6D=3D"6E";L(6C){g.13.2n=3D"3l";g.13.6=
+D=3D"6E";g.13.1N=3D\'f6\';N =
+h=3D1a.35.2E||1a.5j.2E;g.13.1q=3D1u(h)+3w+\'1A\'}g.1G=3D\'2X\'}L(c){f=3Dc=
+;3y=3D\'=E5=9C=A8=E5=BE=AE=E4=BF=A1=E4=B8=8A=E5=85=B3=E6=B3=A8=E6=88=91=E4=
+=BB=AC\';ft=3D\'=E6=89=93=E5=BC=80=E5=BE=AE=E4=BF=A1=EF=BC=8C=E7=82=B9=E5=
+=87=BB=E5=BA=95=E9=83=A8=E7=9A=84=E2=80=9C=E5=8F=91=E7=8E=B0=E2=80=9D=EF=BC=
+=8C=E4=BD=BF=E7=94=A8 =E2=80=9C=E6=89=AB=E4=B8=80=E6=89=AB=E2=80=9D =
+=E5=8D=B3=E5=8F=AF=E5=85=B3=E6=B3=A8=E6=88=91=E4=BB=AC=E3=80=82\';3z=3D\'=
+<4E 1m=3D"\'+f+\'" 13=3D"1R-1q:f7;" 1o=3D"6F" =
+6G=3D"=E4=BA=8C=E7=BB=B4=E7=A0=81=E5=8A=A0=E8=BD=BD=E5=A4=B1=E8=B4=A5" =
+1k=3D"6F" =
+1G=3D"f8">\';1o=3D\'1o:6H;\';1k=3D\'1k:6H;\';bh=3D\'1k:f9;\';2m=3D\'1R: =
+-fa 0 0 =
+-4I;\'}14{f=3D1b.3A+\'?19=3D2c&17=3D\'+d+\'&1d=3D\'+e+\'&fb=3D1c\';3y=3D\=
+'=E5=88=86=E4=BA=AB=E5=88=B0=E5=BE=AE=E4=BF=A1=E6=9C=8B=E5=8F=8B=E5=9C=88=
+\';ft=3D\'=E6=89=93=E5=BC=80=E5=BE=AE=E4=BF=A1=EF=BC=8C=E7=82=B9=E5=87=BB=
+=E5=BA=95=E9=83=A8=E7=9A=84=E2=80=9C=E5=8F=91=E7=8E=B0=E2=80=9D=EF=BC=8C=E4=
+=BD=BF=E7=94=A8 =E2=80=9C=E6=89=AB=E4=B8=80=E6=89=AB=E2=80=9D =
+=E5=8D=B3=E5=8F=AF=E5=B0=86=E7=BD=91=E9=A1=B5=E5=88=86=E4=BA=AB=E5=88=B0=E6=
+=88=91=E7=9A=84=E6=9C=8B=E5=8F=8B=E5=9C=88=E3=80=82 <a 2x=3D"\'+f+\'" =
+4r=3D"fc">=E5=A6=82=E4=BD=95=E4=BD=BF=E7=94=A8=EF=BC=9F</a>\';3z=3Dfd=3D\=
+'=E4=BA=8C=E7=BB=B4=E7=A0=81=E5=8A=A0=E8=BD=BD=E4=B8=AD....\';1o=3D\'1o:6=
+I;\';1k=3D\'1k:6I;\';bh=3D\'1k:fe;\';2m=3D\'1R: -4I 0 0 =
+-4I;\'}g.1x=3D\'<18 1G=3D"6J" 13=3D"4e-fg: 2Y-4J;4e-6K: #4K;26: 2Z 4L =
+6L(0, 0, 0, 0.3);  26-6M: 2A 2A 2A 2A;  4J-4M: 0 fh fi 6L(0, 0, 0, 0.3); =
+1N: 50%; \'+2m+\'2F: 6N; 2n: 4l; 1q: 50%; \'+1o+1k+\' 2F:6N;" =
+1P=3D"6J"><18 1P=3D"6O" 1G=3D"6O" 13=3D"26-5r: 2Z 4L #fj; 2Y: fk 6P;"><a =
+13=3D"1Y-fo:1Q;  1R-1q: fp; 6K: #fq; fr: 6Q;  2B-4N: 6R;  2B-6S: fs; =
+fu:fv;6T-1k: 6R; 4m: 0.2; 1Y-4M: 0 2Z 0 #4K;"1P=3D"6U" 1G=3D"6U" =
+2w=3D"6V()"4r=3D"fw">=C3=97</a><6W 1G=3D"fy"13=3D" 6T-1k: fz; 1R: 0; =
+2B-6S:fA; =
+2B-fB:"=E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91";">\'+3y+\'</6W></18><18 =
+1P=3D"6X"1G=3D"6X"13=3D"1Y-4O:3h;\'+bh+\'"><p =
+1G=3D"6Y">\'+3z+\'</p></18><18 1P=3D"6Z" 1G=3D"6Z"13=3D"  26-6M: 0 0 2A =
+2A; 26-1q: 2Z 4L #fC; 4J-4M: 0 2Z 0 #4K fD; 1k:4w%;2Y:0 =
+fE;2Y-1q:fF;1Y-4O: 6Q; 2B-4N:70;"><18 1G=3D"fG"13=3D"1Y-4O:1N;1R:0; =
+2Y:0;2B-4N:70;">\'+ft+\'</18>  </18></18>\';1a.35.2k(g);L(!c){4v(11(){N =
+a=3D1a.2G(\'4E\');N =
+b=3D1a.2f(\'6Y\');a.1m=3D1b.3A+\'/fH.3f?17=3D\'+d;a.1o=3D\'71\';a.1k=3D\'=
+71\';a.13.fI=3D\'6P\';b.1x=3D\'\';a.6G=3D\'=E4=BA=8C=E7=BB=B4=E7=A0=81=E5=
+=8A=A0=E8=BD=BD=E5=A4=B1=E8=B4=A5...\';b.2k(a)},3b)}72=3D1a.2f("2X")}11 =
+6V(){4P=3D1a.2f(\'2X\');1a.35.5U(4P);4P=3DfJ=3D72=3DfK=3D20}',62,977,'|||=
+||||||||||||||||||||||||||||||||||||||||||||if||var||||||||||||com||funct=
+ion||style|else|return||url|div|webid|document|JIATHIS_CONFIGS|false|titl=
+e|display|for|CKE|www|split|tmp|height|className|src|conf|width|window|to=
+p|length|pic|div1|parseInt|creElm|indexOf|innerHTML|true|shares|px|http|t=
+l|in|likeid|span|id|encodeURIComponent|iframe|jiathis|qq|test|_lists|left=
+|_gv|class|none|margin|uid|location|undefined|offsetHeight|match|type|tex=
+t|clickpopjs|null|codehost|script|Math|head|_ckpre|border|_WR|preferred|l=
+ikeurl|like|summary|weixin|typeof|block|getElementById|name|code|charset|=
+utf|appendChild|ifsrc|mt|position|QQ|qzone|getElementsByTagName|replace|n=
+avigator|userAgent|add|new|onclick|href|css|open|6px|font|renren|jiathis_=
+config|scrollTop|overflow|createElement|firstChild|String|pop|slice|js|pa=
+rentServices|containers|data|jiathis_txt|wb|og|description|content|list|t=
+exts|msie|jiathis_weixin_share|padding|1px|custom|kaixin001|share|baidu|M=
+SN|body|wlh|host||getS|parentNode|1000|_MR|shift|_gck|php|_CF|center|rel|=
+jiathis_separator|met|absolute|timer|jid|tn|contains|offsetWidth|addEvent=
+Listener|appkey|ralateuid|alert|picArr|300|150|wt|innerhtml|shost|jtck|se=
+rvicelist|google|taobao|douban|isStrict|ie|ua|toLowerCase|_reced|scrollLe=
+ft|sTL|while|getPropertyValue|Date|getTime|path|round|1000000000|_rck|eva=
+l|_renderCounter|icon|_gw|break|_renderToolbox|hidemore|RegExp|tsina|jck|=
+out|jiathis_counter|TWID|tsinat|jiathis_get_des|jiathis_get_pic|jialike|j=
+tico|jtico_|background|jiathis_popup|copy|print|fav|_rec|_gd|fixed|opacit=
+y|inputTimer|clist|ckcpjs|disappear|target|timerCont|with|onloaded|setTim=
+eout|100|clearTimeout|cloneNode|frag|attachEvent|try|catch|evt|img|con|it=
+em|imgH|200px|box|FFFFFF|solid|shadow|size|align|_oDlgEl|lhost|ckprefix|j=
+tcbk|jtss|sns|sohu|163|youdao|my|tieba|||ifeng|shuqian|connect|msn|hi|mai=
+l|hexun|139|189|facebook|tumblr|instapaper|ly|digg|ru|delicious|substring=
+|documentElement|max|all|_ref|getWH|getP|isGecko|getBoundingClientRect|bo=
+ttom|offsetTop|offsetLeft|cssText|_uniqueConcat|push|_sc|cookie|escape|_g=
+c|_FN|timedeff|jiathis_rdc|_sck|_otc|_custom|Array|nota|_jck|_url|onmouse=
+out|move|onmouseover|over|continue|jiathis_counter_|object|stylesheet|lin=
+k|removeChild|tools|_gp|showcount|showfaces|show_faces||no|meta|jiathis_s=
+endto|counter|origin|_req|_grf|substr|join|postMessage|frameBorder|jiathi=
+s_style|index|auto|tagName|compareDocumentPosition|this|wh|value|rdc|fire=
+Event|SU|jiathis_copyUrl|jiathis_addBookmark|WT|WS|WU|AT|AS|jiathis_SetSt=
+ring|jiathis_sharewx|addPanel|Ctrl|opera|IE|minW|minH|isIe6|zIndex|100000=
+00001|129|alt|300px|360px|jiathis_weixin_modal|color|rgba|radius|hidden|j=
+iathis_modal_header|15px|right|20px|weight|line|jiathis_weixin_close|jiat=
+his_cancel|h3|jiathis_modal_body|jiathis_webchat|jiathis_modal_footer|12p=
+x|220|_oMaskEl|webhost|_s|sc|1626433|jt_|jt_ishare|yjfx|jt_ujian|cnxh|jt_=
+copy|fzwz|jt_fav|scj|jt_print|jt_email|yj|jt_qzone|qqkj|jt_tsina|xlwb|wei=
+bo|jt_weixin|wx|jt_tqq|txwb|jt_tsohu|shwb|jt_t163|wywb|jt_renren|rrw|jt_k=
+aixin001|kxw|jt_googleplus|Google|googlej|plus|jt_qingbiji|qbj|jt_taobao|=
+tjh|jt_douban|jt_xiaoyou|pyw|pengyou|jt_sdonote|mkjs|jt_baidu|bdsc|cang|j=
+t_ydnote|ydybj|note|jt_189share|sjkc|jt_tianya|tysq|tianya|jt_feixin|spac=
+e|feixin|10086|jt_tieba|bdtb|jt_tifeng|fhwb|jt_youshi|ysw|ushi|jt_fanfou|=
+fanfou|jt_diandian|ddw|diandian|jt_mingdao|md|mingdao|jt_zsvs|zsvs|zhongs=
+ou|net|jt_qileke|qlsc|qileke|jt_google|gg|jt_buzz|Buzz|ggbuzz|jt_youdao|y=
+dsq|jt_cqq|cqq|qqhl|jt_qq|qqsq|jt_msn|jt_pinterest|Pinterest|pinterest|jt=
+_huaban|hbw|huaban|jt_duitang|duitang|jt_ifensi|fsw|cyworld|ifensi|jt_tya=
+olan|ylwb|jt_115|115|115sc|jt_hi|bdkj|apps|jt_gmail|Gmail|gmailyx|jt_hotm=
+ail|Hotmail|hotmailyx|jt_xqw|xqw|xueqi|jt_hexun|hx|bookmark|jt_toeeee|nfw=
+b|jt_139mail|139yx|jt_189mail|189yx|jt_i139|afx|jt_iwo|WO|iwo|wfx|wo|jt_1=
+89cn|yyq|club|jt_139|ydwb|jt_tpeople|rmwb|people|jt_cnfol|zjwb|jt_txinhua=
+|xhwb|jt_caimi|eastmoney|jt_translate|ggfy|jt_tuita|tt|tuita|jt_mop|mptk|=
+tk|mop|jt_digu|dgw|digu|jt_xianguo|xg|jt_faxianla|fxl|jt_ganniu|gnw|ganni=
+u|jt_miliao|ml|jt_kansohu|shssk|jt_51|51sq|home|jt_ifengkb|fhkb|jt_jcrb|f=
+lwb|jt_gmw|gmw|jt_renjian|rjw|renjian|jt_leihou|lhw|leihou|jt_thexun|hxwb=
+|jt_dream163|yxjh|jt_masar|msw|jt_binzhi|bzw|binzhi|jt_fb|Facebook|jt_twi=
+tter||Twitter|twitter|jt_tumblr|Tumblr|jt_reddit|Reddit|reddit|jt_instapa=
+per|Instapaper|jt_pocket|Pocket|pocket|getpocket|jt_wealink|rlw|jt_leshou=
+|ls|site|leshou|jt_waakee|wkw|jt_cyzone|cyb|cyzone|jt_99earth|jjdq|jt_cho=
+uti|ctw|jt_dig24|dkw|dig24|jt_douban9dian|db9d|jt_meilishuo|mls|jt_moguji=
+e|mgj|mogujie|jt_tianji|tjw|app|tianji|jt_poco|Poco|pocow|poco|jt_baohe|b=
+hw|baohe|jt_yijee|yjw|yijee|jt_pdfonline|Pdf|pdfzxzh||jt_printfriendly|yh=
+dy|jt_w3c|W3c|w3cyz|jt_bitly|Bit|bitly|bit|jt_digg|Digg||jt_mailru|Mail|j=
+t_diigo|Diigo|diigo|jt_evernote|EverNote|evernote|jt_friendfeed|FriendFee=
+d|friendfeed|jt_myspace|Myspace|myspace|jt_linkedin|LinkedIn|linkedin|jt_=
+mixx|Mixx|mixx|jt_netlog|NetLog|netlog|jt_netvibes|Netvibes|netvibes|jt_p=
+honefavs|Phonefavs|phonefavs|jt_pingfm|Ping|ping|jt_plaxo|||Plaxo|plaxo|j=
+t_delicious|Delicious|jt_wong|Mister|Wong|misterwong|jt_stumbleupon|Stumb=
+leupon|stumbleupon|jt_plurk|Plurk|plurk|jt_funp||Funp|funp|jt_myshare||||=
+Myshare|myshare|jt_fwisp|Fwisp|fwisp||lastIndexOf|compatMode|CSS1Compat|r=
+eferrer|clientHeight|clientWidth|gecko|clientTop|clientLeft|defaultView|g=
+etComputedStyle|visible|offsetParent|insertBefore|setTime|expires|toGMTSt=
+ring|unescape|isNaN|1000000|floor|lifetime|delete|services_custom|instanc=
+eof|shareImg|hideMore|showType|plugin|shareimg|xunlei|cnzz|||360|kankan|a=
+limama|alibaba|1688|tmall|360buy|string||tajs||tqq|t163|tsohu|xiaoyou|bji=
+athis|onmousemove|hideFocus|_||nodeType||bubble|jiathis_button_expanded|j=
+iathis_|_style||createTextNode|jiathis_button_|icons|jiathis_button_tools=
+_||jiathis_button_icons_|min|jiathis_follow_|jiathis_like_|user|button_nu=
+m|cgi|bin|qzshare|cgi_qzshare_likeurl|pageid|page|allowTransparency|scrol=
+ling|frameborder|200|number|webpage|image|setAttribute|property|decodeURI=
+Component|tjs|sjs|sinajs|api|javascript|repeat|attributes|nodeValue|FALSE=
+|rsc|rnm|rfh|rfp|pre|tit|Image|gif|gi|jiathis_utility_ifr|jiathis_utility=
+|html|firefox|filter|alpha|jiathis_share|centerpop|event|srcElement|toUpp=
+erCase|IMG|SPAN|setInterval|clearInterval|ckepop|onload|onreadystatechang=
+e|complete|loaded|readyState|ckecenterpop|static|jiathis_sharelist|input|=
+choose|createDocumentFragment|ig|centerClose|message|onmessage|click|data=
+_track_clickback|acn|acu|shortUrl|su|110|service|parent|sidebar|external|=
+AddFavorite|version|clipboardData|setData|Text|prompt|URL|random|chrome|c=
+harCodeAt|128|charAt|MSIE|650px|25px|jiathis_follow_img|181px|100px|isexi=
+t|_blank|innerhtmlw|251px||clip|3px|7px|EEEEEE|9px||||decoration|2px|0000=
+00|float|bold||cursor|pointer|_self||jiathis_weixin_h3|30px|normal|family=
+|DDDDDD|inset|10px|11px|jiathis_weixin_tip|qrcode|marginTop|_oDivEl|_oErw=
+eimaMaskEl'.split('|'),0,{}))
+------=_NextPart_000_0000_01CEF720.A84B3BC0--

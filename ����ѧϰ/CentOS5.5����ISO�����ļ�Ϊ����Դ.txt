@@ -1,0 +1,108 @@
+CentOS5.5挂载ISO镜像文件为本地源  
+
+CentOS5.5挂载ISO镜像文件为本地源
+
+操作系统:CentOS5.5
+
+ISO文件:CentOS5.5的ISO镜像一个
+
+ 
+
+操作步骤：
+
+一、挂载iso文件到挂载点
+
+[root@server ~ ]# mount  -o loop /mnt/iso/CentOS5.iso /mnt/cdrom
+ 
+
+二、查看挂载状态
+
+[root@server ~ ]# df -h
+
+Filesystem            Size  Used Avail Use% Mounted on
+
+/dev/mapper/VolGroup00-LogVol00
+
+                       19G  3.3G   15G  19% /
+
+/dev/sda1              99M   12M   82M  13% /boot
+
+tmpfs                  62M     0   62M   0% /dev/shm
+
+/mnt/iso/CentOS5.iso   3.9G  3.9G     0 100% /mnt/cdrom
+
+
+重新挂载系统分区
+
+
+[root@server ~ ]# mount -a
+
+
+三、修改yum的配置文件，使用本地ISO做yum源
+
+
+# cd /etc/yum.repos.d/
+
+# mv CentOS-Base.repo CentOS-Base.repo.bak
+
+# cp CentOS-Media.repo CentOS-Media.repo.bak
+
+# cat  CentOS-Media.repo
+
+[c5-media]
+
+name=CentOS-$releasever - Media
+
+baseurl=file:///mnt/     #表明yum源在/mnt目录下，其它的源(baseurl)注释掉
+
+#baseurl=file:///media/CentOS/
+
+#        file:///media/cdrom/
+
+#        file:///media/cdrecorder/
+
+gpgcheck=1
+
+enabled=1                   #启用yum 
+
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+ 
+
+四、清除缓存
+
+
+# yum clean all
+
+# yum list
+
+ 
+
+五、测试：
+
+安装Telnet:
+
+#yum install telnet*
+
+
+六、开机自动挂载iso镜像文件
+
+在/etc/fstab表中，添加最后的一行，将iso文件永久挂载到系统中
+
+[root@server ~ ]# cat /etc/fstab
+
+/dev/VolGroup00/LogVol00 /                    ext3    defaults        1 1
+
+LABEL=/boot             /boot              　ext3    defaults        1 2
+
+tmpfs                   /dev/shm             tmpfs   defaults        0 0
+
+devpts                  /dev/pts              devpts  gid=5,mode=620  0 0
+
+sysfs                   /sys                  sysfs   defaults        0 0
+
+proc                    /proc                 proc    defaults        0 0
+
+/dev/VolGroup00/LogVol01 swap                 swap    defaults       0 0
+
+/mnt/iso/CentOS5.iso    /mnt/cdrom           iso9660  loop           0 0

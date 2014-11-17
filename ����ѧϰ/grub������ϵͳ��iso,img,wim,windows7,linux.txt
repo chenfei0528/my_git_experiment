@@ -1,0 +1,239 @@
+grub引导多系统—iso,img,wim,windows7,linux
+
+color blue/green yellow/red white/magenta white/magenta
+timeout 30
+default /default
+##########
+#######
+title VHD windows 7
+fallback 2
+find --set-root --ignore-floppies /bootmgr
+chainloader /bootmgr
+savedefault --wait=2
+##############
+###############
+title NTLDR-Windows NT/2K/XP
+fallback 1
+find --set-root --ignore-floppies /ntldr
+chainloader /ntldr
+savedefault --wait=2
+###################
+title (hd0,0)win7pe.iso
+fallback 8
+root (hd0,0)
+find --set-root /ramos/win7pe.iso
+map /ramos/win7pe.iso (0xff) || map --mem (hd0,0)/ramos/win7pe.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+###################
+title (hd0,0) win7pe.iso
+fallback 8
+root (hd0,0)
+find --set-root /ramos/win7pe.iso
+map /ramos/win7pe.iso (0xff) || map --mem (hd0,0)/ramos/win7pe.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+###################################
+###################
+title (hd0,0)win7.net.iso
+fallback 8
+root (hd0,0)
+find --set-root /ramos/)win7.net.iso
+map /ramos/win7.net.iso (0xff) || map --mem (hd0,0)/ramos/win7.net.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+###################################
+#####
+title deeppe.iso (hd0,2)
+fallback 8
+root (hd0,2)
+find --set-root /ramos/deeppe.iso
+map /ramos/deeppe.iso (0xff) || map --mem (hd0,2)/ramos/deeppe.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+########
+title maxdos.img (hd0,2)
+root (hd0,2)
+find --set-root --ignore-floppies /ramos/maxdos.img
+map --mem /ramos/maxdos.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+#########
+#####
+###################
+title win7.iso (hd0,2)
+fallback 8
+root (hd0,2)
+find --set-root /ramos/win7pe.iso
+map /ramos/win7pe.iso (0xff) || map --mem (hd0,2)/ramos/win7pe.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+
+###################################
+#####
+title deeppe.iso (hd0,2)
+fallback 8
+root (hd0,2)
+find --set-root /ramos/deeppe.iso
+map /ramos/deeppe.iso (0xff) || map --mem (hd0,2)/ramos/deeppe.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+########
+title maxdos.img (hd0,2)
+root (hd0,2)
+find --set-root --ignore-floppies /ramos/maxdos.img
+map --mem /ramos/maxdos.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+#########
+####
+title ope.iso (hd0,2)
+fallback 8
+root (hd0,2)
+find --set-root /ramos/ope.iso
+map /ramos/ope.iso (0xff) || map --mem (hd0,2)/ramos/ope.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+########
+###########%^&*(((((&&&&&&&&&####%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+###########%^&*(((((&&&&&&&&&####%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+###########%^&*(((((&&&&&&&&&####%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+title win7pe.iso(hd0,3)
+fallback 8
+root (hd0,3)
+find --set-root /ramos/win7pe.iso
+map /ramos/win7pe.iso (0xff) || map --mem (hd0,2)/ramos/win7pe.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+
+################
+title TonPE(hd0,0)TonPE.iso 
+fallback 8
+root (hd0,0)
+find --set-root /ramos/TonPE.iso 
+map /ramos/TonPE.iso (0xff) || map --mem (hd0,2)/ramos/TonPE.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+###################
+#####
+title deeppe.iso
+fallback 8
+root (hd0,2)
+find --set-root /ramos/deeppe.iso
+map /ramos/deeppe.iso (0xff) || map --mem (hd0,2)/ramos/deeppe.iso (0xff)
+map --hook
+chainloader (0xff)
+savedefault --wait=2
+########
+title maxdos.img
+root (hd0,2)
+find --set-root --ignore-floppies /ramos/maxdos.img
+map --mem /ramos/maxdos.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+#########
+###########%^&*(((((&&&&&&&&&####%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+###########%^&*(((((&&&&&&&&&####%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+###########%^&*(((((&&&&&&&&&####%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#############
+title commandline
+commandline
+
+title reboot
+reboot
+title Ubuntu LiveCD
+root (hd0,2)
+kernel /vmlinuz boot=casper iso-scan/filename=/ub.desktop.9.04.iso ro
+quiet splash locale=zh_CN.UTF-8
+initrd /initrd.gz
+boot
+
+#########
+title Usb Debian 2.6.26-2-686 /dev/sdb2 usb
+root (hd0,1)
+kernel /boot/vmlinuz-2.6.26-2-686 root=/dev/sdb2 ro
+initrd /boot/initrd.img-2.6.26-2-686
+boot
+
+title ubuntu-10.04-desktop-amd64.iso install
+root (hd0,2)
+kernel /vmlinuz boot=casper iso-scan/filename=/ubuntu-10.04-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8
+initrd /initrd.lz
+boot
+
+
+title install Ubuntu 10.04 beta1 hda(0,0)
+root (hd0,2)
+kernel /vmlinuz boot=casper iso-scan/filename=/ubuntu-10.04-beta1-alternate-i386.iso ro quiet splash 
+locale=zh_CN.UTF-8
+initrd /initrd.gz
+boot
+
+
+title   Windows Vista/Longhorn (loader)
+root   (hd0,0)
+savedefault
+makeactive
+chainloader +1
+
+########################
+title find and boot Linux with menu.lst already installed
+fallback 5
+find --set-root /sbin/init
+savedefault --wait=2
+configfile /boot/grub/menu.lst
+
+windows7下引导grub4dos多操作系统方案探索_用NTLDR(不用bootmgr)引导启动windows7（linux,grub,xp）
+
+Windows 7 的系统根目录下没有boot.ini ,怎么将grub 加入启动项？
+1：先去下载grub4dos
+2：解压grldr.mbr,grldr,menu.lst三个文件到C盘根目录，注意是根目录哦！
+3：然后以管理员模式运行cmd，输入bcdedit /create /d "grub" /application bootsector会有一大串id，要记下，等下要用，然后：
+4：bcdedit /set {id} device partition=c:
+5：bcdedit /set {id} path \grldr.mbr6：bcdedit /displayorder {id} /addlast
+
+
+
+windows7使用新的操作系统引导程序bootmgr，而不是之前的ntldr；电脑启动时会先出来bootmgr的画面，选择windows7或早 期OS，然后是早期操作系统的列表；windows7并不经常使用，每次启动都要多加上这个等待时间，过程太罗嗦，准备简化一下。
+
+探索过程
+windows 7正式版算是出来了，虽然还是不很尽人意，但还是值得试试用一下，就安装试用一下，感觉和之前的bate版RC版差不多没有太多改变，基本算是vista 的变种；而且电脑启动还要加上一个可恶的bootmgr的等待时间，画面视觉效果还不如ntldr（xp启动时的多操作系统选单）。第二天就卸载了，不过 并没有格式化win7的安装分区，文件还是在的。
+今天上午看到这个分区，想能不能使用NTLDR把windows7引导启动呢，之前Bate版时尝试过，简单的使用boot.ini是不行的。前几天偶然 见过一个系统工具盘里有用GRUB引导vista/windows7的一个选项，但没有使用，也没研究。既然别人能这么搞，用GRUB应该是可以的，就到 网上查相关资料，但非常不幸，一时间还没找到。
+回头看看Grub引导windows的配置代码
+root (hd0,0)
+makeactive
+chainloader +1
+（对grub 并不很懂，只能算是蒙一下）也就是说，如果grub要把系统的控制权交给(hd0,0)处，如果这里有windows的启动文件，就可以启动。联想 linux可以把引导文件安装在非主引导分区下，那么如果也把windows7的引导文件安装在其它分区下，而不是系统主引导分区下（这样就不影响C盘的 ntldr），就可以实现了。
+windows7 卸载是执行 [DriveLetter]:\boot\bootsect.exe /nt52 ALL /force
+好像bootsect还可以恢复windows7的引导文件，查一下，找到M$官方的文档
+http://technet.microsoft.com/zh-cn/library/cc749177%28WS.10%29.aspx
+
+Bootsect 命令
+Bootsect 使用下列约定：
+bootsect.exe {/help | /nt52 | /nt60} {SYS | ALL | <DriveLetter:>}[/force]
+例如，若要将与 NTLDR 兼容的主启动代码应用到标记为 E 的卷，请使用以下命令：
+bootsect.exe /nt52 E：
+
+笔者硬盘上装了好几个OS，主要用win 2003 中文版，另有一个英文版XP、fedora linux ，再加上一个win7。win7在(hd0,8) 在XP下分配盘符为J（03下没有分配盘符，比较变态一点），就进入XP下，运行bootsect.exe /nt60 j:
+报了一个错误，但后面还是提示了个successful，不管它，看看好了没有。进入grub 命令行运行：
+root (hd0,8)
+makeactive
+chainloader +1
+boot
+出错了，提示说：\Boot\BCD找不到，重启，把C盘下的\boot目录拷过去（windows7的文件没有删，就不用到光盘ISO中拷了）。
+再重启，进入GRUB，运行启动命令，正常进入window7，成功。
+但是再进windows xp 时，出错了，\system32\ntoskrnl.exe 丢失，从win03进去看看，文件是在的，重启xp试了试，还是不行；只好到xp ISO里提取一下覆盖一下，xp也正常启动了。估计是安装bootmgr时搞出了乱子。
+
+

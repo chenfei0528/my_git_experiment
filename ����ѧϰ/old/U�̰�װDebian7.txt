@@ -1,0 +1,78 @@
+U盘安装Debian7  
+
+1.iso文件刻录(Linux平台下)
+U盘资料备份好，iso文件准备好，确定U盘设备号，假定为/dev/sdc，则使用命令：
+dd if=<file> of=/dev/sdc bs=4M; sync
+
+（注意不是/dev/sdc1，否则会出现‘isolinux.bin missing or corrupt'错误）
+
+参考命令：http://www.debian.org/CD/faq/index.en.html#write-usb
+
+dd if=<file> of=<device> bs=4M; sync
+
+where:
+
+<file> is the name of the input image, e.g. netinst.iso 
+<device> is the device matching the USB flash drive, e.g. /dev/sda, /dev/sdb. Be careful to make sure you have the right device name, as this command is capable of writing over your hard disk just as easily if you get the wrong one!
+bs=4M tells dd to read/write in 4 megabyte chunks for better performance; the default is 512 bytes, which will be much slower 
+The sync is to make sure that all the writes are flushed out before the command returns. 
+
+windows平台下可使用Universal USB Installer软件，下载地址：http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
+
+
+2.安装debian
+/boot 分区100MB
+/ 分区10GB
+swap空间3GB
+其它是/home
+
+3.安装后显卡驱动问题
+安装采用联网的形式，装了一些gnome软件。但问题是不能加载gnome3，（进入gnome3 就出现，驱动程序不兼容。使用后备模式）。只能使用gnome2，查资料（http://wiki.debian.org/AtiHowTo#Installing_proprietary_firmware）发现要安装
+
+firmware-linux-nonfree于是先更新源，使用163的源，http://mirrors.163.com/.help/debian.html，source.list替换完成后apt-get update然后apt-get install firmware-linux-nonfree,安装完成后重启即可。
+参考：http://vancel1.info/debian-ati-qna.html
+
+Q: 为什么 2D/3D 性能低下
+
+A: Debian 的内核删除了 radeon DRM 驱动的私有 firmware ，需要加 non-free 源，安装 firmware-linux-nonfree 具体请参考： http://wiki.debian.org/AtiHowTo#Installing_proprietary_firmware
+
+
+4.将当前用户加入sudo组
+su 命令切换root账号
+visudo
+在文件中
+root    ALL=(ALL) ALL 
+下面一行加入当前用户，如
+abcd    ALL=(ALL) ALL
+
+
+解决visudo: command not found错误:http://kuaile.in/archives/1019
+
+
+visudo可以安全的编辑/etc/sudoers文件，虽然也可以直接使用vi来编辑sudoers文件，但是visudo和直接编辑sudoers最大的区别在于visudo在退出并保持文件的时候会自动的检测语法错误，如果使用 vi /etc/sudoers 直接编辑sudoers的话，可以回出现语法错误，但是使用visudo却可以避免因为语法出错而保存了一个错误的souders文件。
+要使用visudo，首先你的linux必须安装了sudo,如果没有安装就安装一下。然后就可以使用了，若还不能请检查visudo位置是否在系统目录中。
+
+5.Linux将中文目录名改为英文(两种方法）
+修改系统语言环境
+
+1.修改系统当前语言环境
+
+export LANG=en_US
+
+2.更新家目录的文件命名
+
+xdg-user-dirs-gtk-update
+
+跳出对话框，提示是否更新成英文，同意即可
+
+3.修改系统当前语言环境为中文
+
+export LANG=zh_CN.UTF-8
+
+修改系统配置文件
+
+1.当前用户的家目录配置文件位置：
+
+vim ~/.config/user-dirs.dirs
+
+2.打开看一下应该就知道如何修改了，关键的一点是：先把中文目录重命名，在去user-dirs.dirs相应的信息

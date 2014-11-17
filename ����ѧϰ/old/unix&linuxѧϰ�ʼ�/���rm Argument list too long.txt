@@ -1,0 +1,21 @@
+解决 /bin/rm: Argument list too long
+
+当某个文件夹下的文件太多，不能使用rm删除
+
+　　# rm * -rf
+
+　　-bash: /bin/rm: Argument list too long
+
+　　网上找了个方法，贴上来给大家分享
+
+　　find PATH -name *.mp3 -exec rm {} \;
+
+　　如，要删除 /tmp/123/abc 目录下的
+
+　　find  /tmp/123/abc ‘*’ -exec rm {} \;
+
+　　如当前目录为 /tmp/123 ，想删除 /tmp/123/abc 下的
+
+　　find  ./abc  -name ‘*’ -exec rm {} \;
+
+　　大家可以自己试试，不过要小心处理，别删错重要文件了！！！

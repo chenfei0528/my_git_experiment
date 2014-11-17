@@ -1,0 +1,36 @@
+64位的windows server 2003运行IIS6运行32位的.NET程序
+
+
+刚买了个服务器支持64位的Windows2003于是想爽一下，装IIS6，只能装64位的NET frameWork 
+　　在XP32位下用VS2005发布两个网站：
+
+A、基于于SQL2000B、基于Office Access　　在服务器配置完毕后，A站正常运行，很爽。B站报错，意思于法连接到数据库，郁闷很久。
+
+　　思考：今天网友提示64位IIS对Ole的支持问题。
+
+　　由于64位操作系统不支持Microsoft OLE DB Provider for Jet驱动程杏爆也不支持更早的Microsoft Access Driver (*.mdb)方式连接。所以用于 Access 和 Excel 数据库的 Microsoft OLE DB Provider for Jet 在 64 位版本中不可用，也就是说，如下两种连接字符串都已经无法正常工作了：
+
+"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="&Server.mappath(db)"driver=Microsoft Access Driver (*.mdb);DBQ="&Server.MapPath(db)　　解决：既然这样，就只能使用一个办法，将IIS的运行环境设置为32位：
+
+IIS6上的做法:
+
+1.命令行键入:
+
+cscript.exe %SYSTEMDRIVE%\inetpub\adminscripts\adsutil.vbs SET W3SVC/AppPools/Enable32bitAppOnWin64 1即设置IIS6允许32位程序运行在64位机器上
+
+2.重新注册.net frameWorks
+
+%SYSTEMROOT%\Microsoft.NET\framework\v2.0.50727\aspnet_regiis.exe -i3.完成之后，看Web服务扩展，应该会多出一个32位的asp.net将其设置为允许，缺点：这样会使整个IIS上的所有站点都以32位兼容方式运行 。
+
+IIS7上的做法要简单很多:
+
+应用程序池，高级设置-->允许32位应用程序运行IIS6，运行.net+Access网站看看是否解决　　后续：如果还有问题，比如Service Unavailable，恭喜你，你可以学到新知识了。很讨厌，看一下错误日志，我遇到的是RpcProxy.dll无法加载和无法加载站点/服务的所有 ISAPI 筛选器错误。解决方法：打开iis-->查看“网站”的属性--->ISAPI 筛选器-->把有向下的红箭头的项删除掉-->重启iis-->OK 。至此全解决。
+
+
+Windows x64 IIS 6 running 32-bit App Pools
+
+Internet Information Services in Windows x64 is 64-bit. This means, if you want to run 32-bit ISAPI DLLs with IIS6 on Windows x64, you'll need to apply a small tweak. Open up a Command Prompt window, and type this command to enable 32-bit Application Pools:
+
+cscript %SystemDrive%\inetpub\AdminScripts\adsutil.vbs set w3svc/AppPools/Enable32bitAppOnWin64 1 Down the road, if you've made the required steps to update your stuff to 64-bit, type the following to re-enable 64-bit Application Pools:
+
+cscript %SystemDrive%\inetpub\AdminScripts\adsutil.vbs set w3svc/AppPools/Enable32bitAppOnWin64 0

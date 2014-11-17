@@ -1,0 +1,124 @@
+用命令操作灌装VHD系统及引导启动
+
+1.
+C:\Users\Administrator>diskpart
+Microsoft DiskPart version 6.1.7000
+Copyright (C) 1999-2008 Microsoft Corporation.
+On computer: HACKER-PC
+2.
+DISKPART> create vdisk file=i:\vhd7.vhd type=fixed maximum=15000
+DiskPart successfully created the virtual disk file.
+（在物理机的i分区创建大小为15000M的固定vhd磁盘并将vhd文件命名为vhd7）
+3.
+DISKPART> select vdisk file=i:\vhd7.vhd
+DiskPart successfully opened the virtual disk file.
+(选择该vhd7磁盘)
+4.
+DISKPART> attach vdisk
+DiskPart successfully attached the virtual disk file.
+（挂载vhd磁盘）
+5.
+DISKPART> create partition primary
+DiskPart succeeded in creating the specified partition.
+（将该磁盘设置为主分区）
+6.
+DISKPART> format fs=ntfs quick
+100 percent completed
+DiskPart successfully formatted the volume.
+（将该磁盘快速分区为ntfs格式）
+7.
+DISKPART> assign letter=v
+DiskPart successfully assigned the drive letter or mount point.
+（设置vhd7的分区盘符为v）
+8.
+DISKPART> exit
+Leaving DiskPart...
+(退出diskpart)
+9.
+C:\>imagex /apply e:\sources\install.wim 4 v:
+(释放windows 7 sources目录下的install.wim到vhd磁盘 4是旗舰版的代号 v是刚才创建的vhd盘符)
+ImageX Tool for Windows
+Copyright (C) Microsoft Corp. All rights reserved.
+[ 100% ] Applying progress
+Successfully applied image.
+Total elapsed time: 7 min 28 sec
+（释放完成 耗时7m28s）
+
+创建vhd多重引导
+
+
+10.
+C:\>bcdedit /copy {current} /d "vhd7"
+The entry was successfully copied to {e8e25dc3-262d-11de-ae9c-9789f8cc463e}.
+11.
+C:\>bcdedit /set {e8e25dc3-262d-11de-ae9c-9789f8cc463e} device vhd=[i:]\vhd7.vhd
+The operation completed successfully.
+12.
+C:\>bcdedit /set {e8e25dc3-262d-11de-ae9c-9789f8cc463e} osdevice vhd=[i:]\vhd7.vhd
+The operation completed successfully.
+13.
+C:\>bcdedit /set {e8e25dc3-262d-11de-ae9c-9789f8cc463e} detecthal on
+The operation completed successfully.
+(e8e25dc3-262d-11de-ae9c-9789f8cc463e代码有所不同 输入bcdedit /copy {current} /d "vhd7"
+命令后会出现 复制替换即可)
+***(其中的i: 应特别注意是物理机存放vhd文件的磁盘分区盘符 而不是vhd的分区盘符)***
+
+
+
+
+14.
+C:\>bcdedit
+（检查启动项）
+Windows Boot Manager
+--------------------
+identifier              {bootmgr}
+device                  partition=C:
+description             Windows Boot Manager
+locale                  en-US
+inherit                 {globalsettings}
+default                 {current}
+resumeobject            {e8e25dbf-262d-11de-ae9c-9789f8cc463e}
+displayorder            {current}
+                        {e8e25dc3-262d-11de-ae9c-9789f8cc463e}
+toolsdisplayorder       {memdiag}
+timeout                 3
+
+Windows Boot Loader
+-------------------
+identifier              {current}
+device                  partition=C:
+path                    \Windows\system32\winload.exe
+description             Windows 7
+locale                  en-US
+loadoptions             DDISABLE_INTEGRITY_CHECKS
+inherit                 {bootloadersettings}
+recoverysequence        {e8e25dc1-262d-11de-ae9c-9789f8cc463e}
+truncatememory          0x80000000
+recoveryenabled         Yes
+osdevice                partition=C:
+systemroot              \Windows
+resumeobject            {e8e25dbf-262d-11de-ae9c-9789f8cc463e}
+nx                      OptIn
+numproc                 2
+detecthal               No
+usefirmwarepcisettings  No
+
+Windows Boot Loader
+-------------------
+identifier              {e8e25dc3-262d-11de-ae9c-9789f8cc463e}
+device                  vhd=[I:]\vhd7.vhd
+path                    \Windows\system32\winload.exe
+description             vhd7
+locale                  en-US
+loadoptions             DDISABLE_INTEGRITY_CHECKS
+inherit                 {bootloadersettings}
+recoverysequence        {e8e25dc1-262d-11de-ae9c-9789f8cc463e}
+truncatememory          0x80000000
+recoveryenabled         Yes
+osdevice                vhd=[I:]\vhd7.VHD
+systemroot              \Windows
+resumeobject            {e8e25dbf-262d-11de-ae9c-9789f8cc463e}
+nx                      OptIn
+numproc                 2
+detecthal               Yes
+usefirmwarepcisettings  No

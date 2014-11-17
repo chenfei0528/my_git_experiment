@@ -1,0 +1,103 @@
+IIS FTP PASV模式下更改端口范围的方法
+
+IIS FTP里的PASV模式下默认端口范围 1024 - 65535，连接时会从中随机选择到响应。如果该值未指定，或被设置成空字符串，则将使用 Winsock 指定的默认值 1025-5000
+如果指定了该属性，则 FTP 将验证的有效范围从 5001 到 65535。 要限制这片超大端口的范围,可以用IIS管理实用程序Adsutil.vbs. 
+cd c:\Inetpub\AdminScripts 
+adsutil.vbs set /MSFTPSVC/PassivePortRange "8900-8909" (例:开放指定的10个端口) 
+重新启动 FTP 服务 
+注意：如果开了防火墙，还必须添加以上端口. 
+
+附:Adsutil.vbs的常用语法 
+配置目录的存取权限 
+C:\Inetpub\Admins cripts>chaccess.vbs -a w3svc/1/ROOT -verbose 
+Usage: chaccess <--ADSPath|-a ADSPATH> 控制配置路径 
+[--computer|-c COMPUTER1[,COMPUTER2...]]指定机器名，IP也可。 
+[+read|-read] 主目录下的读取权限 
+[+write|-write]主目录下的写入权限 
+[+s cript|-s cript]主目录下的执行许可权限为纯脚本 
+[+****ute|-****ute]主目录下的执行许可权限为脚本和可执行程序 
+[+browse|-browse]主目录下的目录浏览权限 
+[--verbose|-v]当前版本 
+[--help|-?] 
+显示指定路径的属性及状态信息 
+C:\Inetpub\Admins cripts>dispnode help 
+Usage: dispnode <--ADSPath|-a ADS PATH OF NODE> [--help|-h] 
+ADS PATH - The Path of the node to be displayed 
+Example 1: dispnode -a IIS://LocalHost/w3svc显示当前IIS的主属性 
+Example 2: dispnode --adspath IIS://MachineName/w3svc/1 显示当前站点的状态信息 
+寻找命名的Web,并显示节点号、描述、主机名、端口和IP地址 
+C:\Inetpub\Admins cripts>findweb 
+Web Site Number = 1 
+Web Site Des cription = 默认 Web 站点 
+Hostname = 
+Port = 80 
+IP Address = 
+C:\Inetpub\Admins cripts>findweb m7.net 
+Web Site Number = 2 
+Web Site Des cription = m7.net 
+Hostname = www.m7.net 
+Port = 80 
+IP Address = www.m7.net 
+显示指定站点路径管理树 
+C:\Inetpub\Admins cripts>disptree.vbs help 
+Usage: disptree [--ADSPath|-a ROOT NODE] 指定要显示管理树的路径 
+[--NoRecurse|-n] 
+[--Help|-?] 
+创建WEB虚拟站点 
+C:\Inetpub\Admins cripts>mkw3site help 
+Unknown argument help 
+Usage: mkw3site <--RootDirectory|-r ROOT DIRECTORY>网站路径名 
+<--Comment|-t SERVER COMMENT>WEB网站标识 
+[--computer|-c COMPUTER1[,COMPUTER2...]] 
+[--port|-o PORT NUM]端口 
+[--IPAddress|-i IP ADDRESS]IP地址 
+[--HostName|-h HOST NAME]主机名 
+[--SiteNumber|-n SITENUMBER] 
+[--DontStart]不启动 
+[--verbose|-v] 
+[--help|-?] 
+创建指定站点的虚拟目录 
+C:\Inetpub\Admins cripts>mkwebdir.vbs help 
+Usage: mkwebdir [--computer|-c COMPUTER1,COMPUTER2]指定服务器名 
+<--website|-w WEBSITE1>指定虚拟站点名 
+<--virtualdir|-v NAME1,PATH1,NAME2,PATH2,...>指定虚拟目录名和目录文件地址 
+[--help|-?] 
+Example : mkwebdir -c MyComputer -w "Default Web Site" 
+-v "dir1","c:\inetpub\wwwroot\dir1","dir2","c:\inetpub\wwwroot\dir2" 
+暂停指定站点的IIS服务 
+C:\Inetpub\Admins cripts>pausesrv help 
+Usage: pausesrv <--ADSPath|-a server1[,server2,server3...]> 
+[--computer|-c COMPUTER1[,COMPUTER2...]] 
+[--verbose|-v] 
+[--help|-?] 
+Example 1: pausesrv -a w3svc/1,msftpsvc/2 
+Example 2: pauseftp -c MACHINE1,MACHINE2,MACHINE3 -a w3svc/1,msftpsvc/2 
+恢复暂停的站点的IIS服务 
+C:\Inetpub\Admins cripts>contsrv.vbs help 
+Usage: contsrv <--ADSPath|-a server1[,server2,server3...]> 
+[--computer|-c COMPUTER1[,COMPUTER2...]] 
+[--verbose|-v] 
+[--help|-?] 
+Example 1: contsrv -a w3svc/1,msftpsvc/2 
+Example 2: contsrv -c MACHINE1,MACHINE2,MACHINE3 -a w3svc/1,msftpsvc/2 
+用法同上 
+pauseftp.vbs 暂停FTP服务器服务 
+contftp.vbs 恢复被暂停的FTP服务 
+pauseweb.vbs 暂停Web服务器服务 
+contweb.vbs 恢复暂停的WWW服务 
+停止指定站点的IIS服务器服务 
+C:\Inetpub\Admins cripts>stopsrv.vbs -a w3svc/2 
+启动指定站点的IIS服务器服务 
+C:\Inetpub\Admins cripts>startsrv.vbs -a w3svc/2 
+停止指定站点的WEB服务器服务 
+C:\Inetpub\Admins cripts>startweb.vbs -a w3svc/2 
+启动指定站点的Web服务器服务 
+C:\Inetpub\Admins cripts>stopweb.vbs -a 2 
+用法同上 
+stopftp.vbs 停止FTP服务器服务 
+startftp.vbs 启动FTP服务器服务 
+跟踪脚本的执行 
+C:\Inetpub\Admins cripts>synciwam.vbs -h 
+Usage: cs cript synciwam.vbs [-v|-h] 
+-v verbose: trace ****ution of the s cript 
+-h help: print this message 
